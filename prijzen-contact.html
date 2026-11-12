@@ -3,458 +3,461 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pakketten, VR-Kar &amp; Prijzen (vanaf € 10.000) | TechBuilds VR</title>
-  <meta name="description" content="Kies uit 3 heldere pakketten van TechBuilds VR: Regietablet &amp; Eigen Brillen (€ 10.000,- incl. 1e jr service), Turnkey VR-Kar 10 (€ 15.000,-) of Turnkey VR-Kar 20 (€ 25.000,-) met eigen KPN 5G &amp; Wi-Fi 7." />
-  <meta property="og:title" content="Pakketten, Turnkey 5G VR-Kar &amp; Prijzen | TechBuilds VR" />
-  <meta property="og:description" content="Vanaf € 10.000,- (Regietablet &amp; Eigen Brillen) tot volledig beheerde Turnkey Zioxi VR-Karren voor 10 of 20 leerlingen met eigen 5G-netwerk." />
+  <title>Pakketten, Meerjaren-TCO &amp; Demo Aanvragen | TechBuilds VR</title>
+  <meta name="description" content="Transparante pakketten excl. BTW: Optie 1 Regietablet & Onbeperkt Eigen Brillen (€ 10.000,- incl. 1e jr service), Optie 2 Turnkey VR-Kar 10 (€ 15.000,-) en Optie 3 Turnkey VR-Kar 20 (€ 25.000,-)." />
+  <meta property="og:title" content="Pakketten, 5G Zioxi VR-Kar &amp; Prijzen | TechBuilds VR" />
+  <meta property="og:description" content="Vergelijk Optie 1 (€ 10.000), Turnkey VR-Kar 10 (€ 15.000) en Turnkey VR-Kar 20 (€ 25.000) excl. BTW en bereken direct de meerjaren-TCO." />
   <meta property="og:image" content="assets/img/logo/OpenGraph_Social_Preview_1200x630.png" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-  <a href="#hoofdinhoud" class="skip-link">Direct naar hoofdinhoud</a>
+<body class="has-mobile-bar">
+  <a href="#hoofdinhoud" class="skip-link" id="skipToMainPricing">Direct naar hoofdinhoud</a>
 
-  <div class="topbar no-print">
-    <div class="container topbar-inner">
-      <div class="topbar-specs">
-        <span>3 HELDERE PAKKETTEN // VANAF € 10.000,- EXCL. BTW (INCL. 1E JR TABLET-SERVICE)</span>
-        <span class="topbar-sep topbar-hide-mobile">|</span>
-        <span class="topbar-hide-mobile">TURNKEY 5G ZIOXI VR-KAR 10 (€ 15.000) &amp; VR-KAR 20 (€ 25.000)</span>
-      </div>
-      <a href="#aanvraag" class="topbar-link">Direct offerte of praktijkdemo aanvragen →</a>
-    </div>
-  </div>
-
-  <header class="site-header no-print">
+  <!-- Luchtige Witte Sticky Frosted Header (70px · Officieel TechBuilds VR Logo) -->
+  <header class="site-header no-print" id="siteHeader">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="TechBuilds VR Startpagina">
-        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR logo" width="186" height="50" />
+      <a href="index.html" class="brand-logo" id="navBrandLogo" aria-label="TechBuilds VR Startpagina">
+        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="145" height="39" />
       </a>
 
-      <nav aria-label="Hoofdmenu">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Overzicht</a></li>
-          <li><a href="training-draaibank.html" class="nav-link">Draaibank VR-Training</a></li>
-          <li><a href="docentapp-tablet.html" class="nav-link">Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html" class="nav-link">Training op Maat</a></li>
-          <li><a href="prijzen-contact.html" class="nav-link" aria-current="page">Pakket &amp; Prijzen</a></li>
-        </ul>
-      </nav>
+      <div class="nav-right-group">
+        <nav class="nav-center" aria-label="Hoofdmenu">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link" id="navLinkHome">Overzicht</a></li>
+            <li><a href="training-draaibank.html" class="nav-link" id="navLinkTraining">Draaibank VR</a></li>
+            <li><a href="docentapp-tablet.html" class="nav-link" id="navLinkTablet">Docenttablet</a></li>
+            <li><a href="maatwerk.html" class="nav-link" id="navLinkMaatwerk">Maatwerk</a></li>
+            <li><a href="prijzen-contact.html" class="nav-link" aria-current="page" id="navLinkPrijzen">Pakketten &amp; Prijzen</a></li>
+          </ul>
+        </nav>
 
-      <div class="nav-actions nav-actions-desktop">
-        <a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Productblad (PDF)</a>
-        <a href="#aanvraag" class="btn btn-primary btn-sm">Offerte Aanvragen</a>
+        <div class="nav-actions nav-actions-desktop">
+          <a href="#aanvraag" class="nav-cta-pill" id="navCtaDemo">Plan demo op school</a>
+        </div>
+
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 8h16M4 16h16" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
+    </div>
 
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
-        </svg>
-      </button>
+    <div class="scroll-progress-track" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="container">
         <ul class="mobile-drawer-list">
-          <li><a href="index.html">Overzicht</a></li>
-          <li><a href="training-draaibank.html">Draaibank VR-Training (M1–M6)</a></li>
-          <li><a href="docentapp-tablet.html">13" Regie-Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html">VR-Trainingen op Maat</a></li>
-          <li><a href="prijzen-contact.html" aria-current="page">Pakket &amp; Prijzen</a></li>
+          <li><a href="index.html" id="mobLinkHome">Overzicht</a></li>
+          <li><a href="training-draaibank.html" id="mobLinkTraining">Draaibank VR (M1–M6)</a></li>
+          <li><a href="docentapp-tablet.html" id="mobLinkTablet">13,1&quot; Docenttablet</a></li>
+          <li><a href="maatwerk.html" id="mobLinkMaatwerk">Maatwerk</a></li>
+          <li><a href="prijzen-contact.html" aria-current="page" id="mobLinkPrijzen">Pakketten &amp; Prijzen</a></li>
         </ul>
+        <a href="#aanvraag" class="btn btn-primary" id="mobCtaDemo" style="width:100%;">Plan demo op school</a>
       </div>
     </div>
   </header>
 
   <main id="hoofdinhoud">
-    <!-- Hero & 3 Commerciële Pakketten -->
-    <section class="hero">
+    <!-- VISUAL 5 — Bento-Tegel Hero met Snelkiezer voor Optie 1, 2 & 3 -->
+    <section class="hero-bento no-print" aria-label="Pakketten en Prijzen Introductie">
+      <div class="container hero-bento-grid">
+        <div class="hero-bento-left">
+          <div class="bento-statement-tile">
+            <h1 class="h1-page">Heldere pakketten. Zonder per-leerling licenties.</h1>
+            <p class="lead">
+              Start met uw eigen brillen op onze 13,1-inch Samsung Knox Regietablet, of kies een volledig beheerde Turnkey Zioxi VR-Kar met eigen KPN Onbeperkt 5G op één 230V-stekker.
+            </p>
+            <div class="btn-group">
+              <a href="#pakket-keuze" class="btn btn-primary" id="pricingHeroCompareBtn">Vergelijk 3 pakketten ↓</a>
+              <a href="#pakketCalculator" class="btn btn-white" id="pricingHeroTcoBtn">Meerjaren-TCO (1–5 jr) ↓</a>
+            </div>
+          </div>
+
+          <div class="hero-metrics-row" role="group" aria-label="Snelkiezer pakketopties">
+            <button type="button" class="bento-metric-tile" data-quick-optie="1" id="quickOptie1">
+              <span class="metric-num">€ 10k</span>
+              <span class="metric-label">Optie 1</span>
+              <span class="metric-sub">Tablet + ∞ eigen brillen</span>
+            </button>
+
+            <button type="button" class="bento-metric-tile is-active" data-quick-optie="2" id="quickOptie2">
+              <span class="metric-num">€ 15k</span>
+              <span class="metric-label">VR-Kar 10</span>
+              <span class="metric-sub">10× Quest 3S + KPN 5G</span>
+            </button>
+
+            <button type="button" class="bento-metric-tile" data-quick-optie="3" id="quickOptie3">
+              <span class="metric-num">€ 25k</span>
+              <span class="metric-label">VR-Kar 20</span>
+              <span class="metric-sub">20× Quest 3S + KPN 5G</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-photo-tile hero-photo-tile--subpage">
+          <img id="pricingHeroImg" src="assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp" class="hero-photo-img" alt="Turnkey Zioxi VR-Kar met genummerde Meta Quest 3S brillen, 13,1-inch Samsung tablet en eigen KPN 5G op één 230V stekker" width="1264" height="848" />
+          <div class="hero-frosted-dock">
+            <div class="hero-dock-caption-row">
+              <span id="pricingHeroCaption"><strong>Turnkey Zioxi VR-Kar 10 / 20</strong> · 1× 230V stekker · Nighthawk Wi-Fi 7 &amp; KPN Onbeperkt 5G</span>
+              <span class="status-badge status-safe">EXCL. BTW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Koloms Bento Pakketvergelijking + Live Bevestigingsbadge -->
+    <section class="section section-tight section-surface no-print" id="pakket-keuze">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">HELDERE INVESTERING // GEEN PER-STUDENT ABONNEMENTEN</div>
-          <h1 class="h1-page">Drie gebruiksklare pakketten voor school en bedrijfsschool.</h1>
-          <p class="lead">
-            Bij TechBuilds VR betaalt u nooit per leerling, per inlog of per examenpoging. Bezit u al eigen VR-brillen? Start direct vanaf <strong>€ 10.000,- excl. BTW</strong> met onze beheerde 13-inch Samsung Docententablet (inclusief het eerste jaar service). Wilt u één compleet ontzorgd systeem met eigen 5G-netwerk en laadkar? Kies dan voor de <strong>Turnkey VR-Kar 10</strong> of <strong>VR-Kar 20</strong>.
-          </p>
+        <div id="selectedPkgBanner" class="pkg-selected-banner" style="display:none;" role="status" aria-live="polite">
+          <div>
+            <strong id="selectedPkgBannerTitle">✓ Optie 2 — Turnkey VR-Kar 10 geselecteerd</strong>
+            <span style="display:block;font-size:0.83rem;color:var(--tb-text-secondary);">Automatisch klaargezet in zowel de Meerjaren TCO-Calculator als het aanvraagformulier hieronder.</span>
+          </div>
+          <div class="btn-group">
+            <a href="#pakketCalculator" class="btn btn-white btn-sm">Bekijk TCO ↓</a>
+            <a href="#aanvraag" class="btn btn-primary btn-sm">Naar aanvraag ↓</a>
+          </div>
         </div>
 
         <div class="grid-3">
-          <!-- Optie 1: Regietablet & Eigen Brillen -->
-          <article class="price-card" id="optie-1">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;">
-              <span class="panel-index" style="margin-bottom:0;">OPTIE 1 · EIGEN BRILLEN</span>
-              <span class="status-badge status-safe">1E JAAR SERVICE INBEGREPEN</span>
+          <!-- Optie 1 -->
+          <article class="price-card" id="optie-1" data-pkg-card="optie-1-eigen-brillen">
+            <div class="price-tier-kicker">
+              <span class="tier-tag">Optie 1 · Eigen brillen</span>
+              <span class="status-badge status-safe">1e jr service incl.</span>
             </div>
-            <h2 class="h3-card" style="font-size:1.38rem;">Regietablet &amp; Onbeperkt Eigen Brillen</h2>
-            <p class="muted" style="font-size:0.88rem;margin-bottom:0.75rem;">Voor scholen en bedrijven die al eigen VR-brillen bezitten.</p>
-            <div class="price-figure" style="font-size:2.15rem;">€ 10.000,- <span style="font-size:0.88rem;font-weight:500;color:var(--tb-text-muted);">excl. BTW</span></div>
-            <p class="price-sub">Eenmalige aanschaf <strong>inclusief het 1e jaar tablet-service</strong>. Vanaf jaar 2: <strong>€ 1.500,- / jaar</strong> excl. BTW.</p>
+            <h2 class="h3-card">Regietablet &amp; Onbeperkt Eigen Brillen</h2>
+            <div class="price-figure">€ 10.000,- <span class="price-vat">excl. BTW</span></div>
+            <p class="price-annual">Eenmalig incl. 1e jaar service · vanaf jaar 2: <strong class="mono">€ 1.500,-/jr</strong> excl. BTW</p>
 
-            <ul class="check-list" style="margin-top:0.75rem;font-size:0.9rem;">
-              <li><strong>13-inch Samsung Docententablet</strong> (<code>Galaxy Tab S10 FE+</code>, 13,1" 90 Hz, <code>IP68</code> stof-/waterdicht, incl. S Pen &amp; robuuste handstrap-case)</li>
-              <li><strong>Samsung Knox MDM (Kiosk Mode):</strong> start direct vergrendeld op in het Docent Dashboard (live meekijken, groepspauze, Black-Box &amp; A4 PDF-rapport)</li>
-              <li><strong>Onbeperkt aantal eigen VR-brillen</strong> koppelen zonder leerlinglimiet (excl. ArborXR bril-MDM)</li>
-              <li><strong>Service &amp; onderhoud op afstand:</strong> remote support, automatische software-updates en Knox MDM-beheer (géén fysieke check op locatie)</li>
+            <ul class="check-list" style="font-size:0.9rem;">
+              <li><strong>13,1&quot; Samsung Galaxy Tab S10 FE+</strong> (<span class="mono">SM-X620</span>, <span class="mono">IP68</span>, S Pen &amp; rugged handstrap-case)</li>
+              <li><strong>Samsung Knox Single-App Kiosk MDM</strong> met Android Docenten Dashboard v2.3.0</li>
+              <li><strong>Onbeperkt eigen Meta Quest brillen</strong> koppelen zonder leerlinglimiet (excl. ArborXR)</li>
+              <li><strong>Remote service:</strong> ondersteuning, updates en Knox-beheer op afstand</li>
             </ul>
 
-            <div class="btn-group no-print" style="margin-top:auto;padding-top:1rem;">
-              <a href="?pakket=optie1#aanvraag" class="btn btn-outline" style="width:100%;" data-select-pkg="optie-1-eigen-brillen">Kies Optie 1 (€ 10.000,-)</a>
+            <div class="no-print" style="margin-top:auto;padding-top:1.25rem;">
+              <button type="button" class="btn btn-white" id="btnChooseOptie1" style="width:100%;" data-select-pkg="optie-1-eigen-brillen">Kies Optie 1</button>
             </div>
           </article>
 
-          <!-- Optie 2: Turnkey VR-Kar 10 (Featured) -->
-          <article class="price-card price-card-featured" id="optie-2">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;">
-              <span class="panel-index" style="margin-bottom:0;">OPTIE 2 · HALVE KLAS / PRAKTIJKLOKAAL</span>
-              <span class="status-badge status-info">INCL. ARBORXR &amp; EIGEN 5G</span>
+          <!-- Optie 2 (Meest gekozen) -->
+          <article class="price-card price-card-featured" id="optie-2" data-pkg-card="optie-2-vr-kar-10">
+            <div class="price-tier-kicker">
+              <span class="tier-tag">Optie 2 · Praktijklokaal</span>
+              <span class="featured-pill">Meest gekozen</span>
             </div>
-            <h2 class="h3-card" style="font-size:1.38rem;">Turnkey VR-Kar 10</h2>
-            <p class="muted" style="font-size:0.88rem;margin-bottom:0.75rem;">Compleet beheerde VR-kar met 10 brillen, ArborXR en eigen 5G-netwerk.</p>
-            <div class="price-figure" style="font-size:2.15rem;">€ 15.000,- <span style="font-size:0.88rem;font-weight:500;color:var(--tb-text-muted);">excl. BTW</span></div>
-            <p class="price-sub">Eenmalige aanschaf + <strong>€ 2.500,- / jaar</strong> excl. BTW voor volledige service op brillen, 5G, tablet &amp; kar.</p>
+            <h2 class="h3-card">Turnkey VR-Kar 10</h2>
+            <div class="price-figure">€ 15.000,- <span class="price-vat">excl. BTW</span></div>
+            <p class="price-annual">Eenmalige aanschaf + <strong class="mono">€ 2.500,-/jr</strong> excl. BTW volledige service &amp; 5G</p>
 
-            <ul class="check-list" style="margin-top:0.75rem;font-size:0.9rem;">
-              <li><strong>10× Meta Quest 3S VR-headsets</strong> (standaard band + medische siliconen hygiënecovers), in Single-App Kiosk Mode beheerd met <strong>ArborXR MDM</strong></li>
-              <li><strong>Aangepaste Zioxi VR Headset Cart 10</strong> (<code>64 × 50 × 95 cm</code>): 20W USB-C PD snelladers met korte geborgde <code>oneClick</code> kabels, LED-laadstatus, 270° deuren &amp; digitaal codeslot</li>
-              <li><strong>Eigen 5G &amp; Wi-Fi 7 netwerk ingebouwd:</strong> Netgear Nighthawk M7 Pro + <strong>KPN Onbeperkt 5G</strong> (1 enkele 230V-stekker, 100% los van school-Wi-Fi en IT)</li>
-              <li><strong>13-inch Samsung Docententablet met Knox MDM</strong> &amp; handstrap-case, veilig opgeborgen en met 45W opgeladen binnenin de afgesloten kar</li>
-              <li><strong>Service &amp; 1× fysieke check/jaar:</strong> hulp &amp; MDM op afstand (ArborXR + Knox + 5G) + jaarlijkse fysieke inspectie op locatie</li>
+            <ul class="check-list" style="font-size:0.9rem;">
+              <li><strong>Aangepaste Zioxi Cart 10</strong> (<span class="mono">64×50×95 cm</span>) met geborgde <span class="mono">oneClick</span> USB-C PD op <span class="mono">1× 230V</span></li>
+              <li><strong>10× Meta Quest 3S</strong> met medische siliconen covers &amp; <strong>ArborXR Single-App Kiosk</strong></li>
+              <li><strong>Netgear Nighthawk M7 Pro Wi-Fi 7 + KPN Onbeperkt 5G</strong> (100% los van school-IT)</li>
+              <li><strong>13,1&quot; Tab S10 FE+</strong> opgeladen in de kar + <span class="mono">1×/jr</span> fysieke check op locatie</li>
             </ul>
 
-            <div class="btn-group no-print" style="margin-top:auto;padding-top:1rem;">
-              <a href="?pakket=optie2#aanvraag" class="btn btn-primary" style="width:100%;" data-select-pkg="optie-2-vr-kar-10">Kies Turnkey VR-Kar 10 (€ 15.000,-)</a>
+            <div class="no-print" style="margin-top:auto;padding-top:1.25rem;">
+              <button type="button" class="btn btn-primary" id="btnChooseOptie2" style="width:100%;" data-select-pkg="optie-2-vr-kar-10">Kies Turnkey VR-Kar 10</button>
             </div>
           </article>
 
-          <!-- Optie 3: Turnkey VR-Kar 20 -->
-          <article class="price-card" id="optie-3">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;">
-              <span class="panel-index" style="margin-bottom:0;">OPTIE 3 · VOLLEDIGE KLAS / HAL</span>
-              <span class="status-badge status-safe">20 BRILLEN + ARBORXR</span>
+          <!-- Optie 3 -->
+          <article class="price-card" id="optie-3" data-pkg-card="optie-3-vr-kar-20">
+            <div class="price-tier-kicker">
+              <span class="tier-tag">Optie 3 · Volledige klas</span>
+              <span class="status-badge status-info">20× Quest 3S</span>
             </div>
-            <h2 class="h3-card" style="font-size:1.38rem;">Turnkey VR-Kar 20</h2>
-            <p class="muted" style="font-size:0.88rem;margin-bottom:0.75rem;">Maximale klas- en praktijkhalcapaciteit met 20 beheerde brillen en ArborXR.</p>
-            <div class="price-figure" style="font-size:2.15rem;">€ 25.000,- <span style="font-size:0.88rem;font-weight:500;color:var(--tb-text-muted);">excl. BTW</span></div>
-            <p class="price-sub">Eenmalige aanschaf + <strong>€ 3.500,- / jaar</strong> excl. BTW voor volledige service op alle 20 brillen, 5G, tablet &amp; kar.</p>
+            <h2 class="h3-card">Turnkey VR-Kar 20</h2>
+            <div class="price-figure">€ 25.000,- <span class="price-vat">excl. BTW</span></div>
+            <p class="price-annual">Eenmalige aanschaf + <strong class="mono">€ 3.500,-/jr</strong> excl. BTW volledige service &amp; 5G</p>
 
-            <ul class="check-list" style="margin-top:0.75rem;font-size:0.9rem;">
-              <li><strong>20× Meta Quest 3S VR-headsets</strong> (standaard band + medische siliconen hygiënecovers), in Single-App Kiosk Mode beheerd met <strong>ArborXR MDM</strong></li>
-              <li><strong>Aangepaste Zioxi VR Headset Cart 20</strong> (<code>75 × 55 × 95 cm</code>): 20W USB-C PD met geborgde <code>oneClick</code> laadkabels, LED-status voorop, 270° deuren &amp; digitaal codeslot</li>
-              <li><strong>Eigen 5G &amp; Wi-Fi 7 netwerk ingebouwd:</strong> Netgear Nighthawk M7 Pro (tot 64 gelijktijdige apparaten) + <strong>KPN Onbeperkt 5G</strong> op één centrale 230V-stekker</li>
-              <li><strong>13-inch Samsung Docententablet met Knox MDM</strong> &amp; handstrap-case, veilig opgeladen binnenin de afgesloten kar</li>
-              <li><strong>Service &amp; 1× fysieke check/jaar:</strong> remote beheer (ArborXR + Knox + 5G) + jaarlijkse fysieke inspectie van kar en alle 20 brillen op locatie</li>
+            <ul class="check-list" style="font-size:0.9rem;">
+              <li><strong>Aangepaste Zioxi Cart 20</strong> (<span class="mono">75×55×95 cm</span>) met codeslot &amp; USB-C PD op <span class="mono">1× 230V</span></li>
+              <li><strong>20× Meta Quest 3S</strong> met medische siliconen covers &amp; <strong>ArborXR Single-App Kiosk</strong></li>
+              <li><strong>Netgear Nighthawk M7 Pro Wi-Fi 7 + KPN Onbeperkt 5G</strong> (tot 64 apparaten)</li>
+              <li><strong>13,1&quot; Tab S10 FE+</strong> opgeladen in de kar + <span class="mono">1×/jr</span> fysieke check op locatie</li>
             </ul>
 
-            <div class="btn-group no-print" style="margin-top:auto;padding-top:1rem;">
-              <a href="?pakket=optie3#aanvraag" class="btn btn-outline" style="width:100%;" data-select-pkg="optie-3-vr-kar-20">Kies Turnkey VR-Kar 20 (€ 25.000,-)</a>
+            <div class="no-print" style="margin-top:auto;padding-top:1.25rem;">
+              <button type="button" class="btn btn-white" id="btnChooseOptie3" style="width:100%;" data-select-pkg="optie-3-vr-kar-20">Kies Turnkey VR-Kar 20</button>
             </div>
           </article>
         </div>
 
-        <!-- Vergelijkingstabel 3 Pakketten -->
-        <div style="margin-top:var(--tb-space-12);">
-          <div class="tech-eyebrow">PAKKETVERGELIJKING OP ÉÉN RIJ</div>
-          <h2 class="h3-card" style="font-size:1.45rem;margin-bottom:1rem;">Overzicht hardware, MDM-beheer, connectiviteit &amp; servicevoorwaarden</h2>
-          <div class="tech-table-wrap">
-            <table class="tech-table">
-              <thead>
-                <tr>
-                  <th>Kenmerk</th>
-                  <th>Optie 1: Regietablet &amp; Eigen Brillen</th>
-                  <th>Optie 2: Turnkey VR-Kar 10</th>
-                  <th>Optie 3: Turnkey VR-Kar 20</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Doelgroep</strong></td>
-                  <td>Scholen &amp; bedrijven met eigen VR-brillen</td>
-                  <td>Praktijklokaal / halve klas (10 brillen)</td>
-                  <td>Volledige klas / praktijkhal (20 brillen)</td>
-                </tr>
-                <tr>
-                  <td><strong>Aanschafprijs (eenmalig)</strong></td>
-                  <td class="mono"><strong>€ 10.000,- excl. BTW</strong></td>
-                  <td class="mono"><strong>€ 15.000,- excl. BTW</strong></td>
-                  <td class="mono"><strong>€ 25.000,- excl. BTW</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>Service &amp; Onderhoud</strong></td>
-                  <td><strong>€ 1.500,- / jaar</strong> excl. BTW<br /><span class="muted" style="font-size:0.8rem;">(1e jaar inbegrepen bij aanschaf!)</span></td>
-                  <td><strong>€ 2.500,- / jaar</strong> excl. BTW<br /><span class="muted" style="font-size:0.8rem;">(voor brillen, ArborXR, 5G, tablet &amp; kar)</span></td>
-                  <td><strong>€ 3.500,- / jaar</strong> excl. BTW<br /><span class="muted" style="font-size:0.8rem;">(voor brillen, ArborXR, 5G, tablet &amp; kar)</span></td>
-                </tr>
-                <tr>
-                  <td><strong>VR-Headsets &amp; Bril-MDM</strong></td>
-                  <td><strong>Onbeperkt eigen brillen</strong> koppelen<br /><span class="muted" style="font-size:0.8rem;">(zonder ArborXR bril-MDM)</span></td>
-                  <td><strong>10× Meta Quest 3S</strong> volledig beheerd met <strong>ArborXR MDM</strong> (Single-App Kiosk)</td>
-                  <td><strong>20× Meta Quest 3S</strong> volledig beheerd met <strong>ArborXR MDM</strong> (Single-App Kiosk)</td>
-                </tr>
-                <tr>
-                  <td><strong>Docentbediening</strong></td>
-                  <td><strong>13" Samsung Tablet</strong> met <strong>Knox MDM</strong> &amp; handstrap-case</td>
-                  <td><strong>13" Samsung Tablet</strong> met <strong>Knox MDM</strong> &amp; handstrap-case (45W geladen in kar)</td>
-                  <td><strong>13" Samsung Tablet</strong> met <strong>Knox MDM</strong> &amp; handstrap-case (45W geladen in kar)</td>
-                </tr>
-                <tr>
-                  <td><strong>VR-Laadkar</strong></td>
-                  <td>Niet inbegrepen (gebruik eigen opslag)</td>
-                  <td><strong>Zioxi VR Headset Cart 10</strong> (<code>64×50×95 cm</code>, 20W USB-C PD, codeslot)</td>
-                  <td><strong>Zioxi VR Headset Cart 20</strong> (<code>75×55×95 cm</code>, 20W USB-C PD, codeslot)</td>
-                </tr>
-                <tr>
-                  <td><strong>Netwerk &amp; Internet</strong></td>
-                  <td>Via bestaand lokaal Wi-Fi / hotspot</td>
-                  <td><strong>Eigen 5G &amp; Wi-Fi 7 in de kar</strong> (Nighthawk M7 Pro + KPN Onbeperkt 5G)</td>
-                  <td><strong>Eigen 5G &amp; Wi-Fi 7 in de kar</strong> (Nighthawk M7 Pro + KPN Onbeperkt 5G)</td>
-                </tr>
-                <tr>
-                  <td><strong>Inhoud Servicepakket</strong></td>
-                  <td><strong>Alleen hulp &amp; beheer op afstand</strong> (tablet Knox MDM, updates &amp; support)</td>
-                  <td><strong>Hulp op afstand (ArborXR + Knox) + 1× per jaar fysieke check</strong> op locatie</td>
-                  <td><strong>Hulp op afstand (ArborXR + Knox) + 1× per jaar fysieke check</strong> op locatie</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <!-- Specificatie Vergelijkingstabel -->
+        <div class="tech-table-wrap" style="margin-top:2.5rem;">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Specificatie</th>
+                <th>Optie 1 · Regietablet &amp; Eigen Brillen</th>
+                <th>Optie 2 · Turnkey VR-Kar 10</th>
+                <th>Optie 3 · Turnkey VR-Kar 20</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Eenmalige aanschaf</strong></td>
+                <td class="mono"><strong>€ 10.000,- excl. BTW</strong></td>
+                <td class="mono"><strong>€ 15.000,- excl. BTW</strong></td>
+                <td class="mono"><strong>€ 25.000,- excl. BTW</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Service &amp; onderhoud</strong></td>
+                <td><strong class="mono">€ 1.500,-/jr</strong> vanaf jaar 2 (1e jr incl.)</td>
+                <td><strong class="mono">€ 2.500,-/jr</strong> (incl. 5G &amp; locatiecheck)</td>
+                <td><strong class="mono">€ 3.500,-/jr</strong> (incl. 5G &amp; locatiecheck)</td>
+              </tr>
+              <tr>
+                <td><strong>VR-brillen &amp; MDM</strong></td>
+                <td>Onbeperkt eigen brillen (geen ArborXR)</td>
+                <td>10× Meta Quest 3S met ArborXR Kiosk</td>
+                <td>20× Meta Quest 3S met ArborXR Kiosk</td>
+              </tr>
+              <tr>
+                <td><strong>13,1&quot; Regietablet</strong></td>
+                <td>Tab S10 FE+ (<span class="mono">IP68</span>, S Pen, Knox Kiosk)</td>
+                <td>Tab S10 FE+ met Knox (geladen in kar)</td>
+                <td>Tab S10 FE+ met Knox (geladen in kar)</td>
+              </tr>
+              <tr>
+                <td><strong>Netwerk &amp; voeding</strong></td>
+                <td>Bestaand lokaal Wi-Fi / hotspot</td>
+                <td>Nighthawk M7 Pro + KPN 5G · <span class="mono">1× 230V</span></td>
+                <td>Nighthawk M7 Pro + KPN 5G · <span class="mono">1× 230V</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- Hoe werkt de Turnkey VR-Kar? (Technische Specificaties) -->
-    <section class="section section-surface no-print" id="hoe-werkt-vr-kar">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="tech-eyebrow">HARDWARE-ARCHITECTUUR // 1-STEKKER PRINCIPE + DUBBEL MDM</div>
-            <h2 class="h2-section">Hoe werkt de Turnkey VR-Kar? Stekker erin en binnen 60 seconden trainen.</h2>
-            <p class="lead">
-              Geen losse adapters, geen kabelwarboel en <strong>nul belasting voor uw school-ICT of bedrijfsfirewall</strong>. Onze op maat geassembleerde Zioxi VR-laadkar vormt een volledig zelfstandig klaslokaalsysteem op wielen.
-            </p>
-
-            <ul class="check-list">
-              <li><strong>Basis-chassis (Zioxi XR-10 / XR-20):</strong> Wit melamine MDF op ergonomische werkbladhoogte (<code>95 cm</code>) met apart afsluitbaar stalen elektravak, 270° omklapbare deuren met magneetsluiting, geremde zwenkwielen en digitaal codeslot.</li>
-              <li><strong>1-Stekker Principe &amp; Veilige Tabletlading:</strong> Achter het afgesloten stalen serviceluik worden het Zioxi 20W USB-C PD-laadsysteem (met korte geborgde <code>oneClick</code> kabels en LED-laadstatus voorop), de 5G-router én de 45W lader van de opgeborgen docententablet centraal gevoed via slechts <strong>één 230V-stekker</strong>.</li>
-              <li><strong>Netgear Nighthawk M7 Pro + KPN Onbeperkt 5G:</strong> <code>Wi-Fi 7 Tri-Band</code> router (tot 64 apparaten, batterijloos 24/7 gevoed voor maximale brandveiligheid). Telemetrie en live meekijkvideo blijven razendsnel lokaal binnen de kar-Wi-Fi; stille updates en MDM lopen veilig via 5G.</li>
-              <li><strong>Dubbel Kiosk-beheer (ArborXR + Samsung Knox MDM):</strong> Op de VR-Kar starten alle Meta Quest 3S brillen via <strong>ArborXR MDM</strong> in Single-App Kiosk Mode direct in de draaibanktraining, terwijl de stof- en waterdichte <code>Galaxy Tab S10 FE+</code> (<code>IP68</code>, met handstrap-case) via <strong>Samsung Knox MDM</strong> direct in het Docent Dashboard start.</li>
-            </ul>
-          </div>
-
-          <div>
-            <figure class="blueprint-frame" style="margin:0;">
-              <div class="blueprint-frame-header">
-                <span>TURNKEY ZIOXI VR-KAR // EIGEN KPN 5G &amp; WI-FI 7</span>
-                <span>1× 230V VOEDING</span>
-              </div>
-              <img src="assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp" alt="Op maat ingerichte Zioxi VR Headset laadkar in een MBO-werkplaats met genummerde Meta Quest 3S brillen, korte USB-C laadkabels, één 230V-stekker en de 13-inch Samsung Docententablet bovenop" width="1264" height="848" loading="lazy" />
-              <figcaption class="blueprint-caption-bar">
-                <span><strong>Zioxi Cart 10 / 20:</strong> geborgde <code>oneClick</code> USB-C PD + KPN Onbeperkt 5G</span>
-                <span class="status-badge status-safe">LOS VAN SCHOOL-IT</span>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactieve Meerjaren- & Investeringscalculator -->
+    <!-- Interactieve Meerjaren TCO-Calculator (1–5 jaar) met Visuele Vergelijkingsbalken -->
     <section class="section section-paper" id="pakketCalculator">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">BEGROTINGSHULP VOOR OPLEIDINGSMANAGERS &amp; INKOPERS</div>
-          <h2 class="h2-section">Bereken direct uw meerjareninvestering (TCO).</h2>
+        <div class="section-intro-center">
+          <span class="section-kicker">Meerjaren TCO-Calculator (1–5 jaar)</span>
+          <h2 class="h2-section">Bereken direct uw totale investering.</h2>
           <p class="lead">
-            Kies uw gewenste pakketoptie, het aantal eenheden en de begrotingslooptijd voor een transparant overzicht (excl. BTW) voor uw afdelingsplan of investeringsaanvraag.
+            Transparante begrotingsindicatie exclusief BTW voor directie, afdelingsleider Techniek of inkoopafdeling.
           </p>
         </div>
 
-        <div class="pricing-grid">
-          <div class="panel no-print">
-            <div class="form-field" style="margin-bottom:1.25rem;">
-              <label class="form-label" for="calcPackageOption">1. Kies uw pakketoptie</label>
-              <select class="form-select" id="calcPackageOption">
-                <option value="optie-1-eigen-brillen">Optie 1: Regietablet &amp; Eigen Brillen (€ 10.000,- | € 1.500,-/jr vanaf jr 2)</option>
-                <option value="optie-2-vr-kar-10" selected>Optie 2: Turnkey VR-Kar 10 (€ 15.000,- | € 2.500,-/jr service &amp; 5G)</option>
-                <option value="optie-3-vr-kar-20">Optie 3: Turnkey VR-Kar 20 (€ 25.000,- | € 3.500,-/jr service &amp; 5G)</option>
-              </select>
+        <div class="pricing-split">
+          <div class="apple-card no-print">
+            <span class="form-label" style="margin-bottom:0.55rem;">1. Kies pakket</span>
+            <div class="segmented-wrap segmented-wrap-start" style="margin-bottom:1.15rem;">
+              <div class="segmented-control" role="tablist" aria-label="Selecteer pakket in TCO calculator" style="background:var(--tb-blueprint-paper);box-shadow:none;">
+                <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-calc-pkg="optie-1-eigen-brillen" id="calcSegOpt1">Optie 1 (€ 10k)</button>
+                <button type="button" class="segmented-btn is-active" role="tab" aria-selected="true" data-calc-pkg="optie-2-vr-kar-10" id="calcSegOpt2">VR-Kar 10 (€ 15k)</button>
+                <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-calc-pkg="optie-3-vr-kar-20" id="calcSegOpt3">VR-Kar 20 (€ 25k)</button>
+              </div>
             </div>
 
-            <div class="form-field" style="margin-bottom:1.5rem;">
+            <select class="form-select" id="calcPackageOption" aria-label="Pakketoptie" style="margin-bottom:1.35rem;">
+              <option value="optie-1-eigen-brillen">Optie 1: Regietablet &amp; Onbeperkt Eigen Brillen (€ 10.000,- | € 1.500,-/jr va. jr 2)</option>
+              <option value="optie-2-vr-kar-10" selected>Optie 2: Turnkey VR-Kar 10 (€ 15.000,- | € 2.500,-/jr service &amp; 5G)</option>
+              <option value="optie-3-vr-kar-20">Optie 3: Turnkey VR-Kar 20 (€ 25.000,- | € 3.500,-/jr service &amp; 5G)</option>
+            </select>
+
+            <div class="form-field" style="margin-bottom:1.35rem;">
               <div style="display:flex;justify-content:space-between;align-items:center;">
-                <label class="form-label" for="calcTabletSets">2. Aantal systemen / locaties</label>
-                <span class="mono" id="calcSetsLabel" style="font-size:0.84rem;color:var(--tb-cobalt-strong);font-weight:600;">1 systeem (10 beheerde brillen)</span>
+                <label class="form-label" for="calcTabletSets">2. Aantal systemen</label>
+                <span class="mono" id="calcSetsLabel" style="font-size:0.82rem;color:var(--tb-cobalt);font-weight:600;">1 Turnkey VR-Kar 10</span>
               </div>
-              <input type="range" id="calcTabletSets" min="1" max="4" value="1" style="width:100%;accent-color:var(--tb-cobalt);margin-top:0.4rem;" />
+              <input type="range" id="calcTabletSets" min="1" max="4" value="1" style="width:100%;accent-color:var(--tb-cobalt);margin-top:0.35rem;" />
             </div>
 
-            <div class="form-field" style="margin-bottom:1.5rem;">
+            <div class="form-field" style="margin-bottom:1.35rem;">
               <div style="display:flex;justify-content:space-between;align-items:center;">
-                <label class="form-label" for="calcYears">3. Begrotingsperiode (looptijd)</label>
-                <span class="mono" id="calcYearsLabel" style="font-size:0.84rem;color:var(--tb-cobalt-strong);font-weight:600;">3 jaar looptijd</span>
+                <label class="form-label" for="calcYears">3. Looptijd (1 tot 5 jaar)</label>
+                <span class="mono" id="calcYearsLabel" style="font-size:0.82rem;color:var(--tb-cobalt);font-weight:600;">3 jaar looptijd</span>
               </div>
-              <input type="range" id="calcYears" min="1" max="5" value="3" style="width:100%;accent-color:var(--tb-cobalt);margin-top:0.4rem;" />
-              <span class="muted" id="calcServiceRuleHint" style="font-size:0.8rem;">Inclusief remote beheer, KPN Onbeperkt 5G en 1× per jaar fysieke onderhoudscheck op locatie.</span>
+              <input type="range" id="calcYears" min="1" max="5" value="3" style="width:100%;accent-color:var(--tb-cobalt);margin-top:0.35rem;" />
+              <span class="muted" id="calcServiceRuleHint" style="font-size:0.8rem;"></span>
             </div>
 
             <label class="choice-pill" style="width:100%;">
               <input type="checkbox" id="calcIncludeCustom" />
-              <span>Voeg verkenning voor een extra <strong>Maatwerk VR-training op maat</strong> toe (draait op dezelfde tablet!)</span>
+              <span>Inclusief verkenning voor extra <strong>Maatwerk VR-simulatie</strong></span>
             </label>
           </div>
 
-          <div class="panel" style="background-color:var(--tb-surface);">
-            <span class="panel-index">BEGROTINGSOVERZICHT (EXCL. BTW)</span>
-            <h3 class="h3-card" id="calcSelectedTitle">Optie 2 — Turnkey VR-Kar 10</h3>
+          <div class="apple-card">
+            <span class="card-step">TCO OVERZICHT (EXCL. BTW)</span>
+            <h3 class="h3-card" id="calcSelectedTitle">Optie 2 — Turnkey VR-Kar 10 (Meest gekozen)</h3>
 
-            <div class="service-breakdown" style="background-color:var(--tb-blueprint-paper);">
+            <div class="service-breakdown">
               <div class="service-breakdown-row">
-                <span><strong>Eenmalige aanschaf hardware &amp; platform</strong><br /><span class="muted" id="calcHardwareSub" style="font-size:0.8rem;">Zioxi Cart 10 + 10× Quest 3S + 5G Wi-Fi 7 + 13" Knox Tablet</span></span>
+                <span><strong>Eenmalige aanschaf</strong><br /><span class="muted" id="calcHardwareSub" style="font-size:0.8rem;"></span></span>
                 <strong class="mono" id="calcYear1Total" style="font-size:1.05rem;">€ 15.000,-</strong>
               </div>
               <div class="service-breakdown-row">
-                <span><strong>Jaarlijks tarief Service &amp; Onderhoud</strong><br /><span class="muted" id="calcServiceSub" style="font-size:0.8rem;">Remote support, MDM, 5G &amp; 1× fysieke check op locatie p/j</span></span>
-                <span class="mono" id="calcServicePerYear">€ 2.500,- / jaar</span>
+                <span><strong>Jaarlijkse service &amp; beheer</strong><br /><span class="muted" id="calcServiceSub" style="font-size:0.8rem;"></span></span>
+                <span class="mono" id="calcServicePerYear">€ 2.500,-/jr</span>
               </div>
               <div class="service-breakdown-row">
-                <span><strong>Totaal Service &amp; Onderhoud over looptijd</strong></span>
-                <span class="mono" id="calcFollowYearsTotal">€ 7.500,- (3 jaar × € 2.500,-)</span>
+                <span><strong>Service over gekozen looptijd</strong></span>
+                <span class="mono" id="calcFollowYearsTotal">€ 7.500,- (3 jr × € 2.500,-)</span>
               </div>
-              <div class="service-breakdown-row" style="padding-top:0.75rem;border-top:2px solid var(--tb-deep-navy);">
-                <span><strong style="font-size:1.02rem;">Totale investering over looptijd (excl. BTW)</strong></span>
-                <strong class="mono" id="calcMultiYearTotal" style="font-size:1.2rem;color:var(--tb-cobalt-strong);">€ 22.500,-</strong>
+              <div class="service-breakdown-row" style="padding-top:0.8rem;border-top:2px solid var(--tb-deep-navy);">
+                <span><strong style="font-size:1.01rem;">Totaal over looptijd (excl. BTW)</strong></span>
+                <strong class="mono" id="calcMultiYearTotal" style="font-size:1.28rem;color:var(--tb-cobalt);">€ 22.500,-</strong>
               </div>
             </div>
 
-            <div id="calcCustomBadge" class="ac24-box" style="display:none;margin-bottom:1rem;font-size:0.83rem;">
-              <strong>+ Maatwerk VR-Training:</strong> Wij nemen een aparte post op voor uw eigen machine- of procescasus. Deze draait rechtstreeks op dezelfde 13-inch Samsung Docententablet zonder dubbel tablet-servicecontract.
+            <!-- Visuele Vergelijkingsbalken tussen Optie 1, 2 & 3 -->
+            <div class="tco-bars-box no-print" id="tcoComparisonBars" aria-label="Meerjaren TCO vergelijking tussen de drie pakketten"></div>
+
+            <div id="calcCustomBadge" class="ac24-notice" style="display:none;margin-bottom:1rem;font-size:0.82rem;padding:0.85rem 1rem;background:var(--tb-blueprint-paper);box-shadow:none;">
+              <strong>+ Maatwerk VR-simulatie:</strong> draait op dezelfde 13,1-inch Samsung Regietablet zonder dubbel tablet-servicecontract.
             </div>
 
-            <div class="btn-group no-print">
-              <a href="#aanvraag" class="btn btn-primary btn-sm" id="btnCalcToQuote">Neem deze keuze over in offerteaanvraag</a>
-              <button type="button" class="btn btn-outline btn-sm" id="btnPrintBudget">🖨 Print Begrotingsindicatie</button>
+            <div class="btn-group no-print" style="margin-top:auto;">
+              <a href="#aanvraag" class="btn btn-primary btn-sm" id="btnCalcToQuote">Overnemen in aanvraag ↓</a>
+              <button type="button" class="btn btn-secondary btn-sm" id="btnPrintBudget">Print TCO-overzicht</button>
             </div>
+          </div>
+        </div>
+
+        <!-- Officiële Documentkaart met TechBuildsVR_Logo_Primary_LightBG.svg -->
+        <div class="official-doc-tile no-print" style="margin-top:1.75rem;">
+          <div class="official-doc-brand">
+            <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="126" height="34" />
+            <div>
+              <span class="card-step" style="margin-bottom:0.15rem;">OFFICIËLE DOCUMENTATIE (PDF)</span>
+              <strong style="font-family:var(--tb-font-display);font-size:1.08rem;">Deel alle specificaties en prijzen direct met directie of inkoop.</strong>
+            </div>
+          </div>
+          <div class="btn-group">
+            <a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" class="btn btn-secondary btn-sm" id="dlProductbladBtn" target="_blank" rel="noopener">Download Productblad (PDF)</a>
+            <a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" class="btn btn-outline btn-sm" id="dlMerkhandboekBtn" target="_blank" rel="noopener">Download Merkhandboek (PDF)</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Aanvraagformulier Demo / Offerte / Maatwerk -->
+    <!-- Demo- & Offerteformulier gericht op info@techbuildsvr.nl -->
     <section class="section section-surface no-print" id="aanvraag">
       <div class="container">
-        <div class="pricing-grid">
+        <div class="pricing-split">
           <div>
-            <div class="tech-eyebrow">CONTACT &amp; DEMONSTRATIE OP LOCATIE</div>
-            <h2 class="h2-section">Plan een praktijkdemo of vraag direct een offerte aan.</h2>
+            <span class="section-kicker">Demonstratie op school of directe offerte</span>
+            <h2 class="h2-section">Ervaar het systeem in uw eigen praktijklokaal.</h2>
             <p class="lead">
-              Wij komen graag met de <strong>13-inch Samsung Docententablet (Knox MDM)</strong> en Meta Quest 3S brillen langs in uw praktijklokaal of bedrijfsschool. Binnen 15 minuten ervaren uw vakdocenten en opleiders zelf de Twee-Triggers bediening en het Docent Dashboard.
+              Wij komen graag langs met de 13,1-inch Samsung Knox Regietablet en Meta Quest 3S brillen. Binnen 15 minuten ervaren uw vakdocenten zelf de rust van de Twee-Triggers bediening en het klasdashboard.
             </p>
-
-            <div class="panel" style="margin-bottom:1.25rem;">
-              <h3 class="h3-card" style="font-size:1.1rem;">Wat kunt u verwachten?</h3>
-              <ul class="check-list" style="margin-bottom:0;">
-                <li>Reactie binnen 1 werkdag van een technisch onderwijskundig specialist</li>
-                <li>Heldere schriftelijke offerte (Optie 1, Turnkey VR-Kar 10/20 en/of maatwerkraming, excl. BTW) geschikt voor schoolinkoop</li>
-                <li>Geen opdringerige verkoop: wij kijken eerlijk mee welke opstelling past in uw werkplaats</li>
-              </ul>
-            </div>
-
-            <div class="ac24-box">
-              <strong>AVG &amp; School-ICT vriendelijk:</strong> Geen leerlingaccounts in externe clouds nodig en met de Turnkey 5G VR-Kar werkt u 100% onafhankelijk van het schoolnetwerk en IT-firewalls.
+            <ul class="check-list" style="margin-bottom:1.5rem;">
+              <li>Persoonlijke reactie binnen 1 werkdag via <a href="mailto:info@techbuildsvr.nl"><strong>info@techbuildsvr.nl</strong></a></li>
+              <li>Heldere offerte op maat voor schooladministratie of investeringscommissie</li>
+              <li>100% AVG-vriendelijk zonder verplichte cloud-leerlingaccounts</li>
+            </ul>
+            <div class="ac24-notice">
+              <strong>Onderwijs- en veiligheidsverklaring (AC24):</strong> De VR-trainingen van TechBuilds VR zijn een educatief oefen- en voorbereidingsmiddel en vervangen nooit fysieke instructie, keuring en vrijgave (<span class="mono">PHYS_01..05</span>) door een bevoegd vakdocent aan de echte machine.
             </div>
           </div>
 
-          <div class="panel">
-            <h3 class="h3-card">Uw gegevens &amp; pakketkeuze</h3>
+          <div class="bento-tile">
+            <h3 class="h3-card">Demo of offerte aanvragen</h3>
             <form id="techbuildsContactForm" novalidate>
               <div class="form-grid">
                 <div class="form-field">
                   <label class="form-label" for="reqName">Voor- en achternaam *</label>
-                  <input type="text" class="form-input" id="reqName" required placeholder="Bijv. Jan van den Berg" />
+                  <input type="text" class="form-input" id="reqName" required placeholder="Jan van den Berg" />
                 </div>
 
                 <div class="form-field">
                   <label class="form-label" for="reqOrg">School / ROC / Bedrijf *</label>
-                  <input type="text" class="form-input" id="reqOrg" required placeholder="Bijv. Techniek College / Metaalbedrijf BV" />
+                  <input type="text" class="form-input" id="reqOrg" required placeholder="Techniek College" />
                 </div>
 
                 <div class="form-field">
                   <label class="form-label" for="reqEmail">Zakelijk e-mailadres *</label>
-                  <input type="email" class="form-input" id="reqEmail" required placeholder="naam@schoolofbedrijf.nl" />
+                  <input type="email" class="form-input" id="reqEmail" required placeholder="naam@school.nl" />
                 </div>
 
                 <div class="form-field">
-                  <label class="form-label" for="reqPhone">Telefoonnummer (optioneel)</label>
-                  <input type="tel" class="form-input" id="reqPhone" placeholder="06 - 1234 5678" />
+                  <label class="form-label" for="reqPhone">Telefoonnummer</label>
+                  <input type="tel" class="form-input" id="reqPhone" placeholder="06 1234 5678" />
                 </div>
 
                 <div class="form-field form-field-full">
-                  <label class="form-label" for="reqType">Welk pakket of traject heeft uw voorkeur?</label>
+                  <label class="form-label" for="reqType">Gewenst pakket of traject</label>
                   <select class="form-select" id="reqType">
-                    <option value="Optie 1: Regietablet & Eigen Brillen (€ 10.000,- excl. BTW, 1e jr service incl., daarna € 1.500,-/jr)">Optie 1: Regietablet &amp; Eigen Brillen (€ 10.000,- excl. BTW · 1e jr service incl.)</option>
-                    <option value="Optie 2: Turnkey VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service & KPN 5G)">Optie 2: Turnkey VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service &amp; 5G)</option>
-                    <option value="Optie 3: Turnkey VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service & KPN 5G)">Optie 3: Turnkey VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service &amp; 5G)</option>
-                    <option value="Praktijkdemonstratie op locatie (Tablet + VR-bril)">Praktijkdemonstratie op locatie (13" Knox Tablet + Quest 3S uitproberen)</option>
-                    <option value="Maatwerk VR-training ontwikkelen + Pakketkeuze">Maatwerk VR-training op maat laten maken (+ Regietablet of VR-Kar)</option>
+                    <option value="Optie 2: Turnkey VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service & KPN 5G)">Optie 2: Turnkey VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr)</option>
+                    <option value="Optie 1: Regietablet & Onbeperkt Eigen Brillen (€ 10.000,- excl. BTW, 1e jr incl., daarna € 1.500,-/jr)">Optie 1: Regietablet &amp; Onbeperkt Eigen Brillen (€ 10.000,- excl. BTW · 1e jr incl.)</option>
+                    <option value="Optie 3: Turnkey VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service & KPN 5G)">Optie 3: Turnkey VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr)</option>
+                    <option value="Praktijkdemonstratie op school of bedrijf (13,1&quot; Tablet + Quest 3S)">Praktijkdemonstratie op locatie (13,1&quot; Tablet + Quest 3S)</option>
+                    <option value="Maatwerk VR-training ontwikkelen + Pakketkeuze">Maatwerk VR-training ontwikkelen + Pakketkeuze</option>
                   </select>
                 </div>
 
                 <div class="form-field form-field-full">
-                  <label class="form-label" for="reqMessage">Toelichting, gewenste aantallen of maatwerkwens</label>
-                  <textarea class="form-textarea" id="reqMessage" placeholder="Vertel kort voor welke opleiding, praktijklokaal of machine u VR wilt inzetten..."></textarea>
+                  <label class="form-label" for="reqMessage">Toelichting of gewenste datum</label>
+                  <textarea class="form-textarea" id="reqMessage" placeholder="Bijv. opleiding, gewenste groepsgrootte of maatwerkvraag..."></textarea>
                 </div>
 
                 <div class="form-field form-field-full">
                   <div class="btn-group">
-                    <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitContact">Aanvraag Samenstellen &amp; Verzenden</button>
-                    <button type="button" class="btn btn-outline" id="btnDownloadAanvraag" style="display:none;">⬇ Download Aanvraagkopie (.txt)</button>
+                    <button type="submit" class="btn btn-primary" id="btnSubmitContact">Aanvraag klaarmaken</button>
+                    <button type="button" class="btn btn-white btn-sm" id="btnDownloadAanvraag" style="display:none;">Download kopie (.txt)</button>
                   </div>
                 </div>
               </div>
             </form>
 
-            <div id="contactFormFeedback" style="display:none;margin-top:1.25rem;"></div>
+            <div id="contactFormFeedback" style="display:none;margin-top:1.15rem;"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Veelgestelde Vragen (FAQ) -->
-    <section class="section section-paper no-print" id="faq">
-      <div class="container" style="max-width:920px;">
-        <div class="section-header">
-          <div class="tech-eyebrow">VEELGESTELDE VRAGEN // INKOPERS, DOCENTEN &amp; ICT</div>
-          <h2 class="h2-section">Heldere antwoorden vóór aanschaf.</h2>
+    <!-- Veelgestelde Vragen (FAQ Accordion) -->
+    <section class="section section-tight section-surface no-print" id="faq">
+      <div class="container-narrow">
+        <div class="section-intro-center">
+          <span class="section-kicker">Veelgestelde vragen</span>
+          <h2 class="h2-section">Helderheid vóór aanschaf.</h2>
         </div>
 
         <div class="faq-list">
           <details class="faq-item" open>
-            <summary>Wat is het verschil in service tussen Optie 1 (€ 10.000,-) en de Turnkey VR-Kar 10/20 (€ 15.000,- / € 25.000,-)?</summary>
+            <summary id="faqSum1">Wat is het verschil in service tussen Optie 1 (€ 10.000,-) en Turnkey VR-Kar 10/20?</summary>
             <div class="faq-item-body">
-              Bij <strong>Optie 1 (€ 10.000,- excl. BTW)</strong> koppelt u onbeperkt uw eigen VR-brillen aan onze voorgeconfigureerde 13-inch Samsung Docententablet met Knox MDM. Het eerste jaar service op afstand is bij de aanschaf inbegrepen; vanaf jaar 2 betaalt u <strong>€ 1.500,- per jaar excl. BTW</strong> voor remote ondersteuning, software-updates en Knox-tabletbeheer (zonder fysieke check op locatie).<br /><br />
-              Bij <strong>Optie 2 (€ 15.000,- + € 2.500,-/jr)</strong> en <strong>Optie 3 (€ 25.000,- + € 3.500,-/jr)</strong> leveren en beheren wij het volledige Turnkey-systeem inclusief 10 of 20 Meta Quest 3S brillen, de aangepaste Zioxi laadkar, KPN Onbeperkt 5G + Wi-Fi 7 router én een <strong>jaarlijkse fysieke inspectie- en onderhoudscheck op uw locatie</strong>.
+              Bij <strong>Optie 1 (€ 10.000,- excl. BTW)</strong> koppelt u onbeperkt uw eigen VR-brillen aan onze 13,1-inch Samsung Galaxy Tab S10 FE+ met Knox Single-App Kiosk. Het 1e jaar remote service is inbegrepen; vanaf jaar 2 geldt <strong>€ 1.500,-/jr excl. BTW</strong> voor support en updates op afstand.<br /><br />
+              Bij <strong>Turnkey VR-Kar 10 (€ 15.000,- + € 2.500,-/jr)</strong> en <strong>Turnkey VR-Kar 20 (€ 25.000,- + € 3.500,-/jr)</strong> verzorgen wij daarnaast ArborXR Kiosk-beheer op alle brillen, KPN Onbeperkt 5G én <strong>1× per jaar een fysieke onderhoudscheck op uw locatie</strong>.
             </div>
           </details>
 
           <details class="faq-item">
-            <summary>Belast de VR-Kar ons schoolnetwerk of moet onze IT-afdeling poorten openzetten?</summary>
+            <summary id="faqSum2">Moet onze school-ICT firewallpoorten openen voor de Turnkey VR-Kar?</summary>
             <div class="faq-item-body">
-              Nee, totaal niet. De Turnkey VR-Kar 10 en VR-Kar 20 hebben een vast ingebouwde <strong>Netgear Nighthawk M7 Pro Wi-Fi 7 router met KPN Onbeperkt 5G</strong>. U steekt slechts <strong>één 230V-stekker</strong> in het stopcontact en binnen 60 seconden draait het eigen klaslokaalnetwerk — 100% los van het school-Wi-Fi en zonder enige belasting voor uw IT-afdeling.
+              Nee. Elke Zioxi Turnkey VR-Kar heeft een ingebouwde <strong>Netgear Nighthawk M7 Pro Wi-Fi 7 router met KPN Onbeperkt 5G</strong>. Eén <span class="mono">230V</span> stopcontact volstaat en het volledige klaslokaalsysteem draait 100% zelfstandig buiten het schoolnetwerk om.
             </div>
           </details>
 
           <details class="faq-item">
-            <summary>Moeten we bij een VR-training op maat opnieuw een Regie-Tablet of VR-Kar aanschaffen?</summary>
+            <summary id="faqSum3">Kunnen we later maatwerktrainingen toevoegen op dezelfde 13,1-inch tablet?</summary>
             <div class="faq-item-body">
-              Nee! Dat is de kracht van het TechBuilds VR-platform. Zodra u Optie 1, VR-Kar 10 of VR-Kar 20 in huis heeft, rollen wij elk nieuw ontwikkeld maatwerkscenario via Samsung Knox MDM en ons beheerplatform direct uit naar dezelfde 13-inch Docententablet en brillen.
+              Ja. Elk maatwerkscenario dat TechBuilds VR voor uw machines of schakelkasten ontwikkelt, wordt via Samsung Knox en ArborXR direct klaargezet op uw bestaande Regietablet en brillen.
             </div>
           </details>
 
           <details class="faq-item">
-            <summary>Vervangt het behalen van het VR-Praktijkexamen de fysieke instructie aan de echte draaibank?</summary>
+            <summary id="faqSum4">Vervangt het VR-vrijgaverapport de fysieke instructie aan de echte draaibank?</summary>
             <div class="faq-item-body">
-              Nee, nooit. Conform onze verplichte <strong>AC24 onderwijs- en veiligheidsverklaring</strong> is VR een veilig en krachtig <em>voorbereidingsmiddel</em> waarmee studenten rustiger en beter voorbereid bij de fysieke machine aankomen. Instructie, fysieke controle en vrijgave door een bevoegd vakdocent of leermeester blijven op de echte machine altijd verplicht.
+              Nee, nooit. Conform onze verplichte <strong>AC24 onderwijs- en veiligheidsclausule</strong> bereidt VR de leerling aantoonbaar voor, waarna de vakdocent op het A4-rapport altijd de 5 fysieke vrijgavepunten (<span class="mono">PHYS_01..05</span>) aan de echte machine controleert en met de S Pen aftekent.
             </div>
           </details>
         </div>
@@ -462,45 +465,60 @@
     </section>
   </main>
 
+  <!-- Lichte Blueprint Paper Footer (#F2F6FA) met Officieel TechBuilds VR Tagline-Logo -->
   <footer class="site-footer no-print">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img src="assets/img/logo/TechBuildsVR_Logo_DarkBG.svg" alt="TechBuilds VR logo" class="footer-logo" width="186" height="50" />
-          <p style="margin:0 0 0.75rem 0;font-size:0.92rem;color:#CBD5E1;max-width:42ch;">
-            <strong>TechBuilds VR</strong> ontwikkelt praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs (VMBO/MBO) en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
+          <img src="assets/img/logo/TechBuildsVR_Logo_With_Tagline.svg" alt="TechBuilds VR — Veilig trainen. Vakbekwaam bouwen." class="footer-logo" width="140" height="42" />
+          <p style="margin:0 0 0.65rem 0;font-size:0.9rem;color:var(--tb-text-secondary);max-width:40ch;">
+            Praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
           </p>
+          <a href="mailto:info@techbuildsvr.nl" class="mono" style="font-size:0.84rem;font-weight:600;color:var(--tb-cobalt);">info@techbuildsvr.nl</a>
         </div>
         <div>
-          <h3 class="footer-heading">Oplossingen</h3>
+          <h3 class="footer-heading">Product</h3>
           <ul class="footer-links">
-            <li><a href="training-draaibank.html">WEILER Draaibank VR (M1–M6)</a></li>
-            <li><a href="docentapp-tablet.html">13" Regie-Tablet &amp; Docentapp</a></li>
-            <li><a href="maatwerk.html">VR-Trainingen op Maat</a></li>
-            <li><a href="prijzen-contact.html">Pakketten &amp; VR-Kar (vanaf € 10.000)</a></li>
+            <li><a href="training-draaibank.html">Draaibank VR (M1–M6)</a></li>
+            <li><a href="docentapp-tablet.html">13,1&quot; Docenttablet (v2.3.0)</a></li>
+            <li><a href="maatwerk.html">Maatwerk Simulaties</a></li>
+            <li><a href="prijzen-contact.html">Pakketten &amp; TCO</a></li>
           </ul>
         </div>
         <div>
           <h3 class="footer-heading">Documentatie</h3>
           <ul class="footer-links">
-            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad TechBuilds VR (PDF)</a></li>
-            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek v1.1 (PDF)</a></li>
+            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad (PDF)</a></li>
+            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek (PDF)</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="footer-heading">Direct Contact</h3>
+          <h3 class="footer-heading">Contact</h3>
           <ul class="footer-links">
             <li><a href="mailto:info@techbuildsvr.nl">info@techbuildsvr.nl</a></li>
-            <li><a href="prijzen-contact.html#aanvraag">Offerte of Demo aanvragen</a></li>
+            <li><a href="#aanvraag">Offerte of demo plannen</a></li>
           </ul>
         </div>
       </div>
+      <div class="footer-ac24">
+        <strong>AC24 Veiligheidsclausule:</strong> VR-training fungeert uitsluitend als voorbereidend leermiddel en vervangt nooit fysieke instructie, toezicht en vrijgave door een bevoegd vakdocent op de echte machine.
+      </div>
       <div class="footer-bottom">
-        <span>© 2026 TechBuilds VR — Alle rechten voorbehouden. Alle prijzen excl. BTW.</span>
+        <span>© 2026 TechBuilds VR · www.techbuildsvr.nl · Alle prijzen excl. BTW.</span>
         <span class="mono">Veilig trainen. Vakbekwaam bouwen.</span>
       </div>
     </div>
   </footer>
+
+  <div class="mobile-sticky-bar no-print" id="mobileStickyBar">
+    <div class="mobile-sticky-copy">
+      3 Pakketten excl. BTW
+      <span>€ 10k · € 15k · € 25k</span>
+    </div>
+    <a href="#aanvraag" class="btn btn-primary btn-sm" id="mobileStickyDemoBtn">Aanvragen</a>
+  </div>
+
+  <button type="button" class="back-to-top-btn no-print" id="backToTopBtn" aria-label="Terug naar boven">↑</button>
 
   <script src="assets/js/main.js"></script>
 </body>

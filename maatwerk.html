@@ -3,342 +3,362 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VR-Trainingen op Maat laten maken | TechBuilds VR</title>
-  <meta name="description" content="Laat praktijkgerichte VR-veiligheids- en opstarttrainingen op maat maken voor uw eigen machines, schakelkasten of productiecellen — direct geïntegreerd op dezelfde 13-inch TechBuilds VR Regie-Tablet." />
-  <meta property="og:title" content="VR-Trainingen op Maat — Uw machine, zelfde regietablet | TechBuilds VR" />
-  <meta property="og:description" content="Maatwerk VR-scenario's voor Metaal, Elektrotechniek, Installatietechniek en Mechatronica met Twee-Triggers bediening." />
+  <title>Maatwerk VR-Machinesimulaties | TechBuilds VR</title>
+  <meta name="description" content="Laat maatwerk VR-machinesimulaties en digital twins ontwikkelen voor uw eigen werkplaats of fabriek — direct geïntegreerd op dezelfde 13,1-inch Samsung Regietablet en Zioxi VR-Kar." />
+  <meta property="og:title" content="Maatwerk VR-Machinesimulaties | TechBuilds VR" />
+  <meta property="og:description" content="Digital twins op maat voor Metaal, Elektrotechniek (LOTO / NEN 3140), Installatietechniek en Mechatronica." />
   <meta property="og:image" content="assets/img/logo/OpenGraph_Social_Preview_1200x630.png" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-  <a href="#hoofdinhoud" class="skip-link">Direct naar hoofdinhoud</a>
+<body class="has-mobile-bar">
+  <a href="#hoofdinhoud" class="skip-link" id="skipToMainMaatwerk">Direct naar hoofdinhoud</a>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-specs">
-        <span>MAATWERK ONTWIKKELING // UW EIGEN MACHINE &amp; WERKPROTOCOL</span>
-        <span class="topbar-sep topbar-hide-mobile">|</span>
-        <span class="topbar-hide-mobile">MODULAIR OP DEZELFDE 13-INCH REGIE-TABLET</span>
-      </div>
-      <a href="#scoper" class="topbar-link">Stel hieronder uw maatwerkcasus samen →</a>
-    </div>
-  </div>
-
-  <header class="site-header">
+  <!-- Luchtige Witte Sticky Frosted Header (70px · Officieel TechBuilds VR Logo) -->
+  <header class="site-header" id="siteHeader">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="TechBuilds VR Startpagina">
-        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR logo" width="186" height="50" />
+      <a href="index.html" class="brand-logo" id="navBrandLogo" aria-label="TechBuilds VR Startpagina">
+        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="145" height="39" />
       </a>
 
-      <nav aria-label="Hoofdmenu">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Overzicht</a></li>
-          <li><a href="training-draaibank.html" class="nav-link">Draaibank VR-Training</a></li>
-          <li><a href="docentapp-tablet.html" class="nav-link">Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html" class="nav-link" aria-current="page">Training op Maat</a></li>
-          <li><a href="prijzen-contact.html" class="nav-link">Pakket &amp; Prijzen</a></li>
-        </ul>
-      </nav>
+      <div class="nav-right-group">
+        <nav class="nav-center" aria-label="Hoofdmenu">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link" id="navLinkHome">Overzicht</a></li>
+            <li><a href="training-draaibank.html" class="nav-link" id="navLinkTraining">Draaibank VR</a></li>
+            <li><a href="docentapp-tablet.html" class="nav-link" id="navLinkTablet">Docenttablet</a></li>
+            <li><a href="maatwerk.html" class="nav-link" aria-current="page" id="navLinkMaatwerk">Maatwerk</a></li>
+            <li><a href="prijzen-contact.html" class="nav-link" id="navLinkPrijzen">Pakketten &amp; Prijzen</a></li>
+          </ul>
+        </nav>
 
-      <div class="nav-actions nav-actions-desktop">
-        <a href="#scoper" class="btn btn-outline btn-sm">Maatwerk-Scoper</a>
-        <a href="prijzen-contact.html?onderwerp=maatwerk#aanvraag" class="btn btn-primary btn-sm">Maatwerk Bespreken</a>
+        <div class="nav-actions nav-actions-desktop">
+          <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="nav-cta-pill" id="navCtaDemo">Plan demo op school</a>
+        </div>
+
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 8h16M4 16h16" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
+    </div>
 
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
-        </svg>
-      </button>
+    <div class="scroll-progress-track" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="container">
         <ul class="mobile-drawer-list">
-          <li><a href="index.html">Overzicht</a></li>
-          <li><a href="training-draaibank.html">Draaibank VR-Training (M1–M6)</a></li>
-          <li><a href="docentapp-tablet.html">13" Regie-Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html" aria-current="page">VR-Trainingen op Maat</a></li>
-          <li><a href="prijzen-contact.html">Pakket &amp; Prijzen (€ 10.000)</a></li>
+          <li><a href="index.html" id="mobLinkHome">Overzicht</a></li>
+          <li><a href="training-draaibank.html" id="mobLinkTraining">Draaibank VR (M1–M6)</a></li>
+          <li><a href="docentapp-tablet.html" id="mobLinkTablet">13,1&quot; Docenttablet</a></li>
+          <li><a href="maatwerk.html" aria-current="page" id="mobLinkMaatwerk">Maatwerk</a></li>
+          <li><a href="prijzen-contact.html" id="mobLinkPrijzen">Pakketten &amp; Prijzen</a></li>
         </ul>
+        <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary" id="mobCtaDemo" style="width:100%;">Plan demo op school</a>
       </div>
     </div>
   </header>
 
   <main id="hoofdinhoud">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="tech-eyebrow">OP MAAT GEMAAKTE VR-TRAININGEN // ONDERWIJS &amp; INDUSTRIE</div>
-          <h1 class="h1-page">Uw eigen machine en veiligheidsprotocol. Dezelfde vertrouwde Regie-Tablet.</h1>
-          <p class="lead">
-            Heeft uw vakschool, ROC of productiebedrijf een specifieke installatie waarvoor fouten te gevaarlijk zijn of machine-uren te kostbaar? Wij bouwen <strong>VR-trainingen op maat</strong> bovenop ons bewezen platform — zodat u niet vanaf nul hoeft te investeren in klaslokaalregie, rapportages en ergonomie.
-          </p>
-          <div class="btn-group">
-            <a href="#scoper" class="btn btn-primary">Stel uw Maatwerkcasus samen</a>
-            <a href="prijzen-contact.html" class="btn btn-outline">Bekijk Basisplatform (€ 10.000)</a>
+    <!-- VISUAL 5 — Bento-Tegel Hero voor Maatwerk VR-Machinesimulaties -->
+    <section class="hero-bento" aria-label="Maatwerk Digital Twins">
+      <div class="container hero-bento-grid">
+        <div class="hero-bento-left">
+          <div class="bento-statement-tile">
+            <h1 class="h1-page">Uw eigen machinepark. Dezelfde vertrouwde regie.</h1>
+            <p class="lead">
+              Heeft uw vakschool of productiebedrijf een specifieke installatie waarvoor fouten kostbaar zijn of machine-uren schaars? Wij bouwen maatwerk VR-simulaties die direct draaien op dezelfde 13,1-inch Samsung Regietablet en Zioxi VR-Kar.
+            </p>
+            <div class="btn-group">
+              <a href="#scoper" class="btn btn-primary" id="maatwerkHeroScoperBtn">Stel uw maatwerkcasus samen ↓</a>
+              <a href="prijzen-contact.html" class="btn btn-white" id="maatwerkHeroPkgBtn">Bekijk 3 basispakketten</a>
+            </div>
+          </div>
+
+          <div class="hero-metrics-row" role="group" aria-label="Maatwerk kenmerken">
+            <a href="#traject" class="bento-metric-tile" id="mwTileWeeks">
+              <span class="metric-num">6–10</span>
+              <span class="metric-label">Weken</span>
+              <span class="metric-sub">Opname tot Kiosk-uitrol</span>
+            </a>
+
+            <a href="#vakgebieden" class="bento-metric-tile" id="mwTileDomains">
+              <span class="metric-num">4</span>
+              <span class="metric-label">Vakgebieden</span>
+              <span class="metric-sub">Metaal · Elektro · Klimaat · Lijn</span>
+            </a>
+
+            <a href="#scoper" class="bento-metric-tile" id="mwTileRegie">
+              <span class="metric-num">1×</span>
+              <span class="metric-label">Regietablet</span>
+              <span class="metric-sub">Geen dubbele servicekosten</span>
+            </a>
           </div>
         </div>
 
-        <figure class="blueprint-frame" style="margin:0;">
-          <div class="blueprint-frame-header">
-            <span>MAATWERK IN DE PRAKTIJK // LOCKOUT-TAGOUT &amp; PROCESVEILIGHEID</span>
-            <span>TWEE-TRIGGERS STANDAARD</span>
+        <div class="hero-photo-tile hero-photo-tile--subpage">
+          <img id="maatwerkHeroImg" src="assets/img/brand/domein_02_elektro_en_installatie.webp" class="hero-photo-img" alt="Monteur oefent spanningsloos maken en Lockout-Tagout bij een 400V AC verdeler in VR" width="1200" height="896" />
+          <div class="hero-frosted-dock" aria-label="Wissel vakgebied voorbeeld">
+            <div class="hero-dock-pills" role="tablist">
+              <button type="button" class="hero-dock-pill is-active" data-mw-scene="elektro" id="mwDockElektro">Elektro &amp; LOTO</button>
+              <button type="button" class="hero-dock-pill" data-mw-scene="metaal" id="mwDockMetaal">Metaal &amp; CNC</button>
+              <button type="button" class="hero-dock-pill" data-mw-scene="klimaat" id="mwDockKlimaat">Klimaat &amp; Proces</button>
+              <button type="button" class="hero-dock-pill" data-mw-scene="mechatronica" id="mwDockMecha">Productiecellen</button>
+            </div>
+            <div class="hero-dock-caption-row">
+              <span id="maatwerkHeroCaption">400V Lockout-Tagout &amp; NEN 3140 · spanningsloos maken en tweepolig meten</span>
+              <span class="status-badge status-info">DIGITAL TWIN</span>
+            </div>
           </div>
-          <img src="assets/img/brand/domein_02_elektro_en_installatie.webp" alt="Monteur traint spanningsloos maken en Lockout-Tagout bij een 400V AC hoofdschakelaar in een technisch opleidingslab" width="1200" height="896" />
-          <figcaption class="blueprint-caption-bar">
-            <span><strong>Eén ecosysteem:</strong> elk maatwerkscenario sluit direct aan op de Docentapp</span>
-            <span class="status-badge status-info">MODULAIR PLATFORM</span>
-          </figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
-    <!-- De 4 Maatwerkdomeinen -->
-    <section class="section section-surface">
+    <!-- Vier Vakgebieden in Rustige Fotografische Bento-Showcase -->
+    <section class="section section-surface" id="vakgebieden">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">TOEPASSINGSGEBIEDEN // VIER TECHNISCHE DOMEINEN</div>
-          <h2 class="h2-section">Waarvoor bouwen wij VR-scenario’s op maat?</h2>
+        <div class="section-intro-center reveal-item">
+          <span class="section-kicker">Vier technische vakgebieden</span>
+          <h2 class="h2-section">Gebouwd voor kritische praktijkhandelingen.</h2>
           <p class="lead">
-            Wij richten ons uitsluitend op realistische technische beroepshandelingen waar vaste volgordes, risicobewustzijn en rustige foutcorrectie het verschil maken:
+            Wij ontwikkelen herkenbare 3D-opstellingen waarin vaste volgordes, risicobewustzijn en rustige foutcorrectie centraal staan.
           </p>
         </div>
 
         <div class="grid-2">
-          <article class="domain-card">
+          <article class="domain-card reveal-item">
             <div class="domain-card-media">
-              <img src="assets/img/brand/domein_01_metaal_en_verspaning.webp" alt="Domein Metaalbewerking en Verspaning" width="1200" height="896" />
+              <img src="assets/img/brand/domein_01_metaal_en_verspaning.webp" alt="Metaalbewerking en verspaning" width="1200" height="896" loading="lazy" />
             </div>
             <div class="domain-card-body">
-              <span class="panel-index">01 // METAAL &amp; VERSPANING</span>
-              <h3 class="h3-card">Freesbanken, lintzagen, kolomboor &amp; CNC-opstart</h3>
-              <p>Oefen opspanning, nulpuntcontrole, gereedschapswissel, beschermkappen en nameten op jullie eigen werkplaatstekeningen voordat kostbare frezen of klauwplaten beschadigen.</p>
-              <div class="spec-tags">
-                <span class="spec-tag">VMBO-PIE / MBO Verspanen</span>
-                <span class="spec-tag">Geen gereedschapsbreuk</span>
-                <span class="spec-tag">Maattoleranties</span>
-              </div>
+              <span class="card-step">01 · METAAL &amp; VERSPANING</span>
+              <h3 class="h3-card">Freesbanken, lintzagen &amp; CNC-opstart</h3>
+              <p>Oefen opspanning, nulpuntcontrole, gereedschapswissel en maattoleranties voordat kostbare frezen of klauwplaten schade oplopen.</p>
+              <div class="domain-meta">VMBO-PIE · MBO Verspanen · Maakindustrie</div>
             </div>
           </article>
 
-          <article class="domain-card">
+          <article class="domain-card reveal-item">
             <div class="domain-card-media">
-              <img src="assets/img/brand/domein_02_elektro_en_installatie.webp" alt="Domein Elektrotechniek en Energietransitie" width="1200" height="896" />
+              <img src="assets/img/brand/domein_02_elektro_en_installatie.webp" alt="Elektrotechniek en Lockout-Tagout" width="1200" height="896" loading="lazy" />
             </div>
             <div class="domain-card-body">
-              <span class="panel-index">02 // ELEKTROTECHNIEK &amp; ENERGIETRANSITIE</span>
-              <h3 class="h3-card">Spanningsloos werken (LOTO), 400V-verdelers &amp; NEN 3140</h3>
-              <p>Train de vijf veiligheidsregels bij het vrij- en spanningsloos schakelen: scheiden, vergrendelen met hangslot, tweepolig spanningsloosheid aantonen, aarden en afschermen.</p>
-              <div class="spec-tags">
-                <span class="spec-tag">Lockout-Tagout</span>
-                <span class="spec-tag">NEN 3140 stappen</span>
-                <span class="spec-tag">Zij-instromers</span>
-              </div>
+              <span class="card-step">02 · ELEKTROTECHNIEK &amp; ENERGIE</span>
+              <h3 class="h3-card">Lockout-Tagout (LOTO) &amp; NEN 3140</h3>
+              <p>Train de vijf veiligheidsregels bij 400V-verdelers en PV-installaties: scheiden, vergrendelen, tweepolig spanningsloosheid aantonen en afschermen.</p>
+              <div class="domain-meta">NEN 3140 · Zij-instromers · Netbeheer &amp; Utiliteit</div>
             </div>
           </article>
 
-          <article class="domain-card">
+          <article class="domain-card reveal-item">
             <div class="domain-card-media">
-              <img src="assets/img/brand/domein_04_installatie_en_klimaat.webp" alt="Domein Installatie en Klimaattechniek" width="1200" height="896" />
+              <img src="assets/img/brand/domein_04_installatie_en_klimaat.webp" alt="Installatie- en klimaattechniek" width="1200" height="896" loading="lazy" />
             </div>
             <div class="domain-card-body">
-              <span class="panel-index">03 // INSTALLATIE- &amp; KLIMAATTECHNIEK</span>
-              <h3 class="h3-card">Warmtepomp-inbedrijfstelling, afsluiters &amp; drukloos maken</h3>
-              <p>Boots complexe leidingsystemen, appendages en manometers na zodat monteurs afsluitervolgordes, ontluchten en veilige storingsdiagnose beheersen zonder waterschade.</p>
-              <div class="spec-tags">
-                <span class="spec-tag">Afsluiterdiscipline</span>
-                <span class="spec-tag">Druk- &amp; temperatuurcontrole</span>
-              </div>
+              <span class="card-step">03 · INSTALLATIE &amp; KLIMAAT</span>
+              <h3 class="h3-card">Warmtepompen &amp; afsluiterdiscipline</h3>
+              <p>Boots leidingsystemen, appendages en manometers exact na voor foutloze inbedrijfstelling, drukloos maken en systematische storingsdiagnose.</p>
+              <div class="domain-meta">Installatietechniek · Praktijkcentra</div>
             </div>
           </article>
 
-          <article class="domain-card">
+          <article class="domain-card reveal-item">
             <div class="domain-card-media">
-              <img src="assets/img/brand/domein_03_mechatronica_en_industrie.webp" alt="Domein Mechatronica en Industriële Machineveiligheid" width="1200" height="896" />
+              <img src="assets/img/brand/domein_03_mechatronica_en_industrie.webp" alt="Mechatronica en productiecellen" width="1200" height="896" loading="lazy" />
             </div>
             <div class="domain-card-body">
-              <span class="panel-index">04 // MECHATRONICA &amp; MAAKINDUSTRIE</span>
-              <h3 class="h3-card">Productiecellen, onboarding operators &amp; lijnoverschakeling</h3>
-              <p>Train nieuwe operators en uitzendkrachten op uw exacte productielijn zonder productiestilstand: lichtschermen, hekwerkvergrendeling, opstartchecks en veilige storingsvrijgave.</p>
-              <div class="spec-tags">
-                <span class="spec-tag">0 uur productiestilstand</span>
-                <span class="spec-tag">Arbobesluit H7</span>
-                <span class="spec-tag">Aantoonbare instructie</span>
-              </div>
+              <span class="card-step">04 · MECHATRONICA &amp; INDUSTRIE</span>
+              <h3 class="h3-card">Productiecellen &amp; operator-onboarding</h3>
+              <p>Train nieuwe operators op uw exacte lijn zonder één minuut productiestilstand: lichtschermen, hekwerkvergrendeling, opstartchecks en noodstop.</p>
+              <div class="domain-meta">Bedrijfsscholen · Arbobesluit Hoofdstuk 7</div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Het 4-Stappen Maatwerkproces -->
-    <section class="section section-paper">
+    <!-- Helder 4-Stappen Traject -->
+    <section class="section section-tight section-surface" id="traject">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">WERKWIJZE // VAN WERKPLAATSOPNAME TOT TABLET-OPLEVERING</div>
-          <h2 class="h2-section">In vier overzichtelijke stappen naar uw eigen VR-training.</h2>
+        <div class="section-intro reveal-item">
+          <span class="section-kicker">Van werkplaatsopname tot Kiosk-uitrol in 6 tot 10 weken</span>
+          <h2 class="h2-section">Vier heldere stappen. Geen herbouw van het platform.</h2>
           <p class="lead">
-            Doordat de Twee-Triggers interactie-engine, het netwerkprotocol en de 13-inch Docentapp al gereed zijn, gaat uw budget rechtstreeks naar vakinhoud en 3D-kwaliteit.
+            Omdat de Twee-Triggers interactie-engine, het <span class="mono">UDP :47800</span> netwerkprotocol en het 13,1-inch Docenten Dashboard al klaarstaan, gaat uw investering rechtstreeks naar vakinhoud.
           </p>
         </div>
 
         <div class="steps-grid">
-          <article class="step-card">
+          <article class="step-card reveal-item">
             <div class="step-num">STAP 01 · WEEK 1–2</div>
-            <h3 class="h3-card">Werkplaatsopname &amp; Functioneel Ontwerp</h3>
-            <p class="muted" style="margin:0;">
-              We leggen uw fysieke machine, werkinstructiekaarten en kritieke veiligheidsfouten vast samen met uw vakdocent of veiligheidskundige. Geen aannames zonder uw akkoord.
-            </p>
+            <h3 class="h3-card">Opname op locatie</h3>
+            <p class="muted" style="margin:0;font-size:0.92rem;">Samen met uw vakdocent of veiligheidskundige leggen we de fysieke machine, instructiekaart en kritische fouten vast.</p>
           </article>
-
-          <article class="step-card">
+          <article class="step-card reveal-item">
             <div class="step-num">STAP 02 · WEEK 3–5</div>
-            <h3 class="h3-card">3D-Reconstructie (CAD / PBR GLB)</h3>
-            <p class="muted" style="margin:0;">
-              Onze 3D-ontwerpers bouwen een scherp, op 72/90 Hz geoptimaliseerd 3D-model van uw opstelling, bedieningsknoppen, schakelaars en meetmiddelen voor Meta Quest 2 &amp; 3.
-            </p>
+            <h3 class="h3-card">3D Digital Twin</h3>
+            <p class="muted" style="margin:0;font-size:0.92rem;">Reconstructie van uw installatie en meetmiddelen in geoptimaliseerde PBR-modellen voor soepele <span class="mono">72/90 Hz</span> weergave op Meta Quest.</p>
           </article>
-
-          <article class="step-card">
+          <article class="step-card reveal-item">
             <div class="step-num">STAP 03 · WEEK 5–8</div>
-            <h3 class="h3-card">Twee-Triggers Logica &amp; Blokkades</h3>
-            <p class="muted" style="margin:0;">
-              We programmeren de toestandsmachine, rustige foutbevriezingen (<em>no gore</em>), 4 Hz Black-Box opname en de docent-vrijgaven op het 13-inch Regie-Dashboard.
-            </p>
+            <h3 class="h3-card">Veiligheidslogica</h3>
+            <p class="muted" style="margin:0;font-size:0.92rem;">Inrichting van de Twee-Triggers bediening, rustige Freeze-uitleg, <span class="mono">4 Hz</span> Black-Box replay en A4-rapportage (<span class="mono">PHYS_01..05</span>).</p>
           </article>
-
-          <article class="step-card">
+          <article class="step-card reveal-item">
             <div class="step-num">STAP 04 · WEEK 8–10</div>
-            <h3 class="h3-card">Praktijktest &amp; Oplevering in het Lokaal</h3>
-            <p class="muted" style="margin:0;">
-              We testen met echte leerlingen of operators op een vaste standplaats, leveren het A4-beoordelingsrapport op en plaatsen de training direct op uw Regie-Tablet.
-            </p>
+            <h3 class="h3-card">Kiosk-oplevering</h3>
+            <p class="muted" style="margin:0;font-size:0.92rem;">Praktijkvalidatie met studenten of monteurs en directe uitrol naar uw 13,1-inch Samsung Knox Regietablet en brillen.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Interactieve Maatwerk-Scoper -->
+    <!-- Verfijnde Interactieve Maatwerk-Scoper -->
     <section class="section section-surface" id="scoper">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">INTERACTIEVE MAATWERK-SCOPER // DIRECT EEN PROJECTSCHETS</div>
-          <h2 class="h2-section">Stel in één minuut uw maatwerk VR-casus samen.</h2>
+        <div class="section-intro-center reveal-item">
+          <span class="section-kicker">Interactieve Maatwerk-Scoper</span>
+          <h2 class="h2-section">Stel in één minuut uw projectschets samen.</h2>
           <p class="lead">
-            Kies hieronder uw domein, doelmachine en leerdoelen. U krijgt direct een concrete projectschets die u kunt downloaden voor intern overleg of rechtstreeks kunt meenemen naar uw offerteaanvraag.
+            Selecteer vakgebied, machinetype en oplevervorm voor een directe samenvatting richting <a href="mailto:info@techbuildsvr.nl">info@techbuildsvr.nl</a>.
           </p>
         </div>
 
-        <div class="pricing-grid">
-          <form class="panel" id="maatwerkScoperForm">
+        <div class="pricing-split">
+          <form class="bento-tile" id="maatwerkScoperForm">
             <div class="form-grid">
               <div class="form-field">
-                <label class="form-label" for="scopeDomein">1. Technisch domein</label>
+                <label class="form-label" for="scopeDomein">Vakgebied</label>
                 <select class="form-select" id="scopeDomein">
                   <option value="Metaalbewerking & Verspaning">Metaalbewerking &amp; Verspaning</option>
-                  <option value="Elektrotechniek & Energietransitie (LOTO / NEN 3140)">Elektrotechniek &amp; Energietransitie (LOTO / NEN 3140)</option>
+                  <option value="Elektrotechniek & Energie (LOTO / NEN 3140)">Elektrotechniek &amp; Energie (LOTO / NEN 3140)</option>
                   <option value="Installatie- & Klimaattechniek">Installatie- &amp; Klimaattechniek</option>
                   <option value="Mechatronica & Industriële Machineveiligheid">Mechatronica &amp; Industriële Machineveiligheid</option>
                 </select>
               </div>
 
               <div class="form-field">
-                <label class="form-label" for="scopeDoelgroep">2. Primaire doelgroep</label>
+                <label class="form-label" for="scopeDoelgroep">Doelgroep</label>
                 <select class="form-select" id="scopeDoelgroep">
                   <option value="MBO Techniek (niveau 2–4)">MBO Techniek (niveau 2–4)</option>
-                  <option value="VMBO-PIE (klas 3–4)">VMBO-PIE (klas 3–4)</option>
-                  <option value="Bedrijfsschool / Onboarding nieuwe monteurs">Bedrijfsschool / Onboarding nieuwe monteurs</option>
-                  <option value="Zij-instromers & Praktijkcentrum">Zij-instromers &amp; Praktijkcentrum</option>
+                  <option value="VMBO-PIE / Praktijkschool">VMBO-PIE / Praktijkschool</option>
+                  <option value="Bedrijfsschool / Onboarding operators">Bedrijfsschool / Onboarding operators</option>
+                  <option value="Zij-instromers & Regionaal Praktijkcentrum">Zij-instromers &amp; Regionaal Praktijkcentrum</option>
                 </select>
               </div>
 
               <div class="form-field form-field-full">
-                <label class="form-label" for="scopeMachine">3. Welke machine, schakelkast of installatie wilt u nabouwen?</label>
-                <input type="text" class="form-input" id="scopeMachine" placeholder="Bijv. Conventionele freesbank Deckel FP1, 400V hoofdverdeler of inpaklijn..." value="Conventionele freesbank + opspancontrole" />
+                <label class="form-label" for="scopeMachine">Machinetype of installatie</label>
+                <input type="text" class="form-input" id="scopeMachine" placeholder="Bijv. Deckel FP1 freesbank, 400V hoofdverdeler of verpakkingslijn" value="Conventionele freesbank + opspancontrole" />
               </div>
 
               <div class="form-field form-field-full">
-                <span class="form-label">4. Gewenste trainingsonderdelen in VR</span>
+                <span class="form-label">Gewenste leerdoelen</span>
                 <div class="choice-pills">
-                  <label class="choice-pill"><input type="checkbox" name="scopeGoal" value="3D Buddy Check & PBM" checked /> 3D Buddy Check &amp; PBM</label>
-                  <label class="choice-pill"><input type="checkbox" name="scopeGoal" value="Prestart werkplek- & machinecontrole" checked /> Prestart controle</label>
-                  <label class="choice-pill"><input type="checkbox" name="scopeGoal" value="Spanningsloos maken (Lockout-Tagout)" /> Lockout-Tagout (LOTO)</label>
-                  <label class="choice-pill"><input type="checkbox" name="scopeGoal" value="Veilig opstarten & bedieningsvolgorde" checked /> Veilig opstarten</label>
-                  <label class="choice-pill"><input type="checkbox" name="scopeGoal" value="Nameten & tolerantiecontrole" /> Nameten op tekening</label>
-                  <label class="choice-pill"><input type="checkbox" name="scopeGoal" value="Storingen & noodstop-reactietijd" checked /> Storingen &amp; Noodstop</label>
+                  <label class="choice-pill" style="background:#FFFFFF;"><input type="checkbox" name="scopeGoal" value="3D Buddy Check & Eigen PBM" checked id="chkGoalBuddy" /> 3D Buddy Check &amp; Eigen PBM</label>
+                  <label class="choice-pill" style="background:#FFFFFF;"><input type="checkbox" name="scopeGoal" value="Prestart machine- & werkplekcontrole" checked id="chkGoalPrestart" /> Prestart controle</label>
+                  <label class="choice-pill" style="background:#FFFFFF;"><input type="checkbox" name="scopeGoal" value="Lockout-Tagout (spanningsloos maken)" id="chkGoalLoto" /> Lockout-Tagout</label>
+                  <label class="choice-pill" style="background:#FFFFFF;"><input type="checkbox" name="scopeGoal" value="Veilig opstarten & bedieningsvolgorde" checked id="chkGoalStart" /> Veilig opstarten</label>
+                  <label class="choice-pill" style="background:#FFFFFF;"><input type="checkbox" name="scopeGoal" value="Nameten op tolerantie" id="chkGoalMeasure" /> Nameten op tolerantie</label>
+                  <label class="choice-pill" style="background:#FFFFFF;"><input type="checkbox" name="scopeGoal" value="Storingen & noodstop-reactietijd" checked id="chkGoalEmergency" /> Storingen &amp; Noodstop</label>
                 </div>
               </div>
 
               <div class="form-field form-field-full">
-                <label class="form-label" for="scopeTabletBezit">5. Gewenste hardware-opstelling / koppeling</label>
+                <label class="form-label" for="scopeTabletBezit">Gewenste oplevervorm</label>
                 <select class="form-select" id="scopeTabletBezit">
-                  <option value="Optie 1 (€ 10.000,- Knox Regietablet & onbeperkt eigen brillen) + Maatwerkscenario">Optie 1 (€ 10.000,- Regietablet &amp; eigen brillen) + Maatwerkscenario</option>
-                  <option value="Optie 2 (€ 15.000,- Turnkey 5G Zioxi VR-Kar 10) + Maatwerkscenario">Optie 2 (€ 15.000,- Turnkey 5G VR-Kar 10) + Maatwerkscenario</option>
-                  <option value="Optie 3 (€ 25.000,- Turnkey 5G Zioxi VR-Kar 20) + Maatwerkscenario">Optie 3 (€ 25.000,- Turnkey 5G VR-Kar 20) + Maatwerkscenario</option>
-                  <option value="Uitbreiding op bestaande TechBuilds VR 13-inch Regie-Tablet / VR-Kar">Uitbreiding op bestaande TechBuilds VR Regie-Tablet / VR-Kar</option>
+                  <option value="Optie 2: Turnkey VR-Kar 10 (€ 15.000,- + € 2.500,-/jr) + Maatwerk">Optie 2: Turnkey VR-Kar 10 (€ 15.000,-) + Maatwerk</option>
+                  <option value="Optie 1: Regietablet & Eigen Brillen (€ 10.000,- incl. 1e jr) + Maatwerk">Optie 1: Regietablet &amp; Eigen Brillen (€ 10.000,-) + Maatwerk</option>
+                  <option value="Optie 3: Turnkey VR-Kar 20 (€ 25.000,- + € 3.500,-/jr) + Maatwerk">Optie 3: Turnkey VR-Kar 20 (€ 25.000,-) + Maatwerk</option>
+                  <option value="Uitbreiding op bestaande TechBuilds VR 13,1-inch Regietablet / VR-Kar">Uitbreiding op bestaande 13,1&quot; Regietablet / VR-Kar</option>
                 </select>
               </div>
             </div>
           </form>
 
-          <div class="panel" style="background-color:var(--tb-deep-navy);color:#F8FAFC;border-color:var(--tb-slate-blue-border);display:flex;flex-direction:column;">
-            <span class="mono" style="font-size:0.74rem;color:#38BDF8;margin-bottom:0.5rem;">LIVE GEGENEREERDE PROJECTSCHETS</span>
-            <h3 class="h3-card" style="color:#FFFFFF;">Uw Maatwerk Specificatie</h3>
-            <pre id="scoperOutputBox" class="mono" style="white-space:pre-wrap;font-size:0.79rem;line-height:1.55;background:#081322;border:1px solid #213A5C;border-radius:6px;padding:1rem;color:#E2E8F0;flex:1;margin:0 0 1rem 0;"></pre>
+          <div class="bento-tile theme-dark" style="background-color:var(--tb-deep-navy);color:#F8FAFC;justify-content:space-between;">
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+                <span class="card-step" style="margin:0;">SAMENVATTING VOOR INTAKE</span>
+                <img src="assets/img/logo/TechBuildsVR_Logo_DarkBG.svg" alt="TechBuilds VR" width="104" height="28" style="height:26px;width:auto;" />
+              </div>
+              <h3 class="h3-card" style="color:#FFFFFF;">Uw Maatwerk Projectschets</h3>
+              <pre id="scoperOutputBox" class="mono" style="white-space:pre-wrap;font-size:0.78rem;line-height:1.58;background:#07111F;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:1.1rem;color:#E2E8F0;margin:0.85rem 0 1.25rem 0;"></pre>
+            </div>
             <div class="btn-group">
-              <button type="button" class="btn btn-primary" id="btnScopeToQuote">Meenemen naar Offerteaanvraag →</button>
-              <button type="button" class="btn btn-dark-ghost btn-sm" id="btnDownloadMaatwerkScope">⬇ Download Schets (.txt)</button>
+              <button type="button" class="btn btn-primary" id="btnScopeToQuote">Open in offerteformulier →</button>
+              <a href="mailto:info@techbuildsvr.nl" class="btn btn-dark-pill btn-sm" id="btnMailMaatwerkScope">Mail naar info@techbuildsvr.nl</a>
+              <button type="button" class="btn btn-dark-pill btn-sm" id="btnDownloadMaatwerkScope">Download .txt</button>
             </div>
           </div>
+        </div>
+
+        <div class="ac24-notice" style="margin-top:2.5rem;">
+          <strong>Onderwijs- en veiligheidsverklaring (AC24):</strong> Ook voor alle op maat ontwikkelde VR-simulaties geldt dat VR uitsluitend fungeert als educatief oefen- en voorbereidingsmiddel en nooit de fysieke werkplaatsinstructie, keuring en vrijgave door een bevoegd vakdocent of deskundig leidinggevende vervangt.
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Lichte Blueprint Paper Footer (#F2F6FA) met Officieel TechBuilds VR Tagline-Logo -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img src="assets/img/logo/TechBuildsVR_Logo_DarkBG.svg" alt="TechBuilds VR logo" class="footer-logo" width="186" height="50" />
-          <p style="margin:0 0 0.75rem 0;font-size:0.92rem;color:#CBD5E1;max-width:42ch;">
-            <strong>TechBuilds VR</strong> ontwikkelt praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs (VMBO/MBO) en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
+          <img src="assets/img/logo/TechBuildsVR_Logo_With_Tagline.svg" alt="TechBuilds VR — Veilig trainen. Vakbekwaam bouwen." class="footer-logo" width="140" height="42" />
+          <p style="margin:0 0 0.65rem 0;font-size:0.9rem;color:var(--tb-text-secondary);max-width:40ch;">
+            Praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
           </p>
+          <a href="mailto:info@techbuildsvr.nl" class="mono" style="font-size:0.84rem;font-weight:600;color:var(--tb-cobalt);">info@techbuildsvr.nl</a>
         </div>
         <div>
-          <h3 class="footer-heading">Oplossingen</h3>
+          <h3 class="footer-heading">Product</h3>
           <ul class="footer-links">
-            <li><a href="training-draaibank.html">WEILER Draaibank VR (M1–M6)</a></li>
-            <li><a href="docentapp-tablet.html">13" Regie-Tablet &amp; Docentapp</a></li>
-            <li><a href="maatwerk.html">VR-Trainingen op Maat</a></li>
-            <li><a href="prijzen-contact.html">Pakket &amp; Prijzen (€ 10.000)</a></li>
+            <li><a href="training-draaibank.html">Draaibank VR (M1–M6)</a></li>
+            <li><a href="docentapp-tablet.html">13,1&quot; Docenttablet (v2.3.0)</a></li>
+            <li><a href="maatwerk.html">Maatwerk Simulaties</a></li>
+            <li><a href="prijzen-contact.html">Pakketten &amp; TCO</a></li>
           </ul>
         </div>
         <div>
           <h3 class="footer-heading">Documentatie</h3>
           <ul class="footer-links">
-            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad TechBuilds VR (PDF)</a></li>
-            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek v1.1 (PDF)</a></li>
+            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad (PDF)</a></li>
+            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek (PDF)</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="footer-heading">Direct Contact</h3>
+          <h3 class="footer-heading">Contact</h3>
           <ul class="footer-links">
             <li><a href="mailto:info@techbuildsvr.nl">info@techbuildsvr.nl</a></li>
             <li><a href="prijzen-contact.html?onderwerp=maatwerk#aanvraag">Maatwerk intake plannen</a></li>
           </ul>
         </div>
       </div>
+      <div class="footer-ac24">
+        <strong>AC24 Veiligheidsclausule:</strong> VR-training fungeert uitsluitend als voorbereidend leermiddel en vervangt nooit fysieke instructie, toezicht en vrijgave door een bevoegd vakdocent op de echte machine.
+      </div>
       <div class="footer-bottom">
-        <span>© 2026 TechBuilds VR — Alle rechten voorbehouden.</span>
+        <span>© 2026 TechBuilds VR · www.techbuildsvr.nl · Alle prijzen excl. BTW.</span>
         <span class="mono">Veilig trainen. Vakbekwaam bouwen.</span>
       </div>
     </div>
   </footer>
+
+  <div class="mobile-sticky-bar no-print" id="mobileStickyBar">
+    <div class="mobile-sticky-copy">
+      Maatwerk Digital Twins
+      <span>Op dezelfde 13,1&quot; Regietablet</span>
+    </div>
+    <a href="#scoper" class="btn btn-primary btn-sm" id="mobileStickyDemoBtn">Projectschets</a>
+  </div>
+
+  <button type="button" class="back-to-top-btn no-print" id="backToTopBtn" aria-label="Terug naar boven">↑</button>
 
   <script src="assets/js/main.js"></script>
 </body>

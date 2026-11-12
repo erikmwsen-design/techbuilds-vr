@@ -3,296 +3,350 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Draaibank VR-Veiligheidstraining (WEILER Praktikant 140) | TechBuilds VR</title>
-  <meta name="description" content="Ontdek de 6 praktijkmodules (M1–M6) van onze WEILER Praktikant 140 VR-veiligheids- en opstarttraining. Twee-triggers bediening op Meta Quest 2 & 3, zonder loopmisselijkheid." />
-  <meta property="og:title" content="WEILER Praktikant 140 — VR Veiligheidstraining | TechBuilds VR" />
-  <meta property="og:description" content="6 VR-modules van 3D Buddy Check tot vlak-/trapdraaien (Ø 29,4 ±0,2 mm), 3D-schuifmaat en noodstop." />
+  <title>Draaibank VR-Training (WEILER Praktikant 140 · M1–M6) | TechBuilds VR</title>
+  <meta name="description" content="Ontdek de 6 modules (M1–M6) op de WEILER Praktikant 140: van 3D Buddy Check & Eigen PBM (AV_COMBO_1..5) tot vlak- en trapdraaien, 3D-schuifmaat en noodstop op Meta Quest." />
+  <meta property="og:title" content="WEILER Praktikant 140 — 6 VR-Modules | TechBuilds VR" />
+  <meta property="og:description" content="Twee-triggers bediening, 3D Buddy Check & Eigen PBM en directe aansluiting op fysieke vrijgave (PHYS_01..05)." />
   <meta property="og:image" content="assets/img/logo/OpenGraph_Social_Preview_1200x630.png" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-  <a href="#hoofdinhoud" class="skip-link">Direct naar hoofdinhoud</a>
+<body class="has-mobile-bar">
+  <a href="#hoofdinhoud" class="skip-link" id="skipToMainTraining">Direct naar hoofdinhoud</a>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-specs">
-        <span>VLAGGENSCHIP TRAINING // WEILER PRAKTIKANT 140</span>
-        <span class="topbar-sep topbar-hide-mobile">|</span>
-        <span class="topbar-hide-mobile">META QUEST 2 &amp; QUEST 3 · 6 MODULES (M1–M6)</span>
-      </div>
-      <a href="prijzen-contact.html" class="topbar-link">Compleet lokaalpakket: € 10.000,- incl. 1e jr tablet-service →</a>
-    </div>
-  </div>
-
-  <header class="site-header">
+  <!-- Luchtige Witte Sticky Frosted Header (70px · Officieel TechBuilds VR Logo) -->
+  <header class="site-header" id="siteHeader">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="TechBuilds VR Startpagina">
-        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR logo" width="186" height="50" />
+      <a href="index.html" class="brand-logo" id="navBrandLogo" aria-label="TechBuilds VR Startpagina">
+        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="145" height="39" />
       </a>
 
-      <nav aria-label="Hoofdmenu">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Overzicht</a></li>
-          <li><a href="training-draaibank.html" class="nav-link" aria-current="page">Draaibank VR-Training</a></li>
-          <li><a href="docentapp-tablet.html" class="nav-link">Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html" class="nav-link">Training op Maat</a></li>
-          <li><a href="prijzen-contact.html" class="nav-link">Pakket &amp; Prijzen</a></li>
-        </ul>
-      </nav>
+      <div class="nav-right-group">
+        <nav class="nav-center" aria-label="Hoofdmenu">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link" id="navLinkHome">Overzicht</a></li>
+            <li><a href="training-draaibank.html" class="nav-link" aria-current="page" id="navLinkTraining">Draaibank VR</a></li>
+            <li><a href="docentapp-tablet.html" class="nav-link" id="navLinkTablet">Docenttablet</a></li>
+            <li><a href="maatwerk.html" class="nav-link" id="navLinkMaatwerk">Maatwerk</a></li>
+            <li><a href="prijzen-contact.html" class="nav-link" id="navLinkPrijzen">Pakketten &amp; Prijzen</a></li>
+          </ul>
+        </nav>
 
-      <div class="nav-actions nav-actions-desktop">
-        <a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Productblad (PDF)</a>
-        <a href="prijzen-contact.html#aanvraag" class="btn btn-primary btn-sm">Plan Praktijkdemo</a>
+        <div class="nav-actions nav-actions-desktop">
+          <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="nav-cta-pill" id="navCtaDemo">Plan demo op school</a>
+        </div>
+
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 8h16M4 16h16" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
+    </div>
 
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
-        </svg>
-      </button>
+    <div class="scroll-progress-track" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="container">
         <ul class="mobile-drawer-list">
-          <li><a href="index.html">Overzicht</a></li>
-          <li><a href="training-draaibank.html" aria-current="page">Draaibank VR-Training (M1–M6)</a></li>
-          <li><a href="docentapp-tablet.html">13" Regie-Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html">VR-Trainingen op Maat</a></li>
-          <li><a href="prijzen-contact.html">Pakket &amp; Prijzen (€ 10.000)</a></li>
+          <li><a href="index.html" id="mobLinkHome">Overzicht</a></li>
+          <li><a href="training-draaibank.html" aria-current="page" id="mobLinkTraining">Draaibank VR (M1–M6)</a></li>
+          <li><a href="docentapp-tablet.html" id="mobLinkTablet">13,1&quot; Docenttablet</a></li>
+          <li><a href="maatwerk.html" id="mobLinkMaatwerk">Maatwerk</a></li>
+          <li><a href="prijzen-contact.html" id="mobLinkPrijzen">Pakketten &amp; Prijzen</a></li>
         </ul>
+        <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary" id="mobCtaDemo" style="width:100%;">Plan demo op school</a>
       </div>
     </div>
   </header>
 
   <main id="hoofdinhoud">
-    <!-- Pagina Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="tech-eyebrow">STANDAARD PAKKET // CONVENTIEEL DRAAIEN &amp; VEILIGHEID</div>
-          <h1 class="h1-page">WEILER Praktikant 140 — VR Veiligheids- &amp; Opstarttraining</h1>
-          <p class="lead">
-            Eén vergeten klauwplaatsleutel, werkhandschoen of open beschermkap kan in de draaierij direct tot ernstig letsel leiden. Met deze 6-delige VR-training slijpen studenten (VMBO-PIE, MBO niveau 2–4) en zij-instromers de vaste veiligheidsroutine foutloos in voordat de echte spindel draait.
-          </p>
-          <div class="btn-group">
-            <a href="prijzen-contact.html#aanvraag" class="btn btn-primary">Plan Demo in uw Werkplaats</a>
-            <a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download Productblad (PDF)</a>
-          </div>
-        </div>
-
-        <figure class="blueprint-frame" style="margin:0;">
-          <div class="blueprint-frame-header">
-            <span>3D REFERENTIEMODEL // 82 PBR GLB-ONDERDELEN</span>
-            <span>72 / 90 HZ NATIVE QUEST</span>
-          </div>
-          <img src="assets/img/weiler/weiler_01_machine_3d_model.webp" alt="Gedetailleerd 3D-model van de WEILER Praktikant 140 conventionele metaaldraaibank" width="1600" height="1400" style="aspect-ratio:16/10;object-fit:cover;" />
-          <figcaption class="blueprint-caption-bar">
-            <span><strong>WEILER Praktikant 140:</strong> drieklauw, beschermkap, nonius-handwielen &amp; noodstop</span>
-            <span class="mono" style="font-size:0.74rem;color:var(--tb-cobalt-strong);">GODOT 4.5 OPENXR</span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Interactieve Module Verkenner -->
-    <section class="section section-surface">
-      <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">CURRICULUM // 6 GESTRUCTUREERDE PRAKTIJKMODULES</div>
-          <h2 class="h2-section">Stap voor stap van PBM-controle tot noodstop.</h2>
-          <p class="lead">
-            Modules zijn los inzetbaar per lesuur of als doorlopend praktijkexamen (<em>Real Deal</em> zonder inhoudelijke hints). Klik door alle zes de modules hieronder:
-          </p>
-        </div>
-
-        <div class="module-tabs" role="tablist" aria-label="Modules M1 tot en met M6">
-          <button type="button" class="module-tab" role="tab" aria-selected="true" data-module-tab="M1">
-            <span class="module-tab-code">MODULE M1</span>
-            <span class="module-tab-title">3D Buddy Check &amp; PBM</span>
-          </button>
-          <button type="button" class="module-tab" role="tab" aria-selected="false" data-module-tab="M2">
-            <span class="module-tab-code">MODULE M2</span>
-            <span class="module-tab-title">Machine &amp; Werkplek</span>
-          </button>
-          <button type="button" class="module-tab" role="tab" aria-selected="false" data-module-tab="M3">
-            <span class="module-tab-code">MODULE M3</span>
-            <span class="module-tab-title">Opspannen &amp; Sleutel</span>
-          </button>
-          <button type="button" class="module-tab" role="tab" aria-selected="false" data-module-tab="M4">
-            <span class="module-tab-code">MODULE M4</span>
-            <span class="module-tab-title">Vlak- &amp; Trapdraaien</span>
-          </button>
-          <button type="button" class="module-tab" role="tab" aria-selected="false" data-module-tab="M5">
-            <span class="module-tab-code">MODULE M5</span>
-            <span class="module-tab-title">Stoppen &amp; Nameten</span>
-          </button>
-          <button type="button" class="module-tab" role="tab" aria-selected="false" data-module-tab="M6">
-            <span class="module-tab-code">MODULE M6</span>
-            <span class="module-tab-title">Storingen &amp; Noodstop</span>
-          </button>
-        </div>
-
-        <div class="module-viewer">
-          <div>
-            <div class="module-shot-wrap">
-              <img id="modViewImg" src="assets/img/weiler/weiler_00b_buddy_check_compleet.webp" alt="In-VR weergave van geselecteerde module" width="1600" height="960" />
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:0.75rem;flex-wrap:wrap;">
-              <span id="modViewCaption" class="muted" style="font-size:0.82rem;"></span>
-              <button type="button" id="btnToggleM1State" class="btn btn-outline btn-sm">Wissel beeld: Beginsituatie vs. Veilig gekeurd</button>
+    <!-- VISUAL 5 — Bento-Tegel Hero voor Draaibank VR (M1–M6) -->
+    <section class="hero-bento" aria-label="WEILER Praktikant 140 VR-Curriculum">
+      <div class="container hero-bento-grid">
+        <div class="hero-bento-left">
+          <div class="bento-statement-tile">
+            <h1 class="h1-page">Zes modules. Eén foutloze routine aan de draaibank.</h1>
+            <p class="lead">
+              Eén vergeten klauwplaatsleutel, werkhandschoen of open kap kan in de draaierij direct tot letsel leiden. Op onze WEILER Praktikant 140 digital twin slijpen studenten de veilige volgorde rustig in vóórdat de echte spindel draait.
+            </p>
+            <div class="btn-group">
+              <a href="#module-studio" class="btn btn-primary" id="trainHeroStudioBtn">Open Module-Studio (M1–M6) ↓</a>
+              <a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" class="btn btn-white" id="trainHeroPdfBtn" target="_blank" rel="noopener">Productblad (PDF)</a>
             </div>
           </div>
 
-          <div>
-            <span id="modViewCode" class="panel-index">MODULE M1 · STANDPLAATS A</span>
-            <h3 id="modViewTitle" class="h3-card" style="font-size:1.5rem;">Risico’s herkennen &amp; 3D Buddy Check (PBM)</h3>
-            <p id="modViewSummary" style="color:var(--tb-text-secondary);"></p>
-            <div class="mono" id="modViewSpecs" style="font-size:0.78rem;color:var(--tb-cobalt-strong);padding:0.5rem 0.75rem;background:var(--tb-cobalt-tint);border-radius:var(--tb-radius-xs);margin:0.75rem 0;"></div>
-            <ul id="modViewChecks" class="check-list"></ul>
+          <div class="hero-metrics-row" role="group" aria-label="Spring direct naar een module">
+            <button type="button" class="bento-metric-tile is-active" data-jump-module="M1" id="trainTileM1">
+              <span class="metric-num">M1–M6</span>
+              <span class="metric-label">Leerroute</span>
+              <span class="metric-sub">3D Buddy Check → Stop</span>
+            </button>
+
+            <button type="button" class="bento-metric-tile" data-jump-module="M4" id="trainTileM4">
+              <span class="metric-num">±0,2</span>
+              <span class="metric-label">mm Tolerantie</span>
+              <span class="metric-sub">Ø 29,4 mm op nonius</span>
+            </button>
+
+            <button type="button" class="bento-metric-tile" data-jump-module="M6" id="trainTileM6">
+              <span class="metric-num">2×</span>
+              <span class="metric-label">Triggers</span>
+              <span class="metric-sub">0% loopmisselijkheid</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-photo-tile hero-photo-tile--subpage">
+          <img src="assets/img/weiler/weiler_01_machine_3d_model.webp" class="hero-photo-img" alt="3D reconstructie van de WEILER Praktikant 140 conventionele metaaldraaibank met 82 PBR-onderdelen" width="1600" height="1400" />
+          <div class="hero-frosted-dock">
+            <div class="hero-dock-caption-row">
+              <span><strong>WEILER Praktikant 140</strong> · 82 PBR-onderdelen · nonius, drieklauw &amp; klauwplaatkap</span>
+              <span class="mono" style="font-size:0.74rem;font-weight:600;color:var(--tb-cobalt);">QUEST APK V2.2.0 · 72/90 HZ</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Twee-Triggers Ergonomie & Didactische Principes -->
-    <section class="section section-paper">
+    <!-- Interactieve Module-Studio (M1 t/m M6) met Stap-Voortgangsbalk & Pijltjesnavigatie -->
+    <section class="section section-surface" id="module-studio">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">TWEE-TRIGGERS ONTWERPNORM // 0% KNOPPENWIRWAR</div>
-          <h2 class="h2-section">Waarom elke leerling binnen één minuut zelfstandig traint.</h2>
+        <div class="section-intro-center reveal-item">
+          <span class="section-kicker">Interactieve Module-Studio</span>
+          <h2 class="h2-section">Verken elke stap van M1 tot en met M6.</h2>
           <p class="lead">
-            Veel VR-applicaties falen in de praktijkles omdat leerlingen verdwalen in A/B/X/Y-knoppen, gripknoppen of misselijk worden door virtueel lopen. TechBuilds VR hanteert een strikte ergonomie-standaard:
+            Los inzetbaar per praktijkles of als zelfstandig eindexamen zonder inhoudelijke voorzeg-hints. Gebruik de tabbladen, knoppen of <span class="mono">← →</span> pijltjestoetsen.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="panel">
-            <span class="panel-index">BEDIENING</span>
-            <h3 class="h3-card">Uitsluitend L + R wijsvingertrigger</h3>
-            <p class="muted">
-              Eén druk bedient een knop; ingedrukt houden pakt een werkstuk, klauwplaatsleutel, schuifmaat of handwiel vast; loslaten legt neer. Links en rechts werken 100% identiek voor links- en rechtshandigen.
-            </p>
-          </article>
+        <div class="segmented-wrap">
+          <div class="segmented-control" role="tablist" aria-label="Selecteer module M1 tot en met M6">
+            <button type="button" class="segmented-btn is-active" role="tab" aria-selected="true" data-module-tab="M1" id="tabModM1">M1 · Buddy Check</button>
+            <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-module-tab="M2" id="tabModM2">M2 · Werkplek</button>
+            <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-module-tab="M3" id="tabModM3">M3 · Opspannen</button>
+            <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-module-tab="M4" id="tabModM4">M4 · Draaien</button>
+            <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-module-tab="M5" id="tabModM5">M5 · Nameten</button>
+            <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-module-tab="M6" id="tabModM6">M6 · Noodstop</button>
+          </div>
+        </div>
 
-          <article class="panel">
-            <span class="panel-index">RUIMTELIJKE OPZET</span>
-            <h3 class="h3-card">Vaste standplaats (geen teleportatie)</h3>
-            <p class="muted">
-              De student blijft fysiek veilig op één gemarkeerde vloerplek staan. Na de Buddy Check op Standplaats A volgt één rustige aangekondigde wissel naar Standplaats B recht vóór de draaibank.
-            </p>
-          </article>
+        <div class="module-studio">
+          <!-- Stap-Voortgangsbalk + Vorige / Volgende Module Navigatie -->
+          <div class="studio-progress-header">
+            <div class="studio-progress-meta">
+              <span class="studio-step-pill" id="modStepCounter">Module 1 van 6</span>
+              <div class="studio-progress-track" aria-hidden="true">
+                <div class="studio-progress-fill" id="modProgressFill"></div>
+              </div>
+              <span class="mono muted" style="font-size:0.74rem;" id="modStandplaatsHint">Standplaats A · Vóór machinevrijgave</span>
+            </div>
 
-          <article class="panel">
-            <span class="panel-index"> DRIE OEFENMODI</span>
-            <h3 class="h3-card">Protocol → Begeleid → Real Deal</h3>
-            <p class="muted">
-              Bouw stapsgewijs ondersteuning af. In <em>Real Deal</em> en Examenmodus blijft de bedieningsfeedback actief, maar verdwijnen inhoudelijke voorzeg-highlights zodat echt veiligheidsinzicht wordt getoetst.
-            </p>
-          </article>
+            <div class="studio-nav-btns">
+              <button type="button" class="btn btn-white btn-sm" id="btnPrevModule">← Vorige module</button>
+              <button type="button" class="btn btn-primary btn-sm" id="btnNextModule">Volgende module →</button>
+            </div>
+          </div>
+
+          <div class="module-studio-grid">
+            <div>
+              <div class="module-shot-frame">
+                <img id="modViewImg" src="assets/img/weiler/weiler_00b_buddy_check_compleet.webp" alt="In-VR weergave van Module M1" width="1600" height="960" />
+              </div>
+              <p id="modViewCaption" class="muted" style="font-size:0.84rem;margin:0.65rem 0 0 0;"></p>
+
+              <!-- Live Telemetrie-strip per module -->
+              <div class="module-telemetry-bar">
+                <div class="module-tel-pill">
+                  <span class="module-tel-label">Spiltoerental</span>
+                  <span class="module-tel-val" id="modTelRpm">0 RPM (Standplaats A)</span>
+                </div>
+                <div class="module-tel-pill">
+                  <span class="module-tel-label">Norm / Tolerantie</span>
+                  <span class="module-tel-val" id="modTelTol">5 Varianten (AV_COMBO_1..5)</span>
+                </div>
+                <div class="module-tel-pill">
+                  <span class="module-tel-label">Beitelpositie / Regie</span>
+                  <span class="module-tel-val" id="modTelPos">L + R Trigger · 0% lopen</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <span id="modViewCode" class="card-step">MODULE M1 · STANDPLAATS A · AV_COMBO_1..5</span>
+              <h3 id="modViewTitle" class="h3-card" style="font-size:1.6rem;">3D Buddy Check &amp; Eigen PBM</h3>
+              <p id="modViewSummary" class="body-copy"></p>
+              <ul id="modViewChecks" class="check-list"></ul>
+
+              <!-- Interactieve M1 3D Buddy Check & Eigen PBM Voor/Na Vergelijker + Hotspots -->
+              <div id="m1BuddyInspector" class="m1-buddy-inspector">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap;">
+                  <span class="mono" style="font-size:0.73rem;font-weight:600;color:var(--tb-cobalt);">VOOR / NA 3D BUDDY CHECK · AV_COMBO_1..5</span>
+                  <div class="segmented-control" style="padding:0.2rem;background:var(--tb-blueprint-paper);box-shadow:none;">
+                    <button type="button" class="segmented-btn" style="padding:0.32rem 0.78rem;font-size:0.76rem;" id="btnM1StateBefore" aria-selected="false">Voor: Risico's</button>
+                    <button type="button" class="segmented-btn is-active" style="padding:0.32rem 0.78rem;font-size:0.76rem;" id="btnM1StateAfter" aria-selected="true">Na: Veilig gekeurd ✓</button>
+                  </div>
+                </div>
+                <p style="font-size:0.82rem;color:var(--tb-text-secondary);margin:0.55rem 0 0 0;">
+                  Klik op de 4 veiligheidshotspots (2 triggers bij medestudent + eigen PBM):
+                </p>
+                <div class="m1-buddy-pills">
+                  <button type="button" class="m1-check-chip is-checked" data-m1-chip="haar" id="m1ChipHaar">✓ Medestudent: haar &amp; mouwen</button>
+                  <button type="button" class="m1-check-chip is-checked" data-m1-chip="sieraden" id="m1ChipSieraden">✓ Medestudent: sieraden af</button>
+                  <button type="button" class="m1-check-chip is-checked" data-m1-chip="bril" id="m1ChipBril">✓ Eigen veiligheidsbril op</button>
+                  <button type="button" class="m1-check-chip is-checked" data-m1-chip="handschoenen" id="m1ChipHandschoenen">✓ Eigen werkhandschoenen uit</button>
+                </div>
+                <div id="m1GateBanner" class="m1-gate-banner is-safe">
+                  4/4 PBM-punten veilig gekeurd — Toegangspoort naar Standplaats B geopend ✓
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Wettelijk & Onderwijskundig Kader (Arbobesluit H7 & MBO-kaart) -->
-    <section class="section section-surface" id="arbokader">
+    <!-- Ergonomie & Didactische Route naar Fysieke Vrijgave (PHYS_01..05) -->
+    <section class="section section-surface" style="padding-top:1rem;">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">VAKINHOUDELIJKE VERANKERING // ARBOBESLUIT H7 &amp; MBO-KAART</div>
-          <h2 class="h2-section">Afgestemd op Nederlandse machineveiligheidsregels in het onderwijs.</h2>
+        <div class="section-intro reveal-item">
+          <span class="section-kicker">Twee-Triggers ontwerpnorm &amp; fysieke overdracht</span>
+          <h2 class="h2-section">Binnen één minuut gestart. Bewust vrijgegeven aan de bank.</h2>
           <p class="lead">
-            Elke blokkade en observatiestap in de simulatie is herleidbaar naar de <em>Arbocatalogus MBO Instructiekaart Draaibank</em> en het <em>Arbobesluit Hoofdstuk 7 (Gebruik arbeidsmiddelen)</em>.
+            Leerlingen raken niet afgeleid door knoppenwirwar of misselijkheid, en ronden de training af met een gestructureerde fysieke controle door de vakdocent.
           </p>
         </div>
 
-        <div class="tech-table-wrap">
-          <table class="tech-table">
-            <thead>
-              <tr>
-                <th>Kader / Artikel</th>
-                <th>Betekenis op de werkvloer</th>
-                <th>Vertaling in de TechBuilds VR-simulatie</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="mono"><strong>Arbocatalogus MBO</strong><br />Instructiekaart Draaibank</td>
-                <td>Geen handschoenen, geen losse kleding/sieraden, haar vast, veiligheidsbril verplicht, 1 persoon bij de machine.</td>
-                <td>Harde gate in Module M1 (3D Buddy Check + eigen handen/bril) en afleidingsscenario met omstander in M4.</td>
-              </tr>
-              <tr>
-                <td class="mono"><strong>Arbobesluit art. 7.5</strong><br />Afstellen, meten &amp; reinigen</td>
-                <td>Onderhoud, meten en spanen verwijderen uitsluitend bij stilstaande/energieveilige machine met geschikt hulpmiddel.</td>
-                <td>Meten of spanen pakken tijdens rotatie of uitloop veroorzaakt direct een rustige <code>FREEZE</code> + uitleg (Module M5).</td>
-              </tr>
-              <tr>
-                <td class="mono"><strong>Arbobesluit art. 7.7</strong><br />Afscherming draaiende delen</td>
-                <td>Bewegende delen zijn afgeschermd; beveiligingen mogen niet worden genegeerd of overbrugd.</td>
-                <td>Starten met open of genegeerde klauwplaatkap is geblokkeerd, met expliciet onderscheid tussen trainingsregel en fysieke machine-interlock.</td>
-              </tr>
-              <tr>
-                <td class="mono"><strong>Arbobesluit art. 7.11 &amp; 7.14</strong><br />Bewust starten &amp; isoleren</td>
-                <td>Starten mag uitsluitend door een opzettelijke handeling; na noodstop-reset of spanningsuitval nooit automatisch herstarten.</td>
-                <td>Na ontgrendelen van de noodstop of vrijgave van de hoofdschakelaar blijft de spindel gegarandeerd stil tot bewuste Start (I).</td>
-              </tr>
-              <tr>
-                <td class="mono"><strong>Arbobesluit art. 7.15 &amp; 7.16</strong><br />Normale stop vs. Noodstop</td>
-                <td>Doeltreffend onderscheid tussen gecontroleerd stoppen (0), acute noodstop en spanningsloos maken (LOTO).</td>
-                <td>Module M6 toetst zowel reactiesnelheid (in milliseconden) op de paddenstoel-noodstop als de juiste keuze bij onderhoud/defect.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="grid-3" style="margin-bottom:3rem;">
+          <article class="bento-tile reveal-item">
+            <span class="card-step">01 · BEDIENING</span>
+            <h3 class="h3-card">Alleen L + R wijsvingertrigger</h3>
+            <p class="muted" style="margin:0;">
+              Indrukken pakt een werkstuk, sleutel, handwiel of schuifmaat vast; loslaten legt neer. Volledig symmetrisch voor links- en rechtshandige leerlingen.
+            </p>
+          </article>
+
+          <article class="bento-tile reveal-item">
+            <span class="card-step">02 · COMFORT</span>
+            <h3 class="h3-card">Vaste standplaats op de vloer</h3>
+            <p class="muted" style="margin:0;">
+              Geen kunstmatige loopbeweging of teleportatie. Na de 3D Buddy Check op Standplaats A volgt één rustige wissel naar Standplaats B vóór de draaibank.
+            </p>
+          </article>
+
+          <article class="bento-tile reveal-item">
+            <span class="card-step">03 · OVERDRACHT NAAR STAAL</span>
+            <h3 class="h3-card">5-Punts Vrijgave (<span class="mono">PHYS_01..05</span>)</h3>
+            <p class="muted" style="margin:0;">
+              Het A4-rapport op de 13,1-inch tablet koppelt de VR-scores direct aan 5 verplichte fysieke controlepunten op de echte draaibank met S Pen aftekening.
+            </p>
+          </article>
         </div>
 
-        <div class="ac24-box" style="margin-top:var(--tb-space-8);">
-          <strong>Onderwijs- en veiligheidsverklaring (AC24):</strong> De VR-scenario's van TechBuilds VR zijn uitsluitend bedoeld als educatief oefen- en voorbereidingsmiddel. Het succesvol doorlopen van een VR-module of VR-toets vormt <strong>geen</strong> bewijs van vakbekwaamheid, <strong>geen</strong> RI&amp;E- of CE-/conformiteitsverklaring en <strong>geen</strong> vrijgave om zelfstandig met fysieke machines of installaties te werken. Fysieke instructie, controle en vrijgave door een bevoegd praktijkdocent of deskundig leidinggevende blijven te allen tijde verplicht.
+        <!-- Wettelijk kader Arbobesluit Hoofdstuk 7 -->
+        <div id="arbokader" class="reveal-item">
+          <span class="section-kicker">Vakinhoudelijke borging</span>
+          <h3 class="h3-card" style="font-size:1.45rem;margin-bottom:1.15rem;">Herleidbaar naar Arbobesluit Hoofdstuk 7 &amp; Arbocatalogus MBO</h3>
+          <div class="tech-table-wrap">
+            <table class="tech-table">
+              <thead>
+                <tr>
+                  <th>Richtlijn / Artikel</th>
+                  <th>Eis in de werkplaats</th>
+                  <th>Borging in WEILER VR (v2.2.0)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono"><strong>Arbocatalogus MBO</strong></td>
+                  <td>Geen handschoenen, geen losse kleding of sieraden, haar vast, veiligheidsbril op.</td>
+                  <td>Harde toegangspoort in Module M1 (<span class="mono">AV_COMBO_1..5</span>: 3D Buddy Check &amp; Eigen PBM).</td>
+                </tr>
+                <tr>
+                  <td class="mono"><strong>Arbobesluit art. 7.5</strong></td>
+                  <td>Meten, afstellen en spanen verwijderen uitsluitend bij stilstaande spindel.</td>
+                  <td>Meten of reinigen vóór <span class="mono">0 RPM</span> activeert direct een rustige Freeze met toelichting (M5).</td>
+                </tr>
+                <tr>
+                  <td class="mono"><strong>Arbobesluit art. 7.7</strong></td>
+                  <td>Draaiende delen zijn afgeschermd; kappen worden niet genegeerd.</td>
+                  <td>Spindelstart is geblokkeerd bij geopende klauwplaatkap of sleutel in drieklauw (M3/M4).</td>
+                </tr>
+                <tr>
+                  <td class="mono"><strong>Arbobesluit art. 7.14–7.16</strong></td>
+                  <td>Opzettelijke start, acute noodstop en geen automatische herstart na reset.</td>
+                  <td>Reactietijdmeting in milliseconden bij M6-slingering (<span class="mono">1,85 mm</span>) en LOTO-isolatie.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="ac24-notice" style="margin-top:2rem;">
+            <strong>Onderwijs- en veiligheidsverklaring (AC24):</strong> De VR-trainingen van TechBuilds VR zijn uitsluitend bedoeld als educatief oefen- en voorbereidingsmiddel en vervangen nooit de fysieke instructie, keuring en vrijgave (<span class="mono">PHYS_01..05</span>) door een bevoegd vakdocent aan de echte draaibank.
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Lichte Blueprint Paper Footer (#F2F6FA) met Officieel TechBuilds VR Tagline-Logo -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img src="assets/img/logo/TechBuildsVR_Logo_DarkBG.svg" alt="TechBuilds VR logo" class="footer-logo" width="186" height="50" />
-          <p style="margin:0 0 0.75rem 0;font-size:0.92rem;color:#CBD5E1;max-width:42ch;">
-            <strong>TechBuilds VR</strong> ontwikkelt praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs (VMBO/MBO) en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
+          <img src="assets/img/logo/TechBuildsVR_Logo_With_Tagline.svg" alt="TechBuilds VR — Veilig trainen. Vakbekwaam bouwen." class="footer-logo" width="140" height="42" />
+          <p style="margin:0 0 0.65rem 0;font-size:0.9rem;color:var(--tb-text-secondary);max-width:40ch;">
+            Praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
           </p>
+          <a href="mailto:info@techbuildsvr.nl" class="mono" style="font-size:0.84rem;font-weight:600;color:var(--tb-cobalt);">info@techbuildsvr.nl</a>
         </div>
         <div>
-          <h3 class="footer-heading">Oplossingen</h3>
+          <h3 class="footer-heading">Product</h3>
           <ul class="footer-links">
-            <li><a href="training-draaibank.html">WEILER Draaibank VR (M1–M6)</a></li>
-            <li><a href="docentapp-tablet.html">13" Regie-Tablet &amp; Docentapp</a></li>
-            <li><a href="maatwerk.html">VR-Trainingen op Maat</a></li>
-            <li><a href="prijzen-contact.html">Pakket &amp; Prijzen (€ 10.000)</a></li>
+            <li><a href="training-draaibank.html">Draaibank VR (M1–M6)</a></li>
+            <li><a href="docentapp-tablet.html">13,1&quot; Docenttablet (v2.3.0)</a></li>
+            <li><a href="maatwerk.html">Maatwerk Simulaties</a></li>
+            <li><a href="prijzen-contact.html">Pakketten &amp; TCO</a></li>
           </ul>
         </div>
         <div>
           <h3 class="footer-heading">Documentatie</h3>
           <ul class="footer-links">
-            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad TechBuilds VR (PDF)</a></li>
-            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek v1.1 (PDF)</a></li>
+            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad (PDF)</a></li>
+            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek (PDF)</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="footer-heading">Direct Contact</h3>
+          <h3 class="footer-heading">Contact</h3>
           <ul class="footer-links">
             <li><a href="mailto:info@techbuildsvr.nl">info@techbuildsvr.nl</a></li>
-            <li><a href="prijzen-contact.html#aanvraag">Offerte of Demo aanvragen</a></li>
+            <li><a href="prijzen-contact.html?onderwerp=demo#aanvraag">Plan demo op school</a></li>
           </ul>
         </div>
       </div>
+      <div class="footer-ac24">
+        <strong>AC24 Veiligheidsclausule:</strong> VR-training fungeert uitsluitend als voorbereidend leermiddel en vervangt nooit fysieke instructie, toezicht en vrijgave door een bevoegd vakdocent op de echte machine.
+      </div>
       <div class="footer-bottom">
-        <span>© 2026 TechBuilds VR — Alle rechten voorbehouden.</span>
+        <span>© 2026 TechBuilds VR · www.techbuildsvr.nl · Alle prijzen excl. BTW.</span>
         <span class="mono">Veilig trainen. Vakbekwaam bouwen.</span>
       </div>
     </div>
   </footer>
+
+  <div class="mobile-sticky-bar no-print" id="mobileStickyBar">
+    <div class="mobile-sticky-copy">
+      WEILER VR (M1–M6)
+      <span>Ervaar zelf op school</span>
+    </div>
+    <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary btn-sm" id="mobileStickyDemoBtn">Plan demo</a>
+  </div>
+
+  <button type="button" class="back-to-top-btn no-print" id="backToTopBtn" aria-label="Terug naar boven">↑</button>
 
   <script src="assets/js/main.js"></script>
 </body>

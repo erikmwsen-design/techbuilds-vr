@@ -3,179 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>13,1-inch Regie-Tablet &amp; Android Docenten Dashboard (v2.3.0) | TechBuilds VR</title>
-  <meta name="description" content="Beheer VR-Kar 10 (2×5), VR-Kar 20 (4×5) of onbeperkt eigen Meta Quest-brillen op de 13,1-inch Samsung Galaxy Tab S10 FE+ met het TechBuilds VR Android Docenten Dashboard v2.3.0: live meekijken, Black-Box replay en S Pen A4-beoordelingsrapport." />
-  <meta property="og:title" content="13,1-inch Regie-Tablet &amp; Docenten Dashboard v2.3.0 | TechBuilds VR" />
-  <meta property="og:description" content="Klaslokaal-cockpit voor VR-Kar 10, VR-Kar 20 en Onbeperkt eigen brillen, 4 Hz Black-Box replay en S Pen A4 PDF praktijkbeoordeling." />
+  <title>13,1-inch Regietablet &amp; Android Docenten Dashboard v2.3.0 | TechBuilds VR</title>
+  <meta name="description" content="Ervaar de 13,1-inch Samsung Galaxy Tab S10 FE+ (SM-X620) met het TechBuilds VR Android Docenten Dashboard v2.3.0: VR-Kar 10 (2×5), VR-Kar 20 (4×5), Onbeperkt eigen brillen en S Pen A4 vrijgaverapport." />
+  <meta property="og:title" content="13,1-inch Android Docenten Dashboard v2.3.0 | TechBuilds VR" />
+  <meta property="og:description" content="Live klasregie op 13,1-inch Samsung Knox tablet met 2D CAD telemetrie, 4 Hz Black-Box replay en S Pen A4 vrijgaverapport (PHYS_01..05)." />
   <meta property="og:image" content="assets/img/logo/OpenGraph_Social_Preview_1200x630.png" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-  <a href="#hoofdinhoud" class="skip-link">Direct naar hoofdinhoud</a>
+<body class="has-mobile-bar">
+  <a href="#hoofdinhoud" class="skip-link" id="skipToMainTablet">Direct naar hoofdinhoud</a>
 
-  <div class="topbar no-print">
-    <div class="container topbar-inner">
-      <div class="topbar-specs">
-        <span>KLASLOKAALREGIE // 13,1" SAMSUNG GALAXY TAB S10 FE+ (IP68) + KNOX MDM</span>
-        <span class="topbar-sep topbar-hide-mobile">|</span>
-        <span class="topbar-hide-mobile">ANDROID DASHBOARD V2.3.0 · VR-KAR 10 · VR-KAR 20 · ONBEPERKT</span>
-      </div>
-      <a href="prijzen-contact.html" class="topbar-link">Inbegrepen vanaf € 10.000,- of in Turnkey VR-Kar 10/20 →</a>
-    </div>
-  </div>
-
-  <header class="site-header no-print">
+  <!-- Luchtige Witte Sticky Frosted Header (70px · Officieel TechBuilds VR Logo) -->
+  <header class="site-header no-print" id="siteHeader">
     <div class="container nav-inner">
-      <a href="index.html" class="brand-logo" aria-label="TechBuilds VR Startpagina">
-        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR logo" width="186" height="50" />
+      <a href="index.html" class="brand-logo" id="navBrandLogo" aria-label="TechBuilds VR Startpagina">
+        <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="145" height="39" />
       </a>
 
-      <nav aria-label="Hoofdmenu">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Overzicht</a></li>
-          <li><a href="training-draaibank.html" class="nav-link">Draaibank VR-Training</a></li>
-          <li><a href="docentapp-tablet.html" class="nav-link" aria-current="page">Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html" class="nav-link">Training op Maat</a></li>
-          <li><a href="prijzen-contact.html" class="nav-link">Pakket &amp; Prijzen</a></li>
-        </ul>
-      </nav>
+      <div class="nav-right-group">
+        <nav class="nav-center" aria-label="Hoofdmenu">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link" id="navLinkHome">Overzicht</a></li>
+            <li><a href="training-draaibank.html" class="nav-link" id="navLinkTraining">Draaibank VR</a></li>
+            <li><a href="docentapp-tablet.html" class="nav-link" aria-current="page" id="navLinkTablet">Docenttablet</a></li>
+            <li><a href="maatwerk.html" class="nav-link" id="navLinkMaatwerk">Maatwerk</a></li>
+            <li><a href="prijzen-contact.html" class="nav-link" id="navLinkPrijzen">Pakketten &amp; Prijzen</a></li>
+          </ul>
+        </nav>
 
-      <div class="nav-actions nav-actions-desktop">
-        <a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Productblad (PDF)</a>
-        <a href="prijzen-contact.html#aanvraag" class="btn btn-primary btn-sm">Plan Praktijkdemo</a>
+        <div class="nav-actions nav-actions-desktop">
+          <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="nav-cta-pill" id="navCtaDemo">Plan demo op school</a>
+        </div>
+
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 8h16M4 16h16" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
+    </div>
 
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Menu openen">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
-        </svg>
-      </button>
+    <div class="scroll-progress-track" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="container">
         <ul class="mobile-drawer-list">
-          <li><a href="index.html">Overzicht</a></li>
-          <li><a href="training-draaibank.html">Draaibank VR-Training (M1–M6)</a></li>
-          <li><a href="docentapp-tablet.html" aria-current="page">13,1" Regie-Tablet &amp; Docentapp</a></li>
-          <li><a href="maatwerk.html">VR-Trainingen op Maat</a></li>
-          <li><a href="prijzen-contact.html">Pakketten &amp; VR-Kar (vanaf € 10.000)</a></li>
+          <li><a href="index.html" id="mobLinkHome">Overzicht</a></li>
+          <li><a href="training-draaibank.html" id="mobLinkTraining">Draaibank VR (M1–M6)</a></li>
+          <li><a href="docentapp-tablet.html" aria-current="page" id="mobLinkTablet">13,1&quot; Docenttablet</a></li>
+          <li><a href="maatwerk.html" id="mobLinkMaatwerk">Maatwerk</a></li>
+          <li><a href="prijzen-contact.html" id="mobLinkPrijzen">Pakketten &amp; Prijzen</a></li>
         </ul>
+        <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary" id="mobCtaDemo" style="width:100%;">Plan demo op school</a>
       </div>
     </div>
   </header>
 
   <main id="hoofdinhoud" class="no-print">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="tech-eyebrow">DE KERN VAN ELK PAKKET // SAMSUNG 13,1" TABLET MET KNOX MDM</div>
-          <h1 class="h1-page">Eén docent, volledig klasoverzicht, nul blinde vlekken in de werkplaats.</h1>
-          <p class="lead">
-            VR werkt in het onderwijs pas echt wanneer de docent niet hoeft te raden wat een student in de bril ziet. Daarom leveren wij elk pakket met een werkplaatsbestendige <strong>13,1-inch Samsung Docententablet</strong> (<code>Galaxy Tab S10 FE+</code>, <code>IP68</code>, S Pen &amp; robuuste handstrap-case) voorzien van ons native <strong>Android Docenten Dashboard (v2.3.0)</strong> voor <strong>VR-Kar 10</strong> (<code>2×5</code>), <strong>VR-Kar 20</strong> (<code>4×5</code>) of <strong>Onbeperkt eigen brillen</strong>.
-          </p>
-          <div class="btn-group">
-            <a href="#live-simulator" class="btn btn-primary">Test het Docenten Dashboard v2.3.0</a>
-            <a href="prijzen-contact.html" class="btn btn-outline">Bekijk de 3 Pakketopties</a>
+    <!-- VISUAL 5 — Bento-Tegel Hero voor de 13,1" Samsung Knox Regietablet -->
+    <section class="hero-bento" aria-label="13,1-inch Regietablet Overzicht">
+      <div class="container hero-bento-grid">
+        <div class="hero-bento-left">
+          <div class="bento-statement-tile">
+            <h1 class="h1-page">Eén 13,1-inch scherm. Volledige regie over de klas.</h1>
+            <p class="lead">
+              De vakdocent beheert de hele werkplaats vanaf één water- en stofdichte Samsung Galaxy Tab S10 FE+ in Knox Kiosk-modus. Kijk live mee met één geselecteerde bril, spoel elk leermoment terug en onderteken het A4-rapport met S Pen.
+            </p>
+            <div class="btn-group">
+              <a href="#live-simulator" class="btn btn-primary" id="tabletHeroSimBtn">Test 13,1&quot; Simulator live ↓</a>
+              <button type="button" class="btn btn-white" id="tabletHeroReportBtn">Bekijk A4 Vrijgaverapport</button>
+            </div>
+          </div>
+
+          <div class="hero-metrics-row" role="group" aria-label="Kies simulator-profiel">
+            <button type="button" class="bento-metric-tile is-active" data-hero-profile="kar10" id="tabletTileKar10">
+              <span class="metric-num">2×5</span>
+              <span class="metric-label">VR-Kar 10</span>
+              <span class="metric-sub">10× Quest 3S slots</span>
+            </button>
+
+            <button type="button" class="bento-metric-tile" data-hero-profile="kar20" id="tabletTileKar20">
+              <span class="metric-num">4×5</span>
+              <span class="metric-label">VR-Kar 20</span>
+              <span class="metric-sub">20× Quest 3S slots</span>
+            </button>
+
+            <button type="button" class="bento-metric-tile" data-hero-profile="unlimited" id="tabletTileUnl">
+              <span class="metric-num">∞</span>
+              <span class="metric-label">Eigen Brillen</span>
+              <span class="metric-sub">UDP :47800 auto-koppel</span>
+            </button>
           </div>
         </div>
 
-        <figure class="blueprint-frame" style="margin:0;">
-          <div class="blueprint-frame-header">
-            <span>HARDWARE BUNDEL // 13,1" KNOX TABLET + S PEN + VR-APP V2.2.0</span>
-            <span>SINGLE-APP KIOSK MODE</span>
+        <div class="hero-photo-tile hero-photo-tile--subpage">
+          <img src="assets/img/brand/pakket_regietablet_vr_set.webp" class="hero-photo-img" alt="13,1-inch Samsung Galaxy Tab S10 FE+ met 2×5 klaslokaalscherm naast S Pen, Meta Quest 3S en stalen schuifmaat" width="1200" height="896" />
+          <div class="hero-frosted-dock">
+            <div class="hero-dock-caption-row">
+              <span><strong>Samsung Galaxy Tab S10 FE+</strong> (<span class="mono">SM-X620</span>, <span class="mono">IP68</span>, S Pen &amp; Knox Single-App Kiosk)</span>
+              <span class="status-badge status-safe">DASHBOARD V2.3.0</span>
+            </div>
           </div>
-          <img src="assets/img/brand/pakket_regietablet_vr_set.webp" alt="13,1-inch Samsung regie-tablet met TechBuilds VR klaslokaaldashboard op een werkbank naast een standalone VR-headset, schuifmaat en A4 beoordelingsformulier" width="1200" height="896" />
-          <figcaption class="blueprint-caption-bar">
-            <span><strong>Compleet geleverd:</strong> pincode-vergrendeling, S Pen handtekening &amp; A4 PDF-export</span>
-            <span class="status-badge status-safe">DASHBOARD V2.3.0</span>
-          </figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
-    <!-- Interactieve Klaslokaal-Simulator (VR-Kar 10 / VR-Kar 20 / Onbeperkt) -->
-    <section class="section section-dark theme-dark" id="live-simulator">
-      <div class="container">
-        <div class="section-header-split">
-          <div style="max-width:740px;">
-            <div class="tech-eyebrow">INTERACTIEVE DEMO // PROTOCOL V2.2.0 · KIES PROFIEL 10, 20 OF ONBEPERKT</div>
-            <h2 class="h2-section">Ervaar het Android Docenten Dashboard (v2.3.0) zelf.</h2>
-            <p class="lead" style="margin-bottom:0;">
-              Schakel hieronder tussen <strong>VR-Kar 10 (<code>2×5</code>)</strong>, <strong>VR-Kar 20 (<code>4×5</code>)</strong> en <strong>Eigen Brillen (Onbeperkt)</strong>. Klik op een leerling, spoel terug op de <strong>4 Hz Black-Box tijdlijn</strong> of open het <strong>A4 Praktijkbeoordelingsrapport</strong> met de 5-punts fysieke vrijgave-checklist.
+    <!-- Afgerond Deep Steel Navy (#0B192C) Pro-Tegel Podium met 13,1" Simulator -->
+    <section class="pro-podium-wrap" id="live-simulator" aria-label="Interactieve 13,1-inch Regietablet Simulator">
+      <div class="container-wide">
+        <div class="pro-podium theme-dark">
+          <div class="section-intro-center" style="margin-bottom:2rem;">
+            <span class="section-kicker">Interactieve Klaslokaal-Simulator · Android Dashboard v2.3.0</span>
+            <h2 class="h2-section">Ervaar de docentregie hieronder live.</h2>
+            <p class="lead">
+              Klik op een student-tegel, wissel van spectator-camerahoek, sleep de <span class="mono">4 Hz</span> Black-Box tijdlijn om de draaibeitel (<span class="mono">carriage_x_mm</span>) te zien bewegen of open het A4-vrijgaverapport.
             </p>
           </div>
-          <button type="button" class="btn btn-primary" id="btnCockpitOpenReport">🖨 Voorbeeld A4 Beoordelingsrapport</button>
-        </div>
 
-        <div class="tablet-bezel" id="docentCockpitSim" data-slots="10" data-profile-switcher="true">
-          <div class="tablet-screen">
-            <div class="tablet-topbar">
-              <div>
-                <span id="cockpitProtocolLine" class="mono" style="font-size:0.74rem;color:#38BDF8;display:block;">ANDROID DASHBOARD V2.3.0 · PROFIEL: VR-KAR 10 (2×5) · STREAM: MAX 1 ACTIEVE BRIL</span>
-                <strong id="cockpitSelHeader" style="font-family:var(--tb-font-display);font-size:1.05rem;">QUEST-01 — Daan Bakker (MBO-2 Verspanen)</strong>
+          <!-- Geanodiseerd 13,1" Tablet-Frame -->
+          <div class="tablet-chassis" id="docentCockpitSim" data-slots="10">
+            <div class="tablet-camera-dot" aria-hidden="true"></div>
+            <div class="tablet-screen">
+              <!-- Live Visuele Feedback-Toast in het Tabletscherm -->
+              <div class="cockpit-live-toast" id="cockpitLiveBanner" role="status" aria-live="polite">
+                <span id="cockpitActionToast">● Klaslokaal verbonden — klik op een bril, trek aan de 4 Hz tijdlijn of open het A4 Vrijgaverapport.</span>
+                <span class="mono" style="font-size:0.68rem;color:#94A3B8;white-space:nowrap;">192.168.1.10 · KNOX</span>
               </div>
-              <div class="btn-group" style="gap:0.45rem;">
-                <button type="button" class="btn btn-primary btn-sm" data-cockpit-profile="kar10" id="btnProfileKar10">VR-Kar 10 (2×5)</button>
-                <button type="button" class="btn btn-dark-ghost btn-sm" data-cockpit-profile="kar20" id="btnProfileKar20">VR-Kar 20 (4×5)</button>
-                <button type="button" class="btn btn-dark-ghost btn-sm" data-cockpit-profile="unlimited" id="btnProfileUnl">Eigen Brillen (∞)</button>
-                <button type="button" class="btn btn-primary btn-sm" id="btnCockpitGroupExam">▶ Groepsexamen</button>
-                <button type="button" class="btn btn-dark-ghost btn-sm" id="btnCockpitGroupPause">⏸ Groeps-Noodpauze</button>
-              </div>
-            </div>
 
-            <div class="headset-slots-grid" id="cockpitSlotsGrid" aria-label="Verbonden Meta Quest klaslokaal-slots"></div>
-
-            <div class="cockpit-split">
-              <div class="cockpit-box">
-                <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-bottom:0.5rem;flex-wrap:wrap;">
-                  <span class="mono" style="font-size:0.75rem;color:#CBD5E1;">120 HZ DIN/ISO 2D DRAAIBANK-BLAUWDRUK + SCHUIFMAAT-LOUPE</span>
-                  <span id="cockpitReplayReadout" class="mono" style="font-size:0.74rem;color:#22C55E;">● LIVE TELEMETRIE (4 Hz · :8765)</span>
+              <!-- Bovenbalk: Officieel DarkBG Logo + Profiel Segmented Control -->
+              <div class="tablet-topbar">
+                <div class="tablet-brand-row">
+                  <img src="assets/img/logo/TechBuildsVR_Logo_DarkBG.svg" alt="TechBuilds VR" class="tablet-brand-logo" width="96" height="26" />
+                  <div>
+                    <span id="cockpitProtocolLine" class="mono" style="font-size:0.71rem;color:#38BDF8;display:block;">ANDROID DASHBOARD V2.3.0 · VR-KAR 10 (2×5) · 192.168.1.101..110:8765</span>
+                    <strong id="cockpitSelHeader" style="font-family:var(--tb-font-display);font-size:1.03rem;">QUEST-01 — Daan Bakker (MBO-2 Verspanen)</strong>
+                  </div>
                 </div>
-                <canvas id="cockpitBlueprintCanvas" class="blueprint-canvas" width="640" height="210"></canvas>
-                <div class="telemetry-row">
-                  <div class="telemetry-cell">
-                    <span class="telemetry-label">SPILTOERENTAL</span>
-                    <span class="telemetry-val" id="telRpm">710 RPM</span>
-                  </div>
-                  <div class="telemetry-cell">
-                    <span class="telemetry-label">ACTUELE MAAT</span>
-                    <span class="telemetry-val" id="telDia">Ø 29,4 mm</span>
-                  </div>
-                  <div class="telemetry-cell">
-                    <span class="telemetry-label">SNIJTEMPERATUUR</span>
-                    <span class="telemetry-val" id="telTemp">74 °C</span>
-                  </div>
-                  <div class="telemetry-cell">
-                    <span class="telemetry-label">VEILIGHEIDSGATE</span>
-                    <span class="telemetry-val" id="telGate">KAP DICHT ✓</span>
-                  </div>
+
+                <div class="segmented-control segmented-control-dark" role="tablist" aria-label="Kies klasprofiel">
+                  <button type="button" class="segmented-btn is-active" role="tab" aria-selected="true" data-cockpit-profile="kar10" id="btnProfileKar10">VR-Kar 10 (2×5)</button>
+                  <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-cockpit-profile="kar20" id="btnProfileKar20">VR-Kar 20 (4×5)</button>
+                  <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-cockpit-profile="unlimited" id="btnProfileUnl">Eigen Brillen (Onbeperkt)</button>
                 </div>
               </div>
 
-              <div class="cockpit-box" style="display:flex;flex-direction:column;justify-content:space-between;gap:0.85rem;">
-                <div>
-                  <span class="mono" style="font-size:0.73rem;color:#38BDF8;display:block;margin-bottom:0.35rem;">BLACK-BOX REPLAY &amp; INCIDENT-BLADWIJZERS</span>
-                  <p id="cockpitSelNote" style="margin:0 0 0.65rem 0;font-size:0.86rem;color:#E2E8F0;"></p>
-                  <label for="cockpitReplaySlider" class="mono" style="font-size:0.72rem;color:#94A3B8;display:block;">Spoel terug naar exacte machinecondities:</label>
-                  <input type="range" id="cockpitReplaySlider" class="replay-slider" min="0" max="35" value="35" />
-                  <div id="cockpitBookmarks" class="btn-group" style="gap:0.4rem;margin-top:0.35rem;"></div>
+              <!-- Filterbalk + Klasacties -->
+              <div class="tablet-toolbar-row">
+                <div class="btn-group" style="gap:0.4rem;">
+                  <button type="button" class="cam-pill is-active" data-cockpit-filter="all" id="filterAllBtn">Alle brillen</button>
+                  <button type="button" class="cam-pill" data-cockpit-filter="active" id="filterActiveBtn">Actief</button>
+                  <button type="button" class="cam-pill" data-cockpit-filter="attention" id="filterWarnBtn">Freeze / Let op</button>
+                  <span id="cockpitStreamBadge" class="mono" style="font-size:0.72rem;color:#38BDF8;margin-left:0.35rem;">LIVE FOCUS: QUEST-01 (1 BRIL STREAM · /api/frame)</span>
                 </div>
 
-                <div>
-                  <span class="mono" style="font-size:0.72rem;color:#94A3B8;display:block;margin-bottom:0.4rem;">Directe Docentcommando's (POST /api/command):</span>
-                  <div class="cmd-btn-grid">
-                    <button type="button" class="cmd-btn" data-teacher-cmd="AC21">✓ AC21 Vrijgave zenden</button>
-                    <button type="button" class="cmd-btn" data-teacher-cmd="WOBBLE">⚠ M6 Slingering (ms-test)</button>
-                    <button type="button" class="cmd-btn" data-teacher-cmd="NEXT">⏭ Bewaar &amp; Volgende Student</button>
-                    <button type="button" class="cmd-btn" data-teacher-cmd="TTS">🔊 Spreek NL tekst in bril</button>
+                <div class="btn-group" style="gap:0.45rem;">
+                  <button type="button" class="btn btn-dark-pill btn-sm" id="btnCockpitGroupPause">Pauzeer Klas</button>
+                  <button type="button" class="btn btn-dark-pill btn-sm" id="btnCockpitNextStudent">Volgende Leerling</button>
+                  <button type="button" class="btn btn-primary btn-sm" id="btnCockpitOpenReport">Open A4 Vrijgaverapport</button>
+                </div>
+              </div>
+
+              <!-- Klikbare Student-tegels (QUEST-01..20) -->
+              <div class="headset-slots-grid" id="cockpitSlotsGrid" aria-label="Verbonden Meta Quest brillen"></div>
+
+              <!-- Onderste Split: Meebewegend 2D CAD Draaibank-Canvas + Black-Box Replay -->
+              <div class="cockpit-split">
+                <div class="cockpit-box">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-bottom:0.55rem;flex-wrap:wrap;">
+                    <span class="mono" style="font-size:0.73rem;color:#CBD5E1;">LIVE 2D CAD DRAAIBANK &amp; SLEDEPOSITIE</span>
+                    <span id="cockpitReplayReadout" class="mono" style="font-size:0.73rem;color:#22C55E;">● LIVE 4 HZ (:8765)</span>
                   </div>
-                  <div id="cockpitActionToast" class="mono" style="margin-top:0.6rem;font-size:0.74rem;color:#38BDF8;min-height:1.2em;">
-                    Selecteer QUEST-02 (Sara) of wissel hierboven naar VR-Kar 20 (4×5) of Eigen Brillen (Onbeperkt).
+
+                  <canvas id="cockpitBlueprintCanvas" class="blueprint-canvas" width="640" height="220"></canvas>
+
+                  <!-- Spectator Camerahoeken (SET_SPECTATOR_VIEW) -->
+                  <div class="spectator-cams" aria-label="Spectator camerahoeken">
+                    <span class="mono" style="font-size:0.68rem;color:#94A3B8;margin-right:0.25rem;">CAMERA:</span>
+                    <button type="button" class="cam-pill is-active" data-spectator-cam="OVERVIEW_3Q" id="camBtnOverview">Overzicht 3/4</button>
+                    <button type="button" class="cam-pill" data-spectator-cam="CUT_ZONE" id="camBtnCutZone">Snijzone</button>
+                    <button type="button" class="cam-pill" data-spectator-cam="CHUCK_CLOSE" id="camBtnChuck">Klauwplaat</button>
+                    <button type="button" class="cam-pill" data-spectator-cam="SPEED_CHART" id="camBtnSpeed">Snelheidstabel</button>
+                  </div>
+
+                  <div class="telemetry-row">
+                    <div class="telemetry-cell">
+                      <span class="telemetry-label">TOERENTAL</span>
+                      <span class="telemetry-val" id="telRpm">710 RPM</span>
+                    </div>
+                    <div class="telemetry-cell">
+                      <span class="telemetry-label">CARRIAGE_X_MM</span>
+                      <span class="telemetry-val" id="telCarriage">64,5 mm</span>
+                    </div>
+                    <div class="telemetry-cell">
+                      <span class="telemetry-label">HOOFDMAAT</span>
+                      <span class="telemetry-val" id="telDia">Ø 29,4 mm</span>
+                    </div>
+                    <div class="telemetry-cell">
+                      <span class="telemetry-label">KLAUWPLAATKAP</span>
+                      <span class="telemetry-val" id="telGate">KAP DICHT ✓</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cockpit-box" style="display:flex;flex-direction:column;justify-content:space-between;gap:0.9rem;">
+                  <div>
+                    <span class="mono" style="font-size:0.72rem;color:#38BDF8;display:block;margin-bottom:0.35rem;">4 HZ BLACK-BOX REPLAY &amp; BLADWIJZERS</span>
+                    <p id="cockpitSelNote" style="margin:0 0 0.65rem 0;font-size:0.86rem;color:#E2E8F0;"></p>
+                    <label for="cockpitReplaySlider" class="mono" style="font-size:0.71rem;color:#94A3B8;display:block;">Trek aan de tijdlijn om slede &amp; beitel live terug te spoelen:</label>
+                    <div class="replay-controls-row">
+                      <button type="button" class="cam-pill" id="btnReplayPlay" style="flex-shrink:0;">▶ Afspelen</button>
+                      <input type="range" id="cockpitReplaySlider" class="replay-slider" min="0" max="35" value="35" />
+                    </div>
+                    <div id="cockpitBookmarks" class="btn-group" style="gap:0.4rem;margin-top:0.4rem;"></div>
+                  </div>
+
+                  <div>
+                    <span class="mono" style="font-size:0.71rem;color:#94A3B8;display:block;margin-bottom:0.4rem;">Gerichte docentactie op geselecteerde bril:</span>
+                    <div class="cmd-btn-grid">
+                      <button type="button" class="cmd-btn" data-teacher-cmd="AC21" id="cmdBtnAc21">✓ AC21 Vrijgave</button>
+                      <button type="button" class="cmd-btn" data-teacher-cmd="WOBBLE" id="cmdBtnWobble">⚠ M6 Slingering</button>
+                      <button type="button" class="cmd-btn" data-teacher-cmd="CALIBRATE" id="cmdBtnCalibrate">↕ Kalibreer Hoogte</button>
+                      <button type="button" class="cmd-btn" data-teacher-cmd="COOLANT" id="cmdBtnCoolant">💧 Koelmiddel Aan/Uit</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -185,169 +239,209 @@
       </div>
     </section>
 
-    <!-- Connectiviteit zonder IT-drempels -->
+    <!-- Zero-Config Netwerkarchitectuur in 3 Visual 5 Bento-Tegels -->
     <section class="section section-surface">
       <div class="container">
-        <div class="section-header">
-          <div class="tech-eyebrow">ZERO-CONFIG KLASLOKAALNETWERK // PROTOCOL V2.2.0</div>
-          <h2 class="h2-section">Werkt direct na opstarten — los van schoolfirewalls.</h2>
+        <div class="section-intro reveal-item">
+          <span class="section-kicker">Zero-Config Netwerkarchitectuur · Protocol v2.2.0</span>
+          <h2 class="h2-section">Automatische koppeling. Stabiele bandbreedte.</h2>
           <p class="lead">
-            Het Android Docenten Dashboard (`v2.3.0`) en de Quest VR-app (`v2.2.0`) koppelen automatisch binnen het eigen werkplaatsnetwerk en houden de bandbreedte strak in de hand door live video uitsluitend voor de <strong>éne geselecteerde bril tegelijk</strong> op te vragen.
+            Zowel op eigen Wi-Fi als in de zelfstandige 5G Zioxi VR-Kar vinden tablet en brillen elkaar binnen anderhalve seconde zonder handmatig IP-beheer door school-ICT.
           </p>
-        </div>
-
-        <div class="grid-2" style="margin-bottom:var(--tb-space-8);">
-          <article class="panel">
-            <span class="panel-index">NIGHTHAWK WI-FI 7 &amp; UDP :47800 DISCOVERY</span>
-            <h3 class="h3-card">Vaste IP-koppeling voor QUEST-01..20 &amp; Onbeperkt</h3>
-            <p class="muted">
-              Op de Turnkey VR-Kar krijgen <code>QUEST-01..20</code> vaste adressen (<code>192.168.1.101..120:8765</code>) rond de docententablet (<code>192.168.1.10</code>). Via een 1,5s <code>UDP :47800</code> beacon verschijnen zowel 10, 20 als een onbeperkt aantal eigen brillen direct met batterijpercentage en live status in beeld.
-            </p>
-          </article>
-
-          <article class="panel">
-            <span class="panel-index">SLIMME STREAMREGIE // HTTP :8765 &amp; H.264 :5555</span>
-            <h3 class="h3-card">Vloeiend meekijken zonder netwerkoverbelasting</h3>
-            <p class="muted">
-              Alle gekoppelde brillen sturen continu lichte <code>4 Hz</code> telemetrie (toerental, beitelpositie, nonius en M1 3D Buddy Check status), terwijl live meekijkbeelden (asynchrone JPEG <code>/api/frame</code> of <code>30 fps H.264 :5555</code>) gericht voor maximaal 1 geselecteerde bril actief zijn — of bekabeld via USB-C op afgeschermde netwerken.
-            </p>
-          </article>
         </div>
 
         <div class="grid-3">
-          <article class="panel">
-            <span class="panel-index">VEILIG IN DE KLAS</span>
-            <h3 class="h3-card">1-Tik Pincode &amp; Wisselknop</h3>
-            <p class="muted">Met één tik vergrendelt het tabletscherm achter een 4-cijferige docentenpincode, of rondt u een beurt direct af via <em>Bewaar &amp; Volgende Student</em>.</p>
+          <article class="bento-tile reveal-item">
+            <span class="card-step">UDP :47800 · ZERO-CONFIG DISCOVERY</span>
+            <h3 class="h3-card">Automatische herkenning</h3>
+            <p class="muted" style="margin:0;">
+              Elke <span class="mono">1,5 s</span> zenden brillen een lichtgewicht beacon uit met slotnummer (<span class="mono">QUEST-01..20</span>), batterijstatus en actieve module. Ook onbeperkt eigen brillen koppelen direct.
+            </p>
           </article>
 
-          <article class="panel">
-            <span class="panel-index">SAMSUNG S PEN &amp; PRINTMANAGER</span>
-            <h3 class="h3-card">A4 PDF + 5-Punts Vrijgave</h3>
-            <p class="muted">Bevat naast de M1–M6 resultaten standaard de 5-punts fysieke vrijgave-checklist (<code>PHYS_01..05</code>) en S Pen ondertekening door de vakdocent.</p>
+          <article class="bento-tile reveal-item">
+            <span class="card-step">TCP :8765 · SLIMME STREAMFOCUS</span>
+            <h3 class="h3-card">1 bril live video tegelijk</h3>
+            <p class="muted" style="margin:0;">
+              Alle brillen sturen continu lichte <span class="mono">4 Hz</span> telemetrie, terwijl live meekijkvideo (<span class="mono">/api/frame</span> of <span class="mono">:5555</span>) uitsluitend op de 1 geselecteerde bril draait voor maximale stabiliteit.
+            </p>
           </article>
 
-          <article class="panel">
-            <span class="panel-index">SAMSUNG KNOX MDM &amp; SERVICE</span>
-            <h3 class="h3-card">Kiosk-beheer &amp; Updates</h3>
-            <p class="muted">Vergrendeld via Samsung Knox Single-App Kiosk MDM. Bij Optie 1 (€ 10.000,-) is het 1e jaar remote service inbegrepen (daarna € 1.500,-/jr); bij VR-Kar 10/20 incl. ArborXR en jaarlijkse locatiecheck.</p>
+          <article class="bento-tile reveal-item">
+            <span class="card-step">NIGHTHAWK M7 PRO · KPN 5G</span>
+            <h3 class="h3-card">100% los van school-Wi-Fi</h3>
+            <p class="muted" style="margin:0;">
+              In Turnkey VR-Kar 10 en 20 draait de tablet (<span class="mono">192.168.1.10</span>) met vaste slots (<span class="mono">.101..120</span>) op een ingebouwde Wi-Fi 7 router met KPN Onbeperkt 5G op één <span class="mono">230V</span> stekker.
+            </p>
           </article>
+        </div>
+
+        <div class="ac24-notice" style="margin-top:2.5rem;">
+          <strong>Onderwijs- en veiligheidsverklaring (AC24):</strong> Het Docenten Dashboard en het geëxporteerde A4-rapport documenteren uitsluitend de voorbereidende VR-simulatie en vervangen nooit fysieke instructie, toezicht en vrijgave (<span class="mono">PHYS_01..05</span>) door een bevoegd vakdocent op de echte machine.
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Modal: Voorbeeld A4 Praktijkbeoordelingsrapport -->
+  <!-- Modal: A4 Praktijkvrijgaverapport met Officieel TechBuildsVR_Logo_Primary_LightBG.svg + S Pen Canvas -->
   <div class="modal-backdrop no-print" id="a4ReportModal" role="dialog" aria-modal="true" aria-labelledby="repModalTitle">
     <div class="modal-sheet">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:2px solid var(--tb-deep-navy);padding-bottom:1rem;margin-bottom:1.25rem;flex-wrap:wrap;">
-        <div>
-          <span class="mono" style="font-size:0.74rem;color:var(--tb-cobalt-strong);display:block;">TECHBUILDS VR // OFFICIEEL PRAKTIJKVOORBEREIDINGSRAPPORT (DASHBOARD V2.3.0)</span>
-          <h2 id="repModalTitle" class="h3-card" style="margin:0;">WEILER Praktikant 140 — Beoordeling &amp; 5-Punts Fysieke Vrijgave</h2>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid rgba(11,25,44,0.10);padding-bottom:1.1rem;margin-bottom:1.25rem;flex-wrap:wrap;">
+        <div class="a4-header-brand">
+          <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="134" height="36" />
+          <div>
+            <span class="mono" style="font-size:0.7rem;color:var(--tb-cobalt);display:block;">A4 PRAKTIJKVRIJGAVERAPPORT · DASHBOARD V2.3.0</span>
+            <h2 id="repModalTitle" class="h3-card" style="margin:0.1rem 0 0 0;font-size:1.22rem;">WEILER Praktikant 140 — VR-Resultaat &amp; Fysieke Vrijgave</h2>
+          </div>
         </div>
         <div class="btn-group">
-          <button type="button" class="btn btn-primary btn-sm" id="btnPrintA4Report">🖨 Print A4 / Bewaar PDF</button>
-          <button type="button" class="btn btn-outline btn-sm" id="btnCloseReportModal">Sluiten</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnPrintA4Report">Print A4 / PDF</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="btnCloseReportModal">Sluiten</button>
         </div>
       </div>
 
-      <div class="grid-3" style="margin-bottom:1.25rem;gap:0.75rem;">
-        <div style="padding:0.65rem;background:var(--tb-blueprint-paper);border:1px solid var(--tb-border);border-radius:4px;">
-          <span class="mono muted" style="font-size:0.7rem;display:block;">STUDENT &amp; BRIL</span>
+      <div class="grid-3" style="margin-bottom:1.15rem;gap:0.75rem;">
+        <div style="padding:0.75rem 0.9rem;background:var(--tb-blueprint-paper);border-radius:14px;">
+          <span class="mono muted" style="font-size:0.68rem;display:block;">LEERLING &amp; HEADSET</span>
           <strong id="repModalStudent">Daan Bakker (QUEST-01)</strong>
         </div>
-        <div style="padding:0.65rem;background:var(--tb-blueprint-paper);border:1px solid var(--tb-border);border-radius:4px;">
-          <span class="mono muted" style="font-size:0.7rem;display:block;">KLAS / GROEP</span>
+        <div style="padding:0.75rem 0.9rem;background:var(--tb-blueprint-paper);border-radius:14px;">
+          <span class="mono muted" style="font-size:0.68rem;display:block;">KLAS / GROEP</span>
           <strong id="repModalKlas">MBO-2 Verspanen</strong>
         </div>
-        <div style="padding:0.65rem;background:var(--tb-blueprint-paper);border:1px solid var(--tb-border);border-radius:4px;">
-          <span class="mono muted" style="font-size:0.7rem;display:block;">NOODSTOP REACTIETIJD</span>
+        <div style="padding:0.75rem 0.9rem;background:var(--tb-blueprint-paper);border-radius:14px;">
+          <span class="mono muted" style="font-size:0.68rem;display:block;">M6 NOODSTOP REACTIETIJD</span>
           <strong id="repModalReaction" class="mono">640 ms (Module M6)</strong>
         </div>
       </div>
 
-      <div class="tech-table-wrap" style="margin-bottom:1rem;">
-        <table class="tech-table">
+      <div class="tech-table-wrap" style="margin-bottom:1.15rem;">
+        <table class="tech-table" style="font-size:0.85rem;">
           <thead>
             <tr>
               <th>Module</th>
               <th>Onderdeel</th>
-              <th>Resultaat</th>
-              <th>Meting / Bijzonderheden</th>
+              <th>Status</th>
+              <th>Geregistreerde meting</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td class="mono">M1</td><td>3D Buddy Check &amp; Eigen PBM</td><td><span class="status-badge status-safe">Zelfstandig behaald</span></td><td>Bril op, eigen handschoenen afgelegd &amp; 3D-Buddy gekeurd</td></tr>
-            <tr><td class="mono">M2</td><td>Machine- &amp; Werkplekcontrole</td><td><span class="status-badge status-safe">Zelfstandig behaald</span></td><td>4/4 inspectiepunten herkend</td></tr>
-            <tr><td class="mono">M3</td><td>Opspannen &amp; Klauwplaatsleutel</td><td><span class="status-badge status-safe">Zelfstandig behaald</span></td><td>Rondloop 0,02 mm · 0× sleutelfout</td></tr>
-            <tr><td class="mono">M4</td><td>Vlak- &amp; Trapdraaien op tekening</td><td><span class="status-badge status-safe">Zelfstandig behaald</span></td><td>Ø 29,4 mm (±0,2) &amp; Trap Ø 28,0 mm</td></tr>
-            <tr><td class="mono">M5</td><td>Stoppen (0 RPM), Meten &amp; Opruimen</td><td><span class="status-badge status-safe">Zelfstandig behaald</span></td><td>Schuifmaat 29,4 mm · Spanenhaak gebruikt</td></tr>
-            <tr><td class="mono">M6</td><td>Storingen &amp; Noodstop</td><td><span class="status-badge status-safe">Zelfstandig behaald</span></td><td>Reactie binnen norm · Geen auto-herstart</td></tr>
+            <tr><td class="mono">M1</td><td>3D Buddy Check &amp; Eigen PBM</td><td><span class="status-badge status-safe">Behaald</span></td><td>Medestudent gekeurd, eigen bril op, handschoenen uit</td></tr>
+            <tr><td class="mono">M2</td><td>Machine- &amp; Werkplekcontrole</td><td><span class="status-badge status-safe">Behaald</span></td><td>4/4 prestartpunten herkend</td></tr>
+            <tr><td class="mono">M3</td><td>Opspannen &amp; Klauwplaatsleutel</td><td><span class="status-badge status-safe">Behaald</span></td><td>Rondloop 0,02 mm · sleutel verwijderd</td></tr>
+            <tr><td class="mono">M4</td><td>Vlak- &amp; Trapdraaien op tekening</td><td><span class="status-badge status-safe">Behaald</span></td><td>Ø 29,4 mm (±0,2) &amp; Trap Ø 28,0 mm</td></tr>
+            <tr><td class="mono">M5</td><td>Stoppen (0 RPM) &amp; 3D-Schuifmaat</td><td><span class="status-badge status-safe">Behaald</span></td><td>Nameting bij 0 RPM · spanenhaak gebruikt</td></tr>
+            <tr><td class="mono">M6</td><td>Storingen &amp; Noodstop</td><td><span class="status-badge status-safe">Behaald</span></td><td>Tijdige stop · geen automatische herstart</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div style="padding:0.75rem 1rem;background:var(--tb-blueprint-paper);border:1px solid var(--tb-border);border-radius:4px;margin-bottom:1rem;font-size:0.83rem;">
-        <strong class="mono" style="font-size:0.75rem;color:var(--tb-cobalt-strong);display:block;margin-bottom:0.35rem;">VERPLICHTE 5-PUNTS FYSIEKE VRIJGAVE-CHECKLIST OP DE ECHTE MACHINE (PHYS_01..05 — S PEN AFTekening):</strong>
-        <span>☐ <code>PHYS_01</code> Fysieke PBM &amp; kleding gecontroleerd · ☐ <code>PHYS_02</code> Fysieke noodstop &amp; rem aangewezen · ☐ <code>PHYS_03</code> Klauwplaatsleutel-discipline op echte bank getoond · ☐ <code>PHYS_04</code> Toerentabel fysiek ingesteld · ☐ <code>PHYS_05</code> S Pen handtekening bevoegd vakdocent</span>
+      <!-- 5-Punts Fysieke Vrijgave-Checklist (PHYS_01..05) -->
+      <div style="padding:1rem 1.1rem;background:var(--tb-blueprint-paper);border-radius:16px;margin-bottom:1rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+          <span class="mono" style="font-size:0.73rem;font-weight:600;color:var(--tb-cobalt);">VERPLICHTE 5-PUNTS FYSIEKE VRIJGAVE OP DE ECHTE DRAAIBANK (PHYS_01..05)</span>
+          <span class="status-badge status-safe" id="physCheckedCounter">5/5 afgevinkt ✓</span>
+        </div>
+        <div class="phys-checklist-grid">
+          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="PHYS_01 PBM & kleding" checked id="chkPhys01" /> <span><strong class="mono">PHYS_01</strong> Fysieke PBM, haar &amp; geen handschoenen</span></label>
+          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="PHYS_02 Noodstop & kap" checked id="chkPhys02" /> <span><strong class="mono">PHYS_02</strong> Fysieke noodstop, voetrem &amp; kap getest</span></label>
+          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="PHYS_03 Sleuteldiscipline" checked id="chkPhys03" /> <span><strong class="mono">PHYS_03</strong> Klauwplaatsleutel direct uitgenomen</span></label>
+          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="PHYS_04 Toerental & voeding" checked id="chkPhys04" /> <span><strong class="mono">PHYS_04</strong> Toerentabel &amp; vrijloop sleden gecontroleerd</span></label>
+          <label class="phys-check-label" style="grid-column:1/-1;"><input type="checkbox" name="physCheck" value="PHYS_05 Vrijgave vakdocent" checked id="chkPhys05" /> <span><strong class="mono">PHYS_05</strong> Mondelinge instructie &amp; fysieke machinevrijgave door bevoegd vakdocent</span></label>
+        </div>
       </div>
 
-      <div class="ac24-box" style="font-size:0.82rem;">
-        <strong>Verplichte AC24 Verklaring:</strong> Dit VR-rapport bevestigt uitsluitend de voorbereidende simulatiedoorloop en vormt <strong>geen</strong> bewijs van vakbekwaamheid of zelfstandige machinevrijgave. Fysieke praktijkinstructie en vrijgave op de echte draaibank door een bevoegd vakdocent blijven verplicht.
+      <!-- Werkend S Pen Handtekening-Canvas -->
+      <div class="spen-canvas-wrap" style="margin-bottom:1rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:0.75rem;margin-bottom:0.5rem;flex-wrap:wrap;">
+          <span class="mono" style="font-size:0.73rem;font-weight:600;color:var(--tb-deep-navy);" id="spenSignatureStatus">S Pen handtekening geregistreerd ✓</span>
+          <div class="btn-group" style="gap:0.4rem;">
+            <button type="button" class="btn btn-white btn-sm" id="btnDemoSignature" style="padding:0.3rem 0.75rem;font-size:0.76rem;">Voorbeeld S Pen</button>
+            <button type="button" class="btn btn-outline btn-sm" id="btnClearSignature" style="padding:0.3rem 0.75rem;font-size:0.76rem;">Wissen</button>
+          </div>
+        </div>
+        <canvas id="spenSignatureCanvas" class="spen-signature-canvas" width="720" height="110"></canvas>
+      </div>
+
+      <div class="ac24-notice" style="font-size:0.8rem;padding:0.9rem 1.1rem;">
+        <strong>AC24 Verklaring:</strong> Dit rapport bevestigt uitsluitend de voorbereidende VR-doorloop en vormt geen zelfstandige machinevrijgave zonder fysieke aftekening (<span class="mono">PHYS_01..05</span>) door de bevoegde vakdocent.
       </div>
     </div>
   </div>
 
-  <!-- Print-versie A4 Rapport -->
-  <div class="print-report-only" style="padding:18px;font-size:12px;">
-    <h2 style="font-size:18px;margin-bottom:4px;">TechBuilds VR — Praktijkvoorbereidingsrapport (A4)</h2>
-    <p style="margin:0 0 12px 0;">Scenario: WEILER Praktikant 140 VR Veiligheidstraining (Modules M1–M6 · Quest APK v2.2.0 / Dashboard v2.3.0)</p>
-    <p><strong>Onderwijs- en veiligheidsverklaring (AC24):</strong> VR-trainingsdoorloop vormt geen bewijs van vakbekwaamheid en geen vrijgave om zelfstandig aan de fysieke machine te werken. Praktijkvrijgave (PHYS_01..05) door de bevoegde vakdocent op de echte machine blijft verplicht.</p>
-    <div style="margin-top:32px;display:flex;justify-content:space-between;gap:24px;">
-      <div style="border-top:1px solid #0B192C;padding-top:6px;width:45%;">S Pen / Handtekening Vakdocent + Datum Fysieke Vrijgave</div>
-      <div style="border-top:1px solid #0B192C;padding-top:6px;width:45%;">Handtekening Student / Deelnemer</div>
+  <!-- A4 Printweergave met Officieel TechBuildsVR_Logo_Primary_LightBG.svg -->
+  <div class="print-report-only" id="printReportSheet" style="padding:28px;font-size:12px;line-height:1.55;">
+    <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #0B5ED7;padding-bottom:14px;margin-bottom:16px;">
+      <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="160" height="43" style="height:40px;width:auto;" />
+      <div style="text-align:right;font-family:monospace;font-size:11px;color:#52657C;">
+        A4 PRAKTIJKVRIJGAVERAPPORT · PHYS_01..05<br />
+        www.techbuildsvr.nl · info@techbuildsvr.nl
+      </div>
+    </div>
+    <h2 style="font-size:18px;margin:0 0 6px 0;">WEILER Praktikant 140 — VR-Resultaat &amp; Fysieke Machinevrijgave</h2>
+    <p style="margin:0 0 10px 0;"><strong>Student:</strong> <span id="printRepStudent">Daan Bakker (QUEST-01 · MBO-2 Verspanen)</span> · <strong>Systeem:</strong> Quest APK v2.2.0 / Android Dashboard v2.3.0</p>
+    <p id="printPhysSummary" style="margin:0 0 14px 0;font-family:monospace;padding:8px 10px;background:#F2F6FA;border-radius:6px;">Afgetekende fysieke vrijgavepunten: PHYS_01 t/m PHYS_05</p>
+    <p style="margin:0 0 18px 0;"><strong>Onderwijs- en veiligheidsverklaring (AC24):</strong> VR-trainingsdoorloop vormt geen bewijs van vakbekwaamheid en vervangt nooit fysieke instructie, controle en vrijgave op de echte machine door een bevoegd vakdocent.</p>
+    <div style="margin-top:20px;">
+      <strong>S Pen Handtekening Vakdocent:</strong>
+      <img id="printSignaturePreview" alt="S Pen handtekening vakdocent" style="max-width:340px;height:auto;border-bottom:1px solid #0B192C;margin-top:8px;display:none;" />
     </div>
   </div>
 
+  <!-- Lichte Blueprint Paper Footer (#F2F6FA) met Officieel TechBuilds VR Tagline-Logo -->
   <footer class="site-footer no-print">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img src="assets/img/logo/TechBuildsVR_Logo_DarkBG.svg" alt="TechBuilds VR logo" class="footer-logo" width="186" height="50" />
-          <p style="margin:0 0 0.75rem 0;font-size:0.92rem;color:#CBD5E1;max-width:42ch;">
-            <strong>TechBuilds VR</strong> ontwikkelt praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs (VMBO/MBO) en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
+          <img src="assets/img/logo/TechBuildsVR_Logo_With_Tagline.svg" alt="TechBuilds VR — Veilig trainen. Vakbekwaam bouwen." class="footer-logo" width="140" height="42" />
+          <p style="margin:0 0 0.65rem 0;font-size:0.9rem;color:var(--tb-text-secondary);max-width:40ch;">
+            Praktijkgerichte VR-veiligheids- en opstarttrainingen voor het technisch onderwijs en de maakindustrie. Veilig trainen. Vakbekwaam bouwen.
           </p>
+          <a href="mailto:info@techbuildsvr.nl" class="mono" style="font-size:0.84rem;font-weight:600;color:var(--tb-cobalt);">info@techbuildsvr.nl</a>
         </div>
         <div>
-          <h3 class="footer-heading">Oplossingen</h3>
+          <h3 class="footer-heading">Product</h3>
           <ul class="footer-links">
-            <li><a href="training-draaibank.html">WEILER Draaibank VR (M1–M6)</a></li>
-            <li><a href="docentapp-tablet.html">13,1" Regie-Tablet &amp; Docentapp</a></li>
-            <li><a href="maatwerk.html">VR-Trainingen op Maat</a></li>
-            <li><a href="prijzen-contact.html">Pakketten &amp; VR-Kar (vanaf € 10.000)</a></li>
+            <li><a href="training-draaibank.html">Draaibank VR (M1–M6)</a></li>
+            <li><a href="docentapp-tablet.html">13,1&quot; Docenttablet (v2.3.0)</a></li>
+            <li><a href="maatwerk.html">Maatwerk Simulaties</a></li>
+            <li><a href="prijzen-contact.html">Pakketten &amp; TCO</a></li>
           </ul>
         </div>
         <div>
           <h3 class="footer-heading">Documentatie</h3>
           <ul class="footer-links">
-            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad TechBuilds VR (PDF)</a></li>
-            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek v1.1 (PDF)</a></li>
+            <li><a href="assets/docs/Productblad_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Productblad (PDF)</a></li>
+            <li><a href="assets/docs/Merkhandboek_TechBuilds_VR_v1.1.pdf" target="_blank" rel="noopener">Merkhandboek (PDF)</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="footer-heading">Direct Contact</h3>
+          <h3 class="footer-heading">Contact</h3>
           <ul class="footer-links">
             <li><a href="mailto:info@techbuildsvr.nl">info@techbuildsvr.nl</a></li>
-            <li><a href="prijzen-contact.html#aanvraag">Offerte of Demo aanvragen</a></li>
+            <li><a href="prijzen-contact.html?onderwerp=demo#aanvraag">Plan demo op school</a></li>
           </ul>
         </div>
       </div>
+      <div class="footer-ac24">
+        <strong>AC24 Veiligheidsclausule:</strong> VR-training fungeert uitsluitend als voorbereidend leermiddel en vervangt nooit fysieke instructie, toezicht en vrijgave door een bevoegd vakdocent op de echte machine.
+      </div>
       <div class="footer-bottom">
-        <span>© 2026 TechBuilds VR — Alle rechten voorbehouden. www.techbuildsvr.nl</span>
+        <span>© 2026 TechBuilds VR · www.techbuildsvr.nl · Alle prijzen excl. BTW.</span>
         <span class="mono">Veilig trainen. Vakbekwaam bouwen.</span>
       </div>
     </div>
   </footer>
+
+  <div class="mobile-sticky-bar no-print" id="mobileStickyBar">
+    <div class="mobile-sticky-copy">
+      13,1&quot; Regietablet
+      <span>Samsung Knox · Dashboard v2.3.0</span>
+    </div>
+    <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary btn-sm" id="mobileStickyDemoBtn">Plan demo</a>
+  </div>
+
+  <button type="button" class="back-to-top-btn no-print" id="backToTopBtn" aria-label="Terug naar boven">↑</button>
 
   <script src="assets/js/main.js"></script>
 </body>

@@ -1,5 +1,5 @@
 /**
- * TechBuilds VR — Official CSS Design System Tokens (v1.0 — Engineering Blue)
+ * TechBuilds VR — Official CSS Design System Tokens (v2.1 — Visual 5 Bento Tiles × Engineering Blue)
  * Tagline: "Veilig trainen. Vakbekwaam bouwen."
  * Inclusief lokale @font-face bundeling (OFL 1.1) voor 100% offline/schoolnetwerk betrouwbaarheid.
  */
@@ -71,48 +71,48 @@
 }
 
 :root {
-  /* 1. Merkpalet — Engineering Blue (Ruwe Kleurwaarden) */
+  /* 1. Officiële TechBuilds VR Engineering Blue Merkkleuren */
   --tb-deep-navy: #0B192C;
   --tb-machined-navy: #122640;
-  --tb-slate-blue-border: #213A5C;
+  --tb-slate-blue-border: rgba(255, 255, 255, 0.11);
 
-  --tb-cobalt: #0B5ED7;          /* Primaire bedrijfskleur (WCAG AA 5.66:1 met wit) */
-  --tb-cobalt-strong: #0849AC;   /* Hover / hoog-contrast actie (7.85:1 AAA met wit) */
-  --tb-cobalt-bright: #2578F4;   /* Actief op donkere vlakken */
-  --tb-cobalt-tint: #E6F0FD;
+  --tb-cobalt: #0B5ED7;          /* Primaire actie- & kerncijfer-kleur */
+  --tb-cobalt-strong: #0849AC;   /* Tactiele hover-kleur */
+  --tb-cobalt-bright: #2578F4;   /* Actief op donkere Pro-vlakken */
+  --tb-cobalt-tint: #EBF3FE;
 
-  --tb-precision-cyan: #0284C7;  /* Secundaire technische blauwtint (maatvoering / kalibratie) */
-  --tb-precision-sky: #38BDF8;   /* Helder cyaan-blauw voor donkere/VR vlakken */
+  --tb-precision-cyan: #0284C7;  /* Technische telemetrie & CAD */
+  --tb-precision-sky: #38BDF8;   /* Helder telemetrie-accent op Deep Steel Navy */
   --tb-cyan-tint: #E0F2FE;
 
-  --tb-blueprint-paper: #F2F6FA; /* Lichte technisch-blauwe papierachtergrond */
-  --tb-pure-surface: #FFFFFF;
-  --tb-steel-mist: #E3ECF5;
-  --tb-technical-line: #C8D6E5;
-  --tb-muted-slate: #475569;
+  --tb-pure-surface: #FFFFFF;    /* Hoofdcanvas conform Visual 5 */
+  --tb-blueprint-paper: #F2F6FA; /* Zachte afgeronde Bento-tegels op #FFFFFF */
+  --tb-steel-mist: #E6EEF6;      /* Subtiele hover-tint op #F2F6FA tegels */
+  --tb-hairline: rgba(11, 25, 44, 0.06);
+  --tb-border-subtle: rgba(11, 25, 44, 0.08);
+  --tb-border-strong: rgba(11, 25, 44, 0.16);
+
+  --tb-muted-slate: #52657C;
   --tb-subtle-slate: #64748B;
 
-  /* 2. Semantische Oppervlakken & Tekst (Standaard Licht: Blueprint Paper — 60%) */
-  --tb-bg: var(--tb-blueprint-paper);
+  /* 2. Semantische Oppervlakken & Tekst */
+  --tb-bg: var(--tb-pure-surface);
   --tb-surface: var(--tb-pure-surface);
-  --tb-surface-alt: var(--tb-steel-mist);
+  --tb-surface-alt: var(--tb-blueprint-paper);
   --tb-surface-dark: var(--tb-deep-navy);
   --tb-text: var(--tb-deep-navy);
-  --tb-text-secondary: #2C3E55;
+  --tb-text-secondary: #33475E;
   --tb-text-muted: var(--tb-muted-slate);
-  --tb-border: var(--tb-technical-line);
-  --tb-border-strong: #8FA6BF;
+  --tb-border: var(--tb-hairline);
 
-  /* Actie- & Interactiekleuren (WCAG AA geverifieerd — 10%) */
+  /* 3. Actie & Focus */
   --tb-brand: var(--tb-cobalt);
   --tb-action: var(--tb-cobalt);
   --tb-action-hover: var(--tb-cobalt-strong);
   --tb-action-fg: #FFFFFF;
-  --tb-secondary: var(--tb-precision-cyan);
-  --tb-secondary-hover: #0369A1;
   --tb-focus-ring: 0 0 0 3px rgba(11, 94, 215, 0.28);
 
-  /* ISO 3864 Veiligheids- & Systeemstatussen (Uitsluitend functioneel) */
+  /* 4. Functionele Systeemstatussen (ISO 3864 — uitsluitend voor live status) */
   --tb-status-safe: #15803D;
   --tb-status-safe-bg: #DCFCE7;
   --tb-status-warn: #B45309;
@@ -122,25 +122,25 @@
   --tb-status-info: #0284C7;
   --tb-status-info-bg: #E0F2FE;
 
-  /* 3. Typografie */
-  --tb-font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --tb-font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --tb-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+  /* 5. Typografie — Space Grotesk, Inter & JetBrains Mono */
+  --tb-font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --tb-font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --tb-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --tb-text-xs: 0.75rem;
   --tb-text-sm: 0.875rem;
-  --tb-text-base: 1rem;
-  --tb-text-lg: 1.125rem;
-  --tb-text-xl: clamp(1.2rem, 1.08rem + 0.45vw, 1.45rem);
-  --tb-text-2xl: clamp(1.45rem, 1.2rem + 0.9vw, 1.95rem);
-  --tb-text-3xl: clamp(1.8rem, 1.45rem + 1.4vw, 2.55rem);
-  --tb-text-display: clamp(2.15rem, 1.7rem + 2.1vw, 3.35rem);
+  --tb-text-base: 1.03125rem;
+  --tb-text-lg: clamp(1.0625rem, 1rem + 0.28vw, 1.2rem);
+  --tb-text-xl: clamp(1.22rem, 1.1rem + 0.45vw, 1.45rem);
+  --tb-text-2xl: clamp(1.5rem, 1.28rem + 0.9vw, 2rem);
+  --tb-text-3xl: clamp(1.95rem, 1.52rem + 1.65vw, 2.85rem);
+  --tb-text-display: clamp(2.25rem, 1.65rem + 2.35vw, 3.45rem);
 
-  --tb-tracking-tight: -0.028em;
-  --tb-tracking-heading: -0.022em;
-  --tb-tracking-mono: 0.04em;
+  --tb-tracking-display: -0.038em;
+  --tb-tracking-heading: -0.034em;
+  --tb-tracking-card: -0.022em;
 
-  /* 4. Maatvoering, Afronding & Diepte */
+  /* 6. Ruimtelijk Ritme, Visual 5 Tegel-Afrondingen & Zachte Diepte */
   --tb-space-1: 0.25rem;
   --tb-space-2: 0.5rem;
   --tb-space-3: 0.75rem;
@@ -154,22 +154,31 @@
   --tb-space-20: 5rem;
   --tb-space-24: 6rem;
 
-  --tb-radius-xs: 4px;
-  --tb-radius-sm: 6px;
-  --tb-radius-md: 8px;
-  --tb-radius-lg: 12px;
+  --tb-section-py: clamp(4.25rem, 7vw, 6.5rem);
 
-  --tb-shadow-sm: 0 1px 2px rgba(11, 25, 44, 0.05);
-  --tb-shadow-card: 0 1px 2px rgba(11, 25, 44, 0.05), 0 6px 16px rgba(11, 25, 44, 0.04);
-  --tb-shadow-elevated: 0 4px 12px rgba(11, 25, 44, 0.08), 0 18px 36px rgba(11, 25, 44, 0.07);
+  --tb-radius-sm: 14px;
+  --tb-radius-md: 20px;
+  --tb-radius-tile: 24px;
+  --tb-radius-card: 28px;
+  --tb-radius-stage: 30px;
+  --tb-radius-bento: 30px;
+  --tb-radius-podium: 32px;
+  --tb-radius-pill: 980px;
 
-  --tb-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --tb-duration-fast: 140ms;
-  --tb-duration-base: 220ms;
+  --tb-shadow-sm: 0 2px 10px -2px rgba(11, 25, 44, 0.05);
+  --tb-shadow-card: 0 12px 32px -14px rgba(11, 25, 44, 0.08), 0 2px 6px -2px rgba(11, 25, 44, 0.03);
+  --tb-shadow-stage: 0 20px 48px -18px rgba(11, 25, 44, 0.11), 0 4px 14px -4px rgba(11, 25, 44, 0.04);
+  --tb-shadow-elevated: 0 24px 56px -18px rgba(11, 25, 44, 0.14), 0 6px 18px -4px rgba(11, 25, 44, 0.06);
+
+  --tb-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --tb-duration-fast: 180ms;
+  --tb-duration-base: 320ms;
+  --tb-nav-height: 70px;
   --tb-container-max: 1240px;
+  --tb-container-wide: 1320px;
 }
 
-/* Donker Thema: Deep Steel Navy / VR-omgeving / Docent Regie (30% merkverhouding) */
+/* Deep Steel Navy (#0B192C) & Machined Navy (#122640) Pro-Tegel Podium */
 [data-theme="dark"],
 .theme-dark {
   --tb-bg: #0B192C;
@@ -178,28 +187,27 @@
   --tb-text: #F8FAFC;
   --tb-text-secondary: #CBD5E1;
   --tb-text-muted: #94A3B8;
-  --tb-border: #213A5C;
-  --tb-border-strong: #335582;
+  --tb-border: rgba(255, 255, 255, 0.10);
+  --tb-border-subtle: rgba(255, 255, 255, 0.12);
+  --tb-border-strong: rgba(255, 255, 255, 0.22);
 
   --tb-brand: #38BDF8;
   --tb-action: #0B5ED7;
   --tb-action-hover: #2578F4;
   --tb-action-fg: #FFFFFF;
-  --tb-secondary: #38BDF8;
-  --tb-secondary-hover: #7DD3FC;
-  --tb-focus-ring: 0 0 0 3px rgba(56, 189, 248, 0.35);
+  --tb-focus-ring: 0 0 0 3px rgba(56, 189, 248, 0.38);
 
   --tb-status-safe: #22C55E;
-  --tb-status-safe-bg: rgba(34, 197, 94, 0.14);
+  --tb-status-safe-bg: rgba(34, 197, 94, 0.15);
   --tb-status-warn: #F59E0B;
   --tb-status-warn-bg: rgba(245, 158, 11, 0.16);
   --tb-status-danger: #EF4444;
-  --tb-status-danger-bg: rgba(239, 68, 68, 0.16);
+  --tb-status-danger-bg: rgba(239, 68, 68, 0.17);
   --tb-status-info: #38BDF8;
-  --tb-status-info-bg: rgba(56, 189, 248, 0.14);
+  --tb-status-info-bg: rgba(56, 189, 248, 0.15);
 
-  --tb-shadow-card: 0 2px 6px rgba(0, 0, 0, 0.28), 0 12px 24px rgba(0, 0, 0, 0.22);
-  --tb-shadow-elevated: 0 8px 20px rgba(0, 0, 0, 0.38), 0 24px 48px rgba(0, 0, 0, 0.32);
+  --tb-shadow-card: 0 20px 44px -16px rgba(0, 0, 0, 0.42);
+  --tb-shadow-stage: 0 32px 80px -20px rgba(0, 0, 0, 0.58);
 }
 
 @media (prefers-reduced-motion: reduce) {
