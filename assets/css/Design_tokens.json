@@ -1,0 +1,151 @@
+{
+  "brand": "TechBuilds VR",
+  "tagline": "Veilig trainen. Vakbekwaam bouwen.",
+  "subtitle": "Praktijkgerichte VR-scenario's voor de technische sector",
+  "edition": "Huisstijl & Design System v1.0 (Engineering Blue)",
+  "date": "2026-11-11",
+  "positioning": {
+    "sector": "Technische sector (VMBO-PIE, MBO Techniek, ROC's, bedrijfsscholen en maakindustrie)",
+    "colorIdentity": "Engineering Blue — Geïnspireerd op technische blauwdrukken, industriële gereedschapskasten (Lista-blauw), ISO-veiligheidsblauw en moderne ruimtelijke VR-technologie.",
+    "flagshipScenario": "WEILER Praktikant 140 – VR Veiligheid- en Opstarttraining (Meta Quest 2/3, Twee-Triggers bediening, Multi-Bril Docent Regiedashboard)"
+  },
+  "color": {
+    "DeepSteelNavy": "#0B192C",
+    "MachinedNavy": "#122640",
+    "SlateBlueBorder": "#213A5C",
+    "EngineeringCobalt": "#0B5ED7",
+    "CobaltStrong": "#0849AC",
+    "CobaltBright": "#2578F4",
+    "PrecisionCyan": "#0284C7",
+    "PrecisionSky": "#38BDF8",
+    "BlueprintTint": "#E6F0FD",
+    "SteelMist": "#E3ECF5",
+    "TechnicalLine": "#C8D6E5",
+    "BlueprintPaper": "#F2F6FA",
+    "PureSurface": "#FFFFFF",
+    "MutedSlate": "#475569",
+    "SubtleSlate": "#64748B"
+  },
+  "semantic": {
+    "light": {
+      "background": "#F2F6FA",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#E3ECF5",
+      "text": "#0B192C",
+      "textSecondary": "#2C3E55",
+      "muted": "#475569",
+      "border": "#C8D6E5",
+      "borderStrong": "#8FA6BF",
+      "action": "#0B5ED7",
+      "actionHover": "#0849AC",
+      "actionForeground": "#FFFFFF",
+      "secondaryAction": "#0284C7",
+      "focus": "#0B5ED7",
+      "success": "#15803D",
+      "successSurface": "#DCFCE7",
+      "warning": "#B45309",
+      "warningSurface": "#FEF3C7",
+      "danger": "#B91C1C",
+      "dangerSurface": "#FEE2E2",
+      "info": "#0284C7",
+      "infoSurface": "#E0F2FE"
+    },
+    "dark": {
+      "background": "#07111F",
+      "surface": "#0B192C",
+      "surfaceAlt": "#122640",
+      "text": "#F8FAFC",
+      "textSecondary": "#CBD5E1",
+      "muted": "#94A3B8",
+      "border": "#213A5C",
+      "borderStrong": "#335582",
+      "action": "#1D74F5",
+      "actionHover": "#38BDF8",
+      "actionForeground": "#FFFFFF",
+      "secondaryAction": "#38BDF8",
+      "focus": "#38BDF8",
+      "success": "#22C55E",
+      "successSurface": "rgba(34, 197, 94, 0.14)",
+      "warning": "#F59E0B",
+      "warningSurface": "rgba(245, 158, 11, 0.15)",
+      "danger": "#EF4444",
+      "dangerSurface": "rgba(239, 68, 68, 0.16)",
+      "info": "#38BDF8",
+      "infoSurface": "rgba(56, 189, 248, 0.14)"
+    }
+  },
+  "font": {
+    "display": {
+      "family": "Space Grotesk",
+      "weights": [500, 600, 700],
+      "trackingHeading": "-0.025em",
+      "lineHeightHeading": 1.12,
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    },
+    "body": {
+      "family": "Inter",
+      "weights": [400, 500, 600, 700],
+      "lineHeightBody": 1.6,
+      "numericVariant": "tabular-nums"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "weights": [400, 600],
+      "usage": "Maattoleranties (Ø 29,4 ±0,2 mm), toerentallen (1000 min⁻¹), modulecodes (M1–M6), Arbo-artikelen en Quest-slot IDs"
+    }
+  },
+  "radius": {
+    "xs": 4,
+    "sm": 6,
+    "md": 10,
+    "lg": 14,
+    "xl": 20
+  },
+  "spacing": [4, 8, 12, 16, 24, 32, 48, 64, 96, 128],
+  "elevation": {
+    "card": "0 1px 2px rgba(11, 25, 44, 0.05), 0 6px 16px rgba(11, 25, 44, 0.04)",
+    "elevated": "0 4px 12px rgba(11, 25, 44, 0.08), 0 16px 32px rgba(11, 25, 44, 0.06)",
+    "machinedInset": "inset 0 1px 0 rgba(255, 255, 255, 0.65)"
+  },
+  "motion": {
+    "durationFastMs": 140,
+    "durationBaseMs": 220,
+    "easing": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "respectReducedMotion": true
+  },
+  "logoSources": {
+    "primaryLight": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Logo_Primary_LightBG.svg",
+    "withTagline": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Logo_With_Tagline.svg",
+    "dark": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Logo_DarkBG.svg",
+    "stacked": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Logo_Stacked.svg",
+    "stackedDark": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Logo_Stacked_DarkBG.svg",
+    "monoDark": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Logo_Mono_Dark.svg",
+    "monoWhite": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Logo_Mono_White.svg",
+    "iconSymbol": "02_Logo_en_Beeldmerk/SVG/TechBuildsVR_Icon_Symbol.svg",
+    "favicon": "02_Logo_en_Beeldmerk/SVG/favicon.svg"
+  },
+  "domains": [
+    "Metaalbewerking & Verspaning",
+    "Elektrotechniek & Energietransitie",
+    "Installatie- & Klimaattechniek",
+    "Mechatronica & Machineveiligheid",
+    "Procestechniek & Onderhoud",
+    "Bouwplaats & Veiligheid"
+  ],
+  "vrSpatialRules": {
+    "panelDistanceMeters": [1.35, 1.85],
+    "panelFill": "rgba(11, 25, 44, 0.94)",
+    "panelBorder": "#213A5C",
+    "minBodyFontPtAt150cm": 22,
+    "interactionModel": "Twee-Triggers (geen complexe controllerknoppen of stick-locomotie vereist)",
+    "pedagogicalStopRule": "Bevriezen + rustige oorzaak-gevolguitleg + veilig opnieuw opzetten; nooit grafisch letsel (no gore)."
+  },
+  "designGuardrails": [
+    "Geen paars of violet op donkere achtergronden — houd de blauwtinten zuiver technisch (Engineering Cobalt, Deep Steel Navy en Precision Cyan)",
+    "Geen gloeiende gekleurde kaartomlijningen of neon-randen",
+    "Geen zwevende 'biscuit pill' met pulserende stip boven de hoofdkop",
+    "Geen CSS-kleurverloop (gradient text) over losse woorden in koppen",
+    "Geen cyber-grid of particle-mesh achtergronden",
+    "Geen over-geneste kaarten (maximaal 1 kaartlaag op een sectievlak)"
+  ]
+}

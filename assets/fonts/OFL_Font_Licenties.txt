@@ -1,0 +1,15 @@
+TECHBUILDS VR — LETTERTYPE LICENTIEOVERZICHT (SIL OPEN FONT LICENSE 1.1)
+
+1. Space Grotesk (500 Medium, 600 SemiBold, 700 Bold)
+   Ontwerper: Florian Karsten — Licentie: SIL Open Font License 1.1 (OFL)
+   Gebruik: Woordmerk, H1–H3 koppen, sectietitels en cijfer-highlights.
+
+2. Inter (400 Regular, 500 Medium, 600 SemiBold, 700 Bold)
+   Ontwerper: Rasmus Andersson — Licentie: SIL Open Font License 1.1 (OFL)
+   Gebruik: Broodtekst, website-UI, in-VR instructiepanelen (Meta Quest) en docentdashboard.
+
+3. JetBrains Mono (400 Regular, 600 SemiBold)
+   Ontwerper: JetBrains / Philipp Nurullin — Licentie: SIL Open Font License 1.1 (OFL)
+   Gebruik: Maattoleranties (Ø 29,4 ±0,2 mm), toerentallen (1000 min⁻¹), modulecodes (M1–M6), normverwijzingen en telemetrie.
+
+Alle drie de lettertypen zijn vrij te gebruiken, te bundelen in webapplicaties, PDF-documenten en standalone VR-builds (Godot / Unity) onder de voorwaarden van de SIL Open Font License 1.1.
