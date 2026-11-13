@@ -1,5 +1,5 @@
 /**
- * TechBuilds VR — Hoofdstijlblad Website (v2.1 — Visual 5 Bento Tiles × Engineering Blue)
+ * TechBuilds VR — Hoofdstijlblad Website (v2.2 — Visual 5 Bento Tiles × Engineering Blue · Draaibank & Elektrotechniek VR)
  * "Veilig trainen. Vakbekwaam bouwen."
  * 100% Vanilla CSS · Pure Surface (#FFFFFF), Blueprint Paper Tegels (#F2F6FA), Deep Steel Navy (#0B192C) & Cobalt (#0B5ED7)
  */
@@ -205,13 +205,13 @@ a:hover {
 .nav-right-group {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.9rem;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.14rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -220,10 +220,11 @@ a:hover {
 .nav-link {
   display: inline-flex;
   align-items: center;
-  padding: 0.46rem 0.9rem;
-  font-size: 0.9rem;
+  padding: 0.44rem 0.72rem;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: -0.01em;
+  white-space: nowrap;
   color: rgba(11, 25, 44, 0.80);
   border-radius: var(--tb-radius-pill);
   transition: color var(--tb-duration-fast) var(--tb-ease),
@@ -251,10 +252,11 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.32rem;
-  font-size: 0.88rem;
+  padding: 0.58rem 1.18rem;
+  font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  white-space: nowrap;
   color: #FFFFFF !important;
   background-color: var(--tb-cobalt);
   border-radius: var(--tb-radius-pill);
@@ -349,7 +351,7 @@ a:hover {
   color: var(--tb-cobalt);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
   .nav-center,
   .nav-actions-desktop {
     display: none;
@@ -2525,3 +2527,110 @@ h1, h2, h3, h4 {
     display: block !important;
   }
 }
+
+/* ==========================================================================
+ * V2.2 — TWEE STANDAARD VAKMODULES SHOWCASE & LOSSE EXTRA MODULE (+ € 5.000,-)
+ * ========================================================================== */
+.module-showcase-card {
+  background-color: var(--tb-blueprint-paper);
+  border-radius: var(--tb-radius-bento);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--tb-duration-base) var(--tb-ease),
+              box-shadow var(--tb-duration-base) var(--tb-ease);
+}
+
+.module-showcase-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--tb-shadow-stage);
+}
+
+.module-showcase-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--tb-steel-mist);
+}
+
+.module-showcase-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms var(--tb-ease);
+}
+
+.module-showcase-card:hover .module-showcase-media img {
+  transform: scale(1.022);
+}
+
+.module-showcase-body {
+  padding: clamp(1.65rem, 2.8vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.module-showcase-footer {
+  margin-top: auto;
+  padding-top: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.addon-module-tile {
+  margin-top: 22px;
+  background-color: var(--tb-blueprint-paper);
+  border-radius: var(--tb-radius-bento);
+  padding: clamp(1.6rem, 2.6vw, 2.15rem) clamp(1.75rem, 3vw, 2.4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.section-paper .addon-module-tile {
+  background-color: #FFFFFF;
+  box-shadow: var(--tb-shadow-card);
+}
+
+.addon-module-copy {
+  max-width: 640px;
+}
+
+.addon-module-copy p {
+  margin: 0.35rem 0 0 0;
+  color: var(--tb-text-secondary);
+  font-size: 0.94rem;
+}
+
+.addon-module-price-group {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  flex-wrap: wrap;
+}
+
+.addon-module-price {
+  font-family: var(--tb-font-display);
+  font-size: clamp(1.65rem, 1.35rem + 0.9vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--tb-deep-navy);
+  line-height: 1.05;
+}
+
+.addon-module-price span {
+  display: block;
+  font-family: var(--tb-font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--tb-muted-slate);
+  margin-top: 0.18rem;
+}
+

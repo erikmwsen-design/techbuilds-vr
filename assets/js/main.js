@@ -1,12 +1,12 @@
 /**
- * TechBuilds VR — Interactieve Website Logica (v2.1 — Visual 5 Bento Tiles × Engineering Blue)
+ * TechBuilds VR — Interactieve Website Logica (v2.2 — Visual 5 Bento Tiles × Engineering Blue · Draaibank & Elektrotechniek VR)
  * Onderdelen:
  * 1. Sticky Frosted Navigatie, Scroll-Progress, Mobiele Quick-CTA, Back-to-Top & Scroll-Reveal
  * 2. Visual 5 Interactieve Hero Bento-Tegels & Frosted Scène-Dock (index.html)
- * 3. Verbeterde M1–M6 Module-Studio met Voortgangsbalk, Pijltoetsen & M1 Voor/Na PBM-Inspector (training-draaibank.html)
+ * 3. Interactieve Module-Studio voor Draaibank VR (M1–M6) én Elektrotechniek VR (E1–E6 · NEN 3140 & LOTO)
  * 4. 13,1" Android Docenten Dashboard v2.3.0 Simulator met Meebewegende 2D CAD-Slede, 4 Hz Replay & A4 S Pen Rapport (docentapp-tablet.html)
  * 5. Vakdomein Hero-Switcher & Maatwerk-Scoper met info@techbuildsvr.nl koppeling (maatwerk.html)
- * 6. Naadloze Pakket-Keuzereis (?optie=1|2|3), Visuele Meerjaren TCO-Calculator (1–5 jr) & Offerteformulier (prijzen-contact.html)
+ * 6. Naadloze Pakket- & Modulekeuze (?optie=1|2|3 & ?module=draaibank|elektro|beide, losse module + € 5.000,-), TCO & Offerte (prijzen-contact.html)
  */
 
 (function () {
@@ -110,7 +110,7 @@
   const isHeadless = /HeadlessChrome/i.test(navigator.userAgent || '');
   if (!prefersReducedMotion && !isHeadless && 'IntersectionObserver' in window) {
     const revealTargets = document.querySelectorAll(
-      '.section .apple-card, .section .bento-card, .section .step-card, .section .domain-card, .section .official-doc-tile'
+      '.section .apple-card, .section .bento-card, .section .step-card, .section .domain-card, .section .official-doc-tile, .section .module-showcase-card, .section .addon-module-tile'
     );
     const revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -142,15 +142,22 @@
       img: 'assets/img/brand/hero_techbuilds_vr_werkplaats.webp',
       alt: 'Vakdocent met 13,1-inch regietablet kijkt live mee met een student die in VR veilig oefent voor de draaibank in het praktijklokaal',
       caption: 'Vaste oefenzone in het praktijklokaal · 0% loopmisselijkheid · 1 vakdocent houdt overzicht',
-      linkText: '6 modules bekijken →',
+      linkText: 'Verken M1–M6 →',
       linkHref: 'training-draaibank.html'
     },
     modules: {
       img: 'assets/img/weiler/weiler_03_vr_trapdraaien_werktekening.webp',
       alt: 'In-VR zicht op de WEILER Praktikant 140 met gesloten klauwplaatkap, nonius-schaalverdeling en live 2D-werktekening Ø 29,4 ±0,2 mm',
-      caption: '6 modules (M1–M6) op de WEILER Praktikant 140: van 3D Buddy Check tot Ø 29,4 ±0,2 mm en noodstop',
-      linkText: 'Open Module-Studio →',
+      caption: 'Draaibank VR (M1–M6) op de WEILER Praktikant 140: van 3D Buddy Check tot Ø 29,4 ±0,2 mm en noodstop',
+      linkText: 'Open Draaibank Studio →',
       linkHref: 'training-draaibank.html#module-studio'
+    },
+    elektro: {
+      img: 'assets/img/elektro/hero_elektro_werkplaats.webp',
+      alt: 'MBO-elektrotechnieklokaal waar een student veilig oefent met een Meta Quest 3S voor een 400V-schakelkast en de vakdocent meekijkt op de 13,1-inch regietablet',
+      caption: 'Elektrotechniek VR (E1–E6 · NEN 3140): Lockout-Tagout, tweepolige Duspol & 400V afschermen',
+      linkText: 'Verken E1–E6 →',
+      linkHref: 'training-elektrotechniek.html'
     },
     kar: {
       img: 'assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp',
@@ -162,7 +169,7 @@
     tablet: {
       img: 'assets/img/brand/pakket_regietablet_vr_set.webp',
       alt: '13,1-inch Samsung Galaxy Tab S10 FE+ regietablet met TechBuilds VR klaslokaaldashboard naast S Pen, Meta Quest 3S en stalen schuifmaat',
-      caption: '13,1" Tab S10 FE+ (IP68 + S Pen): 10 brillen (2×5), 20 brillen (4×5) of onbeperkt eigen brillen',
+      caption: '13,1" Tab S10 FE+ (IP68 + S Pen): Draaibank VR & Elektrotechniek VR op dezelfde regietablet',
       linkText: 'Test 13,1" Simulator →',
       linkHref: 'docentapp-tablet.html#live-simulator'
     }
@@ -222,10 +229,10 @@
   }
 
   /* ------------------------------------------------------------------
-   * 3. Interactieve Module-Studio M1–M6 (training-draaibank.html)
+   * 3. Interactieve Module-Studio M1–M6 (Draaibank) & E1–E6 (Elektrotechniek)
    * ------------------------------------------------------------------ */
-  const MODULE_ORDER = ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'];
-  const MODULES_DATA = {
+  const DRAAIBANK_MODULE_ORDER = ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'];
+  const DRAAIBANK_MODULES_DATA = {
     M1: {
       code: 'MODULE M1 · STANDPLAATS A · AV_COMBO_1..5',
       standplaats: 'Standplaats A · Vaste vloerzone',
@@ -236,6 +243,8 @@
       caption: '3D Buddy Check voltooid: medestudent gecorrigeerd, eigen veiligheidsbril op en eigen werkhandschoenen uit.',
       altCaption: 'Beginsituatie M1 (AV_COMBO_1..5): los haar, sieraden en verboden werkhandschoenen vóór vrijgave naar de machine.',
       hasBuddyToggle: true,
+      gateSafeMsg: 'PBM-punten veilig — Toegang tot Standplaats B (WEILER 140) vrijgegeven',
+      gateWarnMsg: 'PBM-punten gekeurd — Klik alle 4 veiligheidspunten aan voor vrijgave naar Standplaats B',
       telRpm: '0 RPM (Standplaats A)',
       telTol: '5 Varianten (AV_COMBO_1..5)',
       telPos: 'L + R Trigger · 0% lopen',
@@ -332,9 +341,128 @@
     }
   };
 
+  const ELEKTRO_MODULE_ORDER = ['E1', 'E2', 'E3', 'E4', 'E5', 'E6'];
+  const ELEKTRO_MODULES_DATA = {
+    E1: {
+      code: 'MODULE E1 · STANDPLAATS A · NEN 3140 PBM & VDE',
+      standplaats: 'Standplaats A · Vóór kastvrijgave',
+      title: '3D Buddy Check & Elektrische PBM',
+      summary: 'Voordat een schakelkast wordt geopend, controleert de student een levensgrote 3D-medestudent op geleidende sieraden en open kleding én keurt de eigen PBM en VDE 1000V meetset.',
+      image: 'assets/img/elektro/elektro_00b_buddy_check_na.webp',
+      altImage: 'assets/img/elektro/elektro_00a_buddy_check_voor.webp',
+      caption: '3D Buddy Check voltooid: polshorloge af, mouwen gesloten, veiligheidsbril op en VDE 1000V set gekeurd.',
+      altCaption: 'Beginsituatie E1: metalen polshorloge, opgerolde mouwen, bril nog op de werkbank en ongekeurd LOTO-slot.',
+      hasBuddyToggle: true,
+      gateSafeMsg: 'PBM- & VDE-punten veilig — Toegang tot Standplaats B (400V-verdeler) vrijgegeven',
+      gateWarnMsg: 'PBM- & VDE-punten gekeurd — Klik alle 4 veiligheidspunten aan voor vrijgave naar de verdeler',
+      telRpm: 'Werkbank · Kast dicht',
+      telTol: 'NEN 3140 · PBM & VDE',
+      telPos: 'L + R Trigger · 0% lopen',
+      checks: [
+        'Levensgrote 3D-medestudent controleren op horloge, ringen, kettingen en gesloten werkkleding',
+        'Eigen veiligheidsbril / gelaatsbescherming opzetten en VDE 1000V gereedschap op onbeschadigde isolatie keuren',
+        'Persoonlijk LOTO-hangslot en tweepolige spanningzoeker (EN 61243-3) gereedmaken vóór kasttoegang'
+      ]
+    },
+    E2: {
+      code: 'MODULE E2 · STANDPLAATS B · TEKENING & WERKPLEK',
+      standplaats: 'Standplaats B · 400V Hoofdverdeler',
+      title: 'Installatie- & Werkplekinspectie (400V / 230V)',
+      summary: 'Recht vóór de 400V-verdeler vergelijkt de student het eendraadsschema en de groepenverklaring met de werkelijke opstelling en controleert de droge, vrije werkzone.',
+      image: 'assets/img/elektro/elektro_03_afschermen_schema.webp',
+      caption: 'Eendraadsschema in de kastdeur vergelijken met hoofdschakelaar en afgaande groepen.',
+      hasBuddyToggle: false,
+      telRpm: '400V AC · In bedrijf',
+      telTol: 'Schema & Vrije vluchtweg',
+      telPos: 'Standplaats B · Kastdeur',
+      checks: [
+        'Eendraadsschema en groepenverklaring lezen om de juiste voeding en eventuele PV-terugvoeding te identificeren',
+        'Vloerzone controleren op vocht, losliggende kabels en vrije uitwijkruimte rond de verdeelkast',
+        'Vaststellen dat afschakelen zonder gevaar voor omliggende machines kan plaatsvinden (afstemming WV/docent)'
+      ]
+    },
+    E3: {
+      code: 'MODULE E3 · REGEL 1 & 2 · LOCKOUT-TAGOUT (LOTO)',
+      standplaats: 'Standplaats B · Hoofdschakelaar & Slot',
+      title: 'Volledig scheiden & vergrendelen met eigen LOTO-slot',
+      summary: 'De student schakelt gecontroleerd af, zet de lastscheider op 0 en borgt deze direct met een persoonlijk Lockout-Tagout hangslot en ingevulde waarschuwingskaart.',
+      image: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
+      caption: 'In-VR Lockout-Tagout: lastscheider op 0 geborgd met rode vergrendelbeugel, eigen hangslot en LOTO-label.',
+      hasBuddyToggle: false,
+      telRpm: 'Lastscheider: 0 (UIT)',
+      telTol: 'Regel 1 & 2 · LOTO geborgd',
+      telPos: '1 Sleutel bij student',
+      checks: [
+        'Eerst verbruikers afschakelen (geen schakeling onder volle belasting) en daarna de hoofdschakelaar op 0 zetten',
+        'Persoonlijke LOTO-vergrendelbeugel, rood hangslot en naamlabel aanbrengen tegen onbedoeld wederinschakelen',
+        'Openen van de verdeler zonder geplaatst LOTO-slot activeert direct een rustige Freeze met toelichting'
+      ]
+    },
+    E4: {
+      code: 'MODULE E4 · REGEL 3 · EN 61243-3 TWEEPOLIG METEN',
+      standplaats: 'Standplaats B · Klemmenstrook & Rails',
+      title: 'Tweepolig spanningsloosheid aantonen (Duspol)',
+      summary: 'Geen enkelpolige spanningszoeker of blinde aanname: de student voert de volledige driestapsmeting uit met een tweepolige Duspol over alle geleiders.',
+      image: 'assets/img/elektro/elektro_02_tweepolig_meten.webp',
+      caption: 'Tweepolige Duspol-meting tussen L1 en PE toont aantoonbaar 0 V na verplichte voormeting.',
+      hasBuddyToggle: false,
+      telRpm: '0 V (Alle combinaties)',
+      telTol: 'Voor- · Hoofd- · Nameting',
+      telPos: 'Duspol CAT IV · EN 61243-3',
+      checks: [
+        'Verplichte voormeting op een bekende spanningvoerende bron om de werking van de Duspol te bewijzen',
+        'Tweepolig meten tussen alle combinaties: L1–N, L2–N, L3–N, L1–PE, L2–PE, L3–PE én onderling L1–L2–L3',
+        'Afsluiten met verplichte nameting op de bekende bron om defect raken tijdens het meten uit te sluiten'
+      ]
+    },
+    E5: {
+      code: 'MODULE E5 · REGEL 4 & 5 · AARDEN & AFSCHERMEN',
+      standplaats: 'Standplaats B · Actieve naastgelegen delen',
+      title: 'Beschermen tegen terugvoeding & actieve delen afschermen',
+      summary: 'Waar nodig wordt geaard en kortgesloten tegen terugvoeding, en spanningvoerende naastgelegen rails worden aanrakingsveilig (IP2X) afgeschermd.',
+      image: 'assets/img/elektro/elektro_03_afschermen_schema.webp',
+      caption: 'Plaatsen van gele isolerende afschermplaat over naastgelegen koperrails met gecertificeerde 1000V handschoenen.',
+      hasBuddyToggle: false,
+      telRpm: '0 V · IP2X Afgeschermd',
+      telTol: 'Regel 4 & 5 · NEN 3140',
+      telPos: '1000V Handschoenen aan',
+      checks: [
+        'Controleren op mogelijke terugvoeding vanuit PV-omvormers, noodstroom of gekoppelde onderverdelers',
+        'Aanrakingsveilig plaatsen van isolerende afschermplaten over niet-uitgeschakelde voedingsrails',
+        'Werkplek vrijgeven voor de montagehandeling met vastgelegde 4 Hz voortgang op de docenttablet'
+      ]
+    },
+    E6: {
+      code: 'MODULE E6 · CALAMITEIT & VEILIGE WEDERINSCHAKELING',
+      standplaats: 'Standplaats B · Eindcontrole & Vrijgave',
+      title: 'Afwijking herkennen, LOTO verwijderen & vrijgave',
+      summary: 'Na afloop controleert de student of al het gereedschap uit de kast is, verwijdert uitsluitend het eigen LOTO-slot en rondt af met de fysieke vrijgave door de vakdocent.',
+      image: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
+      caption: 'Veilige afronding: kast gecontroleerd en gesloten, eigen LOTO-slot verwijderd en gereed voor PHYS_01..05.',
+      hasBuddyToggle: false,
+      telRpm: 'Gecontroleerde vrijgave',
+      telTol: 'Kast vrij + PHYS_01..05',
+      telPos: 'A4 Rapport met S Pen',
+      checks: [
+        'Kalm ingrijpen bij onverwachte restspanning of beschadigde isolatie zonder vlamboogrisico te veroorzaken',
+        'Visuele eindcontrole: geen achtergebleven gereedschap of losse draadbruggen, afschermkappen teruggeplaatst',
+        'Eigen LOTO-slot verwijderen en A4-rapport (PHYS_01..05) laten aftekenen door de vakdocent bij de echte kast'
+      ]
+    }
+  };
+
   const moduleTabs = document.querySelectorAll('[data-module-tab]');
   if (moduleTabs.length > 0) {
-    let activeModKey = 'M1';
+    const studioSec = document.getElementById('module-studio');
+    const isElektroStudio = Boolean(
+      (studioSec && studioSec.getAttribute('data-studio-domain') === 'elektro') ||
+      document.querySelector('[data-module-tab="E1"]')
+    );
+    const MODULE_ORDER = isElektroStudio ? ELEKTRO_MODULE_ORDER : DRAAIBANK_MODULE_ORDER;
+    const MODULES_DATA = isElektroStudio ? ELEKTRO_MODULES_DATA : DRAAIBANK_MODULES_DATA;
+    const FIRST_MOD_KEY = MODULE_ORDER[0];
+
+    let activeModKey = FIRST_MOD_KEY;
     let m1State = 'after';
 
     const elStepCounter = document.getElementById('modStepCounter');
@@ -360,17 +488,17 @@
     const jumpModuleBtns = document.querySelectorAll('[data-jump-module]');
 
     function syncM1View() {
-      const m = MODULES_DATA.M1;
+      const m = MODULES_DATA[FIRST_MOD_KEY];
       const checkedCount = Array.from(m1Chips).filter(function (c) {
         return c.classList.contains('is-checked');
       }).length;
       const totalChips = m1Chips.length || 4;
       const isBefore = m1State === 'before';
 
-      if (elImg && activeModKey === 'M1') {
+      if (elImg && activeModKey === FIRST_MOD_KEY) {
         elImg.src = isBefore ? m.altImage : m.image;
       }
-      if (elCaption && activeModKey === 'M1') {
+      if (elCaption && activeModKey === FIRST_MOD_KEY) {
         elCaption.textContent = isBefore ? m.altCaption : m.caption;
       }
       if (btnM1Before && btnM1After) {
@@ -382,10 +510,10 @@
       if (elM1GateBanner) {
         if (!isBefore && checkedCount === totalChips) {
           elM1GateBanner.className = 'm1-gate-banner is-safe';
-          elM1GateBanner.textContent = '✓ ' + checkedCount + '/' + totalChips + ' PBM-punten veilig — Toegang tot Standplaats B (WEILER 140) vrijgegeven';
+          elM1GateBanner.textContent = '✓ ' + checkedCount + '/' + totalChips + ' ' + m.gateSafeMsg;
         } else {
           elM1GateBanner.className = 'm1-gate-banner is-open';
-          elM1GateBanner.textContent = '⚠ ' + checkedCount + '/' + totalChips + ' PBM-punten gekeurd — Klik alle 4 veiligheidspunten aan voor vrijgave naar Standplaats B';
+          elM1GateBanner.textContent = '⚠ ' + checkedCount + '/' + totalChips + ' ' + m.gateWarnMsg;
         }
       }
     }
@@ -416,11 +544,11 @@
       if (elTitle) elTitle.textContent = m.title;
       if (elSummary) elSummary.textContent = m.summary;
       if (elImg) {
-        elImg.src = (key === 'M1' && m1State === 'before') ? m.altImage : m.image;
+        elImg.src = (key === FIRST_MOD_KEY && m1State === 'before') ? m.altImage : m.image;
         elImg.alt = m.title;
       }
       if (elCaption) {
-        elCaption.textContent = (key === 'M1' && m1State === 'before') ? m.altCaption : m.caption;
+        elCaption.textContent = (key === FIRST_MOD_KEY && m1State === 'before') ? m.altCaption : m.caption;
       }
       if (elTelRpm) elTelRpm.textContent = m.telRpm;
       if (elTelTol) elTelTol.textContent = m.telTol;
@@ -433,7 +561,7 @@
       if (elM1Box) {
         elM1Box.style.display = m.hasBuddyToggle ? 'block' : 'none';
       }
-      if (key === 'M1') {
+      if (key === FIRST_MOD_KEY) {
         syncM1View();
       }
     }
@@ -514,7 +642,7 @@
 
     const modParams = new URLSearchParams(window.location.search);
     const initialMod = modParams.get('module');
-    renderModule(MODULES_DATA[initialMod] ? initialMod : 'M1');
+    renderModule(MODULES_DATA[initialMod] ? initialMod : FIRST_MOD_KEY);
   }
 
   /* ------------------------------------------------------------------
@@ -1340,16 +1468,16 @@
    * ------------------------------------------------------------------ */
   const MW_SCENES = {
     elektro: {
-      img: 'assets/img/brand/domein_02_elektro_en_installatie.webp',
-      alt: 'Elektrotechniek & Schakelkasten VR-maatwerktraining volgens NEN 3140 en LOTO',
-      caption: 'Elektrotechniek & NEN 3140: veilig spanningsloos maken, LOTO en meten aan verdeelkasten',
-      domeinOption: 'Elektrotechniek & Schakelkasten (NEN 3140)'
+      img: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
+      alt: 'Elektrotechniek & Schakelkasten VR-training volgens NEN 3140 en Lockout-Tagout',
+      caption: '400V Lockout-Tagout & NEN 3140 · standaardmodule beschikbaar of op maat voor uw verdeler',
+      domeinOption: 'Elektrotechniek & Energie (LOTO / NEN 3140)'
     },
     metaal: {
       img: 'assets/img/brand/domein_01_metaal_en_verspaning.webp',
       alt: 'Metaal, Verspaning & Constructie VR-maatwerktraining op de eigen werkplaatsmachines',
       caption: 'Metaal & Verspaning: conventioneel/CNC draaien en frezen, opspanning en werkplaatsveiligheid',
-      domeinOption: 'Metaal, Verspaning & Constructie'
+      domeinOption: 'Metaalbewerking & Verspaning'
     },
     klimaat: {
       img: 'assets/img/brand/domein_04_installatie_en_klimaat.webp',
@@ -1361,7 +1489,7 @@
       img: 'assets/img/brand/domein_03_mechatronica_en_industrie.webp',
       alt: 'Mechatronica, Robotcellen & Procesindustrie VR-maatwerktraining voor lijnveiligheid en vrijgave',
       caption: 'Mechatronica & Industrie: hekwerkbeveiliging, robotcel-vrijgave en gestructureerd storingzoeken',
-      domeinOption: 'Mechatronica, Robotcellen & Procesindustrie'
+      domeinOption: 'Mechatronica & Industriële Machineveiligheid'
     }
   };
 
@@ -1482,8 +1610,30 @@
   }
 
   /* ------------------------------------------------------------------
-   * 6. Naadloze Pakket-Keuzereis (?optie=1|2|3), Visuele TCO & Offerte
+   * 6. Naadloze Pakket- & Modulekeuze (+ € 5.000,- losse module), TCO & Offerte
    * ------------------------------------------------------------------ */
+  const EXTRA_MODULE_PRICE = 5000;
+  const MODULE_CHOICES = {
+    draaibank: {
+      fee: 0,
+      sub: '1 module inbegrepen: Draaibank VR — WEILER 140 (M1–M6)',
+      feeText: '€ 0,- (inbegrepen)',
+      formValue: 'Draaibank VR — WEILER Praktikant 140 (M1–M6 · inbegrepen)'
+    },
+    elektro: {
+      fee: 0,
+      sub: '1 module inbegrepen: Elektrotechniek VR — NEN 3140 (E1–E6)',
+      feeText: '€ 0,- (inbegrepen)',
+      formValue: 'Elektrotechniek VR — Veilig stellen NEN 3140 & LOTO (E1–E6 · inbegrepen)'
+    },
+    beide: {
+      fee: EXTRA_MODULE_PRICE,
+      sub: 'Draaibank VR (M1–M6) + Elektrotechniek VR (E1–E6) op dezelfde tablet',
+      feeText: '+ € 5.000,- (eenmalig)',
+      formValue: 'Beide modules: Draaibank VR + Elektrotechniek VR (+ € 5.000,- eenmalig excl. BTW)'
+    }
+  };
+
   const PACKAGES = {
     'optie-1-eigen-brillen': {
       num: '1',
@@ -1494,7 +1644,7 @@
       annual: 1500,
       firstYearIncluded: true,
       heroImg: 'assets/img/brand/pakket_regietablet_vr_set.webp',
-      heroCaption: 'Optie 1 (€ 10.000,-): 13,1" Samsung regietablet + onbeperkt eigen brillen (1e jr service inbegrepen)',
+      heroCaption: 'Optie 1 (€ 10.000,-): 13,1" Samsung regietablet + onbeperkt eigen brillen (incl. 1 VR-vakmodule naar keuze)',
       unitSingle: '1 regietablet-systeem (onbeperkt eigen brillen)',
       unitPlural: 'regietablet-systemen (onbeperkt eigen brillen)',
       hwSub: '13,1" Tab S10 FE+ (SM-X620, IP68, S Pen) met Knox Single-App Kiosk + onbeperkt eigen brillen',
@@ -1547,11 +1697,19 @@
     'optie3': 'optie-3-vr-kar-20'
   };
 
-  function calcTotalForPkg(pkg, sets, years) {
-    const upfront = sets * pkg.upfront;
+  function calcTotalForPkg(pkg, sets, years, extraModFee) {
+    const upfrontBase = sets * pkg.upfront;
+    const modFee = extraModFee || 0;
     const billedYears = pkg.firstYearIncluded ? Math.max(0, years - 1) : years;
     const srv = billedYears * sets * pkg.annual;
-    return { upfront: upfront, billedYears: billedYears, srv: srv, total: upfront + srv };
+    return {
+      upfrontBase: upfrontBase,
+      modFee: modFee,
+      upfront: upfrontBase + modFee,
+      billedYears: billedYears,
+      srv: srv,
+      total: upfrontBase + modFee + srv
+    };
   }
 
   function formatEuro(amount) {
@@ -1562,12 +1720,17 @@
   if (calcRoot) {
     const selPkg = document.getElementById('calcPackageOption');
     const pkgSegBtns = calcRoot.querySelectorAll('[data-calc-pkg]');
+    const selModChoice = document.getElementById('calcModuleChoice');
+    const modSegBtns = calcRoot.querySelectorAll('[data-calc-mod]');
+    const btnAddExtraModule = document.getElementById('btnAddExtraModule');
     const inpSets = document.getElementById('calcTabletSets');
     const inpYears = document.getElementById('calcYears');
     const chkCustom = document.getElementById('calcIncludeCustom');
 
     const elTitle = document.getElementById('calcSelectedTitle');
     const elHwSub = document.getElementById('calcHardwareSub');
+    const elModSub = document.getElementById('calcModuleSub');
+    const elExtraModFee = document.getElementById('calcExtraModuleFee');
     const elSrvSub = document.getElementById('calcServiceSub');
     const elRuleHint = document.getElementById('calcServiceRuleHint');
     const elSetsOut = document.getElementById('calcSetsLabel');
@@ -1587,6 +1750,20 @@
     const elSelectedBannerTitle = document.getElementById('selectedPkgBannerTitle');
     const elPricingHeroImg = document.getElementById('pricingHeroImg');
     const elPricingHeroCaption = document.getElementById('pricingHeroCaption');
+
+    function syncModuleSelection(modKey) {
+      const mInfo = MODULE_CHOICES[modKey] || MODULE_CHOICES.draaibank;
+      if (selModChoice) selModChoice.value = modKey;
+      modSegBtns.forEach(function (b) {
+        const active = b.getAttribute('data-calc-mod') === modKey;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
+      const reqModSel = document.getElementById('reqModule');
+      if (reqModSel) {
+        reqModSel.value = mInfo.formValue;
+      }
+    }
 
     function syncVisualSelection(pkgKey, showBanner) {
       const pkg = PACKAGES[pkgKey];
@@ -1620,16 +1797,18 @@
       }
 
       if (showBanner && elSelectedBanner && elSelectedBannerTitle) {
-        elSelectedBannerTitle.textContent = pkg.bannerTitle;
+        const curMod = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'draaibank';
+        const modSuffix = curMod === 'beide' ? ' + extra module (€ 5.000,-)' : (curMod === 'elektro' ? ' · Elektrotechniek VR' : ' · Draaibank VR');
+        elSelectedBannerTitle.textContent = '✓ ' + pkg.bannerTitle + modSuffix;
         elSelectedBanner.style.display = 'flex';
       }
     }
 
-    function renderTcoBars(activeKey, sets, years) {
+    function renderTcoBars(activeKey, sets, years, extraModFee) {
       if (!elComparisonBars) return;
       const keys = ['optie-1-eigen-brillen', 'optie-2-vr-kar-10', 'optie-3-vr-kar-20'];
       const totals = keys.map(function (k) {
-        return calcTotalForPkg(PACKAGES[k], sets, years).total;
+        return calcTotalForPkg(PACKAGES[k], sets, years, extraModFee).total;
       });
       const maxTotal = Math.max.apply(null, totals.concat([1]));
 
@@ -1652,7 +1831,7 @@
       }).join('');
 
       elComparisonBars.innerHTML =
-        '<span class="tco-bars-title">Meerjarenvergelijking over ' + years + ' jaar (klik om te wisselen)</span>' +
+        '<span class="tco-bars-title">Meerjarenvergelijking over ' + years + ' jaar' + (extraModFee > 0 ? ' (incl. + € 5.000,- 2e module)' : '') + '</span>' +
         rowsHtml;
 
       elComparisonBars.querySelectorAll('[data-tco-bar-pkg]').forEach(function (row) {
@@ -1670,11 +1849,13 @@
     function updateCalc() {
       const pkgKey = (selPkg && PACKAGES[selPkg.value]) ? selPkg.value : 'optie-2-vr-kar-10';
       const pkg = PACKAGES[pkgKey];
+      const modKey = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'draaibank';
+      const modInfo = MODULE_CHOICES[modKey];
       const sets = parseInt(inpSets.value, 10) || 1;
       const years = parseInt(inpYears.value, 10) || 3;
       const wantsCustom = chkCustom && chkCustom.checked;
 
-      const res = calcTotalForPkg(pkg, sets, years);
+      const res = calcTotalForPkg(pkg, sets, years, modInfo.fee);
       const annualRate = sets * pkg.annual;
 
       pkgSegBtns.forEach(function (b) {
@@ -1682,16 +1863,27 @@
         b.classList.toggle('is-active', active);
         b.setAttribute('aria-selected', String(active));
       });
+      modSegBtns.forEach(function (b) {
+        const active = b.getAttribute('data-calc-mod') === modKey;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
 
       if (elTitle) elTitle.textContent = pkg.title;
       if (elHwSub) elHwSub.textContent = pkg.hwSub;
+      if (elModSub) elModSub.textContent = modInfo.sub;
+      if (elExtraModFee) {
+        elExtraModFee.textContent = modInfo.feeText;
+        elExtraModFee.style.fontWeight = modInfo.fee > 0 ? '600' : '400';
+        elExtraModFee.style.color = modInfo.fee > 0 ? 'var(--tb-cobalt)' : '';
+      }
       if (elSrvSub) elSrvSub.textContent = pkg.srvSub;
       if (elRuleHint) elRuleHint.textContent = pkg.ruleHint;
       if (elSetsOut) {
         elSetsOut.textContent = sets === 1 ? pkg.unitSingle : (sets + ' ' + pkg.unitPlural);
       }
       if (elYearsOut) elYearsOut.textContent = years + (years === 1 ? ' jaar' : ' jaar looptijd');
-      if (elYear1Out) elYear1Out.textContent = formatEuro(res.upfront);
+      if (elYear1Out) elYear1Out.textContent = formatEuro(res.upfrontBase);
       if (elServiceAnnual) {
         elServiceAnnual.textContent = formatEuro(annualRate) + '/jr' + (pkg.firstYearIncluded ? ' (va. jr 2)' : '');
       }
@@ -1711,7 +1903,7 @@
         elCustomNote.style.display = wantsCustom ? 'block' : 'none';
       }
 
-      renderTcoBars(pkgKey, sets, years);
+      renderTcoBars(pkgKey, sets, years, modInfo.fee);
     }
 
     function selectPackageAndScroll(pkgKey, scrollTargetId) {
@@ -1740,6 +1932,28 @@
       });
     });
 
+    modSegBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const mk = btn.getAttribute('data-calc-mod');
+        if (MODULE_CHOICES[mk]) {
+          syncModuleSelection(mk);
+          const curPkg = (selPkg && PACKAGES[selPkg.value]) ? selPkg.value : 'optie-2-vr-kar-10';
+          syncVisualSelection(curPkg, Boolean(elSelectedBanner && elSelectedBanner.style.display === 'flex'));
+          updateCalc();
+        }
+      });
+    });
+
+    if (btnAddExtraModule) {
+      btnAddExtraModule.addEventListener('click', function () {
+        syncModuleSelection('beide');
+        const curPkg = (selPkg && PACKAGES[selPkg.value]) ? selPkg.value : 'optie-2-vr-kar-10';
+        syncVisualSelection(curPkg, true);
+        updateCalc();
+        calcRoot.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
     quickOptieBtns.forEach(function (qb) {
       qb.addEventListener('click', function () {
         const num = qb.getAttribute('data-quick-optie');
@@ -1758,14 +1972,16 @@
       });
     });
 
-    [selPkg, inpSets, inpYears, chkCustom].forEach(function (el) {
+    [selPkg, selModChoice, inpSets, inpYears, chkCustom].forEach(function (el) {
       if (el) {
         el.addEventListener('input', function () {
           if (el === selPkg) syncVisualSelection(selPkg.value, true);
+          if (el === selModChoice) syncModuleSelection(selModChoice.value);
           updateCalc();
         });
         el.addEventListener('change', function () {
           if (el === selPkg) syncVisualSelection(selPkg.value, true);
+          if (el === selModChoice) syncModuleSelection(selModChoice.value);
           updateCalc();
         });
       }
@@ -1774,6 +1990,8 @@
     if (btnCalcToQuote) {
       btnCalcToQuote.addEventListener('click', function () {
         const key = (selPkg && PACKAGES[selPkg.value]) ? selPkg.value : 'optie-2-vr-kar-10';
+        const mk = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'draaibank';
+        syncModuleSelection(mk);
         syncVisualSelection(key, true);
       });
     }
@@ -1784,17 +2002,24 @@
       });
     }
 
-    /* Check URL-parameters (?optie=1|2|3 of ?pakket=optie1|optie2|optie3) */
+    /* Check URL-parameters (?optie=1|2|3 & ?module=draaibank|elektro|beide) */
     const urlParams = new URLSearchParams(window.location.search);
     const optieParam = urlParams.get('optie') || urlParams.get('pakket');
+    const modParam = (urlParams.get('module') || '').toLowerCase();
     const initialPkgKey = optieParam && OPTIE_NUM_TO_KEY[optieParam] ? OPTIE_NUM_TO_KEY[optieParam] : null;
+    const initialModKey = MODULE_CHOICES[modParam] ? modParam : null;
 
-    if (initialPkgKey) {
-      if (selPkg) selPkg.value = initialPkgKey;
-      syncVisualSelection(initialPkgKey, true);
+    if (initialModKey) {
+      syncModuleSelection(initialModKey);
+    }
+
+    if (initialPkgKey || initialModKey) {
+      const targetPkg = initialPkgKey || ((selPkg && PACKAGES[selPkg.value]) ? selPkg.value : 'optie-2-vr-kar-10');
+      if (selPkg) selPkg.value = targetPkg;
+      syncVisualSelection(targetPkg, true);
       updateCalc();
       if (!window.location.hash) {
-        const targetSec = document.getElementById('pakket-keuze') || calcRoot;
+        const targetSec = initialModKey ? calcRoot : (document.getElementById('pakket-keuze') || calcRoot);
         if (targetSec && !isHeadless) {
           setTimeout(function () {
             targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1814,7 +2039,9 @@
     const params = new URLSearchParams(window.location.search);
     const onderwerpParam = params.get('onderwerp');
     const optieOrPakket = params.get('optie') || params.get('pakket');
+    const modParamForm = (params.get('module') || '').toLowerCase();
     const selType = document.getElementById('reqType');
+    const selReqMod = document.getElementById('reqModule');
     const txtMessage = document.getElementById('reqMessage');
 
     if (optieOrPakket && OPTIE_NUM_TO_KEY[optieOrPakket] && selType) {
@@ -1823,6 +2050,10 @@
       selType.value = 'Maatwerk VR-training ontwikkelen + Pakketkeuze';
     } else if (onderwerpParam === 'demo' && selType) {
       selType.value = 'Praktijkdemonstratie op school of bedrijf (13,1" Tablet + Quest 3S)';
+    }
+
+    if (modParamForm && MODULE_CHOICES[modParamForm] && selReqMod) {
+      selReqMod.value = MODULE_CHOICES[modParamForm].formValue;
     }
 
     try {
@@ -1843,6 +2074,7 @@
       const email = document.getElementById('reqEmail').value.trim();
       const tel = document.getElementById('reqPhone').value.trim();
       const type = document.getElementById('reqType').value;
+      const modChoiceText = selReqMod ? selReqMod.value : 'Draaibank VR (M1–M6)';
       const msg = document.getElementById('reqMessage').value.trim();
 
       if (!naam || !org || !email) {
@@ -1862,7 +2094,8 @@
         'Organisatie  : ' + org + '\n' +
         'E-mail       : ' + email + '\n' +
         'Telefoon     : ' + (tel || '-') + '\n' +
-        'Voorkeur     : ' + type + '\n\n' +
+        'Voorkeur     : ' + type + '\n' +
+        'Module(s)    : ' + modChoiceText + '\n\n' +
         'Toelichting:\n' + (msg || '(Geen aanvullende opmerkingen)');
 
       if (feedbackBox) {
