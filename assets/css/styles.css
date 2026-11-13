@@ -1240,7 +1240,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
- * VERBETERDE MODULE-STUDIO UX (M1 t/m M6 op WEILER Praktikant 140)
+ * VERBETERDE MODULE-STUDIO UX (Onderdeel 1 t/m 6)
  * ========================================================================== */
 .module-studio {
   background-color: var(--tb-blueprint-paper);
@@ -1467,7 +1467,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
- * 13,1-INCH SAMSUNG GALAXY TAB S10 FE+ SIMULATOR (v2.3.0) + LIVE TOAST UX
+ * 13,1-INCH DOCENTTABLET DASHBOARDVOORBEELD + LIVE MELDINGEN
  * ========================================================================== */
 .tablet-chassis {
   position: relative;
@@ -1570,7 +1570,7 @@ h1, h2, h3, h4 {
   }
 }
 
-.quest-slot {
+.bril-slot {
   text-align: left;
   background-color: #11233B;
   border: 1px solid rgba(255, 255, 255, 0.09);
@@ -1584,19 +1584,19 @@ h1, h2, h3, h4 {
               transform var(--tb-duration-fast) var(--tb-ease);
 }
 
-.quest-slot:hover {
+.bril-slot:hover {
   border-color: rgba(56, 189, 248, 0.55);
   background-color: #152B47;
   transform: translateY(-1px);
 }
 
-.quest-slot.is-selected {
+.bril-slot.is-selected {
   border-color: var(--tb-precision-sky);
   background-color: #173356;
   box-shadow: 0 0 0 1px var(--tb-precision-sky);
 }
 
-.quest-slot-top {
+.bril-slot-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1604,14 +1604,14 @@ h1, h2, h3, h4 {
   margin-bottom: 0.28rem;
 }
 
-.quest-slot-name {
+.bril-slot-name {
   font-size: 0.85rem;
   font-weight: 600;
   display: block;
   color: #FFFFFF;
 }
 
-.quest-slot-meta {
+.bril-slot-meta {
   font-family: var(--tb-font-mono);
   font-size: 0.71rem;
   color: #94A3B8;
@@ -2233,7 +2233,7 @@ h1, h2, h3, h4 {
   color: var(--tb-deep-navy);
 }
 
-/* A4 Vrijgaverapport Modal & S Pen Handtekening Canvas */
+/* A4 Vrijgaverapport Modal & Handtekeningveld */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -2300,14 +2300,14 @@ h1, h2, h3, h4 {
   cursor: pointer;
 }
 
-.spen-canvas-wrap {
+.pen-canvas-wrap {
   margin-top: 1rem;
   padding: 1rem;
   background: var(--tb-blueprint-paper);
   border-radius: 16px;
 }
 
-.spen-signature-canvas {
+.pen-signature-canvas {
   width: 100%;
   height: 110px;
   background: #FFFFFF;

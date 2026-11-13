@@ -1,9 +1,9 @@
 /**
- * TechBuilds VR — Interactieve Website Logica (v2.2)
+ * TechBuilds VR — Interactieve Website Logica (v2.3)
  * Onderdelen:
  * 1. Vaste navigatiebalk, leesbalk, mobiele snelbalk, terug-naar-boven & subtiele scroll-animatie
  * 2. Interactieve Hero-tegels & fotowisselaar op de startpagina (index.html)
- * 3. Interactief stappenoverzicht voor Draaibank VR (1–6) én Elektrotechniek VR (1–6)
+ * 3. Interactief stappenoverzicht voor Draaibank VR (1–6) én Elektrotechniek VR (1–6) volgens NL & EU-richtlijnen
  * 4. Interactief voorbeeld van het 13,1-inch Teacher Dashboard + printbaar A4-praktijkrapport (docentapp-tablet.html)
  * 5. Vakgebied-wisselaar & Maatwerk-overzicht met directe e-mailkoppeling (maatwerk.html)
  * 6. Pakket- en modulekeuze (losse extra module + € 5.000,-), meerjarenoverzicht & aanvraagformulier (prijzen-contact.html)
@@ -140,36 +140,36 @@
   const HERO_SCENES = {
     praktijklokaal: {
       img: 'assets/img/brand/hero_techbuilds_vr_werkplaats.webp',
-      alt: 'Praktijklokaal waar een student met een VR-bril oefent bij de draaibank terwijl de vakdocent meekijkt op de tablet',
-      caption: 'Oefenen op één vaste plek in het lokaal · simpele bediening met twee knoppen · docent kijkt live mee',
+      alt: 'Praktijklokaal waar een student met een VR-bril oefent voor de draaibank terwijl de vakdocent meekijkt op de 13,1-inch docenttablet',
+      caption: 'Algemene praktijkvoorbereiding volgens NL- en EU-richtlijnen · geen typetraining · docent kijkt live mee',
       linkText: 'Alle modules →',
       linkHref: 'modules.html'
     },
     modules: {
-      img: 'assets/img/weiler/weiler_03_vr_trapdraaien_werktekening.webp',
-      alt: 'Zicht in de VR-bril op de WEILER Praktikant 140 draaibank met gesloten beschermkap, schaalverdeling en werktekening',
-      caption: 'Draaibank VR op de WEILER Praktikant 140: van Buddy Check en opspannen tot draaien op maat en noodstop',
+      img: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
+      alt: 'Zicht in de VR-bril op een conventionele draaibank met gesloten beschermkap, schaalverdeling en werktekening',
+      caption: 'Draaibank VR: algemene voorbereiding op veilig werken aan elke conventionele draaibank (Arbobesluit & Machinerichtlijn)',
       linkText: 'Bekijk Draaibank VR →',
       linkHref: 'training-draaibank.html'
     },
     elektro: {
       img: 'assets/img/elektro/hero_elektro_werkplaats.webp',
-      alt: 'Elektrotechnieklokaal waar een student met een VR-bril oefent voor een 400V-schakelkast terwijl de vakdocent meekijkt op de tablet',
-      caption: 'Elektrotechniek VR (NEN 3140): veilig afschakelen, vergrendelen met hangslot en tweepolig nameten met de Duspol',
+      alt: 'Elektrotechnieklokaal waar een student met een VR-bril oefent bij een meterkast en schakelkast terwijl de vakdocent meekijkt op de docenttablet',
+      caption: 'Elektrotechniek VR (NEN 3140 & EN 50110): veilig afschakelen, vergrendelen en tweepolig nameten bij meterkast en schakelkast',
       linkText: 'Bekijk Elektrotechniek VR →',
       linkHref: 'training-elektrotechniek.html'
     },
     kar: {
-      img: 'assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp',
-      alt: 'Mobiele Zioxi VR-kar met genummerde Meta Quest 3S brillen, 13,1-inch Samsung tablet en eigen 5G-verbinding op één stekker',
-      caption: 'Slechts één gewoon stopcontact nodig · ingebouwde KPN Onbeperkt 5G · geen belasting op de school-wifi',
+      img: 'assets/img/brand/pakket_mobiele_vr_kar_werkplaats.webp',
+      alt: 'Verrijdbare mobiele VR-kar met genummerde VR-brillen, 13,1-inch docenttablet en eigen 5G-verbinding op één stekker',
+      caption: 'Slechts één gewoon stopcontact nodig · ingebouwde wifi- en 5G-verbinding · geen belasting op de school-wifi',
       linkText: 'Bekijk de VR-Karren →',
       linkHref: 'prijzen-contact.html?optie=2#pakket-keuze'
     },
     tablet: {
       img: 'assets/img/brand/pakket_regietablet_vr_set.webp',
-      alt: '13,1-inch Samsung tablet met het Teacher Dashboard naast de S Pen, een Meta Quest 3S bril en een schuifmaat',
-      caption: '13,1-inch Samsung tablet met S Pen: Draaibank VR én Elektrotechniek VR overzichtelijk op één scherm',
+      alt: '13,1-inch docenttablet met het Teacher Dashboard naast de bijbehorende tekenpen, een VR-bril en een schuifmaat',
+      caption: '13,1-inch docenttablet met tekenpen: voorbereiding op draaibank én meterkast overzichtelijk op één scherm',
       linkText: 'Probeer het Dashboard →',
       linkHref: 'docentapp-tablet.html#live-simulator'
     }
@@ -235,66 +235,66 @@
   const DRAAIBANK_MODULES_DATA = {
     M1: {
       code: 'ONDERDEEL 1 · PERSOONLIJKE VEILIGHEID',
-      standplaats: 'Voorbereiding · Vóór de machine',
+      standplaats: 'Voorbereiding · Vóór de draaibank',
       title: 'Buddy Check & eigen beschermingsmiddelen',
-      summary: 'Voordat een leerling in de buurt van de draaibank komt, controleert hij eerst een klasgenoot in 3D op onveilige kleding of sieraden en brengt hij zijn eigen beschermingsmiddelen op orde.',
-      image: 'assets/img/weiler/weiler_00b_buddy_check_compleet.webp',
-      altImage: 'assets/img/weiler/weiler_00a_buddy_check_start.webp',
+      summary: 'Voordat een leerling in de buurt van een draaibank komt, controleert hij eerst een klasgenoot in 3D op onveilige kleding of sieraden en brengt hij zijn eigen beschermingsmiddelen op orde volgens de werkplaatsregels uit het Arbobesluit.',
+      image: 'assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp',
+      altImage: 'assets/img/draaibank/draaibank_00a_buddy_check_start.webp',
       caption: 'Na de controle: klasgenoot netjes gecorrigeerd, eigen veiligheidsbril op en werkhandschoenen uitgedaan.',
-      altCaption: 'Vóór de controle: loshangend haar, sieraden om de pols en werkhandschoenen aan bij een draaiende machine.',
+      altCaption: 'Vóór de controle: loshangend haar, sieraden om de pols en werkhandschoenen aan bij een draaiende spil.',
       hasBuddyToggle: true,
       gateSafeMsg: 'punten in orde — Leerling mag door naar de draaibank',
-      gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de veiligheidspunten aan voor toegang tot de machine',
+      gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de veiligheidspunten aan voor toegang tot de draaibank',
       telRpm: 'Stilstand (vooraf)',
-      telTol: '5 praktijksituaties',
+      telTol: 'Arbobesluit & PBM',
       telPos: 'Vaste plek · 2 knoppen',
       checks: [
         'Klasgenoot in 3D nalopen op los haar, openstaande mouwen, sieraden en veiligheidsschoenen',
-        'Zelf een veiligheidsbril opzetten en werkhandschoenen uittrekken vanwege het gevaar van intrekken',
-        'Pas als alle punten kloppen, gaat de training verder bij de WEILER draaibank'
+        'Zelf een veiligheidsbril opzetten en werkhandschoenen uittrekken vanwege het gevaar van intrekken bij draaiende delen',
+        'Pas als alle punten kloppen, gaat de algemene voorbereiding verder bij de draaibank'
       ]
     },
     M2: {
-      code: 'ONDERDEEL 2 · WERKPLEK & VOORCONTROLE',
-      standplaats: 'Bij de WEILER Praktikant 140',
-      title: 'Machine- en werkplekcontrole vóór de start',
-      summary: 'Recht voor de WEILER Praktikant 140 kijkt de leerling of de vloer schoon is, er geen gereedschap op het bed ligt en de beschermkappen goed sluiten.',
-      image: 'assets/img/weiler/weiler_02_vr_werkplaats_overzicht.webp',
-      caption: 'Zicht recht voor de draaibank met vaste kop, beitelhouder, koelslang en overzichtelijke camerahoeken.',
+      code: 'ONDERDEEL 2 · WERKPLEK & AFSCHERMING',
+      standplaats: 'Voor een conventionele draaibank',
+      title: 'Controle van werkplek en beschermkappen vóór de start',
+      summary: 'Recht voor de draaibank kijkt de leerling of de vloer schoon is, er geen los gereedschap op het bed ligt en de afschermingen goed sluiten — precies zoals voorgeschreven in de Europese Machinerichtlijn en EN ISO 23125.',
+      image: 'assets/img/draaibank/draaibank_02_vr_werkplaats_overzicht.webp',
+      caption: 'Overzicht recht voor een conventionele draaibank met vaste kop, klauwplaatkap, beitelhouder en koelslang.',
       hasBuddyToggle: false,
-      telRpm: '0 RPM (controle)',
-      telTol: '4 aandachtspunten',
+      telRpm: '0 RPM (voorcontrole)',
+      telTol: 'EN ISO 23125 · Kappen',
       telPos: 'Slede in ruststand',
       checks: [
         'Olie- of koelmiddelplassen op de vloer en rondslingerend materiaal opmerken en opruimen',
-        'Los gereedschap van het machinebed halen en de werking van de klauwplaatkap testen',
-        'Controleren dat de automatische voeding uitstaat voordat de hoofdschakelaar omgaat'
+        'Los gereedschap van het machinebed halen en de werking van de klauwplaatkap en spatschermen testen',
+        'Controleren dat de automatische voeding in de nulstand staat voordat de hoofdschakelaar omgaat'
       ]
     },
     M3: {
       code: 'ONDERDEEL 3 · OPSPANNEN & TOERENTAL',
       standplaats: 'Drieklauw & toerentabel',
       title: 'Netjes opspannen en sleutel direct uit de klauwplaat',
-      summary: 'De leerling klemt het werkstuk recht in de drieklauw, controleert de uitsteeklengte en leert één vaste gewoonte: de klauwplaatsleutel gaat meteen terug in de houder.',
-      image: 'assets/img/weiler/weiler_01_machine_3d_model.webp',
-      caption: 'De WEILER Praktikant 140 in VR met drieklauw, vaste sleutelhouder en leesbare toerentabel.',
+      summary: 'De leerling klemt het werkstuk kort en recht in de drieklauw, leest de toerentabel af en traint één onmisbare gewoonte die op elke draaibank geldt: de klauwplaatsleutel gaat meteen terug in de houder.',
+      image: 'assets/img/draaibank/draaibank_01_machine_3d_model.webp',
+      caption: 'Merkneutrale conventionele draaibank in VR met drieklauw, beschermkap, sleden en duidelijke toerentabel.',
       hasBuddyToggle: false,
       telRpm: '710 RPM (gekozen)',
       telTol: 'Slingering ≤ 0,02 mm',
       telPos: 'Sleutel in houder',
       checks: [
         'Werkstuk kort en recht opspannen en controleren of het zuiver rondloopt',
-        'Probeert iemand te starten met de sleutel nog in de klauwplaat? Dan pauzeert het beeld rustig met uitleg',
-        'Het juiste toerental kiezen bij stilstaande spil en de opstelling laten vrijgeven'
+        'Probeert iemand te starten met de sleutel nog in de klauwplaat? Dan pauzeert het beeld rustig met heldere uitleg',
+        'Een passend toerental kiezen bij stilstaande spil en de opstelling laten vrijgeven'
       ]
     },
     M4: {
       code: 'ONDERDEEL 4 · VEILIG STARTEN & DRAAIEN',
       standplaats: 'Snijzone & werktekening',
-      title: 'Vlak- en trapdraaien aan de hand van de werktekening',
-      summary: 'Met gesloten beschermkap draait de leerling het kopvlak vlak en werkt met de handwielen en schaalverdeling rustig naar de maten op de tekening toe.',
-      image: 'assets/img/weiler/weiler_03_vr_trapdraaien_werktekening.webp',
-      caption: 'Draaien met gesloten beschermkap, afleesbare nonius en duidelijke werktekening (Ø 29,4 ±0,2 mm en trap Ø 28,0 mm).',
+      title: 'Vlak- en trapdraaien met gesloten beschermkap',
+      summary: 'Met gesloten klauwplaatkap draait de leerling het kopvlak vlak en werkt met de handwielen en schaalverdeling rustig naar de maten op de werktekening toe, zonder een merkspecifiek besturingspaneel uit het hoofd te leren.',
+      image: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
+      caption: 'Draaien met gesloten beschermkap, afleesbare schaalring en duidelijke werktekening (Ø 29,4 ±0,2 mm en trap Ø 28,0 mm).',
       hasBuddyToggle: false,
       telRpm: '710 RPM (in bedrijf)',
       telTol: 'Ø 29,4 ±0,2 mm',
@@ -309,34 +309,34 @@
       code: 'ONDERDEEL 5 · STOPPEN, METEN & OPRUIMEN',
       standplaats: 'Volledige stilstand (0 RPM)',
       title: 'Wachten op stilstand en nameten met de schuifmaat',
-      summary: 'Grijpen of meten terwijl de klauwplaat nog uitloopt wordt direct tegengehouden. Pas bij volledige stilstand meet de leerling het werkstuk na en maakt de bank veilig schoon.',
-      image: 'assets/img/weiler/weiler_04_vr_schuifmaat_nameten.webp',
+      summary: 'Grijpen of meten terwijl de klauwplaat nog uitloopt wordt direct tegengehouden. Pas bij volledige stilstand meet de leerling het werkstuk na en verwijdert hij spanen veilig met spanenhaak en kwast.',
+      image: 'assets/img/draaibank/draaibank_04_vr_schuifmaat_nameten.webp',
       caption: 'Pas als de spil helemaal stilstaat (0 RPM) meet de leerling Ø 29,4 mm na met de schuifmaat.',
       hasBuddyToggle: false,
       telRpm: '0 RPM (stilstand)',
       telTol: 'Schuifmaat ± 0,1 mm',
       telPos: 'Spanenhaak & kwast',
       checks: [
-        'Rustig wachten tot de klauwplaat volledig stilstaat voordat de kap opengaat',
-        'Spanen weghalen met spanenhaak en kwast — nooit met blote handen of perslucht',
+        'Rustig wachten tot de klauwplaat volledig stilstaat voordat de beschermkap opengaat',
+        'Lange of scherpe spanen weghalen met spanenhaak en kwast — nooit met blote handen of perslucht',
         'De draaibank schoon en uitgeschakeld achterlaten voor de volgende leerling'
       ]
     },
     M6: {
       code: 'ONDERDEEL 6 · STORINGEN & NOODSTOP',
-      standplaats: 'Ingrijpen bij afwijkingen',
-      title: 'Snel en kalm handelen bij een storing of noodstop',
-      summary: 'De leerling oefent wat je doet als een werkstuk plotseling gaat slingeren of een gewone stopknop dienst weigert: direct de noodstop indrukken en veilig uitschakelen.',
-      image: 'assets/img/weiler/weiler_05_vr_veiligheidsstop_m6.webp',
+      standplaats: 'Ingrijpen volgens EN ISO 13850',
+      title: 'Kalm handelen bij afwijkingen en noodstop',
+      summary: 'De leerling oefent wat je volgens Europese veiligheidsnormen doet als een werkstuk plotseling gaat slingeren of een gewone stopknop dienst weigert: direct de noodstop indrukken en veilig uitschakelen.',
+      image: 'assets/img/draaibank/draaibank_05_vr_veiligheidsstop_m6.webp',
       caption: 'Zodra het werkstuk zichtbaar gaat slingeren, drukt de leerling direct op de rode paddenstoel-noodstop.',
       hasBuddyToggle: false,
       telRpm: '0 RPM (noodstop)',
-      telTol: 'Direct ingrijpen',
-      telPos: 'Veilig uitgeschakeld',
+      telTol: 'EN ISO 13850 · Noodstop',
+      telPos: 'Geen herstart bij reset',
       checks: [
         'Meteen de noodstop indrukken bij onverwachte trillingen, geluid of slingering',
-        'Ervaren dat de machine na het ontgrendelen van de noodstop nooit zomaar vanzelf weer aanloopt',
-        'Het verschil kennen tussen normaal stoppen, de noodstop en de hoofdschakelaar vergrendelen'
+        'Ervaren dat een machine na het ontgrendelen van de noodstop volgens EN ISO 13850 nooit vanzelf opnieuw aanloopt',
+        'Het verschil kennen tussen normaal stoppen, de noodstop en het uitschakelen van de hoofdschakelaar'
       ]
     }
   };
@@ -345,108 +345,108 @@
   const ELEKTRO_MODULES_DATA = {
     E1: {
       code: 'ONDERDEEL 1 · VOORBEREIDING & GEREEDSCHAP',
-      standplaats: 'Voorbereiding · Kast nog gesloten',
-      title: 'Buddy Check & geïsoleerd gereedschap',
-      summary: 'Voordat de schakelkast opengaat, controleert de student een klasgenoot op sieraden en open kleding en kijkt hij zijn eigen beschermingsmiddelen, VDE-gereedschap en hangslot na.',
+      standplaats: 'Voorbereiding · Meterkast nog dicht',
+      title: 'Buddy Check & geïsoleerd gereedschap (1000V)',
+      summary: 'Voordat een meterkast, groepenkast of schakelkast opengaat, controleert de student een klasgenoot op sieraden en open kleding en kijkt hij zijn eigen beschermingsmiddelen, geïsoleerde gereedschap en hangslot na.',
       image: 'assets/img/elektro/elektro_00b_buddy_check_na.webp',
       altImage: 'assets/img/elektro/elektro_00a_buddy_check_voor.webp',
-      caption: 'Na de controle: horloge af, mouwen dicht, veiligheidsbril op en VDE 1000V meetset gecontroleerd.',
-      altCaption: 'Vóór de controle: metalen horloge om, opgerolde mouwen, bril nog op tafel en geen gekeurd hangslot.',
+      caption: 'Na de controle: horloge af, mouwen dicht, veiligheidsbril op en geïsoleerde 1000V-set gecontroleerd.',
+      altCaption: 'Vóór de controle: metalen horloge om, opgerolde mouwen, bril nog op tafel en geen persoonlijk hangslot.',
       hasBuddyToggle: true,
-      gateSafeMsg: 'punten in orde — Leerling mag door naar de verdeelkast',
-      gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de punten aan voor toegang tot de verdeelkast',
+      gateSafeMsg: 'punten in orde — Leerling mag door naar de meterkast en schakelkast',
+      gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de punten aan voor toegang tot de kast',
       telRpm: 'Werkbank · Kast dicht',
-      telTol: 'NEN 3140 · PBM & VDE',
+      telTol: 'NEN 3140 & EN 50110',
       telPos: 'Vaste plek · 2 knoppen',
       checks: [
         'Klasgenoot controleren op metalen horloge, ringen, kettingen en openstaande mouwen',
-        'Eigen veiligheidsbril of gelaatsscherm opzetten en kijken of de isolatie van het VDE-gereedschap heel is',
-        'Persoonlijk hangslot met naamkaart en tweepolige spanningzoeker (Duspol) klaarleggen'
+        'Eigen veiligheidsbril of gelaatsscherm opzetten en kijken of de isolatie van het gereedschap (1000V) onbeschadigd is',
+        'Persoonlijk hangslot met naamkaart en gekeurde tweepolige spanningzoeker klaarleggen'
       ]
     },
     E2: {
       code: 'ONDERDEEL 2 · SCHEMA & WERKPLEK',
-      standplaats: 'Bij de 400V-verdeelkast',
+      standplaats: 'Bij de meterkast & groepenkast',
       title: 'Installatieschema lezen en werkplek controleren',
-      summary: 'Voor de 400V-kast vergelijkt de student het schema in de deur met de groepen in de kast en kijkt hij of de vloer droog en vrij van obstakels is.',
+      summary: 'Voor de meterkast of schakelkast vergelijkt de student het installatieschema en de groepenverklaring met de groepen in de kast en controleert hij of de vloer droog en vrij van obstakels is.',
       image: 'assets/img/elektro/elektro_03_afschermen_schema.webp',
       caption: 'Het installatieschema in de kastdeur vergelijken met de hoofdschakelaar en de juiste groep.',
       hasBuddyToggle: false,
-      telRpm: '400V · Nog in bedrijf',
-      telTol: 'Schema & vrije ruimte',
+      telRpm: 'Kast nog in bedrijf',
+      telTol: 'Arbobesluit Hfdst. 3',
       telPos: 'Droge, vrije vloer',
       checks: [
-        'Het installatieschema en de groepenverklaring lezen om de juiste groep en eventuele terugvoeding te vinden',
-        'Controleren of de vloer droog is en er genoeg vrije ruimte rond de kast is',
-        'Afstemmen met de docent of werkverantwoordelijke voordat de voeding wordt uitgeschakeld'
+        'Het installatieschema en de groepenverklaring lezen om de juiste groep en eventuele terugvoeding te herkennen',
+        'Controleren of de vloer droog is en er voldoende veilige werkruimte rond de meterkast of schakelkast is',
+        'Afstemmen met de vakdocent of werkverantwoordelijke voordat de voeding wordt uitgeschakeld'
       ]
     },
     E3: {
-      code: 'ONDERDEEL 3 · STAP 1 & 2 · LOCKOUT-TAGOUT',
-      standplaats: 'Hoofdschakelaar & hangslot',
-      title: 'Uitschakelen en direct vergrendelen met een eigen slot',
-      summary: 'De student schakelt in de juiste volgorde af, zet de lastscheider op nul en plaatst direct een vergrendelbeugel met eigen hangslot en naamkaartje.',
+      code: 'ONDERDEEL 3 · SCHEIDEN & VERGRENDELEN',
+      standplaats: 'Hoofdschakelaar & eigen hangslot',
+      title: 'Volledig scheiden en vergrendelen tegen herinschakelen',
+      summary: 'Volgens de vaste stappen uit NEN 3140 en EN 50110 schakelt de student eerst de belasting af, zet de hoofdschakelaar op nul en plaatst direct een vergrendelbeugel met eigen hangslot en waarschuwingskaart.',
       image: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
-      caption: 'Lockout-Tagout in VR: hoofdschakelaar op 0 en vergrendeld met beugel, persoonlijk hangslot en label.',
+      caption: 'Veilig vergrendelen in VR: hoofdschakelaar op 0 en geborgd met beugel, persoonlijk hangslot en naamkaart.',
       hasBuddyToggle: false,
       telRpm: 'Schakelaar op 0 (UIT)',
-      telTol: 'Vergrendeld met slot',
-      telPos: 'Sleutel op zak',
+      telTol: 'NEN 3140 · Stap 1 & 2',
+      telPos: 'Sleutel bij student',
       checks: [
-        'Eerst de afgaande belasting uitschakelen en daarna rustig de hoofdschakelaar op 0 zetten',
-        'Vergrendelbeugel, persoonlijk hangslot en naamkaart plaatsen zodat niemand de stroom per ongeluk aanzet',
-        'Wie in de kast wil werken zonder slot, krijgt direct een rustige melding met uitleg waarom dat gevaarlijk is'
+        'Eerst de afgaande groepen of belasting uitschakelen en daarna rustig de hoofdschakelaar op 0 zetten',
+        'Vergrendelbeugel, persoonlijk hangslot en naamkaart plaatsen zodat niemand de groepenkast per ongeluk inschakelt',
+        'Wie zonder vergrendeling in de kast wil werken, krijgt direct een rustige melding met uitleg waarom dat onveilig is'
       ]
     },
     E4: {
-      code: 'ONDERDEEL 4 · STAP 3 · TWEEPOLIG NAMETEN',
-      standplaats: 'Klemmenstrook & rails',
-      title: 'Spanningsloosheid aantonen met een tweepolige Duspol',
-      summary: 'Niet gokken en nooit op een enkelpolige spanningszoeker vertrouwen: de student voert de volledige meting uit met een tweepolige Duspol.',
+      code: 'ONDERDEEL 4 · TWEEPOLIG NAMETEN',
+      standplaats: 'Klemmenstrook & groepen',
+      title: 'Spanningsloosheid aantonen met een tweepolige spanningzoeker',
+      summary: 'Nooit vertrouwen op een enkelpolig fittingschroevendraaiertje of een lampje op de kast: de student voert de volledige controle uit met een tweepolige spanningzoeker volgens EN 61243-3.',
       image: 'assets/img/elektro/elektro_02_tweepolig_meten.webp',
-      caption: 'Tweepolige meting met de Duspol tussen fase en aarde laat duidelijk 0 V zien.',
+      caption: 'Tweepolige meting met de spanningzoeker tussen fase, nul en aarde toont duidelijk 0 V aan.',
       hasBuddyToggle: false,
       telRpm: '0 V (alle geleiders)',
-      telTol: 'Voor-, hoofd- & nameting',
-      telPos: 'Tweepolige Duspol',
+      telTol: 'EN 61243-3 · Voor/na-test',
+      telPos: 'Tweepolige meter',
       checks: [
-        'Eerst de Duspol testen op een bekende spanningsbron om zeker te weten dat het meetinstrument werkt',
+        'Eerst de tweepolige spanningzoeker testen op een bekende spanningsbron om zeker te weten dat het instrument werkt',
         'Tweepolig meten tussen alle fasen onderling, tussen elke fase en nul én tussen elke fase en aarde',
-        'Daarna opnieuw testen op de bekende spanningsbron zodat zeker is dat de meter onderweg niet kapot ging'
+        'Direct daarna opnieuw testen op de bekende spanningsbron zodat zeker is dat de meter tijdens het meten intact bleef'
       ]
     },
     E5: {
-      code: 'ONDERDEEL 5 · STAP 4 & 5 · AFSCHERMEN',
-      standplaats: 'Naastgelegen spanningsdelen',
+      code: 'ONDERDEEL 5 · TERUGVOEDING & AFSCHERMEN',
+      standplaats: 'Naastgelegen actieve delen',
       title: 'Rekening houden met terugvoeding en delen afschermen',
-      summary: 'Zitten er naast het werkgebied nog rails of voedingen waar spanning op staat? Dan schermt de student die netjes en aanrakingsveilig af met isolatieplaten.',
+      summary: 'Zitten er in de meterkast of schakelkast nog naastgelegen rails, zonnepaneelgroepen of voedingen waar spanning op kan staan? Dan schermt de student die aanrakingsveilig af met isolatieplaten.',
       image: 'assets/img/elektro/elektro_03_afschermen_schema.webp',
-      caption: 'Plaatsen van een gele isolerende afschermplaat over naastgelegen rails met isolerende handschoenen.',
+      caption: 'Plaatsen van een isolerende afschermplaat over naastgelegen delen met isolerende handschoenen (1000V).',
       hasBuddyToggle: false,
       telRpm: '0 V · Veilig afgeschermd',
-      telTol: 'Geen aanrakingsgevaar',
-      telPos: '1000V handschoenen',
+      telTol: 'EN 50110 · Stap 4 & 5',
+      telPos: 'Isolatieplaat geplaatst',
       checks: [
-        'Controleren op mogelijke terugvoeding vanuit bijvoorbeeld zonnepanelen of noodstroom',
-        'Isolerende afschermplaten plaatsen voor delen die niet uitgeschakeld konden worden',
-        'De werkplek netjes en overzichtelijk klaarzetten voor de eigenlijke werkzaamheden'
+        'Controleren op mogelijke terugvoeding vanuit bijvoorbeeld zonnepanelen, accu-opslag of noodstroom',
+        'Isolerende afschermplaten plaatsen voor naastgelegen delen die onder spanning blijven',
+        'De werkplek overzichtelijk en aanrakingsveilig klaarzetten voor de werkzaamheden'
       ]
     },
     E6: {
-      code: 'ONDERDEEL 6 · CONTROLE & VEILIG INSCHAKELEN',
-      standplaats: 'Eindcontrole & praktijkvrijgave',
-      title: 'Gereedschap tellen, slot weghalen en samen afronden',
-      summary: 'Na het werk kijkt de student of er geen gereedschap in de kast is achtergebleven, haalt zijn eigen hangslot weg en rondt het praktijkrapport af met de vakdocent.',
+      code: 'ONDERDEEL 6 · AFRONDEN & PRAKTIJKVRIJGAVE',
+      standplaats: 'Eindcontrole & overdracht',
+      title: 'Gereedschap natellen, slot verwijderen en samen vrijgeven',
+      summary: 'Na afloop kijkt de student of er geen gereedschap in de kast is achtergebleven, brengt alle afdekkingen terug aan, verwijdert zijn eigen hangslot en bespreekt het praktijkrapport met de vakdocent.',
       image: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
-      caption: 'Veilige afronding: kast gecontroleerd en gesloten, eigen slot verwijderd en klaar voor het gesprek met de docent.',
+      caption: 'Veilige afronding: meterkast of schakelkast gecontroleerd, eigen slot verwijderd en klaar voor controle door de docent.',
       hasBuddyToggle: false,
       telRpm: 'Klaar voor vrijgave',
-      telTol: 'Kast schoon & dicht',
+      telTol: 'Kast compleet & dicht',
       telPos: 'A4-rapport op tablet',
       checks: [
-        'Rustig stoppen en melden als tijdens het werk toch een beschadigde kabel of onverwachte spanning opvalt',
-        'Controleren dat al het gereedschap uit de kast is en alle afdekplaten weer op hun plek zitten',
-        'Alleen het eigen hangslot verwijderen en bij de echte kast de praktijkpunten doornemen met de docent'
+        'Rustig stoppen en direct melden als tijdens het werk een beschadigde ader of onverwachte spanning opvalt',
+        'Controleren dat al het gereedschap uit de kast is en alle aanrakingsbescherming weer vastzit',
+        'Alleen het eigen hangslot weghalen en bij de echte meterkast of schakelkast de vijf praktijkpunten nalopen met de docent'
       ]
     }
   };
@@ -716,7 +716,7 @@
         slotNum: 7, id: 'Bril 07', student: 'Bram Peters', klas: 'MBO-3 Allround', mod: 'Onderdeel 2 · Werkplek',
         status: 'BEZIG', statusClass: 'status-safe', rpm: 0, diaMain: 30.0, diaStep: 30.0,
         carriageX: 140.0, overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,7 sec', battery: 79,
-        note: 'Controle vooraf: plas koelmiddel op de vloer opgemerkt en los gereedschap van het bed gehaald.',
+        note: 'Controle vooraf: plas koelmiddel op de vloer opgemerkt en los gereedschap van het machinebed gehaald.',
         bookmarks: [
           { frame: 18, label: 'Vloer en machinebed vrijgemaakt', warn: false }
         ]
@@ -924,22 +924,22 @@
         const badgeCls = groupPaused ? 'status-warn' : h.statusClass;
         const isSel = idx === selectedIdx;
         return (
-          '<button type="button" class="quest-slot ' + (isSel ? 'is-selected' : '') + '" data-slot-idx="' + idx + '" id="slotBtn_' + h.slotNum + '">' +
-            '<div class="quest-slot-top">' +
+          '<button type="button" class="bril-slot ' + (isSel ? 'is-selected' : '') + '" data-slot-idx="' + idx + '" id="slotBtn_' + h.slotNum + '">' +
+            '<div class="bril-slot-top">' +
               '<span class="mono" style="font-size:0.72rem;font-weight:600;color:' + (isSel ? '#38BDF8' : '#94A3B8') + ';">' + h.id + ' · ' + h.battery + '%</span>' +
               '<span class="status-badge ' + badgeCls + '">' + badgeText + '</span>' +
             '</div>' +
-            '<span class="quest-slot-name">' + h.student + '</span>' +
-            '<span class="quest-slot-meta">' + h.mod + (isSel ? ' · MEEKIJKEN' : '') + '</span>' +
+            '<span class="bril-slot-name">' + h.student + '</span>' +
+            '<span class="bril-slot-meta">' + h.mod + (isSel ? ' · MEEKIJKEN' : '') + '</span>' +
           '</button>'
         );
       }).join('');
 
       if (currentProfile === 'unlimited' && activeCount < BASE_HEADSETS.length && statusFilter === 'all') {
         html +=
-          '<button type="button" class="quest-slot" id="btnAddUnlimitedHeadset" style="border-style:dashed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">' +
+          '<button type="button" class="bril-slot" id="btnAddUnlimitedHeadset" style="border-style:dashed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">' +
             '<span class="mono" style="font-size:0.76rem;color:#38BDF8;font-weight:600;">+ EIGEN BRIL KOPPELEN</span>' +
-            '<span class="quest-slot-meta">Verschijnt automatisch op nummer</span>' +
+            '<span class="bril-slot-meta">Verschijnt automatisch op nummer</span>' +
           '</button>';
       }
 
@@ -967,7 +967,7 @@
               protocolLine.textContent = 'KLASOVERZICHT · EIGEN BRILLEN (' + activeCount + ' BRILLEN VERBONDEN)';
             }
             updateCockpit();
-            showToast('Extra bril (' + HEADSETS[selectedIdx].id + ' · ' + HEADSETS[selectedIdx].student + ') automatisch toegevoegd aan het overzicht.');
+            showToast('Extra VR-bril (' + HEADSETS[selectedIdx].id + ' · ' + HEADSETS[selectedIdx].student + ') automatisch toegevoegd aan het overzicht.');
           }
         });
       }
@@ -1019,7 +1019,7 @@
 
         ctx.fillStyle = '#38BDF8';
         ctx.font = '600 12px "JetBrains Mono", monospace';
-        ctx.fillText('WEILER PRAKTIKANT 140 — TOERENTABEL', 56, 54);
+        ctx.fillText('CONVENTIONELE DRAAIBANK — TOERENTABEL', 56, 54);
 
         const speeds = [250, 355, 500, 710, 1000, 1400];
         speeds.forEach(function (sp, idx) {
@@ -1042,7 +1042,7 @@
         ctx.fillText('Ingesteld door leerling: ' + (groupPaused ? 0 : h.rpm) + ' RPM  ·  Richtwaarde staal Ø 30 mm: 710 RPM', 56, 154);
         ctx.restore();
       } else {
-        /* Bedbanen van de WEILER Praktikant 140 onderlangs */
+        /* Bedbanen van de draaibank onderlangs */
         const bedY = cy + 64;
         ctx.fillStyle = '#0F2036';
         ctx.strokeStyle = '#254266';
@@ -1194,7 +1194,7 @@
       }
       if (elSelNote) {
         elSelNote.textContent = groupPaused
-          ? 'KLAS GEPAUZEERD: Alle brillen staan even op pauze zodat je rustig klassikaal uitleg kunt geven.'
+          ? 'KLAS GEPAUZEERD: Alle VR-brillen staan even op pauze zodat je rustig klassikaal uitleg kunt geven.'
           : h.note;
       }
       const liveRpm = groupPaused ? 0 : Math.round(h.rpm * (scrubFrame < 35 ? 0.85 : 1));
@@ -1290,7 +1290,7 @@
     if (btnNextStudent) {
       btnNextStudent.addEventListener('click', function () {
         const h = HEADSETS[selectedIdx];
-        showToast('Voortgang opgeslagen op ' + h.id + ' — bril staat weer klaar voor de volgende leerling.');
+        showToast('Voortgang opgeslagen op ' + h.id + ' — VR-bril staat weer klaar voor de volgende leerling.');
       });
     }
 
@@ -1307,7 +1307,7 @@
         const messages = {
           AC21: 'Opstelling goedgekeurd bij ' + h.student + ' (' + h.id + ') — leerling kan veilig starten.',
           WOBBLE: 'Noodstop-oefening gestart bij ' + h.student + ' (' + h.id + '): werkstuk gaat merkbaar slingeren.',
-          CALIBRATE: 'Werkhoogte van de machine netjes afgestemd voor ' + h.student + ' (' + h.id + ').',
+          CALIBRATE: 'Werkhoogte van de draaibank netjes afgestemd voor ' + h.student + ' (' + h.id + ').',
           TTS: 'Rustige gesproken aanwijzing afgespeeld op ' + h.id + '.'
         };
         showToast(messages[cmd] || ('Actie uitgevoerd op ' + h.id + '.'));
@@ -1318,10 +1318,10 @@
     const reportModal = document.getElementById('a4ReportModal');
     const btnCloseReport = document.getElementById('btnCloseReportModal');
     const btnPrintReport = document.getElementById('btnPrintA4Report');
-    const sigCanvas = document.getElementById('spenSignatureCanvas');
+    const sigCanvas = document.getElementById('penSignatureCanvas');
     const btnClearSig = document.getElementById('btnClearSignature');
     const btnDemoSig = document.getElementById('btnDemoSignature');
-    const sigStatus = document.getElementById('spenSignatureStatus');
+    const sigStatus = document.getElementById('penSignatureStatus');
     const printSigImg = document.getElementById('printSignaturePreview');
     const printPhysSummary = document.getElementById('printPhysSummary');
     const physCounter = document.getElementById('physCheckedCounter');
@@ -1360,7 +1360,7 @@
       sctx.stroke();
       sctx.fillStyle = '#52657C';
       sctx.font = '500 11px "JetBrains Mono", monospace';
-      sctx.fillText('Getekend met S Pen · Vakdocent', 38, 96);
+      sctx.fillText('Getekend door vakdocent · Praktijkvrijgave', 38, 96);
       hasSignature = true;
       if (sigStatus) sigStatus.textContent = 'Handtekening vakdocent geplaatst ✓';
     }
@@ -1414,7 +1414,7 @@
       btnClearSig.addEventListener('click', function () {
         sigCanvas.getContext('2d').clearRect(0, 0, sigCanvas.width, sigCanvas.height);
         hasSignature = false;
-        if (sigStatus) sigStatus.textContent = 'Zet hierboven een handtekening met muis, vinger of S Pen';
+        if (sigStatus) sigStatus.textContent = 'Zet hierboven een handtekening met muis, vinger of tekenpen';
       });
     }
 
@@ -1453,7 +1453,7 @@
           });
           printPhysSummary.textContent = checked.length > 0
             ? ('Afgetekende praktijkpunten: ' + checked.join(' · '))
-            : 'Nog samen bij de echte machine langs te lopen: Punt 1 t/m Punt 5';
+            : 'Nog samen bij de echte draaibank langs te lopen: Punt 1 t/m Punt 5';
         }
         window.print();
       });
@@ -1473,27 +1473,27 @@
   const MW_SCENES = {
     elektro: {
       img: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
-      alt: 'Elektrotechniek & Schakelkasten VR-training volgens NEN 3140 en Lockout-Tagout',
-      caption: '400V Lockout-Tagout & NEN 3140 · standaard beschikbaar of op maat voor jullie eigen verdeler',
-      domeinOption: 'Elektrotechniek & Energie (LOTO / NEN 3140)'
+      alt: 'Algemene VR-praktijkvoorbereiding voor meterkast, groepenkast en schakelkast volgens NEN 3140 en EN 50110',
+      caption: 'Spanningsloos werken bij meterkast en schakelkast (NEN 3140 & EN 50110) · ook uitbreidbaar voor aanvullende opstellingen',
+      domeinOption: 'Elektrotechniek & Energie (Meterkast & Schakelkast)'
     },
     metaal: {
       img: 'assets/img/brand/domein_01_metaal_en_verspaning.webp',
-      alt: 'Metaal, Verspaning & Constructie VR-maatwerktraining voor eigen werkplaatsmachines',
-      caption: 'Metaal & Verspaning: conventioneel en CNC draaien of frezen, opspannen en veiligheid aan de bank',
+      alt: 'Algemene VR-praktijkvoorbereiding voor metaalbewerking en verspaning op freesbank, kolomboormachine en draaibank',
+      caption: 'Metaal & Verspaning: algemene voorbereiding op veilig opspannen, afscherming en werken aan freesbank of boormachine',
       domeinOption: 'Metaalbewerking & Verspaning'
     },
     klimaat: {
       img: 'assets/img/brand/domein_04_installatie_en_klimaat.webp',
-      alt: 'Installatie- & Klimaattechniek VR-maatwerktraining op warmtepomp- en klimaatinstallaties',
-      caption: 'Installatie & Klimaat: veilig inbedrijfstellen, drukcontroles en stap voor stap storingzoeken',
+      alt: 'Algemene VR-praktijkvoorbereiding voor installatie- en klimaattechniek bij warmtepomp en leidingwerk',
+      caption: 'Installatie & Klimaat: algemene volgorde voor drukloos stellen, afsluiters bedienen en veilig controleren',
       domeinOption: 'Installatie- & Klimaattechniek'
     },
     mechatronica: {
       img: 'assets/img/brand/domein_03_mechatronica_en_industrie.webp',
-      alt: 'Mechatronica, Robotcellen & Procesindustrie VR-maatwerktraining voor lijnveiligheid en vrijgave',
-      caption: 'Mechatronica & Industrie: veilig betreden van robotcellen, hekwerkbeveiliging en lijnvrijgave',
-      domeinOption: 'Mechatronica & Industriële Machineveiligheid'
+      alt: 'Algemene VR-praktijkvoorbereiding voor oefenlijnen en machineveiligheid volgens Europese richtlijnen',
+      caption: 'Mechatronica & Industrie: algemene voorbereiding op afscherming, vergrendeling en veilig vrijgeven van oefenlijnen',
+      domeinOption: 'Mechatronica & Machineveiligheid'
     }
   };
 
@@ -1543,7 +1543,7 @@
 
     function buildScopeText() {
       const domein = document.getElementById('scopeDomein').value;
-      const machine = document.getElementById('scopeMachine').value.trim() || 'Eigen machine of praktijkopstelling';
+      const machine = document.getElementById('scopeMachine').value.trim() || 'Aanvullende werkplek of installatie';
       const doelgroep = document.getElementById('scopeDoelgroep').value;
       const pakketStatus = document.getElementById('scopeTabletBezit').value;
 
@@ -1555,15 +1555,16 @@
         : 'Kleding- en PBM-check, veilig opstarten en rustig uitschakelen';
 
       const fullText =
-        'SAMENVATTING MAATWERK-IDEE — TECHBUILDS VR\n' +
-        '----------------------------------------------------\n' +
+        'SAMENVATTING AANVULLENDE VOORBEREIDING — TECHBUILDS VR\n' +
+        '--------------------------------------------------------\n' +
+        'Uitgangspunt    : Algemene praktijkvoorbereiding (NL & EU-richtlijnen, geen typetraining)\n' +
         'Vakgebied       : ' + domein + '\n' +
-        'Machine / kast  : ' + machine + '\n' +
+        'Werkplek / kast : ' + machine + '\n' +
         'Voor wie        : ' + doelgroep + '\n' +
         'Leerdoelen      : ' + goalsList + '\n' +
         'Gewenste vorm   : ' + pakketStatus + '\n' +
         'Begeleiding     : Gewoon zichtbaar op het 13,1-inch Teacher Dashboard + A4-rapport\n' +
-        'Doorlooptijd    : Gemiddeld 6 tot 10 weken van bezoek op school tot oplevering';
+        'Doorlooptijd    : Gemiddeld 6 tot 10 weken van inventarisatie tot gebruik in de les';
 
       return { domein: domein, machine: machine, fullText: fullText };
     }
@@ -1576,7 +1577,7 @@
       if (btnMailScope) {
         btnMailScope.href =
           'mailto:info@techbuildsvr.nl?subject=' +
-          encodeURIComponent('Maatwerk VR-idee — ' + data.machine) +
+          encodeURIComponent('Aanvullende VR-praktijkvoorbereiding — ' + data.machine) +
           '&body=' +
           encodeURIComponent(data.fullText);
       }
@@ -1592,7 +1593,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'TechBuilds_VR_Maatwerk_Overzicht.txt';
+        a.download = 'TechBuilds_VR_Praktijkvoorbereiding_Overzicht.txt';
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -1620,19 +1621,19 @@
   const MODULE_CHOICES = {
     draaibank: {
       fee: 0,
-      sub: '1 module inbegrepen: Draaibank VR — WEILER Praktikant 140',
+      sub: '1 module inbegrepen: Draaibank VR — Algemene voorbereiding (NL & EU-richtlijnen)',
       feeText: '€ 0,- (inbegrepen)',
-      formValue: 'Draaibank VR — WEILER Praktikant 140 (inbegrepen)'
+      formValue: 'Draaibank VR — Algemene voorbereiding draaibank (inbegrepen)'
     },
     elektro: {
       fee: 0,
-      sub: '1 module inbegrepen: Elektrotechniek VR — Veilig stellen (NEN 3140)',
+      sub: '1 module inbegrepen: Elektrotechniek VR — Meterkast & schakelkast (NEN 3140 & EU)',
       feeText: '€ 0,- (inbegrepen)',
-      formValue: 'Elektrotechniek VR — Veilig stellen NEN 3140 & LOTO (inbegrepen)'
+      formValue: 'Elektrotechniek VR — Meterkast, groepenkast & schakelkast (inbegrepen)'
     },
     beide: {
       fee: EXTRA_MODULE_PRICE,
-      sub: 'Draaibank VR + Elektrotechniek VR samen op dezelfde tablet en brillen',
+      sub: 'Draaibank VR + Elektrotechniek VR samen op dezelfde docenttablet en VR-brillen',
       feeText: '+ € 5.000,- (eenmalig)',
       formValue: 'Beide modules: Draaibank VR + Elektrotechniek VR (+ € 5.000,- eenmalig excl. BTW)'
     }
@@ -1648,10 +1649,10 @@
       annual: 1500,
       firstYearIncluded: true,
       heroImg: 'assets/img/brand/pakket_regietablet_vr_set.webp',
-      heroCaption: 'Optie 1 (€ 10.000,-): 13,1-inch Samsung tablet met Teacher Dashboard + onbeperkt eigen brillen (incl. 1 VR-module)',
-      unitSingle: '1 Teacher Dashboard-set (eigen brillen)',
-      unitPlural: 'Teacher Dashboard-sets (eigen brillen)',
-      hwSub: '13,1-inch Samsung Tab S10 FE+ (waterdicht, S Pen & stevige hoes) + onbeperkt eigen brillen koppelen',
+      heroCaption: 'Optie 1 (€ 10.000,-): 13,1-inch docenttablet met Teacher Dashboard + onbeperkt eigen VR-brillen (incl. 1 VR-module)',
+      unitSingle: '1 Teacher Dashboard-set (eigen VR-brillen)',
+      unitPlural: 'Teacher Dashboard-sets (eigen VR-brillen)',
+      hwSub: '13,1-inch docenttablet (water- en stofdicht, tekenpen & stevige hoes) + onbeperkt eigen VR-brillen koppelen',
       srvSub: 'Hulp op afstand en software-updates (1e jaar bij de aanschaf inbegrepen)',
       ruleHint: 'Het 1e jaar service zit bij de prijs in; vanaf jaar 2 betaal je € 1.500,- per jaar excl. BTW.',
       formValue: 'Optie 1: Teacher Dashboard & Eigen Brillen (€ 10.000,- excl. BTW, 1e jr incl., daarna € 1.500,-/jr)'
@@ -1664,14 +1665,14 @@
       upfront: 15000,
       annual: 2500,
       firstYearIncluded: false,
-      heroImg: 'assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp',
-      heroCaption: 'Optie 2 (€ 15.000,-): Mobiele Zioxi VR-kar met 10× Meta Quest 3S, eigen KPN 5G en 13,1-inch tablet op één stopcontact',
-      unitSingle: '1 VR-Kar 10 (10× Meta Quest 3S)',
+      heroImg: 'assets/img/brand/pakket_mobiele_vr_kar_werkplaats.webp',
+      heroCaption: 'Optie 2 (€ 15.000,-): Verrijdbare oplaadkar met 10 VR-brillen, ingebouwde 5G-verbinding en 13,1-inch docenttablet op één stopcontact',
+      unitSingle: '1 VR-Kar 10 (10 VR-brillen)',
       unitPlural: 'VR-Karren 10',
-      hwSub: 'Mobiele Zioxi oplaadkar (1 stekker) + 10× Meta Quest 3S + eigen KPN 5G-router + 13,1-inch Samsung tablet',
-      srvSub: 'Beheer van alle brillen, onbeperkt KPN 5G én elk jaar onderhoud op school',
-      ruleHint: 'Inclusief onbeperkt KPN 5G in de kar en onze jaarlijkse onderhoudsbeurt op school (€ 2.500,-/jr excl. BTW).',
-      formValue: 'Optie 2: Complete VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service & KPN 5G)'
+      hwSub: 'Verrijdbare oplaadkar (1 stekker) + 10 VR-brillen + ingebouwde wifi- en 5G-router + 13,1-inch docenttablet',
+      srvSub: 'Centraal beheer van alle brillen, onbeperkt 5G én elk jaar onderhoud op school',
+      ruleHint: 'Inclusief onbeperkt 5G in de kar en onze jaarlijkse onderhoudsbeurt op school (€ 2.500,-/jr excl. BTW).',
+      formValue: 'Optie 2: Complete VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service & 5G)'
     },
     'optie-3-vr-kar-20': {
       num: '3',
@@ -1681,14 +1682,14 @@
       upfront: 25000,
       annual: 3500,
       firstYearIncluded: false,
-      heroImg: 'assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp',
-      heroCaption: 'Optie 3 (€ 25.000,-): Mobiele Zioxi VR-kar met 20× Meta Quest 3S, eigen KPN 5G en 13,1-inch tablet voor hele klassen',
-      unitSingle: '1 VR-Kar 20 (20× Meta Quest 3S)',
+      heroImg: 'assets/img/brand/pakket_mobiele_vr_kar_werkplaats.webp',
+      heroCaption: 'Optie 3 (€ 25.000,-): Verrijdbare oplaadkar met 20 VR-brillen, ingebouwde 5G-verbinding en 13,1-inch docenttablet voor hele klassen',
+      unitSingle: '1 VR-Kar 20 (20 VR-brillen)',
       unitPlural: 'VR-Karren 20',
-      hwSub: 'Mobiele Zioxi oplaadkar (1 stekker) + 20× Meta Quest 3S + eigen KPN 5G-router + 13,1-inch Samsung tablet',
-      srvSub: 'Beheer van alle 20 brillen, onbeperkt KPN 5G én elk jaar onderhoud op school',
-      ruleHint: 'Voor hele klassen tegelijk, inclusief onbeperkt KPN 5G en jaarlijks onderhoud op school (€ 3.500,-/jr excl. BTW).',
-      formValue: 'Optie 3: Complete VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service & KPN 5G)'
+      hwSub: 'Verrijdbare 20-vaks oplaadkar (1 stekker) + 20 VR-brillen + ingebouwde wifi- en 5G-router + 13,1-inch docenttablet',
+      srvSub: 'Centraal beheer van alle 20 brillen, onbeperkt 5G én elk jaar onderhoud op school',
+      ruleHint: 'Voor hele klassen tegelijk, inclusief onbeperkt 5G en jaarlijks onderhoud op school (€ 3.500,-/jr excl. BTW).',
+      formValue: 'Optie 3: Complete VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service & 5G)'
     }
   };
 
@@ -2051,7 +2052,7 @@
     if (optieOrPakket && OPTIE_NUM_TO_KEY[optieOrPakket] && selType) {
       selType.value = PACKAGES[OPTIE_NUM_TO_KEY[optieOrPakket]].formValue;
     } else if (onderwerpParam === 'maatwerk' && selType) {
-      selType.value = 'Maatwerk VR-training ontwikkelen + Pakketkeuze';
+      selType.value = 'Aanvullende praktijkvoorbereiding op maat bespreken';
     } else if (onderwerpParam === 'demo' && selType) {
       selType.value = 'Vrijblijvende demo op school of bedrijf';
     }
@@ -2078,7 +2079,7 @@
       const email = document.getElementById('reqEmail').value.trim();
       const tel = document.getElementById('reqPhone').value.trim();
       const type = document.getElementById('reqType').value;
-      const modChoiceText = selReqMod ? selReqMod.value : 'Draaibank VR';
+      const modChoiceText = selReqMod ? selReqMod.value : 'Draaibank VR — Algemene voorbereiding draaibank';
       const msg = document.getElementById('reqMessage').value.trim();
 
       if (!naam || !org || !email) {
