@@ -1,12 +1,12 @@
 /**
- * TechBuilds VR — Interactieve Website Logica (v2.2 — Visual 5 Bento Tiles × Engineering Blue · Draaibank & Elektrotechniek VR)
+ * TechBuilds VR — Interactieve Website Logica (v2.2)
  * Onderdelen:
- * 1. Sticky Frosted Navigatie, Scroll-Progress, Mobiele Quick-CTA, Back-to-Top & Scroll-Reveal
- * 2. Visual 5 Interactieve Hero Bento-Tegels & Frosted Scène-Dock (index.html)
- * 3. Interactieve Module-Studio voor Draaibank VR (M1–M6) én Elektrotechniek VR (E1–E6 · NEN 3140 & LOTO)
- * 4. 13,1" Android Docenten Dashboard v2.3.0 Simulator met Meebewegende 2D CAD-Slede, 4 Hz Replay & A4 S Pen Rapport (docentapp-tablet.html)
- * 5. Vakdomein Hero-Switcher & Maatwerk-Scoper met info@techbuildsvr.nl koppeling (maatwerk.html)
- * 6. Naadloze Pakket- & Modulekeuze (?optie=1|2|3 & ?module=draaibank|elektro|beide, losse module + € 5.000,-), TCO & Offerte (prijzen-contact.html)
+ * 1. Vaste navigatiebalk, leesbalk, mobiele snelbalk, terug-naar-boven & subtiele scroll-animatie
+ * 2. Interactieve Hero-tegels & fotowisselaar op de startpagina (index.html)
+ * 3. Interactief stappenoverzicht voor Draaibank VR (1–6) én Elektrotechniek VR (1–6)
+ * 4. Interactief voorbeeld van het 13,1-inch Teacher Dashboard + printbaar A4-praktijkrapport (docentapp-tablet.html)
+ * 5. Vakgebied-wisselaar & Maatwerk-overzicht met directe e-mailkoppeling (maatwerk.html)
+ * 6. Pakket- en modulekeuze (losse extra module + € 5.000,-), meerjarenoverzicht & aanvraagformulier (prijzen-contact.html)
  */
 
 (function () {
@@ -36,7 +36,7 @@
   }
 
   /* ------------------------------------------------------------------
-   * 1. Navigatie, Scroll-Progress, Mobiele Quick-CTA, Back-to-Top & Reveal
+   * 1. Navigatie, Scroll-Progress, Mobiele Snelbalk, Back-to-Top & Reveal
    * ------------------------------------------------------------------ */
   const siteHeader = document.getElementById('siteHeader');
   const scrollProgressBar = document.getElementById('scrollProgressBar');
@@ -135,42 +135,42 @@
   }
 
   /* ------------------------------------------------------------------
-   * 2. Visual 5 Interactieve Hero Bento-Tegels & Scène-Dock (index.html)
+   * 2. Interactieve Hero-Tegels & Fotowisselaar (index.html)
    * ------------------------------------------------------------------ */
   const HERO_SCENES = {
     praktijklokaal: {
       img: 'assets/img/brand/hero_techbuilds_vr_werkplaats.webp',
-      alt: 'Vakdocent met 13,1-inch regietablet kijkt live mee met een student die in VR veilig oefent voor de draaibank in het praktijklokaal',
-      caption: 'Vaste oefenzone in het praktijklokaal · 0% loopmisselijkheid · 1 vakdocent houdt overzicht',
-      linkText: 'Verken M1–M6 →',
-      linkHref: 'training-draaibank.html'
+      alt: 'Praktijklokaal waar een student met een VR-bril oefent bij de draaibank terwijl de vakdocent meekijkt op de tablet',
+      caption: 'Oefenen op één vaste plek in het lokaal · simpele bediening met twee knoppen · docent kijkt live mee',
+      linkText: 'Alle modules →',
+      linkHref: 'modules.html'
     },
     modules: {
       img: 'assets/img/weiler/weiler_03_vr_trapdraaien_werktekening.webp',
-      alt: 'In-VR zicht op de WEILER Praktikant 140 met gesloten klauwplaatkap, nonius-schaalverdeling en live 2D-werktekening Ø 29,4 ±0,2 mm',
-      caption: 'Draaibank VR (M1–M6) op de WEILER Praktikant 140: van 3D Buddy Check tot Ø 29,4 ±0,2 mm en noodstop',
-      linkText: 'Open Draaibank Studio →',
-      linkHref: 'training-draaibank.html#module-studio'
+      alt: 'Zicht in de VR-bril op de WEILER Praktikant 140 draaibank met gesloten beschermkap, schaalverdeling en werktekening',
+      caption: 'Draaibank VR op de WEILER Praktikant 140: van Buddy Check en opspannen tot draaien op maat en noodstop',
+      linkText: 'Bekijk Draaibank VR →',
+      linkHref: 'training-draaibank.html'
     },
     elektro: {
       img: 'assets/img/elektro/hero_elektro_werkplaats.webp',
-      alt: 'MBO-elektrotechnieklokaal waar een student veilig oefent met een Meta Quest 3S voor een 400V-schakelkast en de vakdocent meekijkt op de 13,1-inch regietablet',
-      caption: 'Elektrotechniek VR (E1–E6 · NEN 3140): Lockout-Tagout, tweepolige Duspol & 400V afschermen',
-      linkText: 'Verken E1–E6 →',
+      alt: 'Elektrotechnieklokaal waar een student met een VR-bril oefent voor een 400V-schakelkast terwijl de vakdocent meekijkt op de tablet',
+      caption: 'Elektrotechniek VR (NEN 3140): veilig afschakelen, vergrendelen met hangslot en tweepolig nameten met de Duspol',
+      linkText: 'Bekijk Elektrotechniek VR →',
       linkHref: 'training-elektrotechniek.html'
     },
     kar: {
       img: 'assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp',
-      alt: 'Turnkey Zioxi VR-Kar met genummerde Meta Quest 3S brillen, 13,1-inch Samsung regietablet en eigen KPN 5G Wi-Fi 7 router op één 230V stekker',
-      caption: '1× 230V stekker · Nighthawk M7 Pro Wi-Fi 7 + KPN Onbeperkt 5G · 0% belasting op school-IT',
-      linkText: 'Vergelijk VR-Kar 10 & 20 →',
+      alt: 'Mobiele Zioxi VR-kar met genummerde Meta Quest 3S brillen, 13,1-inch Samsung tablet en eigen 5G-verbinding op één stekker',
+      caption: 'Slechts één gewoon stopcontact nodig · ingebouwde KPN Onbeperkt 5G · geen belasting op de school-wifi',
+      linkText: 'Bekijk de VR-Karren →',
       linkHref: 'prijzen-contact.html?optie=2#pakket-keuze'
     },
     tablet: {
       img: 'assets/img/brand/pakket_regietablet_vr_set.webp',
-      alt: '13,1-inch Samsung Galaxy Tab S10 FE+ regietablet met TechBuilds VR klaslokaaldashboard naast S Pen, Meta Quest 3S en stalen schuifmaat',
-      caption: '13,1" Tab S10 FE+ (IP68 + S Pen): Draaibank VR & Elektrotechniek VR op dezelfde regietablet',
-      linkText: 'Test 13,1" Simulator →',
+      alt: '13,1-inch Samsung tablet met het Teacher Dashboard naast de S Pen, een Meta Quest 3S bril en een schuifmaat',
+      caption: '13,1-inch Samsung tablet met S Pen: Draaibank VR én Elektrotechniek VR overzichtelijk op één scherm',
+      linkText: 'Probeer het Dashboard →',
       linkHref: 'docentapp-tablet.html#live-simulator'
     }
   };
@@ -229,114 +229,114 @@
   }
 
   /* ------------------------------------------------------------------
-   * 3. Interactieve Module-Studio M1–M6 (Draaibank) & E1–E6 (Elektrotechniek)
+   * 3. Interactief Stappenoverzicht Draaibank VR (M1–M6) & Elektrotechniek VR (E1–E6)
    * ------------------------------------------------------------------ */
   const DRAAIBANK_MODULE_ORDER = ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'];
   const DRAAIBANK_MODULES_DATA = {
     M1: {
-      code: 'MODULE M1 · STANDPLAATS A · AV_COMBO_1..5',
-      standplaats: 'Standplaats A · Vaste vloerzone',
-      title: '3D Buddy Check & Eigen PBM',
-      summary: 'Vóór de machine wordt aangeraakt controleert de student oog in oog een levensgrote 3D-medestudent met de twee wijsvingertriggers én stelt de eigen PBM veilig.',
+      code: 'ONDERDEEL 1 · PERSOONLIJKE VEILIGHEID',
+      standplaats: 'Voorbereiding · Vóór de machine',
+      title: 'Buddy Check & eigen beschermingsmiddelen',
+      summary: 'Voordat een leerling in de buurt van de draaibank komt, controleert hij eerst een klasgenoot in 3D op onveilige kleding of sieraden en brengt hij zijn eigen beschermingsmiddelen op orde.',
       image: 'assets/img/weiler/weiler_00b_buddy_check_compleet.webp',
       altImage: 'assets/img/weiler/weiler_00a_buddy_check_start.webp',
-      caption: '3D Buddy Check voltooid: medestudent gecorrigeerd, eigen veiligheidsbril op en eigen werkhandschoenen uit.',
-      altCaption: 'Beginsituatie M1 (AV_COMBO_1..5): los haar, sieraden en verboden werkhandschoenen vóór vrijgave naar de machine.',
+      caption: 'Na de controle: klasgenoot netjes gecorrigeerd, eigen veiligheidsbril op en werkhandschoenen uitgedaan.',
+      altCaption: 'Vóór de controle: loshangend haar, sieraden om de pols en werkhandschoenen aan bij een draaiende machine.',
       hasBuddyToggle: true,
-      gateSafeMsg: 'PBM-punten veilig — Toegang tot Standplaats B (WEILER 140) vrijgegeven',
-      gateWarnMsg: 'PBM-punten gekeurd — Klik alle 4 veiligheidspunten aan voor vrijgave naar Standplaats B',
-      telRpm: '0 RPM (Standplaats A)',
-      telTol: '5 Varianten (AV_COMBO_1..5)',
-      telPos: 'L + R Trigger · 0% lopen',
+      gateSafeMsg: 'punten in orde — Leerling mag door naar de draaibank',
+      gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de veiligheidspunten aan voor toegang tot de machine',
+      telRpm: 'Stilstand (vooraf)',
+      telTol: '5 praktijksituaties',
+      telPos: 'Vaste plek · 2 knoppen',
       checks: [
-        'Levensgrote 3D-medestudent controleren op los haar, open mouwen, sieraden en veiligheidsschoeisel',
-        'Eigen veiligheidsbril opzetten en eigen werkhandschoenen verplicht afleggen (intrekkingsgevaar)',
-        'Pas na foutloze 3D Buddy Check & Eigen PBM volgt toegang tot Standplaats B bij de WEILER'
+        'Klasgenoot in 3D nalopen op los haar, openstaande mouwen, sieraden en veiligheidsschoenen',
+        'Zelf een veiligheidsbril opzetten en werkhandschoenen uittrekken vanwege het gevaar van intrekken',
+        'Pas als alle punten kloppen, gaat de training verder bij de WEILER draaibank'
       ]
     },
     M2: {
-      code: 'MODULE M2 · STANDPLAATS B · ARBOBESLUIT 7.5 & 7.7',
-      standplaats: 'Standplaats B · WEILER Praktikant 140',
-      title: 'Machine- & Werkplekcontrole vóór start',
-      summary: 'Recht vóór de WEILER Praktikant 140 inspecteert de student de vloerzone, het machinebed, de beschermkappen en de nulstand van de sleden.',
+      code: 'ONDERDEEL 2 · WERKPLEK & VOORCONTROLE',
+      standplaats: 'Bij de WEILER Praktikant 140',
+      title: 'Machine- en werkplekcontrole vóór de start',
+      summary: 'Recht voor de WEILER Praktikant 140 kijkt de leerling of de vloer schoon is, er geen gereedschap op het bed ligt en de beschermkappen goed sluiten.',
       image: 'assets/img/weiler/weiler_02_vr_werkplaats_overzicht.webp',
-      caption: 'Operatorzicht op Standplaats B met vaste kop, beitelhouder, koelslang en 4-camera inspectiepaneel.',
+      caption: 'Zicht recht voor de draaibank met vaste kop, beitelhouder, koelslang en overzichtelijke camerahoeken.',
       hasBuddyToggle: false,
-      telRpm: '0 RPM (Prestart)',
-      telTol: '4/4 Inspectiepunten',
-      telPos: 'carriage_x: 140,0 mm',
+      telRpm: '0 RPM (controle)',
+      telTol: '4 aandachtspunten',
+      telPos: 'Slede in ruststand',
       checks: [
-        'Olie- en koelmiddelplassen of losliggende obstakels rond de draaibank herkennen en opruimen',
-        'Machinebed vrijmaken van los gereedschap en klauwplaatbeschermkap op werking controleren',
-        'Controleren dat automatische langsvoeding uitgeschakeld staat vóór inschakeling hoofdschakelaar'
+        'Olie- of koelmiddelplassen op de vloer en rondslingerend materiaal opmerken en opruimen',
+        'Los gereedschap van het machinebed halen en de werking van de klauwplaatkap testen',
+        'Controleren dat de automatische voeding uitstaat voordat de hoofdschakelaar omgaat'
       ]
     },
     M3: {
-      code: 'MODULE M3 · OPSPANNEN & TOERENTABEL',
-      standplaats: 'Standplaats B · Drieklauw & Spil',
-      title: 'Zuiver opspannen & klauwplaatsleutel-discipline',
-      summary: 'Het stafmateriaal wordt ingeklemd in de drieklauw met rondloopcontrole en één onwrikbare hoofdregel: de klauwplaatsleutel gaat direct terug in de houder.',
+      code: 'ONDERDEEL 3 · OPSPANNEN & TOERENTAL',
+      standplaats: 'Drieklauw & toerentabel',
+      title: 'Netjes opspannen en sleutel direct uit de klauwplaat',
+      summary: 'De leerling klemt het werkstuk recht in de drieklauw, controleert de uitsteeklengte en leert één vaste gewoonte: de klauwplaatsleutel gaat meteen terug in de houder.',
       image: 'assets/img/weiler/weiler_01_machine_3d_model.webp',
-      caption: 'WEILER Praktikant 140 digital twin (82 PBR-onderdelen) met drieklauw, sleutelhouder en toerentabel.',
+      caption: 'De WEILER Praktikant 140 in VR met drieklauw, vaste sleutelhouder en leesbare toerentabel.',
       hasBuddyToggle: false,
-      telRpm: '710 RPM (Gekozen)',
-      telTol: 'Rondloop ≤ 0,02 mm',
-      telPos: 'carriage_x: 118,0 mm',
+      telRpm: '710 RPM (gekozen)',
+      telTol: 'Slingering ≤ 0,02 mm',
+      telPos: 'Sleutel in houder',
       checks: [
-        'Maximale uitsteeklengte bewaken en rondloop controleren vóór vrijgave',
-        'Startpoging met klauwplaatsleutel in de drieklauw activeert direct een rustige Freeze met uitleg',
-        'Juiste toerental schakelen bij volledig stilstaande hoofdspil en AC21 docent-vrijgave aanvragen'
+        'Werkstuk kort en recht opspannen en controleren of het zuiver rondloopt',
+        'Probeert iemand te starten met de sleutel nog in de klauwplaat? Dan pauzeert het beeld rustig met uitleg',
+        'Het juiste toerental kiezen bij stilstaande spil en de opstelling laten vrijgeven'
       ]
     },
     M4: {
-      code: 'MODULE M4 · VEILIG STARTEN & VERSPANEN',
-      standplaats: 'Standplaats B · Snijzone & Nonius',
-      title: 'Vlak- en trapdraaien op live 2D-werktekening',
-      summary: 'Met gesloten klauwplaatkap draait de student het kopvlak schoon en werkt op nonius-schaalverdeling naar de gevraagde maattolerantie toe.',
+      code: 'ONDERDEEL 4 · VEILIG STARTEN & DRAAIEN',
+      standplaats: 'Snijzone & werktekening',
+      title: 'Vlak- en trapdraaien aan de hand van de werktekening',
+      summary: 'Met gesloten beschermkap draait de leerling het kopvlak vlak en werkt met de handwielen en schaalverdeling rustig naar de maten op de tekening toe.',
       image: 'assets/img/weiler/weiler_03_vr_trapdraaien_werktekening.webp',
-      caption: 'Gesloten beschermkap, nonius-uitlezing en 2D-werktekening (Ø 29,4 ±0,2 mm & trap Ø 28,0 × 24 mm).',
+      caption: 'Draaien met gesloten beschermkap, afleesbare nonius en duidelijke werktekening (Ø 29,4 ±0,2 mm en trap Ø 28,0 mm).',
       hasBuddyToggle: false,
-      telRpm: '710 RPM (Snijzone)',
+      telRpm: '710 RPM (in bedrijf)',
       telTol: 'Ø 29,4 ±0,2 mm',
-      telPos: 'carriage_x: 64,5 mm',
+      telPos: 'Langsslede: 64,5 mm',
       checks: [
-        'Opzettelijke spindelstart pas na gesloten beschermkap en vrije draaizone (Arbobesluit 7.14)',
-        'Directe fysica-feedback bij te diepe aanzet: trilling (chatter), oplopende snijtemperatuur en stop',
-        'Nauwkeurig werken met langs- en dwarsslede richting Ø 29,4 mm hoofdmaat en Ø 28,0 mm trap'
+        'Pas starten nadat de klauwplaatkap dicht zit en de draaizone helemaal vrij is',
+        'Bij een te diepe snede voelt en ziet de leerling direct dat de beitel gaat trillen en heet wordt',
+        'Stapsgewijs werken met langs- en dwarsslede naar Ø 29,4 mm en een trap van Ø 28,0 mm'
       ]
     },
     M5: {
-      code: 'MODULE M5 · STOPPEN, METEN & SCHOONMAKEN',
-      standplaats: 'Standplaats B · 0 RPM Stilstand',
-      title: 'Volledige stilstand (0 RPM) & 3D-schuifmaat',
-      summary: 'Meten of spanen verwijderen tijdens uitloop wordt direct onderschept. Pas bij 0 RPM meet de student na met de 3D-schuifmaat en ruimt veilig op.',
+      code: 'ONDERDEEL 5 · STOPPEN, METEN & OPRUIMEN',
+      standplaats: 'Volledige stilstand (0 RPM)',
+      title: 'Wachten op stilstand en nameten met de schuifmaat',
+      summary: 'Grijpen of meten terwijl de klauwplaat nog uitloopt wordt direct tegengehouden. Pas bij volledige stilstand meet de leerling het werkstuk na en maakt de bank veilig schoon.',
       image: 'assets/img/weiler/weiler_04_vr_schuifmaat_nameten.webp',
-      caption: 'Na volledige stilstand (0 RPM) meet de student Ø 29,4 mm na met de 3D-schuifmaat.',
+      caption: 'Pas als de spil helemaal stilstaat (0 RPM) meet de leerling Ø 29,4 mm na met de schuifmaat.',
       hasBuddyToggle: false,
-      telRpm: '0 RPM (Stilstand)',
-      telTol: 'Nonius ± 0,1 mm',
-      telPos: 'carriage_x: 132,0 mm',
+      telRpm: '0 RPM (stilstand)',
+      telTol: 'Schuifmaat ± 0,1 mm',
+      telPos: 'Spanenhaak & kwast',
       checks: [
-        'Volledige spindelstilstand (0 RPM) afwachten vóór openen van de kap of pakken van de schuifmaat',
-        'Spanen verwijderen met spanenhaak en kwast — nooit met blote hand of perslucht',
-        'Draaibank spanningsveilig, schoon en gereed voor de volgende leerling achterlaten'
+        'Rustig wachten tot de klauwplaat volledig stilstaat voordat de kap opengaat',
+        'Spanen weghalen met spanenhaak en kwast — nooit met blote handen of perslucht',
+        'De draaibank schoon en uitgeschakeld achterlaten voor de volgende leerling'
       ]
     },
     M6: {
-      code: 'MODULE M6 · STORINGEN & NOODSTOP',
-      standplaats: 'Standplaats B · Noodstop & LOTO',
-      title: 'Afwijkingen herkennen, noodstop & LOTO-isolatie',
-      summary: 'Kalm en trefzeker ingrijpen bij plotselinge werkstukslingering of een weigerende stopknop, inclusief exacte reactietijdmeting in milliseconden.',
+      code: 'ONDERDEEL 6 · STORINGEN & NOODSTOP',
+      standplaats: 'Ingrijpen bij afwijkingen',
+      title: 'Snel en kalm handelen bij een storing of noodstop',
+      summary: 'De leerling oefent wat je doet als een werkstuk plotseling gaat slingeren of een gewone stopknop dienst weigert: direct de noodstop indrukken en veilig uitschakelen.',
       image: 'assets/img/weiler/weiler_05_vr_veiligheidsstop_m6.webp',
-      caption: 'Zichtbare werkstukslingering (1,85 mm) met directe bediening van de paddenstoel-noodstop.',
+      caption: 'Zodra het werkstuk zichtbaar gaat slingeren, drukt de leerling direct op de rode paddenstoel-noodstop.',
       hasBuddyToggle: false,
-      telRpm: '0 RPM (Noodstop)',
-      telTol: 'Reactie < 750 ms',
-      telPos: 'Slingering 1,85 mm',
+      telRpm: '0 RPM (noodstop)',
+      telTol: 'Direct ingrijpen',
+      telPos: 'Veilig uitgeschakeld',
       checks: [
-        'Onmiddellijk indrukken van de paddenstoel-noodstop bij slingering of mechanische afwijking',
-        'Geen automatische herstart na ontgrendelen noodstop (bewuste herstarteis Arbobesluit 7.14)',
-        'Onderscheid toepassen tussen normale stop, noodstop en spanningsloos maken (LOTO)'
+        'Meteen de noodstop indrukken bij onverwachte trillingen, geluid of slingering',
+        'Ervaren dat de machine na het ontgrendelen van de noodstop nooit zomaar vanzelf weer aanloopt',
+        'Het verschil kennen tussen normaal stoppen, de noodstop en de hoofdschakelaar vergrendelen'
       ]
     }
   };
@@ -344,109 +344,109 @@
   const ELEKTRO_MODULE_ORDER = ['E1', 'E2', 'E3', 'E4', 'E5', 'E6'];
   const ELEKTRO_MODULES_DATA = {
     E1: {
-      code: 'MODULE E1 · STANDPLAATS A · NEN 3140 PBM & VDE',
-      standplaats: 'Standplaats A · Vóór kastvrijgave',
-      title: '3D Buddy Check & Elektrische PBM',
-      summary: 'Voordat een schakelkast wordt geopend, controleert de student een levensgrote 3D-medestudent op geleidende sieraden en open kleding én keurt de eigen PBM en VDE 1000V meetset.',
+      code: 'ONDERDEEL 1 · VOORBEREIDING & GEREEDSCHAP',
+      standplaats: 'Voorbereiding · Kast nog gesloten',
+      title: 'Buddy Check & geïsoleerd gereedschap',
+      summary: 'Voordat de schakelkast opengaat, controleert de student een klasgenoot op sieraden en open kleding en kijkt hij zijn eigen beschermingsmiddelen, VDE-gereedschap en hangslot na.',
       image: 'assets/img/elektro/elektro_00b_buddy_check_na.webp',
       altImage: 'assets/img/elektro/elektro_00a_buddy_check_voor.webp',
-      caption: '3D Buddy Check voltooid: polshorloge af, mouwen gesloten, veiligheidsbril op en VDE 1000V set gekeurd.',
-      altCaption: 'Beginsituatie E1: metalen polshorloge, opgerolde mouwen, bril nog op de werkbank en ongekeurd LOTO-slot.',
+      caption: 'Na de controle: horloge af, mouwen dicht, veiligheidsbril op en VDE 1000V meetset gecontroleerd.',
+      altCaption: 'Vóór de controle: metalen horloge om, opgerolde mouwen, bril nog op tafel en geen gekeurd hangslot.',
       hasBuddyToggle: true,
-      gateSafeMsg: 'PBM- & VDE-punten veilig — Toegang tot Standplaats B (400V-verdeler) vrijgegeven',
-      gateWarnMsg: 'PBM- & VDE-punten gekeurd — Klik alle 4 veiligheidspunten aan voor vrijgave naar de verdeler',
+      gateSafeMsg: 'punten in orde — Leerling mag door naar de verdeelkast',
+      gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de punten aan voor toegang tot de verdeelkast',
       telRpm: 'Werkbank · Kast dicht',
       telTol: 'NEN 3140 · PBM & VDE',
-      telPos: 'L + R Trigger · 0% lopen',
+      telPos: 'Vaste plek · 2 knoppen',
       checks: [
-        'Levensgrote 3D-medestudent controleren op horloge, ringen, kettingen en gesloten werkkleding',
-        'Eigen veiligheidsbril / gelaatsbescherming opzetten en VDE 1000V gereedschap op onbeschadigde isolatie keuren',
-        'Persoonlijk LOTO-hangslot en tweepolige spanningzoeker (EN 61243-3) gereedmaken vóór kasttoegang'
+        'Klasgenoot controleren op metalen horloge, ringen, kettingen en openstaande mouwen',
+        'Eigen veiligheidsbril of gelaatsscherm opzetten en kijken of de isolatie van het VDE-gereedschap heel is',
+        'Persoonlijk hangslot met naamkaart en tweepolige spanningzoeker (Duspol) klaarleggen'
       ]
     },
     E2: {
-      code: 'MODULE E2 · STANDPLAATS B · TEKENING & WERKPLEK',
-      standplaats: 'Standplaats B · 400V Hoofdverdeler',
-      title: 'Installatie- & Werkplekinspectie (400V / 230V)',
-      summary: 'Recht vóór de 400V-verdeler vergelijkt de student het eendraadsschema en de groepenverklaring met de werkelijke opstelling en controleert de droge, vrije werkzone.',
+      code: 'ONDERDEEL 2 · SCHEMA & WERKPLEK',
+      standplaats: 'Bij de 400V-verdeelkast',
+      title: 'Installatieschema lezen en werkplek controleren',
+      summary: 'Voor de 400V-kast vergelijkt de student het schema in de deur met de groepen in de kast en kijkt hij of de vloer droog en vrij van obstakels is.',
       image: 'assets/img/elektro/elektro_03_afschermen_schema.webp',
-      caption: 'Eendraadsschema in de kastdeur vergelijken met hoofdschakelaar en afgaande groepen.',
+      caption: 'Het installatieschema in de kastdeur vergelijken met de hoofdschakelaar en de juiste groep.',
       hasBuddyToggle: false,
-      telRpm: '400V AC · In bedrijf',
-      telTol: 'Schema & Vrije vluchtweg',
-      telPos: 'Standplaats B · Kastdeur',
+      telRpm: '400V · Nog in bedrijf',
+      telTol: 'Schema & vrije ruimte',
+      telPos: 'Droge, vrije vloer',
       checks: [
-        'Eendraadsschema en groepenverklaring lezen om de juiste voeding en eventuele PV-terugvoeding te identificeren',
-        'Vloerzone controleren op vocht, losliggende kabels en vrije uitwijkruimte rond de verdeelkast',
-        'Vaststellen dat afschakelen zonder gevaar voor omliggende machines kan plaatsvinden (afstemming WV/docent)'
+        'Het installatieschema en de groepenverklaring lezen om de juiste groep en eventuele terugvoeding te vinden',
+        'Controleren of de vloer droog is en er genoeg vrije ruimte rond de kast is',
+        'Afstemmen met de docent of werkverantwoordelijke voordat de voeding wordt uitgeschakeld'
       ]
     },
     E3: {
-      code: 'MODULE E3 · REGEL 1 & 2 · LOCKOUT-TAGOUT (LOTO)',
-      standplaats: 'Standplaats B · Hoofdschakelaar & Slot',
-      title: 'Volledig scheiden & vergrendelen met eigen LOTO-slot',
-      summary: 'De student schakelt gecontroleerd af, zet de lastscheider op 0 en borgt deze direct met een persoonlijk Lockout-Tagout hangslot en ingevulde waarschuwingskaart.',
+      code: 'ONDERDEEL 3 · STAP 1 & 2 · LOCKOUT-TAGOUT',
+      standplaats: 'Hoofdschakelaar & hangslot',
+      title: 'Uitschakelen en direct vergrendelen met een eigen slot',
+      summary: 'De student schakelt in de juiste volgorde af, zet de lastscheider op nul en plaatst direct een vergrendelbeugel met eigen hangslot en naamkaartje.',
       image: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
-      caption: 'In-VR Lockout-Tagout: lastscheider op 0 geborgd met rode vergrendelbeugel, eigen hangslot en LOTO-label.',
+      caption: 'Lockout-Tagout in VR: hoofdschakelaar op 0 en vergrendeld met beugel, persoonlijk hangslot en label.',
       hasBuddyToggle: false,
-      telRpm: 'Lastscheider: 0 (UIT)',
-      telTol: 'Regel 1 & 2 · LOTO geborgd',
-      telPos: '1 Sleutel bij student',
+      telRpm: 'Schakelaar op 0 (UIT)',
+      telTol: 'Vergrendeld met slot',
+      telPos: 'Sleutel op zak',
       checks: [
-        'Eerst verbruikers afschakelen (geen schakeling onder volle belasting) en daarna de hoofdschakelaar op 0 zetten',
-        'Persoonlijke LOTO-vergrendelbeugel, rood hangslot en naamlabel aanbrengen tegen onbedoeld wederinschakelen',
-        'Openen van de verdeler zonder geplaatst LOTO-slot activeert direct een rustige Freeze met toelichting'
+        'Eerst de afgaande belasting uitschakelen en daarna rustig de hoofdschakelaar op 0 zetten',
+        'Vergrendelbeugel, persoonlijk hangslot en naamkaart plaatsen zodat niemand de stroom per ongeluk aanzet',
+        'Wie in de kast wil werken zonder slot, krijgt direct een rustige melding met uitleg waarom dat gevaarlijk is'
       ]
     },
     E4: {
-      code: 'MODULE E4 · REGEL 3 · EN 61243-3 TWEEPOLIG METEN',
-      standplaats: 'Standplaats B · Klemmenstrook & Rails',
-      title: 'Tweepolig spanningsloosheid aantonen (Duspol)',
-      summary: 'Geen enkelpolige spanningszoeker of blinde aanname: de student voert de volledige driestapsmeting uit met een tweepolige Duspol over alle geleiders.',
+      code: 'ONDERDEEL 4 · STAP 3 · TWEEPOLIG NAMETEN',
+      standplaats: 'Klemmenstrook & rails',
+      title: 'Spanningsloosheid aantonen met een tweepolige Duspol',
+      summary: 'Niet gokken en nooit op een enkelpolige spanningszoeker vertrouwen: de student voert de volledige meting uit met een tweepolige Duspol.',
       image: 'assets/img/elektro/elektro_02_tweepolig_meten.webp',
-      caption: 'Tweepolige Duspol-meting tussen L1 en PE toont aantoonbaar 0 V na verplichte voormeting.',
+      caption: 'Tweepolige meting met de Duspol tussen fase en aarde laat duidelijk 0 V zien.',
       hasBuddyToggle: false,
-      telRpm: '0 V (Alle combinaties)',
-      telTol: 'Voor- · Hoofd- · Nameting',
-      telPos: 'Duspol CAT IV · EN 61243-3',
+      telRpm: '0 V (alle geleiders)',
+      telTol: 'Voor-, hoofd- & nameting',
+      telPos: 'Tweepolige Duspol',
       checks: [
-        'Verplichte voormeting op een bekende spanningvoerende bron om de werking van de Duspol te bewijzen',
-        'Tweepolig meten tussen alle combinaties: L1–N, L2–N, L3–N, L1–PE, L2–PE, L3–PE én onderling L1–L2–L3',
-        'Afsluiten met verplichte nameting op de bekende bron om defect raken tijdens het meten uit te sluiten'
+        'Eerst de Duspol testen op een bekende spanningsbron om zeker te weten dat het meetinstrument werkt',
+        'Tweepolig meten tussen alle fasen onderling, tussen elke fase en nul én tussen elke fase en aarde',
+        'Daarna opnieuw testen op de bekende spanningsbron zodat zeker is dat de meter onderweg niet kapot ging'
       ]
     },
     E5: {
-      code: 'MODULE E5 · REGEL 4 & 5 · AARDEN & AFSCHERMEN',
-      standplaats: 'Standplaats B · Actieve naastgelegen delen',
-      title: 'Beschermen tegen terugvoeding & actieve delen afschermen',
-      summary: 'Waar nodig wordt geaard en kortgesloten tegen terugvoeding, en spanningvoerende naastgelegen rails worden aanrakingsveilig (IP2X) afgeschermd.',
+      code: 'ONDERDEEL 5 · STAP 4 & 5 · AFSCHERMEN',
+      standplaats: 'Naastgelegen spanningsdelen',
+      title: 'Rekening houden met terugvoeding en delen afschermen',
+      summary: 'Zitten er naast het werkgebied nog rails of voedingen waar spanning op staat? Dan schermt de student die netjes en aanrakingsveilig af met isolatieplaten.',
       image: 'assets/img/elektro/elektro_03_afschermen_schema.webp',
-      caption: 'Plaatsen van gele isolerende afschermplaat over naastgelegen koperrails met gecertificeerde 1000V handschoenen.',
+      caption: 'Plaatsen van een gele isolerende afschermplaat over naastgelegen rails met isolerende handschoenen.',
       hasBuddyToggle: false,
-      telRpm: '0 V · IP2X Afgeschermd',
-      telTol: 'Regel 4 & 5 · NEN 3140',
-      telPos: '1000V Handschoenen aan',
+      telRpm: '0 V · Veilig afgeschermd',
+      telTol: 'Geen aanrakingsgevaar',
+      telPos: '1000V handschoenen',
       checks: [
-        'Controleren op mogelijke terugvoeding vanuit PV-omvormers, noodstroom of gekoppelde onderverdelers',
-        'Aanrakingsveilig plaatsen van isolerende afschermplaten over niet-uitgeschakelde voedingsrails',
-        'Werkplek vrijgeven voor de montagehandeling met vastgelegde 4 Hz voortgang op de docenttablet'
+        'Controleren op mogelijke terugvoeding vanuit bijvoorbeeld zonnepanelen of noodstroom',
+        'Isolerende afschermplaten plaatsen voor delen die niet uitgeschakeld konden worden',
+        'De werkplek netjes en overzichtelijk klaarzetten voor de eigenlijke werkzaamheden'
       ]
     },
     E6: {
-      code: 'MODULE E6 · CALAMITEIT & VEILIGE WEDERINSCHAKELING',
-      standplaats: 'Standplaats B · Eindcontrole & Vrijgave',
-      title: 'Afwijking herkennen, LOTO verwijderen & vrijgave',
-      summary: 'Na afloop controleert de student of al het gereedschap uit de kast is, verwijdert uitsluitend het eigen LOTO-slot en rondt af met de fysieke vrijgave door de vakdocent.',
+      code: 'ONDERDEEL 6 · CONTROLE & VEILIG INSCHAKELEN',
+      standplaats: 'Eindcontrole & praktijkvrijgave',
+      title: 'Gereedschap tellen, slot weghalen en samen afronden',
+      summary: 'Na het werk kijkt de student of er geen gereedschap in de kast is achtergebleven, haalt zijn eigen hangslot weg en rondt het praktijkrapport af met de vakdocent.',
       image: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
-      caption: 'Veilige afronding: kast gecontroleerd en gesloten, eigen LOTO-slot verwijderd en gereed voor PHYS_01..05.',
+      caption: 'Veilige afronding: kast gecontroleerd en gesloten, eigen slot verwijderd en klaar voor het gesprek met de docent.',
       hasBuddyToggle: false,
-      telRpm: 'Gecontroleerde vrijgave',
-      telTol: 'Kast vrij + PHYS_01..05',
-      telPos: 'A4 Rapport met S Pen',
+      telRpm: 'Klaar voor vrijgave',
+      telTol: 'Kast schoon & dicht',
+      telPos: 'A4-rapport op tablet',
       checks: [
-        'Kalm ingrijpen bij onverwachte restspanning of beschadigde isolatie zonder vlamboogrisico te veroorzaken',
-        'Visuele eindcontrole: geen achtergebleven gereedschap of losse draadbruggen, afschermkappen teruggeplaatst',
-        'Eigen LOTO-slot verwijderen en A4-rapport (PHYS_01..05) laten aftekenen door de vakdocent bij de echte kast'
+        'Rustig stoppen en melden als tijdens het werk toch een beschadigde kabel of onverwachte spanning opvalt',
+        'Controleren dat al het gereedschap uit de kast is en alle afdekplaten weer op hun plek zitten',
+        'Alleen het eigen hangslot verwijderen en bij de echte kast de praktijkpunten doornemen met de docent'
       ]
     }
   };
@@ -534,7 +534,7 @@
         jb.classList.toggle('is-active', jb.getAttribute('data-jump-module') === key);
       });
 
-      if (elStepCounter) elStepCounter.textContent = 'Module ' + stepNum + ' van ' + MODULE_ORDER.length;
+      if (elStepCounter) elStepCounter.textContent = 'Onderdeel ' + stepNum + ' van ' + MODULE_ORDER.length;
       if (elStandplaatsHint) elStandplaatsHint.textContent = m.standplaats;
       if (elProgressFill) {
         elProgressFill.style.width = ((stepNum / MODULE_ORDER.length) * 100).toFixed(2) + '%';
@@ -646,104 +646,104 @@
   }
 
   /* ------------------------------------------------------------------
-   * 4. 13,1" Android Docenten Dashboard (v2.3.0) Simulator + S Pen A4 Rapport
+   * 4. 13,1-inch Teacher Dashboard Voorbeeld + A4-Praktijkrapport
    * ------------------------------------------------------------------ */
   const cockpitRoot = document.getElementById('docentCockpitSim');
   if (cockpitRoot) {
     const initialSlots = parseInt(cockpitRoot.getAttribute('data-slots') || '10', 10);
     const BASE_HEADSETS = [
       {
-        id: 'QUEST-01', student: 'Daan Bakker', klas: 'MBO-2 Verspanen', mod: 'M4 · Trapdraaien',
-        status: 'ACTIEF', statusClass: 'status-safe', rpm: 710, diaMain: 29.4, diaStep: 28.0,
-        carriageX: 64.5, temp: 74, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionMs: 640, battery: 88,
-        note: 'Kopvlak gevlakt · Hoofdmaat Ø 29,4 mm binnen tolerantie (±0,2 mm), langsslede op 64,5 mm.',
+        slotNum: 1, id: 'Bril 01', student: 'Daan Bakker', klas: 'MBO-2 Verspanen', mod: 'Onderdeel 4 · Trapdraaien',
+        status: 'BEZIG', statusClass: 'status-safe', rpm: 710, diaMain: 29.4, diaStep: 28.0,
+        carriageX: 64.5, overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 88,
+        note: 'Kopvlak netjes gevlakt · Hoofdmaat Ø 29,4 mm binnen de marge (±0,2 mm), langsslede op 64,5 mm.',
         bookmarks: [
-          { frame: 8, label: 'M3 Opstelling vrijgegeven (AC21)', warn: false },
-          { frame: 22, label: 'Kopvlak vlakdraaien voltooid', warn: false },
+          { frame: 8, label: 'Opstelling goedgekeurd', warn: false },
+          { frame: 22, label: 'Kopvlak vlakgedraaid', warn: false },
           { frame: 35, label: 'Maat Ø 29,4 mm bereikt', warn: false }
         ]
       },
       {
-        id: 'QUEST-02', student: 'Sara Yilmaz', klas: 'MBO-2 Verspanen', mod: 'M3 · Opspannen',
-        status: 'FREEZE', statusClass: 'status-danger', rpm: 0, diaMain: 30.0, diaStep: 30.0,
-        carriageX: 118.0, temp: 24, guardClosed: false, chuckKeyIn: true, runout: 0.03, reactionMs: 710, battery: 92,
-        note: 'VEILIGHEIDSSTOP: Startpoging met klauwplaatsleutel nog in drieklauw — rustige uitleg getoond.',
+        slotNum: 2, id: 'Bril 02', student: 'Sara Yilmaz', klas: 'MBO-2 Verspanen', mod: 'Onderdeel 3 · Opspannen',
+        status: 'GEPAUZEERD', statusClass: 'status-danger', rpm: 0, diaMain: 30.0, diaStep: 30.0,
+        carriageX: 118.0, overheated: false, guardClosed: false, chuckKeyIn: true, runout: 0.03, reactionSec: '0,7 sec', battery: 92,
+        note: 'VEILIGHEIDSSTOP: Wilde starten met de klauwplaatsleutel nog in de drieklauw — rustige uitleg in beeld.',
         bookmarks: [
           { frame: 14, label: 'Werkstuk Ø 30 mm ingeklemd', warn: false },
-          { frame: 28, label: 'FREEZE: Sleutel nog in klauwplaat', warn: true }
+          { frame: 28, label: 'Gepauzeerd: sleutel nog in klauwplaat', warn: true }
         ]
       },
       {
-        id: 'QUEST-03', student: 'Lucas van Dijk', klas: 'VMBO-PIE Klas 4', mod: 'M4 · Langsdraaien',
+        slotNum: 3, id: 'Bril 03', student: 'Lucas van Dijk', klas: 'VMBO-PIE Klas 4', mod: 'Onderdeel 4 · Langsdraaien',
         status: 'LET OP', statusClass: 'status-warn', rpm: 1000, diaMain: 29.6, diaStep: 28.4,
-        carriageX: 82.0, temp: 234, guardClosed: true, chuckKeyIn: false, runout: 0.04, reactionMs: 690, battery: 76,
-        note: 'LET OP: Te diepe aanzet (1,45 mm) bij 1000 RPM veroorzaakt chatter en 234 °C aanloopkleur.',
+        carriageX: 82.0, overheated: true, guardClosed: true, chuckKeyIn: false, runout: 0.04, reactionSec: '0,7 sec', battery: 76,
+        note: 'LET OP: Te diepe aanzet gekozen bij 1000 RPM — de beitel begint merkbaar te trillen.',
         bookmarks: [
-          { frame: 12, label: 'Start spindel 1000 RPM (kap dicht)', warn: false },
-          { frame: 31, label: 'Chatter & snijtemp 234 °C', warn: true }
+          { frame: 12, label: 'Gestart op 1000 RPM (kap dicht)', warn: false },
+          { frame: 31, label: 'Te diepe snede: trilling op beitel', warn: true }
         ]
       },
       {
-        id: 'QUEST-04', student: 'Noor Jansen', klas: 'MBO-3 Allround', mod: 'M6 · Noodsituatie',
+        slotNum: 4, id: 'Bril 04', student: 'Noor Jansen', klas: 'MBO-3 Allround', mod: 'Onderdeel 6 · Noodstop',
         status: 'VEILIG GESTOPT', statusClass: 'status-info', rpm: 0, diaMain: 29.4, diaStep: 28.0,
-        carriageX: 96.0, temp: 52, guardClosed: true, chuckKeyIn: false, runout: 1.85, reactionMs: 580, battery: 84,
-        note: 'M6 Geslaagd: Paddenstoel-noodstop bediend binnen 580 ms bij 1,85 mm werkstukslingering.',
+        carriageX: 96.0, overheated: false, guardClosed: true, chuckKeyIn: false, runout: 1.85, reactionSec: '0,6 sec', battery: 84,
+        note: 'Goed gehandeld: direct de noodstop ingedrukt (0,6 sec) toen het werkstuk begon te slingeren.',
         bookmarks: [
-          { frame: 19, label: 'Storingsinjectie: Slingering 1,85 mm', warn: true },
-          { frame: 25, label: 'Noodstop bediend (580 ms)', warn: false }
+          { frame: 19, label: 'Storing gestart: werkstuk slingert', warn: true },
+          { frame: 25, label: 'Noodstop direct ingedrukt (0,6 sec)', warn: false }
         ]
       },
       {
-        id: 'QUEST-05', student: 'Sem de Vries', klas: 'MBO-2 Verspanen', mod: 'M1 · 3D Buddy Check',
-        status: 'ACTIEF', statusClass: 'status-safe', rpm: 0, diaMain: 30.0, diaStep: 30.0,
-        carriageX: 140.0, temp: 21, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionMs: 660, battery: 95,
-        note: 'Standplaats A: 3D-medestudent gecorrigeerd (AV_COMBO_2) & eigen werkhandschoenen afgelegd.',
+        slotNum: 5, id: 'Bril 05', student: 'Sem de Vries', klas: 'MBO-2 Verspanen', mod: 'Onderdeel 1 · Buddy Check',
+        status: 'BEZIG', statusClass: 'status-safe', rpm: 0, diaMain: 30.0, diaStep: 30.0,
+        carriageX: 140.0, overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,7 sec', battery: 95,
+        note: 'Voorbereiding: klasgenoot gecontroleerd op losse kleding, eigen veiligheidsbril op en handschoenen uit.',
         bookmarks: [
-          { frame: 16, label: '3D Buddy Check & Eigen PBM gekeurd', warn: false }
+          { frame: 16, label: 'Buddy Check & eigen PBM afgerond', warn: false }
         ]
       },
       {
-        id: 'QUEST-06', student: 'Mila Koster', klas: 'MBO-2 Verspanen', mod: 'M5 · Nameten',
-        status: 'ACTIEF', statusClass: 'status-safe', rpm: 0, diaMain: 29.3, diaStep: 28.0,
-        carriageX: 132.0, temp: 41, guardClosed: false, chuckKeyIn: false, runout: 0.02, reactionMs: 615, battery: 81,
-        note: 'Spindel op 0 RPM · 3D-schuifmaat geklemd op Ø 29,3 mm (binnen ±0,2 mm).',
+        slotNum: 6, id: 'Bril 06', student: 'Mila Koster', klas: 'MBO-2 Verspanen', mod: 'Onderdeel 5 · Nameten',
+        status: 'BEZIG', statusClass: 'status-safe', rpm: 0, diaMain: 29.3, diaStep: 28.0,
+        carriageX: 132.0, overheated: false, guardClosed: false, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 81,
+        note: 'Netjes gewacht op volledige stilstand · schuifmaat afgelezen op Ø 29,3 mm (binnen ±0,2 mm).',
         bookmarks: [
-          { frame: 20, label: 'Volledige stilstand 0 RPM afgewacht', warn: false },
-          { frame: 33, label: '3D-Schuifmaat meting: 29,3 mm', warn: false }
+          { frame: 20, label: 'Volledige stilstand (0 RPM) afgewacht', warn: false },
+          { frame: 33, label: 'Schuifmaat gemeten: Ø 29,3 mm', warn: false }
         ]
       },
       {
-        id: 'QUEST-07', student: 'Bram Peters', klas: 'MBO-3 Allround', mod: 'M2 · Inspectie',
-        status: 'ACTIEF', statusClass: 'status-safe', rpm: 0, diaMain: 30.0, diaStep: 30.0,
-        carriageX: 140.0, temp: 22, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionMs: 705, battery: 79,
-        note: 'Prestart: koelmiddelplas op vloer gemeld en machinebed volledig vrijgemaakt.',
+        slotNum: 7, id: 'Bril 07', student: 'Bram Peters', klas: 'MBO-3 Allround', mod: 'Onderdeel 2 · Werkplek',
+        status: 'BEZIG', statusClass: 'status-safe', rpm: 0, diaMain: 30.0, diaStep: 30.0,
+        carriageX: 140.0, overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,7 sec', battery: 79,
+        note: 'Controle vooraf: plas koelmiddel op de vloer opgemerkt en los gereedschap van het bed gehaald.',
         bookmarks: [
-          { frame: 18, label: 'Vloerobstakel & koelmiddel gemeld', warn: false }
+          { frame: 18, label: 'Vloer en machinebed vrijgemaakt', warn: false }
         ]
       },
       {
-        id: 'QUEST-08', student: 'Aya El Amrani', klas: 'MBO-2 Verspanen', mod: 'M4 · Examen EX-4821',
-        status: 'ACTIEF', statusClass: 'status-safe', rpm: 710, diaMain: 29.5, diaStep: 28.1,
-        carriageX: 58.2, temp: 68, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionMs: 595, battery: 90,
-        note: 'Individueel praktijkexamen (Real Deal zonder hints) — stabiele langsvoeding.',
+        slotNum: 8, id: 'Bril 08', student: 'Aya El Amrani', klas: 'MBO-2 Verspanen', mod: 'Onderdeel 4 · Eindopdracht',
+        status: 'BEZIG', statusClass: 'status-safe', rpm: 710, diaMain: 29.5, diaStep: 28.1,
+        carriageX: 58.2, overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 90,
+        note: 'Zelfstandige eindopdracht zonder voorzeggen — rustige, gelijkmatige langsvoeding.',
         bookmarks: [
-          { frame: 10, label: 'Prestart 100% zelfstandig behaald', warn: false },
-          { frame: 30, label: 'Trap-as Ø 28,1 mm in bewerking', warn: false }
+          { frame: 10, label: 'Voorcontrole zelfstandig behaald', warn: false },
+          { frame: 30, label: 'Trap Ø 28,1 mm in bewerking', warn: false }
         ]
       },
       {
-        id: 'QUEST-09', student: 'Finn Hendriks', klas: 'MBO-2 Verspanen', mod: 'M3 · Toerentabel',
-        status: 'ACTIEF', statusClass: 'status-safe', rpm: 710, diaMain: 30.0, diaStep: 30.0,
-        carriageX: 112.0, temp: 38, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionMs: 630, battery: 87,
-        note: 'Snijsnelheid berekend · 710 RPM veilig geschakeld bij stilstaande hoofdspil.',
-        bookmarks: [{ frame: 24, label: '710 RPM veilig geschakeld', warn: false }]
+        slotNum: 9, id: 'Bril 09', student: 'Finn Hendriks', klas: 'MBO-2 Verspanen', mod: 'Onderdeel 3 · Toerental',
+        status: 'BEZIG', statusClass: 'status-safe', rpm: 710, diaMain: 30.0, diaStep: 30.0,
+        carriageX: 112.0, overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 87,
+        note: 'Juiste toerental opgezocht op de tabel en 710 RPM ingeschakeld bij stilstaande spil.',
+        bookmarks: [{ frame: 24, label: '710 RPM veilig gekozen', warn: false }]
       },
       {
-        id: 'QUEST-10', student: 'Zoë Vermeer', klas: 'MBO-3 Allround', mod: 'M5 · Schoonmaken',
-        status: 'ACTIEF', statusClass: 'status-safe', rpm: 0, diaMain: 29.4, diaStep: 28.0,
-        carriageX: 138.0, temp: 33, guardClosed: false, chuckKeyIn: false, runout: 0.02, reactionMs: 605, battery: 93,
-        note: 'Hoofdschakelaar op 0 · Spanen verwijderd met spanenhaak en kwast.',
-        bookmarks: [{ frame: 30, label: 'Spanenhaak gebruikt', warn: false }]
+        slotNum: 10, id: 'Bril 10', student: 'Zoë Vermeer', klas: 'MBO-3 Allround', mod: 'Onderdeel 5 · Opruimen',
+        status: 'BEZIG', statusClass: 'status-safe', rpm: 0, diaMain: 29.4, diaStep: 28.0,
+        carriageX: 138.0, overheated: false, guardClosed: false, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 93,
+        note: 'Hoofdschakelaar uitgeschakeld en spanen netjes weggehaald met spanenhaak en kwast.',
+        bookmarks: [{ frame: 30, label: 'Spanenhaak en kwast gebruikt', warn: false }]
       }
     ];
 
@@ -754,10 +754,11 @@
     ];
     for (let n = 11; n <= 22; n++) {
       const tpl = BASE_HEADSETS[(n - 1) % 10];
-      const padId = 'QUEST-' + (n < 10 ? '0' + n : String(n));
+      const padId = 'Bril ' + (n < 10 ? '0' + n : String(n));
       BASE_HEADSETS.push({
+        slotNum: n,
         id: padId,
-        student: EXTRA_NAMES[n - 11] || ('Student ' + n),
+        student: EXTRA_NAMES[n - 11] || ('Leerling ' + n),
         klas: tpl.klas,
         mod: tpl.mod,
         status: tpl.status,
@@ -766,11 +767,11 @@
         diaMain: tpl.diaMain,
         diaStep: tpl.diaStep,
         carriageX: tpl.carriageX,
-        temp: tpl.temp,
+        overheated: tpl.overheated,
         guardClosed: tpl.guardClosed,
         chuckKeyIn: tpl.chuckKeyIn,
         runout: tpl.runout,
-        reactionMs: tpl.reactionMs,
+        reactionSec: tpl.reactionSec,
         battery: Math.max(72, 98 - n),
         note: tpl.note,
         bookmarks: tpl.bookmarks
@@ -812,10 +813,10 @@
     let toastFlashTimer = null;
 
     const CAM_LABELS = {
-      OVERVIEW_3Q: 'Overzicht 3/4',
-      CUT_ZONE: 'Snijzone Close-up',
-      CHUCK_CLOSE: 'Klauwplaat & Kap',
-      SPEED_CHART: 'Snelheidstabel'
+      OVERVIEW_3Q: 'Overzicht',
+      CUT_ZONE: 'Dicht op werkstuk',
+      CHUCK_CLOSE: 'Klauwplaat & kap',
+      SPEED_CHART: 'Toerentabel'
     };
 
     function stopReplayLoop() {
@@ -853,21 +854,21 @@
 
       if (profKey === 'kar10') {
         activeCount = 10;
-        if (protocolLine) protocolLine.textContent = 'ANDROID DASHBOARD V2.3.0 · VR-KAR 10 (2×5) · 192.168.1.101..110:8765';
+        if (protocolLine) protocolLine.textContent = 'KLASOVERZICHT · VR-KAR 10 (10 BRILLEN VERBONDEN)';
       } else if (profKey === 'kar20') {
         activeCount = 20;
-        if (protocolLine) protocolLine.textContent = 'ANDROID DASHBOARD V2.3.0 · VR-KAR 20 (4×5) · 192.168.1.101..120:8765';
+        if (protocolLine) protocolLine.textContent = 'KLASOVERZICHT · VR-KAR 20 (20 BRILLEN VERBONDEN)';
       } else {
         activeCount = 12;
-        if (protocolLine) protocolLine.textContent = 'ANDROID DASHBOARD V2.3.0 · EIGEN BRILLEN (ONBEPERKT · UDP :47800)';
+        if (protocolLine) protocolLine.textContent = 'KLASOVERZICHT · EIGEN BRILLEN (' + activeCount + ' BRILLEN VERBONDEN)';
       }
       HEADSETS = BASE_HEADSETS.slice(0, activeCount);
       if (selectedIdx >= HEADSETS.length) selectedIdx = 0;
       updateCockpit();
       showToast(
-        'Klasprofiel actief: ' +
-        (profKey === 'kar10' ? 'VR-Kar 10 (2×5)' : profKey === 'kar20' ? 'VR-Kar 20 (4×5)' : 'Eigen Brillen (Onbeperkt via UDP :47800)') +
-        ' — live videostream alleen op 1 geselecteerde bril.'
+        'Groepsweergave gewisseld naar ' +
+        (profKey === 'kar10' ? 'VR-Kar 10 (10 brillen)' : profKey === 'kar20' ? 'VR-Kar 20 (20 brillen)' : 'Eigen brillen van school') +
+        ' — klik op een leerling om direct mee te kijken.'
       );
     }
 
@@ -906,30 +907,30 @@
         });
         updateCockpit();
         const h = HEADSETS[selectedIdx];
-        showToast('Spectator-camera gewisseld → ' + CAM_LABELS[activeSpectatorCam] + ' op ' + h.id + ' (live stream op 1 bril).');
+        showToast('Weergave gewisseld naar "' + CAM_LABELS[activeSpectatorCam] + '" bij ' + h.student + ' (' + h.id + ').');
       });
     });
 
     function renderSlots() {
       if (!slotsContainer) return;
       let html = HEADSETS.map(function (h, idx) {
-        if (statusFilter === 'attention' && h.status !== 'FREEZE' && h.status !== 'LET OP') {
+        if (statusFilter === 'attention' && h.status !== 'GEPAUZEERD' && h.status !== 'LET OP') {
           return '';
         }
-        if (statusFilter === 'active' && h.status !== 'ACTIEF') {
+        if (statusFilter === 'active' && h.status !== 'BEZIG') {
           return '';
         }
         const badgeText = groupPaused ? 'PAUZE' : h.status;
         const badgeCls = groupPaused ? 'status-warn' : h.statusClass;
         const isSel = idx === selectedIdx;
         return (
-          '<button type="button" class="quest-slot ' + (isSel ? 'is-selected' : '') + '" data-slot-idx="' + idx + '" id="slotBtn_' + h.id + '">' +
+          '<button type="button" class="quest-slot ' + (isSel ? 'is-selected' : '') + '" data-slot-idx="' + idx + '" id="slotBtn_' + h.slotNum + '">' +
             '<div class="quest-slot-top">' +
               '<span class="mono" style="font-size:0.72rem;font-weight:600;color:' + (isSel ? '#38BDF8' : '#94A3B8') + ';">' + h.id + ' · ' + h.battery + '%</span>' +
               '<span class="status-badge ' + badgeCls + '">' + badgeText + '</span>' +
             '</div>' +
             '<span class="quest-slot-name">' + h.student + '</span>' +
-            '<span class="quest-slot-meta">' + h.mod + (isSel ? ' · LIVE FOCUS' : '') + '</span>' +
+            '<span class="quest-slot-meta">' + h.mod + (isSel ? ' · MEEKIJKEN' : '') + '</span>' +
           '</button>'
         );
       }).join('');
@@ -937,8 +938,8 @@
       if (currentProfile === 'unlimited' && activeCount < BASE_HEADSETS.length && statusFilter === 'all') {
         html +=
           '<button type="button" class="quest-slot" id="btnAddUnlimitedHeadset" style="border-style:dashed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">' +
-            '<span class="mono" style="font-size:0.76rem;color:#38BDF8;font-weight:600;">+ KOPPEL EIGEN BRIL</span>' +
-            '<span class="quest-slot-meta">UDP :47800 (Onbeperkt)</span>' +
+            '<span class="mono" style="font-size:0.76rem;color:#38BDF8;font-weight:600;">+ EIGEN BRIL KOPPELEN</span>' +
+            '<span class="quest-slot-meta">Verschijnt automatisch op nummer</span>' +
           '</button>';
       }
 
@@ -951,7 +952,7 @@
           scrubFrame = 35;
           if (elReplaySlider) elReplaySlider.value = '35';
           updateCockpit();
-          showToast('Live focus op ' + HEADSETS[selectedIdx].id + ' (' + HEADSETS[selectedIdx].student + ') — overige brillen op 4 Hz telemetrie.');
+          showToast('Je kijkt nu live mee met ' + HEADSETS[selectedIdx].student + ' (' + HEADSETS[selectedIdx].id + ').');
         });
       });
 
@@ -962,8 +963,11 @@
             activeCount += 1;
             HEADSETS = BASE_HEADSETS.slice(0, activeCount);
             selectedIdx = activeCount - 1;
+            if (protocolLine) {
+              protocolLine.textContent = 'KLASOVERZICHT · EIGEN BRILLEN (' + activeCount + ' BRILLEN VERBONDEN)';
+            }
             updateCockpit();
-            showToast('Nieuwe eigen bril (' + HEADSETS[selectedIdx].id + ') gekoppeld via UDP :47800 Zero-Config Discovery.');
+            showToast('Extra bril (' + HEADSETS[selectedIdx].id + ' · ' + HEADSETS[selectedIdx].student + ') automatisch toegevoegd aan het overzicht.');
           }
         });
       }
@@ -979,7 +983,7 @@
       ctx.fillStyle = '#07111F';
       ctx.fillRect(0, 0, w, ht);
 
-      /* Subtiel technisch CAD-raster op de achtergrond */
+      /* Subtiel technisch raster op de achtergrond */
       ctx.strokeStyle = 'rgba(36, 70, 110, 0.22)';
       ctx.lineWidth = 1;
       for (let gx = 40; gx < w; gx += 40) {
@@ -1015,7 +1019,7 @@
 
         ctx.fillStyle = '#38BDF8';
         ctx.font = '600 12px "JetBrains Mono", monospace';
-        ctx.fillText('WEILER PRAKTIKANT 140 — TOERENTABEL & VOEDING', 56, 54);
+        ctx.fillText('WEILER PRAKTIKANT 140 — TOERENTABEL', 56, 54);
 
         const speeds = [250, 355, 500, 710, 1000, 1400];
         speeds.forEach(function (sp, idx) {
@@ -1035,7 +1039,7 @@
 
         ctx.fillStyle = '#CBD5E1';
         ctx.font = '400 11px "JetBrains Mono", monospace';
-        ctx.fillText('Actief spiltoerental student: ' + (groupPaused ? 0 : h.rpm) + ' RPM  ·  Advies staal Ø 30 mm (Vc 65 m/min): 710 RPM', 56, 154);
+        ctx.fillText('Ingesteld door leerling: ' + (groupPaused ? 0 : h.rpm) + ' RPM  ·  Richtwaarde staal Ø 30 mm: 710 RPM', 56, 154);
         ctx.restore();
       } else {
         /* Bedbanen van de WEILER Praktikant 140 onderlangs */
@@ -1046,7 +1050,7 @@
         ctx.fillRect(28, bedY, w - 56, 16);
         ctx.strokeRect(28, bedY, w - 56, 16);
 
-        /* Technische hartlijn */
+        /* Hartlijn */
         ctx.strokeStyle = '#23446B';
         ctx.lineWidth = 1;
         ctx.setLineDash([8, 5, 2, 5]);
@@ -1084,7 +1088,7 @@
           ctx.fillRect(60, cy - 88, 14, 34);
           ctx.fillStyle = '#FCA5A5';
           ctx.font = '600 11px "JetBrains Mono", monospace';
-          ctx.fillText('SLEUTEL IN KLAUWPLAAT (FREEZE)', 130, 24);
+          ctx.fillText('SLEUTEL NOG IN KLAUWPLAAT (GEPAUZEERD)', 130, 24);
         }
 
         const wobbleOffset = h.runout > 0.5 ? (scrubFrame % 2 === 0 ? 5 : -4) : 0;
@@ -1092,22 +1096,22 @@
         const stepProgress = Math.min(1, Math.max(0.08, frameRatio));
         const stepHalfH = Math.round((h.diaStep / 30.0) * 30);
 
-        /* Werkstuk hoofdcilinder + afgedraaide trap (groeit mee met de 4 Hz tijdlijn!) */
+        /* Werkstuk hoofdcilinder + afgedraaide trap */
         const totalStockLen = 330;
         const turnedStepLen = Math.round(135 * stepProgress);
         const unturnedLen = totalStockLen - turnedStepLen;
 
-        ctx.fillStyle = h.temp > 180 ? '#D97706' : '#94A3B8';
+        ctx.fillStyle = h.overheated ? '#D97706' : '#94A3B8';
         ctx.strokeStyle = '#E2E8F0';
         ctx.lineWidth = 1.2;
         ctx.fillRect(108, cy - mainHalfH + wobbleOffset, unturnedLen, mainHalfH * 2);
         ctx.strokeRect(108, cy - mainHalfH + wobbleOffset, unturnedLen, mainHalfH * 2);
 
-        ctx.fillStyle = h.temp > 180 ? '#F59E0B' : '#CBD5E1';
+        ctx.fillStyle = h.overheated ? '#F59E0B' : '#CBD5E1';
         ctx.fillRect(108 + unturnedLen, cy - stepHalfH - wobbleOffset, turnedStepLen, stepHalfH * 2);
         ctx.strokeRect(108 + unturnedLen, cy - stepHalfH - wobbleOffset, turnedStepLen, stepHalfH * 2);
 
-        /* Vloeiend meebewegende Beitelslede + Dwarsslede + Beitelhouder op carriage_x_mm */
+        /* Meebewegende beitelslede + beitelhouder */
         const toolTipX = 108 + unturnedLen + 4;
         const toolTipY = cy + stepHalfH + 2;
 
@@ -1122,15 +1126,15 @@
           ctx.setLineDash([]);
         }
 
-        /* Snijpunt / gloed */
+        /* Snijpunt */
         if (!groupPaused && h.rpm > 0) {
-          ctx.fillStyle = h.temp > 180 ? 'rgba(245, 158, 11, 0.65)' : 'rgba(56, 189, 248, 0.45)';
+          ctx.fillStyle = h.overheated ? 'rgba(245, 158, 11, 0.65)' : 'rgba(56, 189, 248, 0.45)';
           ctx.beginPath();
-          ctx.arc(toolTipX - 2, toolTipY - 2, h.temp > 180 ? 7 : 4.5, 0, Math.PI * 2);
+          ctx.arc(toolTipX - 2, toolTipY - 2, h.overheated ? 7 : 4.5, 0, Math.PI * 2);
           ctx.fill();
         }
 
-        /* Hardmetalen wisselplaat + beitelschacht */
+        /* Beitelpunt */
         ctx.fillStyle = '#38BDF8';
         ctx.beginPath();
         ctx.moveTo(toolTipX, toolTipY);
@@ -1160,18 +1164,18 @@
         ctx.restore();
       }
 
-      /* HUD Statusbalk onderin */
+      /* Overzichtsbalk onderin het scherm */
       const dynCarriage = (h.carriageX + (35 - scrubFrame) * 1.2).toFixed(1).replace('.', ',');
       ctx.fillStyle = 'rgba(7, 17, 31, 0.90)';
       ctx.fillRect(0, ht - 26, w, 26);
       ctx.fillStyle = '#94A3B8';
       ctx.font = '400 10.5px "JetBrains Mono", monospace';
       ctx.fillText(
-        'CAM: ' + CAM_LABELS[activeSpectatorCam] +
-        '  ·  carriage_x_mm: ' + dynCarriage + ' mm' +
+        'WEERGAVE: ' + CAM_LABELS[activeSpectatorCam] +
+        '  ·  SLEDE: ' + dynCarriage + ' mm' +
         '  ·  ' + (h.guardClosed ? 'KAP DICHT' : 'KAP OPEN') +
         '  ·  KOELING: ' + (coolantActive ? 'AAN' : 'UIT') +
-        '  ·  M6: ' + h.reactionMs + ' ms',
+        '  ·  NOODSTOP: ' + h.reactionSec,
         14,
         ht - 9
       );
@@ -1186,11 +1190,11 @@
         elSelHeader.textContent = h.id + ' — ' + h.student + ' (' + h.klas + ') · ' + h.mod;
       }
       if (elStreamBadge) {
-        elStreamBadge.textContent = 'LIVE FOCUS: ' + h.id + ' (1 BRIL STREAM · /api/frame)';
+        elStreamBadge.textContent = 'MEEKIJKEN MET: ' + h.id.toUpperCase();
       }
       if (elSelNote) {
         elSelNote.textContent = groupPaused
-          ? 'KLAS GEPAUZEERD: Alle verbonden Meta Quest-brillen staan stil voor klassikale toelichting door de vakdocent.'
+          ? 'KLAS GEPAUZEERD: Alle brillen staan even op pauze zodat je rustig klassikaal uitleg kunt geven.'
           : h.note;
       }
       const liveRpm = groupPaused ? 0 : Math.round(h.rpm * (scrubFrame < 35 ? 0.85 : 1));
@@ -1199,12 +1203,12 @@
       if (elTelCarriage) elTelCarriage.textContent = dynCarriage + ' mm';
       if (elTelDia) elTelDia.textContent = 'Ø ' + h.diaMain.toFixed(1).replace('.', ',') + ' mm';
       if (elTelGate) {
-        elTelGate.textContent = h.chuckKeyIn ? 'SLEUTEL ALARM' : (h.guardClosed ? 'KAP DICHT ✓' : 'KAP OPEN');
+        elTelGate.textContent = h.chuckKeyIn ? 'SLEUTEL ERIN' : (h.guardClosed ? 'KAP DICHT ✓' : 'KAP OPEN');
       }
       if (elReplayReadout) {
         elReplayReadout.textContent = scrubFrame >= 35
-          ? '● LIVE 4 HZ (:8765)'
-          : '⏪ REPLAY t = -' + ((35 - scrubFrame) * 0.5).toFixed(1).replace('.', ',') + ' s';
+          ? '● LIVE MEEKIJKEN'
+          : '⏪ TERUGKIJKEN (-' + ((35 - scrubFrame) * 0.5).toFixed(1).replace('.', ',') + ' sec)';
       }
       if (elBookmarks) {
         elBookmarks.innerHTML = h.bookmarks.map(function (b) {
@@ -1220,21 +1224,21 @@
             scrubFrame = parseInt(btn.getAttribute('data-bm-frame'), 10);
             if (elReplaySlider) elReplaySlider.value = String(scrubFrame);
             updateCockpit();
-            showToast('Black-Box teruggespoeld naar gemarkeerd moment op ' + h.id + ' (carriage_x beweegt mee).');
+            showToast('Teruggespoeld naar een gemarkeerd moment bij ' + h.student + ' (' + h.id + ').');
           });
         });
       }
 
       drawBlueprint(h, ratio);
 
-      /* Sync A4 Vrijgaverapport gegevens */
+      /* Werk het A4-praktijkrapport bij met de gekozen leerling */
       const repStudent = document.getElementById('repModalStudent');
       const repKlas = document.getElementById('repModalKlas');
       const repReaction = document.getElementById('repModalReaction');
       const printStudent = document.getElementById('printRepStudent');
       if (repStudent) repStudent.textContent = h.student + ' (' + h.id + ')';
       if (repKlas) repKlas.textContent = h.klas;
-      if (repReaction) repReaction.textContent = h.reactionMs + ' ms (Module M6)';
+      if (repReaction) repReaction.textContent = 'Direct ingedrukt (' + h.reactionSec + ')';
       if (printStudent) printStudent.textContent = h.student + ' (' + h.id + ' · ' + h.klas + ')';
     }
 
@@ -1250,15 +1254,15 @@
       btnReplayPlay.addEventListener('click', function () {
         if (replayInterval) {
           stopReplayLoop();
-          showToast('4 Hz Black-Box weergave gepauzeerd op frame ' + scrubFrame + '/35.');
+          showToast('Terugkijken even gepauzeerd.');
           return;
         }
         if (scrubFrame >= 35) {
           scrubFrame = 0;
           if (elReplaySlider) elReplaySlider.value = '0';
         }
-        btnReplayPlay.textContent = '⏸ Stop';
-        showToast('4 Hz Black-Box replay gestart — zie de beitelslede (carriage_x_mm) live meebewegen.');
+        btnReplayPlay.textContent = '⏸ Pauze';
+        showToast('Laatste handelingen worden rustig opnieuw afgespeeld.');
         updateCockpit();
         replayInterval = setInterval(function () {
           scrubFrame += 1;
@@ -1266,7 +1270,7 @@
           updateCockpit();
           if (scrubFrame >= 35) {
             stopReplayLoop();
-            showToast('Terug op ● LIVE 4 HZ (:8765) telemetrie.');
+            showToast('Je kijkt weer live mee.');
           }
         }, 180);
       });
@@ -1275,18 +1279,18 @@
     if (btnGroupPause) {
       btnGroupPause.addEventListener('click', function () {
         groupPaused = !groupPaused;
-        btnGroupPause.textContent = groupPaused ? 'Hervat Klas' : 'Pauzeer Klas';
+        btnGroupPause.textContent = groupPaused ? 'Hervat klas' : 'Pauzeer klas';
         updateCockpit();
         showToast(groupPaused
-          ? 'Klas gepauzeerd (POST /api/command PAUSE): alle gekoppelde brillen staan stil voor toelichting.'
-          : 'Klas hervat (POST /api/command RESUME): alle gekoppelde brillen draaien weer live.');
+          ? 'Hele klas gepauzeerd: alle VR-brillen staan stil voor korte uitleg van de docent.'
+          : 'Les hervat: alle leerlingen kunnen weer verder werken.');
       });
     }
 
     if (btnNextStudent) {
       btnNextStudent.addEventListener('click', function () {
         const h = HEADSETS[selectedIdx];
-        showToast('Volgende leerling geactiveerd op ' + h.id + ' (SAVE_AND_NEXT_STUDENT → M1 3D Buddy Check gereed).');
+        showToast('Voortgang opgeslagen op ' + h.id + ' — bril staat weer klaar voor de volgende leerling.');
       });
     }
 
@@ -1297,20 +1301,20 @@
         if (cmd === 'COOLANT') {
           coolantActive = !coolantActive;
           updateCockpit();
-          showToast('Koelmiddeltoevoer ' + (coolantActive ? 'ingeschakeld' : 'uitgeschakeld') + ' op ' + h.id + '.');
+          showToast('Koeling ' + (coolantActive ? 'aangezet' : 'uitgezet') + ' bij ' + h.student + ' (' + h.id + ').');
           return;
         }
         const messages = {
-          AC21: 'AC21 Opstellingsvrijgave verzonden naar ' + h.id + ' (' + h.student + ').',
-          WOBBLE: 'M6 Storingsinjectie geactiveerd op ' + h.id + ': werkstukslingering 1,85 mm + ms-meting gestart.',
-          CALIBRATE: 'Werkhoogte gekalibreerd (AUTO_CALIBRATE_HEIGHT) op ' + h.id + ' voor ' + h.student + '.',
-          TTS: 'Spraakinstructie (NL TTS) afgespeeld in ' + h.id + '.'
+          AC21: 'Opstelling goedgekeurd bij ' + h.student + ' (' + h.id + ') — leerling kan veilig starten.',
+          WOBBLE: 'Noodstop-oefening gestart bij ' + h.student + ' (' + h.id + '): werkstuk gaat merkbaar slingeren.',
+          CALIBRATE: 'Werkhoogte van de machine netjes afgestemd voor ' + h.student + ' (' + h.id + ').',
+          TTS: 'Rustige gesproken aanwijzing afgespeeld op ' + h.id + '.'
         };
-        showToast(messages[cmd] || ('Docentcommando verzonden naar ' + h.id + '.'));
+        showToast(messages[cmd] || ('Actie uitgevoerd op ' + h.id + '.'));
       });
     });
 
-    /* A4 Vrijgaverapport Modal & Werkend S Pen Handtekening-Canvas */
+    /* A4-Praktijkrapport Modal & Handtekeningveld */
     const reportModal = document.getElementById('a4ReportModal');
     const btnCloseReport = document.getElementById('btnCloseReportModal');
     const btnPrintReport = document.getElementById('btnPrintA4Report');
@@ -1327,7 +1331,7 @@
       if (!reportModal || !physCounter) return;
       const allChecks = reportModal.querySelectorAll('input[name="physCheck"]');
       const checked = reportModal.querySelectorAll('input[name="physCheck"]:checked');
-      physCounter.textContent = checked.length + '/' + allChecks.length + ' afgevinkt';
+      physCounter.textContent = checked.length + '/' + allChecks.length + ' afgevinkt' + (checked.length === allChecks.length ? ' ✓' : '');
       physCounter.className = checked.length === allChecks.length
         ? 'status-badge status-safe'
         : 'status-badge status-info';
@@ -1356,9 +1360,9 @@
       sctx.stroke();
       sctx.fillStyle = '#52657C';
       sctx.font = '500 11px "JetBrains Mono", monospace';
-      sctx.fillText('S Pen · Vakdocent Verspaning (Knox PrintManager)', 38, 96);
+      sctx.fillText('Getekend met S Pen · Vakdocent', 38, 96);
       hasSignature = true;
-      if (sigStatus) sigStatus.textContent = 'S Pen handtekening geregistreerd ✓';
+      if (sigStatus) sigStatus.textContent = 'Handtekening vakdocent geplaatst ✓';
     }
 
     if (sigCanvas && sigCanvas.getContext) {
@@ -1387,7 +1391,7 @@
         sctx.beginPath();
         sctx.moveTo(p.x, p.y);
         hasSignature = true;
-        if (sigStatus) sigStatus.textContent = 'S Pen handtekening geregistreerd ✓';
+        if (sigStatus) sigStatus.textContent = 'Handtekening vakdocent geplaatst ✓';
       });
 
       sigCanvas.addEventListener('pointermove', function (e) {
@@ -1410,7 +1414,7 @@
       btnClearSig.addEventListener('click', function () {
         sigCanvas.getContext('2d').clearRect(0, 0, sigCanvas.width, sigCanvas.height);
         hasSignature = false;
-        if (sigStatus) sigStatus.textContent = 'Teken hierboven met muis, vinger of S Pen';
+        if (sigStatus) sigStatus.textContent = 'Zet hierboven een handtekening met muis, vinger of S Pen';
       });
     }
 
@@ -1448,8 +1452,8 @@
             return c.value;
           });
           printPhysSummary.textContent = checked.length > 0
-            ? ('Afgetekende fysieke vrijgavepunten: ' + checked.join(' · '))
-            : 'Nog af te vinken op de echte machine: PHYS_01 t/m PHYS_05';
+            ? ('Afgetekende praktijkpunten: ' + checked.join(' · '))
+            : 'Nog samen bij de echte machine langs te lopen: Punt 1 t/m Punt 5';
         }
         window.print();
       });
@@ -1464,31 +1468,31 @@
   }
 
   /* ------------------------------------------------------------------
-   * 5. Vakdomein Hero-Switcher & Maatwerk-Scoper (maatwerk.html)
+   * 5. Vakgebied-Wisselaar & Maatwerk-Samenvatting (maatwerk.html)
    * ------------------------------------------------------------------ */
   const MW_SCENES = {
     elektro: {
       img: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
       alt: 'Elektrotechniek & Schakelkasten VR-training volgens NEN 3140 en Lockout-Tagout',
-      caption: '400V Lockout-Tagout & NEN 3140 · standaardmodule beschikbaar of op maat voor uw verdeler',
+      caption: '400V Lockout-Tagout & NEN 3140 · standaard beschikbaar of op maat voor jullie eigen verdeler',
       domeinOption: 'Elektrotechniek & Energie (LOTO / NEN 3140)'
     },
     metaal: {
       img: 'assets/img/brand/domein_01_metaal_en_verspaning.webp',
-      alt: 'Metaal, Verspaning & Constructie VR-maatwerktraining op de eigen werkplaatsmachines',
-      caption: 'Metaal & Verspaning: conventioneel/CNC draaien en frezen, opspanning en werkplaatsveiligheid',
+      alt: 'Metaal, Verspaning & Constructie VR-maatwerktraining voor eigen werkplaatsmachines',
+      caption: 'Metaal & Verspaning: conventioneel en CNC draaien of frezen, opspannen en veiligheid aan de bank',
       domeinOption: 'Metaalbewerking & Verspaning'
     },
     klimaat: {
       img: 'assets/img/brand/domein_04_installatie_en_klimaat.webp',
-      alt: 'Installatie- & Klimaattechniek VR-maatwerktraining op warmtepomp- en koudemiddelinstallaties',
-      caption: 'Installatie & Klimaat: inbedrijfstelling, drukveiligheid en storingsdiagnose zonder installatieschade',
+      alt: 'Installatie- & Klimaattechniek VR-maatwerktraining op warmtepomp- en klimaatinstallaties',
+      caption: 'Installatie & Klimaat: veilig inbedrijfstellen, drukcontroles en stap voor stap storingzoeken',
       domeinOption: 'Installatie- & Klimaattechniek'
     },
     mechatronica: {
       img: 'assets/img/brand/domein_03_mechatronica_en_industrie.webp',
       alt: 'Mechatronica, Robotcellen & Procesindustrie VR-maatwerktraining voor lijnveiligheid en vrijgave',
-      caption: 'Mechatronica & Industrie: hekwerkbeveiliging, robotcel-vrijgave en gestructureerd storingzoeken',
+      caption: 'Mechatronica & Industrie: veilig betreden van robotcellen, hekwerkbeveiliging en lijnvrijgave',
       domeinOption: 'Mechatronica & Industriële Machineveiligheid'
     }
   };
@@ -1539,7 +1543,7 @@
 
     function buildScopeText() {
       const domein = document.getElementById('scopeDomein').value;
-      const machine = document.getElementById('scopeMachine').value.trim() || 'Eigen praktijkopstelling / installatie';
+      const machine = document.getElementById('scopeMachine').value.trim() || 'Eigen machine of praktijkopstelling';
       const doelgroep = document.getElementById('scopeDoelgroep').value;
       const pakketStatus = document.getElementById('scopeTabletBezit').value;
 
@@ -1548,18 +1552,18 @@
       });
       const goalsList = checkedGoals.length > 0
         ? checkedGoals.join(', ')
-        : '3D Buddy Check & Eigen PBM, opstartprocedure en veilig stoppen';
+        : 'Kleding- en PBM-check, veilig opstarten en rustig uitschakelen';
 
       const fullText =
-        'TECHBUILDS VR — MAATWERK PROJECTSCHETS\n' +
+        'SAMENVATTING MAATWERK-IDEE — TECHBUILDS VR\n' +
         '----------------------------------------------------\n' +
         'Vakgebied       : ' + domein + '\n' +
-        'Machinetype     : ' + machine + '\n' +
-        'Doelgroep       : ' + doelgroep + '\n' +
+        'Machine / kast  : ' + machine + '\n' +
+        'Voor wie        : ' + doelgroep + '\n' +
         'Leerdoelen      : ' + goalsList + '\n' +
-        'Oplevervorm     : ' + pakketStatus + '\n' +
-        'Klasregie       : 13,1" Android Docenten Dashboard v2.3.0 + A4 PDF (PHYS_01..05)\n' +
-        'Indicatie       : 6 tot 10 weken van werkplaatsopname tot Kiosk-oplevering';
+        'Gewenste vorm   : ' + pakketStatus + '\n' +
+        'Begeleiding     : Gewoon zichtbaar op het 13,1-inch Teacher Dashboard + A4-rapport\n' +
+        'Doorlooptijd    : Gemiddeld 6 tot 10 weken van bezoek op school tot oplevering';
 
       return { domein: domein, machine: machine, fullText: fullText };
     }
@@ -1572,7 +1576,7 @@
       if (btnMailScope) {
         btnMailScope.href =
           'mailto:info@techbuildsvr.nl?subject=' +
-          encodeURIComponent('Maatwerk VR-aanvraag — ' + data.machine) +
+          encodeURIComponent('Maatwerk VR-idee — ' + data.machine) +
           '&body=' +
           encodeURIComponent(data.fullText);
       }
@@ -1588,7 +1592,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'TechBuilds_VR_Maatwerk_Projectschets.txt';
+        a.download = 'TechBuilds_VR_Maatwerk_Overzicht.txt';
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -1610,25 +1614,25 @@
   }
 
   /* ------------------------------------------------------------------
-   * 6. Naadloze Pakket- & Modulekeuze (+ € 5.000,- losse module), TCO & Offerte
+   * 6. Pakket- & Modulekeuze (+ € 5.000,- losse module), Kostenoverzicht & Offerte
    * ------------------------------------------------------------------ */
   const EXTRA_MODULE_PRICE = 5000;
   const MODULE_CHOICES = {
     draaibank: {
       fee: 0,
-      sub: '1 module inbegrepen: Draaibank VR — WEILER 140 (M1–M6)',
+      sub: '1 module inbegrepen: Draaibank VR — WEILER Praktikant 140',
       feeText: '€ 0,- (inbegrepen)',
-      formValue: 'Draaibank VR — WEILER Praktikant 140 (M1–M6 · inbegrepen)'
+      formValue: 'Draaibank VR — WEILER Praktikant 140 (inbegrepen)'
     },
     elektro: {
       fee: 0,
-      sub: '1 module inbegrepen: Elektrotechniek VR — NEN 3140 (E1–E6)',
+      sub: '1 module inbegrepen: Elektrotechniek VR — Veilig stellen (NEN 3140)',
       feeText: '€ 0,- (inbegrepen)',
-      formValue: 'Elektrotechniek VR — Veilig stellen NEN 3140 & LOTO (E1–E6 · inbegrepen)'
+      formValue: 'Elektrotechniek VR — Veilig stellen NEN 3140 & LOTO (inbegrepen)'
     },
     beide: {
       fee: EXTRA_MODULE_PRICE,
-      sub: 'Draaibank VR (M1–M6) + Elektrotechniek VR (E1–E6) op dezelfde tablet',
+      sub: 'Draaibank VR + Elektrotechniek VR samen op dezelfde tablet en brillen',
       feeText: '+ € 5.000,- (eenmalig)',
       formValue: 'Beide modules: Draaibank VR + Elektrotechniek VR (+ € 5.000,- eenmalig excl. BTW)'
     }
@@ -1638,53 +1642,53 @@
     'optie-1-eigen-brillen': {
       num: '1',
       shortLabel: 'Optie 1 · Eigen Brillen',
-      title: 'Optie 1 — Regietablet & Onbeperkt Eigen Brillen',
+      title: 'Optie 1 — Teacher Dashboard & Eigen Brillen',
       bannerTitle: 'Optie 1 (€ 10.000,- excl. BTW · 1e jaar service inbegrepen)',
       upfront: 10000,
       annual: 1500,
       firstYearIncluded: true,
       heroImg: 'assets/img/brand/pakket_regietablet_vr_set.webp',
-      heroCaption: 'Optie 1 (€ 10.000,-): 13,1" Samsung regietablet + onbeperkt eigen brillen (incl. 1 VR-vakmodule naar keuze)',
-      unitSingle: '1 regietablet-systeem (onbeperkt eigen brillen)',
-      unitPlural: 'regietablet-systemen (onbeperkt eigen brillen)',
-      hwSub: '13,1" Tab S10 FE+ (SM-X620, IP68, S Pen) met Knox Single-App Kiosk + onbeperkt eigen brillen',
-      srvSub: 'Remote support, updates & Knox MDM-beheer op afstand (1e jaar inbegrepen)',
-      ruleHint: 'Het 1e jaar service is inbegrepen bij aanschaf; vanaf jaar 2 geldt € 1.500,-/jr excl. BTW.',
-      formValue: 'Optie 1: Regietablet & Onbeperkt Eigen Brillen (€ 10.000,- excl. BTW, 1e jr incl., daarna € 1.500,-/jr)'
+      heroCaption: 'Optie 1 (€ 10.000,-): 13,1-inch Samsung tablet met Teacher Dashboard + onbeperkt eigen brillen (incl. 1 VR-module)',
+      unitSingle: '1 Teacher Dashboard-set (eigen brillen)',
+      unitPlural: 'Teacher Dashboard-sets (eigen brillen)',
+      hwSub: '13,1-inch Samsung Tab S10 FE+ (waterdicht, S Pen & stevige hoes) + onbeperkt eigen brillen koppelen',
+      srvSub: 'Hulp op afstand en software-updates (1e jaar bij de aanschaf inbegrepen)',
+      ruleHint: 'Het 1e jaar service zit bij de prijs in; vanaf jaar 2 betaal je € 1.500,- per jaar excl. BTW.',
+      formValue: 'Optie 1: Teacher Dashboard & Eigen Brillen (€ 10.000,- excl. BTW, 1e jr incl., daarna € 1.500,-/jr)'
     },
     'optie-2-vr-kar-10': {
       num: '2',
-      shortLabel: 'Optie 2 · Turnkey VR-Kar 10',
-      title: 'Optie 2 — Turnkey VR-Kar 10 (Meest gekozen)',
-      bannerTitle: 'Optie 2 — Turnkey VR-Kar 10 (€ 15.000,- excl. BTW)',
+      shortLabel: 'Optie 2 · VR-Kar 10',
+      title: 'Optie 2 — Complete VR-Kar 10 (Meest gekozen)',
+      bannerTitle: 'Optie 2 — Complete VR-Kar 10 (€ 15.000,- excl. BTW)',
       upfront: 15000,
       annual: 2500,
       firstYearIncluded: false,
       heroImg: 'assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp',
-      heroCaption: 'Optie 2 (€ 15.000,-): Zioxi VR-Kar met 10× Quest 3S, KPN Onbeperkt 5G en 13,1" regietablet op één 230V stekker',
-      unitSingle: '1 Turnkey VR-Kar 10 (10× Meta Quest 3S)',
-      unitPlural: 'Turnkey VR-Karren 10',
-      hwSub: 'Zioxi Cart 10 (1× 230V) + 10× Quest 3S (ArborXR) + Nighthawk M7 Pro & KPN 5G + 13,1" Tab S10 FE+',
-      srvSub: 'ArborXR + Knox + KPN Onbeperkt 5G + 1×/jr fysieke onderhoudscheck op locatie',
-      ruleHint: 'Volledige ontzorging inclusief KPN Onbeperkt 5G en jaarlijkse fysieke locatiecheck (€ 2.500,-/jr excl. BTW).',
-      formValue: 'Optie 2: Turnkey VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service & KPN 5G)'
+      heroCaption: 'Optie 2 (€ 15.000,-): Mobiele Zioxi VR-kar met 10× Meta Quest 3S, eigen KPN 5G en 13,1-inch tablet op één stopcontact',
+      unitSingle: '1 VR-Kar 10 (10× Meta Quest 3S)',
+      unitPlural: 'VR-Karren 10',
+      hwSub: 'Mobiele Zioxi oplaadkar (1 stekker) + 10× Meta Quest 3S + eigen KPN 5G-router + 13,1-inch Samsung tablet',
+      srvSub: 'Beheer van alle brillen, onbeperkt KPN 5G én elk jaar onderhoud op school',
+      ruleHint: 'Inclusief onbeperkt KPN 5G in de kar en onze jaarlijkse onderhoudsbeurt op school (€ 2.500,-/jr excl. BTW).',
+      formValue: 'Optie 2: Complete VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service & KPN 5G)'
     },
     'optie-3-vr-kar-20': {
       num: '3',
-      shortLabel: 'Optie 3 · Turnkey VR-Kar 20',
-      title: 'Optie 3 — Turnkey VR-Kar 20',
-      bannerTitle: 'Optie 3 — Turnkey VR-Kar 20 (€ 25.000,- excl. BTW)',
+      shortLabel: 'Optie 3 · VR-Kar 20',
+      title: 'Optie 3 — Complete VR-Kar 20',
+      bannerTitle: 'Optie 3 — Complete VR-Kar 20 (€ 25.000,- excl. BTW)',
       upfront: 25000,
       annual: 3500,
       firstYearIncluded: false,
       heroImg: 'assets/img/brand/pakket_zioxi_vr_kar_werkplaats.webp',
-      heroCaption: 'Optie 3 (€ 25.000,-): Zioxi VR-Kar 20 met 20× Quest 3S (4×5 klasraster), KPN Onbeperkt 5G en 13,1" regietablet',
-      unitSingle: '1 Turnkey VR-Kar 20 (20× Meta Quest 3S)',
-      unitPlural: 'Turnkey VR-Karren 20',
-      hwSub: 'Zioxi Cart 20 (1× 230V) + 20× Quest 3S (ArborXR) + Nighthawk M7 Pro & KPN 5G + 13,1" Tab S10 FE+',
-      srvSub: 'ArborXR + Knox + KPN Onbeperkt 5G + 1×/jr fysieke inspectie van kar en 20 brillen op locatie',
-      ruleHint: 'Maximale klascapaciteit inclusief KPN Onbeperkt 5G en jaarlijkse fysieke locatiecheck (€ 3.500,-/jr excl. BTW).',
-      formValue: 'Optie 3: Turnkey VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service & KPN 5G)'
+      heroCaption: 'Optie 3 (€ 25.000,-): Mobiele Zioxi VR-kar met 20× Meta Quest 3S, eigen KPN 5G en 13,1-inch tablet voor hele klassen',
+      unitSingle: '1 VR-Kar 20 (20× Meta Quest 3S)',
+      unitPlural: 'VR-Karren 20',
+      hwSub: 'Mobiele Zioxi oplaadkar (1 stekker) + 20× Meta Quest 3S + eigen KPN 5G-router + 13,1-inch Samsung tablet',
+      srvSub: 'Beheer van alle 20 brillen, onbeperkt KPN 5G én elk jaar onderhoud op school',
+      ruleHint: 'Voor hele klassen tegelijk, inclusief onbeperkt KPN 5G en jaarlijks onderhoud op school (€ 3.500,-/jr excl. BTW).',
+      formValue: 'Optie 3: Complete VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service & KPN 5G)'
     }
   };
 
@@ -1831,7 +1835,7 @@
       }).join('');
 
       elComparisonBars.innerHTML =
-        '<span class="tco-bars-title">Meerjarenvergelijking over ' + years + ' jaar' + (extraModFee > 0 ? ' (incl. + € 5.000,- 2e module)' : '') + '</span>' +
+        '<span class="tco-bars-title">Vergelijking over ' + years + ' jaar' + (extraModFee > 0 ? ' (incl. + € 5.000,- extra module)' : '') + '</span>' +
         rowsHtml;
 
       elComparisonBars.querySelectorAll('[data-tco-bar-pkg]').forEach(function (row) {
@@ -1882,18 +1886,18 @@
       if (elSetsOut) {
         elSetsOut.textContent = sets === 1 ? pkg.unitSingle : (sets + ' ' + pkg.unitPlural);
       }
-      if (elYearsOut) elYearsOut.textContent = years + (years === 1 ? ' jaar' : ' jaar looptijd');
+      if (elYearsOut) elYearsOut.textContent = years + ' jaar';
       if (elYear1Out) elYear1Out.textContent = formatEuro(res.upfrontBase);
       if (elServiceAnnual) {
-        elServiceAnnual.textContent = formatEuro(annualRate) + '/jr' + (pkg.firstYearIncluded ? ' (va. jr 2)' : '');
+        elServiceAnnual.textContent = formatEuro(annualRate) + '/jr' + (pkg.firstYearIncluded ? ' (vanaf jaar 2)' : '');
       }
       if (elFollowYears) {
         if (pkg.firstYearIncluded && res.billedYears === 0) {
           elFollowYears.textContent = '€ 0,- (1e jaar inbegrepen)';
         } else if (pkg.firstYearIncluded) {
-          elFollowYears.textContent = formatEuro(res.srv) + ' (' + res.billedYears + ' vervolgjr × ' + formatEuro(annualRate) + ')';
+          elFollowYears.textContent = formatEuro(res.srv) + ' (' + res.billedYears + ' vervolgjaar × ' + formatEuro(annualRate) + ')';
         } else {
-          elFollowYears.textContent = formatEuro(res.srv) + ' (' + res.billedYears + ' jr × ' + formatEuro(annualRate) + ')';
+          elFollowYears.textContent = formatEuro(res.srv) + ' (' + res.billedYears + ' jaar × ' + formatEuro(annualRate) + ')';
         }
       }
       if (elGrandTotal) {
@@ -2002,7 +2006,7 @@
       });
     }
 
-    /* Check URL-parameters (?optie=1|2|3 & ?module=draaibank|elektro|beide) */
+    /* Lees eventuele URL-keuzes (?optie=1|2|3 & ?module=draaibank|elektro|beide) */
     const urlParams = new URLSearchParams(window.location.search);
     const optieParam = urlParams.get('optie') || urlParams.get('pakket');
     const modParam = (urlParams.get('module') || '').toLowerCase();
@@ -2049,7 +2053,7 @@
     } else if (onderwerpParam === 'maatwerk' && selType) {
       selType.value = 'Maatwerk VR-training ontwikkelen + Pakketkeuze';
     } else if (onderwerpParam === 'demo' && selType) {
-      selType.value = 'Praktijkdemonstratie op school of bedrijf (13,1" Tablet + Quest 3S)';
+      selType.value = 'Vrijblijvende demo op school of bedrijf';
     }
 
     if (modParamForm && MODULE_CHOICES[modParamForm] && selReqMod) {
@@ -2074,14 +2078,14 @@
       const email = document.getElementById('reqEmail').value.trim();
       const tel = document.getElementById('reqPhone').value.trim();
       const type = document.getElementById('reqType').value;
-      const modChoiceText = selReqMod ? selReqMod.value : 'Draaibank VR (M1–M6)';
+      const modChoiceText = selReqMod ? selReqMod.value : 'Draaibank VR';
       const msg = document.getElementById('reqMessage').value.trim();
 
       if (!naam || !org || !email) {
         if (feedbackBox) {
           feedbackBox.style.display = 'block';
           feedbackBox.className = 'ac24-notice status-danger';
-          feedbackBox.textContent = 'Vul uw naam, school of organisatie en zakelijk e-mailadres in.';
+          feedbackBox.textContent = 'Vul je naam, school of bedrijf en je e-mailadres even in.';
         }
         return;
       }
@@ -2096,15 +2100,15 @@
         'Telefoon     : ' + (tel || '-') + '\n' +
         'Voorkeur     : ' + type + '\n' +
         'Module(s)    : ' + modChoiceText + '\n\n' +
-        'Toelichting:\n' + (msg || '(Geen aanvullende opmerkingen)');
+        'Toelichting:\n' + (msg || '(Geen extra opmerkingen)');
 
       if (feedbackBox) {
         feedbackBox.style.display = 'block';
         feedbackBox.className = 'ac24-notice';
         feedbackBox.innerHTML =
-          '<strong>Aanvraag gereedgezet voor ' + org.replace(/</g, '&lt;') + '.</strong><br>' +
-          'Verstuur uw aanvraag nu met één klik via uw e-mailprogramma naar <a href="mailto:info@techbuildsvr.nl?subject=' +
-          encodeURIComponent('Aanvraag TechBuilds VR — ' + org) + '&body=' + encodeURIComponent(lastRequestContent) + '"><strong>info@techbuildsvr.nl</strong></a> of download hieronder een kopie voor uw eigen administratie.';
+          '<strong>Je aanvraag staat klaar voor ' + org.replace(/</g, '&lt;') + '.</strong><br>' +
+          'Klik hier om hem direct via je e-mailprogramma te versturen naar <a href="mailto:info@techbuildsvr.nl?subject=' +
+          encodeURIComponent('Aanvraag TechBuilds VR — ' + org) + '&body=' + encodeURIComponent(lastRequestContent) + '"><strong>info@techbuildsvr.nl</strong></a>, of bewaar hieronder een kopie voor je eigen administratie.';
       }
       if (btnDownloadReq) {
         btnDownloadReq.style.display = 'inline-flex';
