@@ -2870,7 +2870,7 @@ h1, h2, h3, h4 {
 }
 
 .school-choice-media {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background-color: var(--tb-steel-mist);
 }
@@ -3404,3 +3404,79 @@ h1, h2, h3, h4 {
   }
 }
 
+/* ==========================================================================
+ * HARDWARE PAKKETKAARTEN & PRAKTIJKLOKAAL SHOWCASE (v2.6)
+ * ========================================================================== */
+.price-card-visual {
+  margin: -0.35rem -0.35rem 1.15rem -0.35rem;
+  border-radius: calc(var(--tb-radius-bento) - 8px);
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(11, 25, 44, 0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.price-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 420ms var(--tb-ease);
+}
+
+.price-card:hover .price-card-visual img {
+  transform: scale(1.02);
+}
+
+.hardware-practice-banner {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: clamp(1.4rem, 2.8vw, 2.4rem);
+  background-color: var(--tb-blueprint-paper);
+  border: 1px solid rgba(11, 25, 44, 0.07);
+  border-radius: var(--tb-radius-bento);
+  padding: clamp(1rem, 2vw, 1.4rem);
+  margin-bottom: 1.65rem;
+}
+
+.hardware-practice-media {
+  border-radius: calc(var(--tb-radius-bento) - 8px);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background-color: var(--tb-deep-navy);
+  box-shadow: var(--tb-shadow-sm);
+}
+
+.hardware-practice-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hardware-practice-copy {
+  padding: 0.35rem 0.5rem;
+}
+
+.quote-hardware-preview {
+  margin: 0 0 1.35rem 0;
+  border-radius: var(--tb-radius-card);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(11, 25, 44, 0.08);
+  box-shadow: var(--tb-shadow-sm);
+}
+
+.quote-hardware-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hardware-practice-banner {
+    grid-template-columns: 1fr;
+  }
+}
