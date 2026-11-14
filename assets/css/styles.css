@@ -2691,4 +2691,321 @@ h1, h2, h3, h4 {
   }
 }
 
+/* ==========================================================================
+ * V2.4 — KISS VOORPAGINA, 3 ONDERDELEN DRAAIBANK & AVG-DOCENTBEGELEIDING
+ * ========================================================================== */
 
+.hero-calm {
+  padding: clamp(2rem, 4.5vw, 4rem) 0 clamp(3.25rem, 6vw, 5.25rem);
+  background-color: var(--tb-pure-surface);
+}
+
+.hero-calm-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
+  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: center;
+}
+
+.hero-calm-copy {
+  max-width: 540px;
+}
+
+.hero-calm-kicker {
+  display: block;
+  font-family: var(--tb-font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--tb-cobalt);
+  margin: 0 0 0.75rem 0;
+}
+
+.hero-calm-title {
+  font-family: var(--tb-font-display);
+  font-size: clamp(2.25rem, 1.65rem + 2.4vw, 3.45rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.032em;
+  color: var(--tb-deep-navy);
+  margin: 0 0 1.15rem 0;
+}
+
+.hero-calm-lead {
+  font-size: clamp(1.04rem, 0.98rem + 0.28vw, 1.16rem);
+  line-height: 1.62;
+  color: var(--tb-text-secondary);
+  margin: 0 0 1.85rem 0;
+}
+
+.hero-calm-media {
+  margin: 0;
+  border-radius: var(--tb-radius-bento);
+  overflow: hidden;
+  background-color: var(--tb-blueprint-paper);
+  box-shadow: 0 22px 50px -20px rgba(11, 25, 44, 0.16);
+}
+
+.hero-calm-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+@media (max-width: 920px) {
+  .hero-calm-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-calm-copy {
+    max-width: 640px;
+  }
+}
+
+/* 3 Duidelijke Onderdelen (1 -> 2 -> 3) */
+.parts-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.part-step-card {
+  background-color: #FFFFFF;
+  border-radius: var(--tb-radius-bento);
+  padding: clamp(1.65rem, 2.5vw, 2.15rem);
+  border: 1px solid rgba(11, 25, 44, 0.06);
+  box-shadow: 0 12px 30px -18px rgba(11, 25, 44, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: transform var(--tb-duration-fast) var(--tb-ease),
+              box-shadow var(--tb-duration-fast) var(--tb-ease);
+}
+
+.part-step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -18px rgba(11, 25, 44, 0.15);
+}
+
+.part-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.part-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: var(--tb-cobalt-tint);
+  color: var(--tb-cobalt);
+  font-family: var(--tb-font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.part-step-tag {
+  font-family: var(--tb-font-mono);
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--tb-muted-slate);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.part-step-card p {
+  margin: 0;
+  color: var(--tb-text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.parts-footer-bar {
+  margin-top: 1.75rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(11, 25, 44, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.parts-footer-note {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--tb-text-secondary);
+}
+
+@media (max-width: 900px) {
+  .parts-three-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Keuze voor School: VR-Kar of Losse Tablet + 3 Begeleidingspunten (AVG) */
+.choice-two-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.school-choice-card {
+  background-color: var(--tb-blueprint-paper);
+  border-radius: var(--tb-radius-bento);
+  overflow: hidden;
+  border: 1px solid rgba(11, 25, 44, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.school-choice-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--tb-steel-mist);
+}
+
+.school-choice-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.school-choice-body {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.school-choice-body p {
+  margin: 0;
+  color: var(--tb-text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.guidance-three-box {
+  background-color: var(--tb-blueprint-paper);
+  border-radius: var(--tb-radius-bento);
+  padding: clamp(1.65rem, 2.8vw, 2.3rem);
+  border: 1px solid rgba(11, 25, 44, 0.06);
+}
+
+.guidance-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 1.15rem;
+}
+
+.guidance-item h4 {
+  font-family: var(--tb-font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0.25rem 0 0.4rem 0;
+  color: var(--tb-deep-navy);
+}
+
+.guidance-item p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.56;
+  color: var(--tb-text-secondary);
+}
+
+@media (max-width: 860px) {
+  .choice-two-grid,
+  .guidance-three-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Rustige Afsluiter op Voorpagina */
+.calm-cta-card {
+  background-color: var(--tb-deep-navy);
+  color: #F8FAFC;
+  border-radius: var(--tb-radius-bento);
+  padding: clamp(2rem, 3.8vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.calm-cta-card h2 {
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+}
+
+.calm-cta-card p {
+  margin: 0;
+  color: #CBD5E1;
+  max-width: 54ch;
+  font-size: 1rem;
+}
+
+/* 5 Werkstukken-overzicht in Onderdeel 3 (training-draaibank.html) */
+.objects-five-list {
+  margin-top: 1.1rem;
+  padding: 1rem 1.1rem;
+  background-color: var(--tb-blueprint-paper);
+  border-radius: 16px;
+  border: 1px solid rgba(11, 25, 44, 0.07);
+}
+
+.objects-five-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+}
+
+.object-mini-item {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 0.68rem 0.8rem;
+  border: 1px solid rgba(11, 25, 44, 0.06);
+  font-size: 0.82rem;
+  line-height: 1.42;
+}
+
+.object-mini-item strong {
+  display: block;
+  color: var(--tb-deep-navy);
+  font-size: 0.86rem;
+  margin-bottom: 0.15rem;
+}
+
+/* AVG-Toestemmingsstrook in het Teacher Dashboard voorbeeld */
+.avg-consent-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 0.65rem;
+  border-radius: 12px;
+  background: rgba(14, 165, 233, 0.10);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  font-size: 0.8rem;
+  color: #E2E8F0;
+}
+
+.avg-consent-strip.is-private {
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.25);
+}

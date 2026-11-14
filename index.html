@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TechBuilds VR — Veilig trainen. Vakbekwaam bouwen. | Algemene VR-Praktijkvoorbereiding</title>
-  <meta name="description" content="Algemene VR-praktijkvoorbereidingen voor het techniekonderwijs en bedrijfsscholen. Geen merkspecifieke typetrainingen, maar veilig leren werken aan de draaibank, meterkast en schakelkast volgens Nederlandse en Europese richtlijnen." />
-  <meta property="og:title" content="TechBuilds VR — Algemene praktijkvoorbereiding in VR, veilig naar de werkplaats." />
-  <meta property="og:description" content="Algemene VR-voorbereidingen voor de draaibank en voor meterkast &amp; schakelkast volgens Nederlandse en Europese richtlijnen, inclusief 13,1-inch Teacher Dashboard en mobiele VR-karren vanaf € 10.000,- excl. BTW." />
+  <meta name="description" content="Algemene VR-praktijkvoorbereidingen volgens Nederlandse en Europese richtlijnen. Bekijk de 3 onderdelen van de draaibank-app en kies als school eenvoudig voor een mobiele VR-kar of losse docenttablet." />
+  <meta property="og:title" content="TechBuilds VR — Algemene praktijkvoorbereiding in VR, rustig en overzichtelijk." />
+  <meta property="og:description" content="Geen merkspecifieke typetraining, maar algemene voorbereiding in 3 duidelijke onderdelen. School kiest voor een VR-kar of losse tablet waarmee de docent studenten AVG-vriendelijk begeleidt." />
   <meta property="og:image" content="assets/img/logo/OpenGraph_Social_Preview_1200x630.png" />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg" />
@@ -64,381 +64,177 @@
   </header>
 
   <main id="hoofdinhoud">
-    <!-- Hero Sectie -->
-    <section class="hero-bento" aria-label="Introductie TechBuilds VR">
-      <div class="container hero-bento-grid">
-        <div class="hero-bento-left">
-          <div class="bento-statement-tile">
-            <h1 class="h1-bento">Eerst rustig oefenen in VR. Daarna goed voorbereid aan het werk.</h1>
-            <p class="lead">
-              Wij maken geen merkspecifieke typetrainingen, maar <strong>algemene praktijkvoorbereidingen</strong> op basis van <strong>Nederlandse en Europese veiligheidsrichtlijnen</strong>. Leerlingen oefenen in VR eerst de vaste werkvolgorde voor de <strong>draaibank</strong> of voor de <strong>meterkast, groepenkast en schakelkast</strong>, terwijl de vakdocent rustig meekijkt op het Teacher Dashboard.
-            </p>
-            <div class="btn-group">
-              <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary btn-lg" id="heroBtnDemo">Plan demo op school</a>
-              <a href="modules.html" class="btn btn-white btn-lg" id="heroBtnPackages">Bekijk de modules</a>
-            </div>
-          </div>
-
-          <div class="hero-metrics-row" role="group" aria-label="Kernpunten">
-            <button type="button" class="bento-metric-tile" data-hero-scene="elektro" aria-pressed="false" id="heroTileModules">
-              <span class="metric-num">NL &amp; EU</span>
-              <span class="metric-label">Richtlijnen</span>
-              <span class="metric-sub">Geen typetraining</span>
-            </button>
-
-            <button type="button" class="bento-metric-tile" data-hero-scene="kar" aria-pressed="false" id="heroTileKar">
-              <span class="metric-num">1 stekker</span>
-              <span class="metric-label">Klaar voor de les</span>
-              <span class="metric-sub">Eigen 5G in de kar</span>
-            </button>
-
-            <button type="button" class="bento-metric-tile" data-hero-scene="tablet" aria-pressed="false" id="heroTileTablet">
-              <span class="metric-num">10 of 20</span>
-              <span class="metric-label">VR-brillen</span>
-              <span class="metric-sub">of eigen brillen</span>
-            </button>
+    <!-- Rustige KISS Hero: één duidelijke boodschap + één praktijkfoto -->
+    <section class="hero-calm" id="over-ons" aria-label="Introductie TechBuilds VR">
+      <div class="container hero-calm-grid">
+        <div class="hero-calm-copy">
+          <span class="hero-calm-kicker">Algemene praktijkvoorbereiding · NL &amp; EU-richtlijnen</span>
+          <h1 class="hero-calm-title">Veilig voorbereid naar de praktijkles.</h1>
+          <p class="hero-calm-lead">
+            Wij maken geen merkspecifieke typetrainingen, maar rustige <strong>algemene voorbereidingen in VR</strong> voor het techniekonderwijs en bedrijfsscholen. Studenten oefenen eerst de vaste veiligheidsregels voordat zij bij de echte draaibank of meterkast aan de slag gaan.
+          </p>
+          <div class="btn-group">
+            <a href="#draaibank-onderdelen" class="btn btn-primary btn-lg" id="heroBtnOnderdelen">Bekijk de 3 onderdelen ↓</a>
+            <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-outline btn-lg" id="heroBtnDemo">Plan demo op school</a>
           </div>
         </div>
 
-        <div class="hero-photo-tile">
-          <img id="heroStageImg" class="hero-photo-img" src="assets/img/brand/hero_techbuilds_vr_werkplaats.webp" alt="Praktijklokaal waar een student met een VR-bril oefent bij de draaibank terwijl de vakdocent meekijkt op de docenttablet" width="1376" height="768" />
-
-          <div class="hero-frosted-dock" aria-label="Wissel praktijkweergave">
-            <div class="hero-dock-pills" role="tablist">
-              <button type="button" class="hero-dock-pill is-active" role="tab" aria-selected="true" data-hero-scene="praktijklokaal" id="heroDockTab0">Praktijklokaal</button>
-              <button type="button" class="hero-dock-pill" role="tab" aria-selected="false" data-hero-scene="modules" id="heroDockTab1">Draaibank</button>
-              <button type="button" class="hero-dock-pill" role="tab" aria-selected="false" data-hero-scene="elektro" id="heroDockTabElektro">Meterkast &amp; Elektro</button>
-              <button type="button" class="hero-dock-pill" role="tab" aria-selected="false" data-hero-scene="kar" id="heroDockTab2">Mobiele VR-Kar</button>
-              <button type="button" class="hero-dock-pill" role="tab" aria-selected="false" data-hero-scene="tablet" id="heroDockTab3">Dashboard</button>
-            </div>
-            <div class="hero-dock-caption-row">
-              <span id="heroSceneCaption">Algemene voorbereiding op de praktijkles · simpele bediening met twee knoppen · docent kijkt live mee</span>
-              <a href="modules.html" class="hero-dock-link" id="heroSceneLink">Alle modules →</a>
-            </div>
-          </div>
-        </div>
+        <figure class="hero-calm-media">
+          <img src="assets/img/brand/hero_techbuilds_vr_werkplaats.webp" alt="Praktijklokaal waar een student met een VR-bril oefent terwijl de vakdocent rustig begeleidt met een docenttablet" width="1600" height="1200" />
+        </figure>
       </div>
     </section>
 
-    <!-- Over TechBuilds VR (#over-ons) -->
-    <section class="section section-tight section-paper" id="over-ons" aria-label="Over TechBuilds VR">
+    <!-- Blok 1: Welke 3 onderdelen doorloopt een student bij de draaibank-app? -->
+    <section class="section section-paper" id="draaibank-onderdelen" aria-label="De 3 onderdelen van de draaibank-app">
       <div class="container">
-        <div class="section-intro reveal-item">
-          <span class="section-kicker">Over ons · Algemene voorbereiding op de praktijk</span>
-          <h2 class="h2-section">Geen knoppencursus voor één merk, maar veilig leren werken volgens vaste richtlijnen.</h2>
+        <div class="section-intro">
+          <span class="section-kicker">Draaibank VR · Overzicht voor de student</span>
+          <h2 class="h2-section">Welke 3 onderdelen doorloopt een student bij de draaibank-app?</h2>
           <p class="lead">
-            In een druk praktijklokaal kun je als vakdocent niet bij tien opstellingen tegelijk staan. Daarom ontwikkelt TechBuilds VR algemene voorbereidingen voor het VMBO, MBO en bedrijfsscholen. Leerlingen oefenen in alle rust de veiligheidsregels en werkvolgorde die in heel Nederland en Europa gelden — ongeacht welk merk draaibank, meterkast of schakelkast er in jullie lokaal staat.
+            In plaats van een losse knoppencursus volgt elke student drie logische onderdelen op basis van Nederlandse en Europese veiligheidsrichtlijnen (met vooraf optioneel een korte <em>Wegwijs</em>-rondleiding langs de draaibank):
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="bento-tile reveal-item" style="background:#FFFFFF;">
-            <span class="card-step">01 · NEDERLANDSE &amp; EUROPESE RICHTLIJNEN</span>
-            <h3 class="h3-card">Bruikbaar bij elke opstelling</h3>
-            <p class="muted" style="margin:0;">
-              Onze trainingen zijn opgebouwd rond het <strong>Arbobesluit</strong>, de <strong>Europese Machinerichtlijn (EN ISO 23125)</strong> en <strong>NEN 3140 / EN 50110</strong>. Zo leren leerlingen gewoontes die overal op school en in het bedrijf kloppen.
-            </p>
-          </article>
-
-          <article class="bento-tile reveal-item" style="background:#FFFFFF;">
-            <span class="card-step">02 · OVERZICHT VOOR DE VAKDOCENT</span>
-            <h3 class="h3-card">Eén duidelijk Teacher Dashboard</h3>
-            <p class="muted" style="margin:0;">
-              Geen losse leerlingaccounts of wachtwoorden. De docent ziet op één grote 13,1-inch docenttablet precies wie bij welke stap is, waar iemand vastloopt en wie klaar is voor de controle bij de echte opstelling.
-            </p>
-          </article>
-
-          <article class="bento-tile reveal-item" style="background:#FFFFFF;">
-            <span class="card-step">03 · ZONDER GEDOE VOOR ICT</span>
-            <h3 class="h3-card">Stekker erin en starten</h3>
-            <p class="muted" style="margin:0;">
-              Onze mobiele VR-karren hebben één gewoon stopcontact nodig en werken op een eigen ingebouwde wifi- en 5G-verbinding. Je hoeft dus niets aan te vragen bij de ICT-afdeling van school.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Twee Standaard VR-Vakmodules -->
-    <section class="section section-tight section-surface" id="vakmodules" aria-label="Twee standaard VR-vakmodules">
-      <div class="container">
-        <div class="section-intro reveal-item">
-          <span class="section-kicker">Onze VR-voorbereidingen</span>
-          <h2 class="h2-section">Kies Draaibank, Elektrotechniek of combineer ze allebei.</h2>
-          <p class="lead">
-            Bij elk pakket zit standaard <strong>één algemene VR-voorbereiding naar keuze</strong>. Wil je de tweede module er ook bij hebben op dezelfde docenttablet en VR-brillen? Een losse extra module kost eenmalig <strong>€ 5.000,- excl. BTW</strong>.
-          </p>
-        </div>
-
-        <div class="grid-2" style="margin-bottom:20px;">
-          <article class="module-showcase-card reveal-item">
-            <div class="module-showcase-media">
-              <img src="assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp" alt="Algemene praktijkvoorbereiding aan de draaibank in VR met gesloten beschermkap en werktekening" width="1600" height="960" loading="lazy" />
+        <div class="parts-three-grid">
+          <article class="part-step-card">
+            <div class="part-step-header">
+              <span class="part-step-num">1</span>
+              <span class="part-step-tag">Onderdeel 1 · PBM &amp; kleding</span>
             </div>
-            <div class="module-showcase-body">
-              <span class="card-step">METAAL &amp; VERSPANING · NL &amp; EU-RICHTLIJNEN</span>
-              <h3 class="h3-card">Draaibank VR — Algemene voorbereiding</h3>
-              <p class="muted" style="margin:0;">
-                Geen specifieke typetraining, maar zes heldere stappen die gelden aan elke conventionele draaibank: kleding- en PBM-controle (veiligheidsbril op, handschoenen uit), werkplekcontrole, opspannen en de klauwplaatsleutel direct uitnemen, draaien met dichte kap, nameten bij stilstand en ingrijpen met de noodstop.
-              </p>
-              <div class="module-showcase-footer">
-                <a href="training-draaibank.html" class="btn btn-primary btn-sm" id="homeCardDraaibankBtn">Bekijk Draaibank VR →</a>
-                <span class="mono muted" style="font-size:0.75rem;">1e module inbegrepen</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="module-showcase-card reveal-item">
-            <div class="module-showcase-media">
-              <img src="assets/img/elektro/elektro_02_tweepolig_meten.webp" alt="Tweepolig spanningsloos meten met een spanningzoeker in een groepenkast en schakelkast in VR" width="1376" height="768" loading="lazy" />
-            </div>
-            <div class="module-showcase-body">
-              <span class="card-step">ELEKTROTECHNIEK · NEN 3140 &amp; EN 50110</span>
-              <h3 class="h3-card">Elektrotechniek VR — Meterkast &amp; schakelkast</h3>
-              <p class="muted" style="margin:0;">
-                Algemene voorbereiding om veilig spanningsloos te werken aan een meterkast, groepenkast of schakelkast: sieraden af en geïsoleerd gereedschap pakken, gecontroleerd uitschakelen, vergrendelen met een eigen hangslot, tweepolig nameten met een spanningzoeker en naastgelegen delen afschermen.
-              </p>
-              <div class="module-showcase-footer">
-                <a href="training-elektrotechniek.html" class="btn btn-primary btn-sm" id="homeCardElektroBtn">Bekijk Elektrotechniek VR →</a>
-                <span class="mono muted" style="font-size:0.75rem;">Inbegrepen of los + € 5.000,-</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="grid-3">
-          <article class="bento-tile reveal-item">
-            <span class="card-step">MAKKELIJK IN GEBRUIK</span>
-            <h3 class="h3-card">Binnen een minuut aan de slag</h3>
-            <p class="muted" style="margin:0 0 1rem 0;">
-              Leerlingen gebruiken alleen de twee wijsvingerknoppen en blijven gewoon op één vaste plek staan. Daardoor heeft iedereen de bediening direct door en wordt niemand duizelig.
-            </p>
-            <a href="modules.html" style="margin-top:auto;font-size:0.88rem;font-weight:600;" id="pillarLinkModules">Bekijk alle modules →</a>
-          </article>
-
-          <article class="bento-tile reveal-item">
-            <span class="card-step">STEVIGE DOCENTTABLET</span>
-            <h3 class="h3-card">13,1-inch Teacher Dashboard</h3>
-            <p class="muted" style="margin:0 0 1rem 0;">
-              Een water- en stofdichte 13,1-inch docenttablet met stevige beschermhoes en tekenpen, speciaal ingericht voor de werkplaats. Hiermee begeleid je 10, 20 of een onbeperkt aantal eigen VR-brillen.
-            </p>
-            <a href="docentapp-tablet.html" style="margin-top:auto;font-size:0.88rem;font-weight:600;" id="pillarLinkTablet">Probeer het dashboard zelf →</a>
-          </article>
-
-          <article class="bento-tile reveal-item">
-            <span class="card-step">ZELFSTANDIG NETWERK</span>
-            <h3 class="h3-card">Los van het schoolnetwerk</h3>
-            <p class="muted" style="margin:0 0 1rem 0;">
-              De verrijdbare VR-kar laadt alle VR-brillen én de docenttablet tegelijk op via één stopcontact en heeft een eigen snelle wifi- en 5G-router aan boord. Rol de kar het lokaal in en je kunt beginnen.
-            </p>
-            <a href="prijzen-contact.html#pakket-keuze" style="margin-top:auto;font-size:0.88rem;font-weight:600;" id="pillarLinkKar">Vergelijk de VR-karren →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hoe een praktijkles eruitziet -->
-    <section class="section section-surface" id="workflow">
-      <div class="container">
-        <div class="section-intro-center reveal-item">
-          <span class="section-kicker">Hoe werkt het in de les?</span>
-          <h2 class="h2-section">Van oefenen in VR naar veilig werken in het lokaal.</h2>
-          <p class="lead">
-            VR vervangt de praktijkles niet, maar zorgt dat leerlingen de algemene veiligheidsregels al beheersen voordat de docent ze vrijgeeft bij de echte draaibank, meterkast of schakelkast.
-          </p>
-        </div>
-
-        <div class="bento-workflow">
-          <!-- Stap 1 -->
-          <article class="bento-card bento-span-7 reveal-item">
-            <div class="bento-card-body">
-              <span class="card-step">STAP 1 · VEILIGHEIDSCHECK VOORAF</span>
-              <h3 class="h3-card">Buddy Check en eigen beschermingsmiddelen</h3>
-              <p class="body-copy" style="margin-bottom:0;">
-                Elke voorbereiding begint vóór de draaibank of kast. De leerling controleert eerst een virtuele klasgenoot op los haar, sieraden en werkkleding, zet daarna de eigen veiligheidsbril op en legt verboden spullen weg. Pas als alles klopt, gaat de oefening verder.
-              </p>
-            </div>
-            <div class="bento-card-media">
-              <img src="assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp" alt="Buddy Check en controle van persoonlijke beschermingsmiddelen in VR" width="1600" height="960" loading="lazy" />
-            </div>
-          </article>
-
-          <!-- Stap 2 -->
-          <article class="bento-card bento-card-dark bento-span-5 reveal-item">
-            <div class="bento-card-body">
-              <span class="card-step">STAP 2 · MEEKIJKEN EN BEGELEIDEN</span>
-              <h3 class="h3-card">Rustig overzicht op de docenttablet</h3>
-              <p style="color:#CBD5E1;font-size:0.95rem;margin:0 0 1.2rem 0;">
-                Op het Teacher Dashboard ziet de docent in één oogopslag wie goed bezig is en bij wie de oefening even stilstaat na een fout. Je kunt live meekijken met één gekozen VR-bril en een belangrijk moment direct een stukje terugspoelen om samen te bespreken.
-              </p>
-              <a href="docentapp-tablet.html#live-simulator" class="btn btn-dark-pill btn-sm" id="homeBentoBtnSim">Bekijk het Teacher Dashboard →</a>
-            </div>
-            <div class="bento-card-media">
-              <img src="assets/img/brand/pakket_regietablet_vr_set.webp" alt="13,1-inch docenttablet met het Teacher Dashboard, tekenpen, schuifmaat en een VR-bril" width="1200" height="896" loading="lazy" />
-            </div>
-          </article>
-
-          <!-- Stap 3 -->
-          <article class="bento-card bento-span-12 reveal-item">
-            <div class="bento-wide-split">
-              <div class="bento-card-body">
-                <span class="card-step">STAP 3 · AFTEKENEN BIJ DE ECHTE OPSTELLING</span>
-                <h3 class="h3-card" style="font-size:clamp(1.35rem,1.15rem+0.65vw,1.72rem);">Overzichtelijk A4-rapport voor het praktijkdossier.</h3>
-                <p class="body-copy">
-                  Klaar met oefenen? Vanaf de docenttablet print of bewaar je eenvoudig een A4-overzicht van de behaalde onderdelen. Daarop staan ook vijf vaste controlepunten die de vakdocent samen met de leerling bij de echte draaibank, meterkast of schakelkast naloopt en met de pen ondertekent.
-                </p>
-                <div class="btn-group">
-                  <a href="modules.html" class="btn btn-primary btn-sm" id="homeBtnCurriculum">Bekijk de modules</a>
-                  <a href="docentapp-tablet.html?rapport=open#live-simulator" class="btn btn-white btn-sm" id="homeBtnReportPreview">Voorbeeld van het A4-rapport</a>
-                </div>
-              </div>
-              <div class="bento-card-media" style="height:100%;">
-                <img src="assets/img/draaibank/draaibank_04_vr_schuifmaat_nameten.webp" alt="Nameten met een schuifmaat bij stilstaande draaibank in VR" width="1600" height="960" loading="lazy" style="height:100%;" />
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Aanvullende Werkplekken & Maatwerk Podium -->
-    <section class="pro-podium-wrap" aria-label="Aanvullende praktijkvoorbereidingen">
-      <div class="container-wide">
-        <div class="pro-podium theme-dark reveal-item">
-          <div class="section-header-row">
-            <div style="max-width:680px;">
-              <div style="display:flex;align-items:center;gap:0.65rem;margin-bottom:0.65rem;">
-                <img src="assets/img/logo/TechBuildsVR_Icon_Symbol_DarkBG.svg" alt="" width="24" height="24" aria-hidden="true" />
-                <span class="section-kicker" style="margin:0;">Standaard én op aanvraag</span>
-              </div>
-              <h2 class="h2-section">Ook een voorbereiding nodig voor een andere werkplek in het lokaal?</h2>
-              <p class="lead">
-                Naast onze modules voor de draaibank en de meterkast of schakelkast ontwikkelen we ook algemene praktijkvoorbereidingen voor andere technische werkplekken — altijd op basis van Nederlandse en Europese veiligheidsrichtlijnen en direct te gebruiken op dezelfde docenttablet.
-              </p>
-            </div>
-            <a href="maatwerk.html" class="btn btn-dark-pill" id="homeBtnMaatwerk">Meer over maatwerk →</a>
-          </div>
-
-          <div class="grid-4">
-            <article class="apple-card">
-              <span class="card-step">01 · VERSPANING</span>
-              <h3 class="h3-card">Draaibank, frees &amp; boor</h3>
-              <p style="color:#94A3B8;font-size:0.92rem;margin:0;">Standaard voor de draaibank, uit te breiden met algemene voorbereidingen voor bijvoorbeeld de freesbank, zaagmachine of kolomboor.</p>
-            </article>
-            <article class="apple-card">
-              <span class="card-step">02 · ELEKTROTECHNIEK</span>
-              <h3 class="h3-card">Meterkast &amp; groepenkast</h3>
-              <p style="color:#94A3B8;font-size:0.92rem;margin:0;">Standaard veilig stellen bij de meterkast, groepenkast en schakelkast, of aanvullend voor verdelers bij zonnepanelen en laadpleinen.</p>
-            </article>
-            <article class="apple-card">
-              <span class="card-step">03 · INSTALLATIE</span>
-              <h3 class="h3-card">Klimaat &amp; leidingwerk</h3>
-              <p style="color:#94A3B8;font-size:0.92rem;margin:0;">Veilig oefenen met warmtepompen, juiste afsluitervolgordes en leidingwerk gecontroleerd drukloos maken.</p>
-            </article>
-            <article class="apple-card">
-              <span class="card-step">04 · MECHATRONICA</span>
-              <h3 class="h3-card">Oefen- &amp; productielijnen</h3>
-              <p style="color:#94A3B8;font-size:0.92rem;margin:0;">Algemene voorbereiding op werken rond hekwerkbeveiliging, lichtschermen, noodstoppen en veilig vrijgeven.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Drie Pakketten + Losse Module (€ 5.000,-) -->
-    <section class="section section-surface" id="pakketten">
-      <div class="container">
-        <div class="section-intro-center reveal-item">
-          <span class="section-kicker">Duidelijke prijzen excl. BTW · Geen kosten per leerling</span>
-          <h2 class="h2-section">Drie heldere pakketten. Direct klaar voor gebruik.</h2>
-          <p class="lead">
-            Bij elk pakket zit <strong>één VR-module naar keuze</strong> inbegrepen (Draaibank VR óf Elektrotechniek VR). Een losse extra module erbij kost eenmalig <strong>€ 5.000,- excl. BTW</strong>.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <!-- Optie 1 -->
-          <article class="price-card reveal-item">
-            <div class="price-tier-kicker">
-              <span class="tier-tag">Optie 1 · Eigen brillen</span>
-              <span class="status-badge status-safe">1e jaar service incl.</span>
-            </div>
-            <h3 class="h3-card">Teacher Dashboard &amp; Eigen Brillen</h3>
-            <div class="price-figure">€ 10.000,- <span class="price-vat">excl. BTW</span></div>
-            <p class="price-annual">Eenmalig incl. 1e jaar service · vanaf jaar 2: <strong class="mono">€ 1.500,-/jr</strong></p>
-            <ul class="check-list" style="font-size:0.91rem;">
-              <li><strong>1 VR-module naar keuze inbegrepen</strong> (Draaibank VR óf Elektrotechniek VR)</li>
-              <li>Stevige 13,1-inch docenttablet met tekenpen, beschermhoes en het Teacher Dashboard</li>
-              <li>Koppel onbeperkt jullie eigen VR-brillen (inclusief hulp en updates op afstand)</li>
-            </ul>
-            <div style="margin-top:auto;padding-top:1.15rem;">
-              <a href="prijzen-contact.html?optie=1#pakketCalculator" class="btn btn-white" id="homePkg1Btn" style="width:100%;">Kies Optie 1 →</a>
-            </div>
-          </article>
-
-          <!-- Optie 2 (Meest gekozen) -->
-          <article class="price-card price-card-featured reveal-item">
-            <div class="price-tier-kicker">
-              <span class="tier-tag">Optie 2 · Praktijklokaal</span>
-              <span class="featured-pill">Meest gekozen</span>
-            </div>
-            <h3 class="h3-card">Complete VR-Kar 10</h3>
-            <div class="price-figure">€ 15.000,- <span class="price-vat">excl. BTW</span></div>
-            <p class="price-annual">Eenmalige aanschaf + <strong class="mono">€ 2.500,-/jr</strong> service, beheer &amp; 5G</p>
-            <ul class="check-list" style="font-size:0.91rem;">
-              <li><strong>1 VR-module naar keuze inbegrepen</strong> (Draaibank VR óf Elektrotechniek VR)</li>
-              <li>Verrijdbare oplaadkar (1 stopcontact) met 10 VR-brillen en ingebouwde wifi- en 5G-verbinding</li>
-              <li>13,1-inch docenttablet in de kar + elk jaar een onderhoudscontrole bij jullie op school</li>
-            </ul>
-            <div style="margin-top:auto;padding-top:1.15rem;">
-              <a href="prijzen-contact.html?optie=2#pakketCalculator" class="btn btn-primary" id="homePkg2Btn" style="width:100%;">Kies VR-Kar 10 →</a>
-            </div>
-          </article>
-
-          <!-- Optie 3 -->
-          <article class="price-card reveal-item">
-            <div class="price-tier-kicker">
-              <span class="tier-tag">Optie 3 · Hele klas</span>
-              <span class="status-badge status-info">20 brillen</span>
-            </div>
-            <h3 class="h3-card">Complete VR-Kar 20</h3>
-            <div class="price-figure">€ 25.000,- <span class="price-vat">excl. BTW</span></div>
-            <p class="price-annual">Eenmalige aanschaf + <strong class="mono">€ 3.500,-/jr</strong> service, beheer &amp; 5G</p>
-            <ul class="check-list" style="font-size:0.91rem;">
-              <li><strong>1 VR-module naar keuze inbegrepen</strong> (Draaibank VR óf Elektrotechniek VR)</li>
-              <li>Verrijdbare oplaadkar (1 stopcontact) met 20 VR-brillen en ingebouwde wifi- en 5G-verbinding</li>
-              <li>13,1-inch docenttablet in de kar + elk jaar een onderhoudscontrole bij jullie op school</li>
-            </ul>
-            <div style="margin-top:auto;padding-top:1.15rem;">
-              <a href="prijzen-contact.html?optie=3#pakketCalculator" class="btn btn-white" id="homePkg3Btn" style="width:100%;">Kies VR-Kar 20 →</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Losse extra module (+ € 5.000,-) -->
-        <div class="addon-module-tile reveal-item">
-          <div class="addon-module-copy">
-            <span class="card-step" style="margin-bottom:0.25rem;">TWEEDE MODULE OP DEZELFDE SET</span>
-            <h3 class="h3-card" style="margin-bottom:0.25rem;">Zowel bij de draaibank als bij de meterkast en schakelkast voorbereiden?</h3>
+            <h3 class="h3-card">De Buddy Check</h3>
             <p>
-              Beide vakmodules werken op precies dezelfde docenttablet en VR-brillen. Je hebt dus geen tweede kar nodig en betaalt geen dubbele jaarlijkse servicekosten.
+              Eerst een medestudent controleren op losse kleding, los haar en sieraden. Daarna zet de student de eigen veiligheidsbril op en gaan werkhandschoenen verplicht uit vóór draaiend werk.
             </p>
-          </div>
-          <div class="addon-module-price-group">
-            <div class="addon-module-price">
-              + € 5.000,-
-              <span>eenmalig excl. BTW · losse module erbij</span>
+          </article>
+
+          <article class="part-step-card">
+            <div class="part-step-header">
+              <span class="part-step-num">2</span>
+              <span class="part-step-tag">Onderdeel 2 · Opbouwen &amp; stop</span>
             </div>
-            <a href="prijzen-contact.html?module=beide#pakketCalculator" class="btn btn-white" id="homeBtnComboModules">Bereken met beide modules →</a>
-          </div>
+            <h3 class="h3-card">Voorbereiden &amp; veiligheid</h3>
+            <p>
+              De draaibank vrijmaken van los gereedschap, het werkstuk spanningsloos opspannen, de klauwplaatsleutel direct terugplaatsen, de beschermkap sluiten, het toerental instellen en oefenen met de noodstop.
+            </p>
+          </article>
+
+          <article class="part-step-card">
+            <div class="part-step-header">
+              <span class="part-step-num">3</span>
+              <span class="part-step-tag">Onderdeel 3 · 5 werkstukken</span>
+            </div>
+            <h3 class="h3-card">Praktijkgebruik</h3>
+            <p>
+              Zelfstandig oefenen met vijf oplopende werkstukken volgens tekening — van gladde paspen tot storingsopdracht — inclusief wachten op volledige stilstand en nameten met de schuifmaat.
+            </p>
+          </article>
         </div>
 
-        <div style="text-align:center;margin:2rem 0 2.5rem;">
-          <a href="prijzen-contact.html#pakketCalculator" class="btn btn-outline" id="homeBtnTco">Bereken het kostenoverzicht voor 1 tot 5 jaar →</a>
+        <div class="parts-footer-bar">
+          <p class="parts-footer-note">
+            Naast <strong>Draaibank VR</strong> is er ook een algemene voorbereiding voor veilig spanningsloos werken bij de <strong>meterkast en schakelkast</strong>.
+          </p>
+          <div class="btn-group">
+            <a href="training-draaibank.html" class="btn btn-primary btn-sm" id="homeBtnDraaibank">Bekijk Draaibank VR →</a>
+            <a href="modules.html" class="btn btn-white btn-sm" id="homeBtnAllModules">Alle modules →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blok 2: School kiest voor VR-kar of tablet + AVG-vriendelijke begeleiding -->
+    <section class="section section-surface" id="kar-of-tablet" aria-label="Keuze voor VR-kar of tablet en begeleiding door de docent">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-kicker">Eenvoudige keuze voor school · AVG-vriendelijk</span>
+          <h2 class="h2-section">School kiest voor een VR-kar of een losse tablet.</h2>
+          <p class="lead">
+            Of jullie nu een complete oplaadkar willen of met eigen VR-brillen werken: de docent gebruikt één overzichtelijke docenttablet om studenten rustig te begeleiden tijdens de les.
+          </p>
+        </div>
+
+        <div class="choice-two-grid">
+          <article class="school-choice-card">
+            <div class="school-choice-media">
+              <img src="assets/img/brand/pakket_mobiele_vr_kar_werkplaats.webp" alt="Mobiele VR-kar op wielen met genummerde VR-brillen en docenttablet op één stopcontact" width="1264" height="848" loading="lazy" />
+            </div>
+            <div class="school-choice-body">
+              <span class="card-step">KEUZE A · ALLES-IN-ÉÉN OP WIELEN</span>
+              <h3 class="h3-card">Complete mobiele VR-kar (10 of 20 brillen)</h3>
+              <p>
+                Een verrijdbare oplaadkar met 10 of 20 VR-brillen, de 13,1-inch docenttablet en een eigen 5G-verbinding. Eén gewoon stopcontact in het lokaal is genoeg, helemaal los van het schoolnetwerk.
+              </p>
+            </div>
+          </article>
+
+          <article class="school-choice-card">
+            <div class="school-choice-media">
+              <img src="assets/img/brand/pakket_regietablet_vr_set.webp" alt="Losse 13,1-inch docenttablet met het Teacher Dashboard voor koppeling met eigen VR-brillen van school" width="1200" height="896" loading="lazy" />
+            </div>
+            <div class="school-choice-body">
+              <span class="card-step">KEUZE B · VOOR EIGEN VR-BRILLEN</span>
+              <h3 class="h3-card">Losse docenttablet</h3>
+              <p>
+                Heeft de school zelf al VR-brillen? Dan kies je alleen de 13,1-inch docenttablet met het Teacher Dashboard en koppel je jullie eigen brillen zonder licenties per student.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="guidance-three-box">
+          <span class="card-step" style="margin:0;">HOE HELPT DE TABLET DE DOCENT BIJ HET BEGELEIDEN?</span>
+          <div class="guidance-three-grid">
+            <div class="guidance-item">
+              <span class="mono" style="font-size:0.75rem;color:var(--tb-cobalt);font-weight:600;">01 · KLAARZETTEN</span>
+              <h4>Opstarten van app en scenario</h4>
+              <p>
+                De docent kiest en start centraal de juiste app en het gewenste onderdeel (1, 2 of 3), zodat studenten direct op de juiste plek beginnen zonder door menu's te zoeken.
+              </p>
+            </div>
+
+            <div class="guidance-item">
+              <span class="mono" style="font-size:0.75rem;color:var(--tb-cobalt);font-weight:600;">02 · PRIVACY &amp; AVG</span>
+              <h4>Meekijken indien nodig en gewenst</h4>
+              <p>
+                De docent kijkt alleen mee wanneer begeleiding nodig is én dit gewenst is door de student (AVG-vriendelijk). Er zijn geen leerlingaccounts en er worden geen persoonsgegevens in de cloud bewaard.
+              </p>
+            </div>
+
+            <div class="guidance-item">
+              <span class="mono" style="font-size:0.75rem;color:var(--tb-cobalt);font-weight:600;">03 · NETJES AFRONDEN</span>
+              <h4>Afsluiten van de apps</h4>
+              <p>
+                Aan het einde van de oefening sluit de docent de apps op de brillen in één keer rustig af. Zo staan alle brillen direct weer klaar voor de volgende groep.
+              </p>
+            </div>
+          </div>
+
+          <div class="btn-group" style="margin-top:1.5rem;">
+            <a href="docentapp-tablet.html" class="btn btn-primary" id="homeBtnDashboard">Bekijk het Teacher Dashboard →</a>
+            <a href="prijzen-contact.html" class="btn btn-white" id="homeBtnPrijzen">Bekijk pakketten en prijzen →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blok 3: Rustige uitnodiging voor een demo + verplichte veiligheidsmelding -->
+    <section class="section-tight section-surface" aria-label="Demo aanvragen en veiligheidsverklaring">
+      <div class="container">
+        <div class="calm-cta-card" style="margin-bottom:1.75rem;">
+          <div>
+            <h2 class="h2-section">Rustig zelf uitproberen op school?</h2>
+            <p>
+              We komen graag vrijblijvend langs in jullie praktijklokaal met de docenttablet en een paar VR-brillen, zodat jij en je collega's de drie onderdelen zelf kunnen ervaren.
+            </p>
+          </div>
+          <div class="btn-group">
+            <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary btn-lg" id="homeBottomDemoBtn">Plan demo op school</a>
+          </div>
         </div>
 
         <div class="ac24-notice">
-          <strong>Goed om te weten:</strong> Onze VR-modules zijn een algemene voorbereiding op de praktijkles en geen merkspecifieke typetraining of officieel certificaat. Ze vervangen nooit de persoonlijke uitleg, het toezicht en de vrijgave door een bevoegd vakdocent of leermeester aan de echte draaibank, meterkast of installatie.
+          <strong>Goed om te weten:</strong> Onze VR-modules zijn een algemene oefening en voorbereiding op de praktijkles en geen merkspecifieke typetraining of officieel certificaat. Ze vervangen nooit de persoonlijke uitleg, begeleiding en vrijgave door een bevoegd vakdocent bij de echte draaibank, meterkast of installatie.
         </div>
       </div>
     </section>
@@ -502,7 +298,7 @@
   <div class="mobile-sticky-bar no-print" id="mobileStickyBar">
     <div class="mobile-sticky-copy">
       TechBuilds VR
-      <span>Pakketten vanaf € 10.000,- excl. BTW</span>
+      <span>VR-kar of losse docenttablet</span>
     </div>
     <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary btn-sm" id="mobileStickyDemoBtn">Plan demo</a>
   </div>
