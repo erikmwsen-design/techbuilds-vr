@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teacher Dashboard — Keuze voor VR-kar of Tablet &amp; AVG-vriendelijk Begeleiden | TechBuilds VR</title>
-  <meta name="description" content="School kiest voor een mobiele VR-kar of losse docenttablet. Het Teacher Dashboard helpt de docent studenten begeleiden: opstarten van app en scenario, meekijken indien nodig en gewenst door de student (AVG) en gezamenlijk afsluiten van de apps." />
-  <meta property="og:title" content="Teacher Dashboard — VR-kar of tablet · AVG-vriendelijk begeleiden | TechBuilds VR" />
-  <meta property="og:description" content="Eenvoudig apps en scenario's opstarten, alleen meekijken wanneer nodig en gewenst door de student (AVG) en na afloop de apps centraal afsluiten." />
+  <title>Docent Dashboard — Keuze voor VR-kar of Tablet &amp; AVG-vriendelijk Begeleiden | TechBuilds VR</title>
+  <meta name="description" content="School kiest voor een mobiele VR-kar of losse docenttablet. Het Docent Dashboard v2.4.0 helpt de docent rustig begeleiden: apps en oefeningen klaarzetten, pas meekijken nadat de student rechtsboven in VR op ‘Hulp nodig’ tikt (AVG) en gezamenlijk afsluiten." />
+  <meta property="og:title" content="Docent Dashboard — VR-kar of tablet · AVG-vriendelijk begeleiden | TechBuilds VR" />
+  <meta property="og:description" content="Lichte Blueprint-weergave in 3 overzichtelijke tabbladen: 1. Klasoverzicht, 2. Leerling &amp; Klaarzetten (met ‘Hulp nodig’-knop rechtsboven in VR) en 3. Vrijgave &amp; A4 Rapport." />
   <meta property="og:image" content="assets/img/logo/OpenGraph_Social_Preview_1200x630.png" />
   <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo/favicon-32x32.png" />
@@ -28,7 +28,7 @@
           <ul class="nav-links">
             <li><a href="index.html" class="nav-link" id="navLinkHome">Over ons</a></li>
             <li><a href="modules.html" class="nav-link" id="navLinkModules">Modules</a></li>
-            <li><a href="docentapp-tablet.html" class="nav-link" aria-current="page" id="navLinkTablet">Teacher Dashboard</a></li>
+            <li><a href="docentapp-tablet.html" class="nav-link" aria-current="page" id="navLinkTablet">Docent Dashboard</a></li>
             <li><a href="prijzen-contact.html" class="nav-link" id="navLinkPrijzen">Pakketten en prijzen</a></li>
           </ul>
         </nav>
@@ -54,7 +54,7 @@
         <ul class="mobile-drawer-list">
           <li><a href="index.html" id="mobLinkHome">Over ons</a></li>
           <li><a href="modules.html" id="mobLinkModules">Modules</a></li>
-          <li><a href="docentapp-tablet.html" aria-current="page" id="mobLinkTablet">Teacher Dashboard</a></li>
+          <li><a href="docentapp-tablet.html" aria-current="page" id="mobLinkTablet">Docent Dashboard</a></li>
           <li><a href="prijzen-contact.html" id="mobLinkPrijzen">Pakketten en prijzen</a></li>
         </ul>
         <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary" id="mobCtaDemo" style="width:100%;">Plan demo op school</a>
@@ -63,31 +63,32 @@
   </header>
 
   <main id="hoofdinhoud" class="no-print">
-    <!-- Hero Teacher Dashboard -->
-    <section class="hero-bento" aria-label="Teacher Dashboard Overzicht">
+    <!-- Hero Docent Dashboard v2.4.0 -->
+    <section class="hero-bento" aria-label="Docent Dashboard Overzicht">
       <div class="container hero-bento-grid">
         <div class="hero-bento-left">
           <div class="bento-statement-tile">
-            <h1 class="h1-page">School kiest voor VR-kar of tablet. De docent begeleidt in rust.</h1>
+            <span class="section-kicker" style="margin-bottom:0.5rem;display:block;">Docent Dashboard v2.4.0 · Lichte overzichtsweergave</span>
+            <h1 class="h1-page">School kiest voor VR-kar of tablet. Het Docent Dashboard houdt de les rustig.</h1>
             <p class="lead">
-              Of jullie nu kiezen voor een <strong>complete mobiele VR-kar</strong> (met 10 of 20 brillen) of een <strong>losse 13,1-inch docenttablet</strong> bij eigen brillen: de tablet helpt de docent om studenten praktisch te begeleiden. Denk aan het <strong>opstarten van de app en het scenario</strong>, <strong>meekijken indien nodig en gewenst door de student (AVG)</strong> en het <strong>gezamenlijk afsluiten van de apps</strong>.
+              Of jullie nu werken met een <strong>complete mobiele VR-kar</strong> (10 of 20 brillen) of een <strong>losse 13,1-inch docenttablet</strong> bij eigen brillen: het <strong>Docent Dashboard</strong> bundelt alles in drie rustige tabbladen. Start de app en de juiste oefening klaar voor de groep, kijk <strong>alleen live mee zodra een student rechtsboven in VR op ‘Hulp nodig’ tikt (AVG)</strong> en sluit alle apps na afloop in één keer netjes af.
             </p>
             <div class="btn-group">
-              <a href="#live-simulator" class="btn btn-primary" id="tabletHeroSimBtn">Probeer het dashboard hieronder ↓</a>
-              <button type="button" class="btn btn-white" id="tabletHeroReportBtn">Bekijk voorbeeld A4-rapport</button>
+              <a href="#live-simulator" class="btn btn-primary" id="tabletHeroSimBtn">Probeer het nieuwe dashboard ↓</a>
+              <button type="button" class="btn btn-white" id="tabletHeroReportBtn">Bekijk Vrijgave &amp; A4 Rapport</button>
             </div>
           </div>
 
           <div class="hero-metrics-row" role="group" aria-label="Kies opstelling in het voorbeeld">
             <button type="button" class="bento-metric-tile is-active" data-hero-profile="kar10" id="tabletTileKar10">
               <span class="metric-num">VR-Kar 10</span>
-              <span class="metric-label">10 brillen + tablet</span>
+              <span class="metric-label">10 brillen (2×5)</span>
               <span class="metric-sub">Alles in één kar</span>
             </button>
 
             <button type="button" class="bento-metric-tile" data-hero-profile="kar20" id="tabletTileKar20">
               <span class="metric-num">VR-Kar 20</span>
-              <span class="metric-label">20 brillen + tablet</span>
+              <span class="metric-label">20 brillen (4×5)</span>
               <span class="metric-sub">Voor een hele klas</span>
             </button>
 
@@ -99,11 +100,17 @@
           </div>
         </div>
 
-        <div class="hero-photo-tile hero-photo-tile--subpage">
-          <img src="assets/img/brand/pakket_regietablet_vr_set.webp" class="hero-photo-img" alt="13,1-inch docenttablet met het Teacher Dashboard naast de bijbehorende tekenpen, een VR-bril en een schuifmaat" width="1200" height="896" />
-          <div class="hero-frosted-dock">
+        <div class="hero-photo-tile hero-photo-tile--dashboard">
+          <img id="ddHeroShotImg" src="assets/img/dashboard/dashboard_01_klasoverzicht_v2_4.webp" class="hero-photo-img" alt="Tabblad 1 Klasoverzicht van het lichte Docent Dashboard v2.4.0 met 10 genummerde VR-brillen, groepsknoppen voor opstarten en klaarzetten en oranje melding bij Hulp nodig" width="1600" height="1000" />
+          <div class="hero-frosted-dock" aria-label="Bekijk de 4 schermen van Docent Dashboard v2.4.0">
+            <div class="hero-dock-pills" role="tablist">
+              <button type="button" class="hero-dock-pill is-active" role="tab" aria-selected="true" data-dd-shot="1" id="ddShotBtn1">1. Klasoverzicht</button>
+              <button type="button" class="hero-dock-pill" role="tab" aria-selected="false" data-dd-shot="2" id="ddShotBtn2">2a. Zelfstandig (AVG)</button>
+              <button type="button" class="hero-dock-pill" role="tab" aria-selected="false" data-dd-shot="3" id="ddShotBtn3">2b. Na ‘Hulp nodig’</button>
+              <button type="button" class="hero-dock-pill" role="tab" aria-selected="false" data-dd-shot="4" id="ddShotBtn4">3. A4 Rapport</button>
+            </div>
             <div class="hero-dock-caption-row">
-              <span><strong>13,1-inch docenttablet</strong> · geen leerlingaccounts nodig · AVG-vriendelijk begeleiden</span>
+              <span id="ddHeroShotCaption"><strong>Tab 1 — Klasoverzicht:</strong> apps openen, oefening klaarzetten voor de groep en direct zien wie op ‘Hulp nodig’ tikt.</span>
               <span class="status-badge status-safe">AVG-BEWUST</span>
             </div>
           </div>
@@ -111,14 +118,14 @@
       </div>
     </section>
 
-    <!-- De 3 begeleidingsfuncties van de docenttablet (AVG) -->
-    <section class="section section-tight section-paper" id="begeleiding-avg" aria-label="Hoe de docenttablet helpt bij het begeleiden">
+    <!-- De 3 overzichtelijke tabbladen van Docent Dashboard v2.4.0 -->
+    <section class="section section-tight section-paper" id="begeleiding-avg" aria-label="De drie tabbladen van het Docent Dashboard">
       <div class="container">
         <div class="section-intro">
-          <span class="section-kicker">Praktisch hulpmiddel voor de docent · AVG-vriendelijk</span>
-          <h2 class="h2-section">Drie simpele taken tijdens de praktijkles.</h2>
+          <span class="section-kicker">Overzichtelijk voor elke vakdocent · AVG Privacy-by-Design</span>
+          <h2 class="h2-section">Drie tabbladen die precies aansluiten op de praktijkles.</h2>
           <p class="lead">
-            Het Teacher Dashboard is geen controlesysteem met leerlingprofielen, maar een rustige afstandsbediening waarmee de docent studenten op weg helpt.
+            Het Docent Dashboard werkt zonder leerlingaccounts of cloudopslag. Witte tegels betekenen dat studenten rustig zelfstandig oefenen; pas bij een hulpvraag of veiligheidsstop vraagt een tegel aandacht.
           </p>
         </div>
 
@@ -126,168 +133,320 @@
           <article class="part-step-card">
             <div class="part-step-header">
               <span class="part-step-num">1</span>
-              <span class="part-step-tag">Voor de start</span>
+              <span class="part-step-tag">Tab 1 · Groepsregie</span>
             </div>
-            <h3 class="h3-card">App en scenario opstarten</h3>
+            <h3 class="h3-card">Klasoverzicht: openen, klaarzetten &amp; sluiten</h3>
             <p>
-              Zet vanaf de tablet voor één bril of voor de hele groep direct de juiste app en het gewenste onderdeel klaar (bijvoorbeeld <em>De Buddy Check</em>, <em>Voorbereiden &amp; veiligheid</em> of één van de 5 werkstukken).
+              Open vanaf de tablet in één keer de VR-app op alle brillen, zet het gewenste onderdeel klaar (van <em>Wegwijs</em> en <em>De Buddy Check</em> tot de 5 praktijkwerkstukken) en sluit aan het eind van het lesuur alle apps gezamenlijk af.
             </p>
           </article>
 
           <article class="part-step-card">
             <div class="part-step-header">
               <span class="part-step-num">2</span>
-              <span class="part-step-tag">Alleen op verzoek · AVG</span>
+              <span class="part-step-tag">Tab 2 · Knop ‘Hulp nodig’ in VR</span>
             </div>
-            <h3 class="h3-card">Meekijken indien nodig en gewenst</h3>
+            <h3 class="h3-card">Meekijken pas als de student dat wenst (AVG)</h3>
             <p>
-              Brillen werken op nummer (<em>Bril 01</em>, <em>Bril 02</em>), zonder accounts of cloudopslag. De docent kijkt alleen mee wanneer begeleiding nodig is én dit gewenst is door de student, met volledig respect voor de AVG.
+              Zonder hulpvraag ziet de docent alleen welk onderdeel actief is en kan een oefening klaarzetten. Pas wanneer de student rechtsboven in het VR-scherm op <strong>‘Hulp nodig’</strong> tikt, opent het live meekijkbeeld (maximaal 1 bril tegelijk) naast de 2D-werktekening.
             </p>
           </article>
 
           <article class="part-step-card">
             <div class="part-step-header">
               <span class="part-step-num">3</span>
-              <span class="part-step-tag">Einde van de oefening</span>
+              <span class="part-step-tag">Tab 3 · Bij de echte machine</span>
             </div>
-            <h3 class="h3-card">Apps netjes afsluiten</h3>
+            <h3 class="h3-card">Praktijkvrijgave &amp; lokaal A4-rapport</h3>
             <p>
-              Is de groep klaar met oefenen? Dan sluit de docent de apps op alle brillen in één keer gezamenlijk af. De brillen kunnen direct terug in de lader en staan schoon klaar voor het volgende lesuur.
+              Na het oefenen in VR loopt de vakdocent vijf vaste veiligheidspunten samen met de student na bij de echte draaibank op school, ondertekent met de tekenpen op het scherm en print indien gewenst direct een A4-overzicht.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Interactief Voorbeeld van het Teacher Dashboard -->
-    <section class="pro-podium-wrap" id="live-simulator" aria-label="Interactief voorbeeld van het Teacher Dashboard">
+    <!-- Live Interactief Docent Dashboard v2.4.0 (Lichte Blueprint-UI) -->
+    <section class="section section-surface" id="live-simulator" aria-label="Interactief voorbeeld van Docent Dashboard v2.4.0">
       <div class="container-wide">
-        <div class="pro-podium theme-dark">
-          <div class="section-intro-center" style="margin-bottom:2rem;">
-            <span class="section-kicker">Zelf uitproberen</span>
-            <h2 class="h2-section">Probeer opstarten, AVG-meekijken en afsluiten.</h2>
+        <div class="dd-podium-light">
+          <div class="section-intro-center" style="margin-bottom:1.85rem;">
+            <span class="section-kicker">Zelf uitproberen · Docent Dashboard v2.4.0</span>
+            <h2 class="h2-section">Klik door de 3 tabbladen en test de knop ‘Hulp nodig’.</h2>
             <p class="lead">
-              Kies hieronder een onderdeel om op te starten, klik op een bril waar een student hulp vraagt om mee te kijken (AVG), of sluit alle apps in één keer af.
+              Zet een oefening klaar voor de groep in <strong>1. Klasoverzicht</strong>, test de AVG-meekijkgate in <strong>2. Leerling &amp; Klaarzetten</strong> (klik op een bril of simuleer de knop <em>Hulp nodig</em> rechtsboven in VR) of onderteken het overzicht in <strong>3. Vrijgave &amp; A4 Rapport</strong>.
             </p>
           </div>
 
-          <!-- 13,1" Tablet-Frame -->
-          <div class="tablet-chassis" id="docentCockpitSim" data-slots="10">
+          <div class="dd-tablet-bezel">
             <div class="tablet-camera-dot" aria-hidden="true"></div>
-            <div class="tablet-screen">
-              <!-- Meldingenbalk bovenin het scherm -->
-              <div class="cockpit-live-toast" id="cockpitLiveBanner" role="status" aria-live="polite">
-                <span id="cockpitActionToast">● Brillen verbonden op nummer (geen leerlingaccounts) — start een scenario, kijk mee op verzoek (AVG) of sluit de apps af.</span>
-                <span class="mono" style="font-size:0.68rem;color:#94A3B8;white-space:nowrap;">AVG-VRIENDELIJK</span>
-              </div>
 
-              <!-- Bovenbalk: Logo + Keuze VR-Kar of Losse Tablet -->
-              <div class="tablet-topbar">
-                <div class="tablet-brand-row">
-                  <img src="assets/img/logo/TechBuildsVR_Logo_DarkBG.svg" alt="TechBuilds VR" class="tablet-brand-logo" width="96" height="26" />
+            <div class="dd-screen" id="docentCockpitSim" data-slots="10">
+              <!-- Topbar van Docent Dashboard v2.4.0 -->
+              <div class="dd-topbar">
+                <div class="dd-brand">
+                  <img src="assets/img/logo/TechBuildsVR_Icon_Symbol.svg" alt="TechBuilds VR" width="36" height="36" />
                   <div>
-                    <span id="cockpitProtocolLine" class="mono" style="font-size:0.71rem;color:#38BDF8;display:block;">OPSTELLING · VR-KAR 10 (10 BRILLEN VERBONDEN · GEEN ACCOUNTS)</span>
-                    <strong id="cockpitSelHeader" style="font-family:var(--tb-font-display);font-size:1.03rem;">Bril 02 — Hulp gevraagd bij Onderdeel 2 (meekijken gewenst)</strong>
+                    <div style="display:flex;align-items:center;gap:7px;">
+                      <strong style="font-family:var(--tb-font-display);font-size:15.5px;letter-spacing:-0.01em;">Docent Dashboard</strong>
+                      <span class="dd-badge mono" style="background:var(--dd-cobalt-soft);color:var(--dd-cobalt);">v2.4.0</span>
+                    </div>
+                    <div id="ddSubtitleLine" style="font-size:11.5px;color:var(--dd-muted);">TechBuilds VR · 13,1-inch docenttablet · VR-Kar 10 (geen leerlingaccounts)</div>
                   </div>
                 </div>
 
-                <div class="segmented-control segmented-control-dark" role="tablist" aria-label="Kies kar of losse tablet">
-                  <button type="button" class="segmented-btn is-active" role="tab" aria-selected="true" data-cockpit-profile="kar10" id="btnProfileKar10">VR-Kar 10</button>
-                  <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-cockpit-profile="kar20" id="btnProfileKar20">VR-Kar 20</button>
-                  <button type="button" class="segmented-btn" role="tab" aria-selected="false" data-cockpit-profile="unlimited" id="btnProfileUnl">Losse tablet (eigen brillen)</button>
-                </div>
-              </div>
-
-              <!-- Filterbalk + De 3 Kernacties: Opstarten, Pauzeren/Begeleiden, Apps afsluiten -->
-              <div class="tablet-toolbar-row">
-                <div class="btn-group" style="gap:0.4rem;">
-                  <button type="button" class="cam-pill is-active" data-cockpit-filter="all" id="filterAllBtn">Alle brillen</button>
-                  <button type="button" class="cam-pill" data-cockpit-filter="active" id="filterActiveBtn">Zelfstandig bezig</button>
-                  <button type="button" class="cam-pill" data-cockpit-filter="attention" id="filterWarnBtn">Hulp gevraagd</button>
-                  <span id="cockpitStreamBadge" class="mono" style="font-size:0.72rem;color:#38BDF8;margin-left:0.35rem;">GESELECTEERD: BRIL 02</span>
+                <!-- 3 Hoofdtabbladen -->
+                <div class="dd-nav-tabs" role="tablist" aria-label="Tabbladen Docent Dashboard">
+                  <button type="button" class="dd-pill is-active" role="tab" aria-selected="true" data-dd-tab="KLAS" id="ddNavKlas">1. Klasoverzicht</button>
+                  <button type="button" class="dd-pill" role="tab" aria-selected="false" data-dd-tab="LEERLING" id="ddNavLeerling">
+                    <span>2. Leerling &amp; Klaarzetten</span>
+                    <span id="ddHelpNavBadge" class="mono" style="background:#D97706;color:#FFFFFF;border-radius:999px;padding:1px 7px;font-size:11px;font-weight:700;">🙋 1</span>
+                  </button>
+                  <button type="button" class="dd-pill" role="tab" aria-selected="false" data-dd-tab="RAPPORT" id="ddNavRapport">3. Vrijgave &amp; A4 Rapport</button>
                 </div>
 
-                <div class="btn-group" style="gap:0.45rem;">
-                  <button type="button" class="btn btn-primary btn-sm" id="btnCockpitStartScenario">▶ Start app &amp; scenario</button>
-                  <button type="button" class="btn btn-dark-pill btn-sm" id="btnCockpitGroupPause">⏸ Pauzeer uitleg</button>
-                  <button type="button" class="btn btn-dark-pill btn-sm" id="btnCockpitCloseApps">⏹ Sluit apps af</button>
-                  <button type="button" class="btn btn-dark-pill btn-sm" id="btnCockpitOpenReport">A4-overzicht</button>
+                <!-- Systeemstatus & Licht/Donker wisselaar -->
+                <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                  <span class="dd-pill is-soft-active mono" style="cursor:default;">● Lokaal verbonden</span>
+                  <button type="button" class="dd-pill" id="ddThemeBtn" title="Wissel tussen lichte en donkere weergave">☾ Donker</button>
                 </div>
               </div>
 
-              <!-- Klikbare Bril-tegels -->
-              <div class="headset-slots-grid" id="cockpitSlotsGrid" aria-label="Verbonden VR-brillen op nummer"></div>
+              <!-- Live Statusbalk -->
+              <div class="dd-statusbar" id="ddStatusBar" role="status" aria-live="polite">
+                <span id="ddStatusText" style="font-weight:600;">✓ Docent Dashboard v2.4.0 actief — live meekijken opent pas zodra een student rechtsboven in VR op ‘🙋 Hulp nodig’ tikt (AVG).</span>
+                <span class="mono" style="color:var(--dd-muted);font-size:11px;">Max. 1 videostream · Geen leerlingaccounts · info@techbuildsvr.nl</span>
+              </div>
 
-              <!-- Onderste Split: AVG-Meekijkscherm + Scenario & Hulpknoppen -->
-              <div class="cockpit-split">
-                <div class="cockpit-box">
-                  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-bottom:0.45rem;flex-wrap:wrap;">
-                    <span class="mono" style="font-size:0.73rem;color:#CBD5E1;">BEGELEIDINGSSCHERM · ALLEEN INDIEN NODIG EN GEWENST DOOR STUDENT (AVG)</span>
-                    <span id="cockpitReplayReadout" class="mono" style="font-size:0.73rem;color:#22C55E;">● MEEKIJKEN OP VERZOEK</span>
+              <!-- Inhoud van de 3 Tabbladen -->
+              <div class="dd-body">
+                <!-- TAB 1: KLASOVERZICHT -->
+                <div id="ddTabKlas">
+                  <div class="dd-card" style="padding:13px 15px;margin-bottom:14px;">
+                    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-bottom:11px;border-bottom:1px solid var(--dd-border);">
+                      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                        <span class="mono" style="font-weight:700;font-size:11.5px;color:var(--dd-muted);margin-right:3px;">OPSTELLING:</span>
+                        <button type="button" class="dd-pill is-active" data-cockpit-profile="kar10" id="btnProfileKar10">VR-Kar 10 (2×5)</button>
+                        <button type="button" class="dd-pill" data-cockpit-profile="kar20" id="btnProfileKar20">VR-Kar 20 (4×5)</button>
+                        <button type="button" class="dd-pill" data-cockpit-profile="unlimited" id="btnProfileUnl">Losse tablet (eigen brillen)</button>
+                      </div>
+
+                      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                        <span class="mono" style="font-weight:700;font-size:11.5px;color:var(--dd-muted);">FILTER:</span>
+                        <button type="button" class="dd-pill is-soft-active" data-dd-filter="ALL" id="ddFltAll">Alle (<span id="ddCntAll">10</span>)</button>
+                        <button type="button" class="dd-pill" data-dd-filter="SELF" id="ddFltSelf">Zelfstandig (<span id="ddCntSelf">8</span>)</button>
+                        <button type="button" class="dd-pill" data-dd-filter="HELP" id="ddFltHelp">🙋 Hulp nodig (<span id="ddCntHelp">1</span>)</button>
+                        <button type="button" class="dd-pill" data-dd-filter="FREEZE" id="ddFltFreeze">⚠ Veiligheidsstop (<span id="ddCntFreeze">1</span>)</button>
+                      </div>
+                    </div>
+
+                    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:11px;">
+                      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                        <button type="button" class="dd-btn-primary" id="ddBtnOpenGroup">🚀 Apps Openen (Groep)</button>
+                        <div style="display:flex;align-items:center;gap:6px;background:var(--dd-subtle);padding:4px 8px;border-radius:9px;border:1px solid var(--dd-border);flex-wrap:wrap;">
+                          <label for="ddGroupExSelect" style="font-size:12px;font-weight:700;color:var(--dd-muted);">Klaarzetten:</label>
+                          <select id="ddGroupExSelect" class="dd-select">
+                            <option value="TOUR">Wegwijs op de draaibank (8 onderdelen)</option>
+                            <option value="M1">1. De Buddy Check (PBM &amp; kleding)</option>
+                            <option value="P2">2. Voorbereiden &amp; veiligheidstraining</option>
+                            <option value="OBJ_1" selected>3.1 Gladde Paspen (Ø 29,4 mm)</option>
+                            <option value="OBJ_2">3.2 Afstandsbus (Kopvlak + Ø 29,0 mm)</option>
+                            <option value="OBJ_3">3.3 Getrapte As (Ø 29,4 &amp; Ø 28,0 mm)</option>
+                            <option value="OBJ_4">3.4 Aluminium Rol (Ø 28,6 mm)</option>
+                            <option value="OBJ_5">3.5 Centerpen (met storing)</option>
+                          </select>
+                          <button type="button" class="dd-btn-primary" style="padding:6px 12px;" id="ddBtnStageGroup">📋 Zet Klaar voor Groep</button>
+                        </div>
+                      </div>
+
+                      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                        <button type="button" class="dd-btn-outline" id="ddBtnPauseGroup">⏸ Pauzeer Groep</button>
+                        <button type="button" class="dd-btn-outline" style="color:var(--dd-err);border-color:var(--dd-err-border);" id="ddBtnCloseGroup">⏹ Apps Sluiten</button>
+                      </div>
+                    </div>
                   </div>
 
-                  <div id="cockpitAvgStrip" class="avg-consent-strip">
-                    <span id="cockpitAvgText">✓ Student op Bril 02 vraagt hulp en geeft toestemming om mee te kijken (AVG).</span>
-                    <button type="button" class="cam-pill" id="btnToggleAvgConsent" style="flex-shrink:0;">Meekijken sluiten</button>
+                  <!-- 5-koloms Bril-tegelrooster -->
+                  <div id="ddBentoGrid" class="dd-bento-grid" aria-label="Verbonden VR-brillen op nummer"></div>
+                </div>
+
+                <!-- TAB 2: LEERLING & KLAARZETTEN -->
+                <div id="ddTabLeerling" style="display:none;">
+                  <div class="dd-card" style="padding:9px 13px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+                    <div id="ddStudentStrip" style="display:flex;align-items:center;gap:6px;overflow-x:auto;flex:1;"></div>
+                    <button type="button" class="dd-btn-warn" id="ddSimHelpBtn">🙋 Simuleer VR-klik rechtsboven: ‘Hulp nodig’</button>
                   </div>
 
-                  <canvas id="cockpitBlueprintCanvas" class="blueprint-canvas" width="640" height="220"></canvas>
+                  <div class="dd-split-guidance">
+                    <!-- Linkerkolom: AVG-afgeschermde status OF Live Meekijk-studio -->
+                    <div id="ddLeftGuidancePane"></div>
 
-                  <!-- Camerahoeken -->
-                  <div class="spectator-cams" aria-label="Kies camerahoek tijdens meekijken">
-                    <span class="mono" style="font-size:0.68rem;color:#94A3B8;margin-right:0.25rem;">WEERGAVE:</span>
-                    <button type="button" class="cam-pill is-active" data-spectator-cam="OVERVIEW_3Q" id="camBtnOverview">Overzicht</button>
-                    <button type="button" class="cam-pill" data-spectator-cam="CUT_ZONE" id="camBtnCutZone">Dicht op werkstuk</button>
-                    <button type="button" class="cam-pill" data-spectator-cam="CHUCK_CLOSE" id="camBtnChuck">Klauwplaat &amp; kap</button>
-                    <button type="button" class="cam-pill" data-spectator-cam="SPEED_CHART" id="camBtnSpeed">Toerentabel</button>
-                  </div>
+                    <!-- Rechterkolom: App Openen & 8 Oefeningen Klaarzetten (altijd beschikbaar) -->
+                    <div style="display:flex;flex-direction:column;gap:12px;">
+                      <div class="dd-card" style="padding:14px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px;">
+                          <div>
+                            <div style="font-family:var(--tb-font-display);font-weight:700;font-size:14.5px;">🚀 VR-App &amp; Oefening Klaarzetten</div>
+                            <div id="ddRightStudentSub" style="font-size:12px;color:var(--dd-muted);">Altijd beschikbaar — ook zonder live meekijken</div>
+                          </div>
+                          <span id="ddAppOpenBadge" class="dd-badge" style="background:var(--dd-ok-bg);color:var(--dd-ok);border:1px solid var(--dd-ok-border);">✓ VR-App Open</span>
+                        </div>
 
-                  <div class="telemetry-row">
-                    <div class="telemetry-cell">
-                      <span class="telemetry-label">ONDERDEEL</span>
-                      <span class="telemetry-val" id="telRpm">Deel 2 · Veilig</span>
-                    </div>
-                    <div class="telemetry-cell">
-                      <span class="telemetry-label">SLEDEPOSITIE</span>
-                      <span class="telemetry-val" id="telCarriage">118,0 mm</span>
-                    </div>
-                    <div class="telemetry-cell">
-                      <span class="telemetry-label">DIAMETER</span>
-                      <span class="telemetry-val" id="telDia">Ø 30,0 mm</span>
-                    </div>
-                    <div class="telemetry-cell">
-                      <span class="telemetry-label">BESCHERMKAP</span>
-                      <span class="telemetry-val" id="telGate">SLEUTEL ERIN</span>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                          <button type="button" class="dd-btn-primary" id="ddBtnOpenOne">🚀 App Openen op Bril</button>
+                          <button type="button" class="dd-btn-outline" id="ddBtnCloseOne">⏹ App Sluiten op Bril</button>
+                        </div>
+
+                        <div class="mono" style="font-weight:700;font-size:11px;color:var(--dd-muted);margin-bottom:6px;">KIES ONDERDEEL OM KLAAR TE ZETTEN (8 OPTIES):</div>
+                        <div id="ddExerciseGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px;"></div>
+
+                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+                          <span style="font-size:12px;font-weight:700;color:var(--dd-muted);">Hulpniveau:</span>
+                          <button type="button" class="dd-pill" data-dd-mode="Stap-voor-stap">Stap-voor-stap</button>
+                          <button type="button" class="dd-pill is-soft-active" data-dd-mode="Begeleid">Begeleid</button>
+                          <button type="button" class="dd-pill" data-dd-mode="Zelfstandig">Zelfstandig</button>
+                        </div>
+
+                        <button type="button" class="dd-btn-primary" style="width:100%;padding:10px 14px;font-size:13px;" id="ddBtnStageOne">
+                          📋 Zet Oefening Klaar zodat Student kan Starten
+                        </button>
+                      </div>
+
+                      <div id="ddContextToolsCard" class="dd-card" style="padding:14px;"></div>
                     </div>
                   </div>
                 </div>
 
-                <div class="cockpit-box" style="display:flex;flex-direction:column;justify-content:space-between;gap:0.9rem;">
-                  <div>
-                    <span class="mono" style="font-size:0.72rem;color:#38BDF8;display:block;margin-bottom:0.35rem;">1. KIES WELK ONDERDEEL JE WILT OPSTARTEN</span>
-                    <p id="cockpitSelNote" style="margin:0 0 0.65rem 0;font-size:0.86rem;color:#E2E8F0;"></p>
-                    <div class="cmd-btn-grid" style="margin-bottom:0.85rem;">
-                      <button type="button" class="cmd-btn" data-start-part="1" id="cmdStartPart1">▶ Start 1 · Buddy Check</button>
-                      <button type="button" class="cmd-btn" data-start-part="2" id="cmdStartPart2">▶ Start 2 · Voorbereiden</button>
-                      <button type="button" class="cmd-btn" data-start-part="3" id="cmdStartPart3">▶ Start 3 · 5 Werkstukken</button>
-                      <button type="button" class="cmd-btn" data-start-part="TOUR" id="cmdStartTour">▶ Start Wegwijs (2 min)</button>
+                <!-- TAB 3: VRIJGAVE & A4 RAPPORT -->
+                <div id="ddTabRapport" style="display:none;">
+                  <div class="dd-split-rapport">
+                    <!-- Links: 5-punts praktijkvrijgave + handtekeningveld met tekenpen -->
+                    <div style="display:flex;flex-direction:column;gap:12px;">
+                      <div class="dd-card" style="padding:15px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+                          <div style="font-family:var(--tb-font-display);font-weight:700;font-size:14.5px;">✅ 5-Punts Praktijkvrijgave (Echte Draaibank)</div>
+                          <span class="dd-badge mono" style="background:var(--dd-cobalt-soft);color:var(--dd-cobalt);" id="physCheckedCounter">5/5 afgevinkt ✓</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--dd-muted);margin:0 0 10px 0;">
+                          Loop deze vijf vaste punten samen met de student na naast de echte draaibank in het lokaal:
+                        </p>
+                        <div id="ddPhysChecklist" style="display:flex;flex-direction:column;gap:7px;">
+                          <label class="phys-check-label" style="background:var(--dd-bg);border:1px solid var(--dd-border);padding:7px 9px;border-radius:8px;">
+                            <input type="checkbox" name="physCheck" value="Punt 1: Veiligheidsbril op, haar vast en géén handschoenen" checked id="chkPhys01" />
+                            <span><strong>Punt 1:</strong> Veiligheidsbril op, haar vast en géén handschoenen naast de bank</span>
+                          </label>
+                          <label class="phys-check-label" style="background:var(--dd-bg);border:1px solid var(--dd-border);padding:7px 9px;border-radius:8px;">
+                            <input type="checkbox" name="physCheck" value="Punt 2: Klauwplaatsleutel direct terug in houder" checked id="chkPhys02" />
+                            <span><strong>Punt 2:</strong> Klauwplaatsleutel na het inspannen direct terug in de houder</span>
+                          </label>
+                          <label class="phys-check-label" style="background:var(--dd-bg);border:1px solid var(--dd-border);padding:7px 9px;border-radius:8px;">
+                            <input type="checkbox" name="physCheck" value="Punt 3: Noodstop, rem en beschermkap aangewezen" checked id="chkPhys03" />
+                            <span><strong>Punt 3:</strong> Noodstop, voetrem en beschermkap op jullie machine aangewezen</span>
+                          </label>
+                          <label class="phys-check-label" style="background:var(--dd-bg);border:1px solid var(--dd-border);padding:7px 9px;border-radius:8px;">
+                            <input type="checkbox" name="physCheck" value="Punt 4: Juist toerental en vrije loop sleden gecontroleerd" checked id="chkPhys04" />
+                            <span><strong>Punt 4:</strong> Juist toerental gekozen en vrije loop van de sleden gecontroleerd</span>
+                          </label>
+                          <label class="phys-check-label" style="background:var(--dd-bg);border:1px solid var(--dd-border);padding:7px 9px;border-radius:8px;">
+                            <input type="checkbox" name="physCheck" value="Punt 5: Eerste aanzet en koeling vrijgegeven door vakdocent" checked id="chkPhys05" />
+                            <span><strong>Punt 5:</strong> Eerste aanzet en koeling onder toezicht vrijgegeven door vakdocent</span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="dd-card" style="padding:15px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+                          <div style="font-family:var(--tb-font-display);font-weight:700;font-size:14.5px;">🖊 Handtekening Vakdocent (met tekenpen)</div>
+                          <div style="display:flex;gap:6px;">
+                            <button type="button" class="dd-btn-outline" style="padding:4px 9px;font-size:11.5px;" id="btnDemoSignature">Voorbeeld</button>
+                            <button type="button" class="dd-btn-outline" style="padding:4px 9px;font-size:11.5px;" id="btnClearSignature">Wissen</button>
+                          </div>
+                        </div>
+                        <div style="font-size:11.5px;color:var(--dd-muted);margin-bottom:8px;" id="penSignatureStatus">
+                          Handtekening vakdocent geplaatst ✓ (zet gerust zelf een handtekening in het vak)
+                        </div>
+                        <canvas id="penSignatureCanvas" class="pen-signature-canvas" width="480" height="116" style="background:#F8FBFF;"></canvas>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;gap:8px;flex-wrap:wrap;">
+                          <span style="font-size:12px;color:var(--dd-muted);">Lokaal printen zonder cloudopslag (AVG)</span>
+                          <button type="button" class="dd-btn-primary" id="btnPrintA4Report">🖨 Print A4 Rapport / PDF</button>
+                        </div>
+                      </div>
                     </div>
 
-                    <label for="cockpitReplaySlider" class="mono" style="font-size:0.71rem;color:#94A3B8;display:block;">Samen met de student een handeling terugkijken:</label>
-                    <div class="replay-controls-row">
-                      <button type="button" class="cam-pill" id="btnReplayPlay" style="flex-shrink:0;">▶ Afspelen</button>
-                      <input type="range" id="cockpitReplaySlider" class="replay-slider" min="0" max="35" value="35" />
-                    </div>
-                    <div id="cockpitBookmarks" class="btn-group" style="gap:0.4rem;margin-top:0.4rem;"></div>
-                  </div>
+                    <!-- Rechts: Live WYSIWYG A4 Praktijkoverzicht -->
+                    <div class="dd-card" style="padding:18px 22px;background:#FFFFFF;color:#0B192C;border:1px solid #CBD5E1;">
+                      <div style="background:#0B192C;color:#FFFFFF;border-radius:9px;padding:12px 16px;border-bottom:4px solid #0B5ED7;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+                        <div style="display:flex;align-items:center;gap:10px;">
+                          <img src="assets/img/logo/TechBuildsVR_Icon_Symbol_DarkBG.svg" alt="" width="30" height="30" />
+                          <div>
+                            <div style="font-family:var(--tb-font-display);font-weight:700;font-size:13.5px;">TECHBUILDS VR · PRAKTIJKOVERZICHT &amp; VRIJGAVE (A4)</div>
+                            <div style="font-size:11px;color:#93C5FD;">Draaibank VR · Algemene voorbereiding (NL &amp; EU-richtlijnen) · Docent Dashboard v2.4.0</div>
+                          </div>
+                        </div>
+                        <div class="mono" style="text-align:right;font-size:11px;color:#E2E8F0;">
+                          <div id="ddA4SlotLabel">BRIL 01 · AVG-BEWUST</div>
+                          <div>www.techbuildsvr.nl</div>
+                        </div>
+                      </div>
 
-                  <div>
-                    <span class="mono" style="font-size:0.71rem;color:#94A3B8;display:block;margin-bottom:0.4rem;">2. HULP BIJ BEGELEIDING OP DEZE BRIL:</span>
-                    <div class="cmd-btn-grid">
-                      <button type="button" class="cmd-btn" data-teacher-cmd="CALIBRATE" id="cmdBtnCalibrate">↕ Werkhoogte afstemmen</button>
-                      <button type="button" class="cmd-btn" data-teacher-cmd="AC21" id="cmdBtnAc21">✓ Opstelling besproken</button>
-                      <button type="button" class="cmd-btn" data-teacher-cmd="COOLANT" id="cmdBtnCoolant">💧 Koeling aan/uit</button>
-                      <button type="button" class="cmd-btn" data-teacher-cmd="CLOSE_ONE" id="cmdBtnCloseOne">⏹ App op deze bril sluiten</button>
+                      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;padding:10px 12px;background:#F2F6FA;border:1px solid #DCE6F1;border-radius:8px;font-size:12px;">
+                        <div><strong>Sessie:</strong> <span id="ddA4StudentLine">Bril 01 (naam pas op papier invullen · AVG)</span></div>
+                        <div><strong>Voorbereiding:</strong> Draaibank VR · 3 onderdelen</div>
+                        <div><strong>Actief onderdeel:</strong> <span id="ddA4ActiveEx">3.1 Gladde Paspen (Ø 29,4 mm)</span></div>
+                        <div><strong>Contact:</strong> <span class="mono">info@techbuildsvr.nl</span></div>
+                      </div>
+
+                      <div style="margin-top:12px;">
+                        <div class="mono" style="font-weight:700;font-size:11px;color:#0B192C;margin-bottom:5px;">DOORLOPEN ONDERDELEN IN DE DRAAIBANK-APP (NL &amp; EU-RICHTLIJNEN):</div>
+                        <div class="tech-table-wrap">
+                          <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+                            <thead>
+                              <tr style="background:#E8F0F8;text-align:left;">
+                                <th style="padding:6px 8px;border:1px solid #DCE6F1;">Onderdeel</th>
+                                <th style="padding:6px 8px;border:1px solid #DCE6F1;">Wat de student heeft geoefend</th>
+                                <th style="padding:6px 8px;border:1px solid #DCE6F1;">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">1 · De Buddy Check</td>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;">Medestudent gecontroleerd, eigen veiligheidsbril op &amp; werkhandschoenen uit</td>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;color:#15803D;font-weight:700;">✓ Doorlopen</td>
+                              </tr>
+                              <tr>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">2 · Voorbereiden</td>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;">Draaibank vrijgemaakt, spanningsloos ingespannen, sleutel eruit, kap dicht &amp; noodstop</td>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;color:#15803D;font-weight:700;">✓ Doorlopen</td>
+                              </tr>
+                              <tr>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">3 · Praktijkgebruik</td>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;">Oefenwerkstukken volgens tekening, stilstand (0 RPM) afgewacht &amp; schuifmaat</td>
+                                <td style="padding:6px 8px;border:1px solid #DCE6F1;color:#0B5ED7;font-weight:700;">✓ Geoefend</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:10px;margin-top:12px;align-items:stretch;">
+                        <div style="padding:9px 11px;background:#F8FBFF;border:1px solid #DCE6F1;border-radius:8px;font-size:11px;">
+                          <div class="mono" style="font-weight:700;margin-bottom:4px;color:#0B192C;">PRAKTIJKVRIJGAVE ECHTE DRAAIBANK:</div>
+                          <div id="ddA4PhysSummary" style="display:flex;flex-direction:column;gap:2px;"></div>
+                        </div>
+                        <div style="padding:9px 11px;background:#F8FBFF;border:1px solid #0B5ED7;border-radius:8px;display:flex;flex-direction:column;justify-content:space-between;">
+                          <div class="mono" style="font-size:10.5px;font-weight:700;color:#0B5ED7;">HANDTEKENING VAKDOCENT:</div>
+                          <canvas id="ddA4SigPreview" width="240" height="64" style="width:100%;height:58px;background:#FFFFFF;border-radius:4px;border:1px solid #DCE6F1;margin:4px 0;"></canvas>
+                          <div style="font-size:10.5px;color:#475569;display:flex;justify-content:space-between;">
+                            <span>Vakdocent op school</span>
+                            <span class="mono">Praktijkvrijgave</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div style="margin-top:11px;padding:8px 11px;background:#FFFBEB;border:1px solid #F59E0B;border-radius:7px;font-size:10.5px;color:#78350F;line-height:1.38;">
+                        <strong>VERPLICHTE ONDERWIJSVERKLARING (AC24 — GEEN MACHINECERTIFICAAT):</strong>
+                        Dit overzicht wordt lokaal aangemaakt zonder cloudopslag (AVG) en bevestigt uitsluitend het oefenen in VR. Een VR-sessie vervangt nooit de persoonlijke machine-instructie, keuring en vrijgave bij de echte draaibank door een bevoegd vakdocent.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -299,22 +458,22 @@
     </section>
 
     <!-- Waarom kar of tablet in de praktijk zo rustig werkt -->
-    <section class="section section-surface">
+    <section class="section section-surface" style="padding-top:1rem;">
       <div class="container">
         <div class="section-intro reveal-item">
           <span class="section-kicker">Zonder technisch gedoe of privacyzorgen</span>
           <h2 class="h2-section">Geen leerlingaccounts, geen school-wifi nodig bij de VR-kar.</h2>
           <p class="lead">
-            Of jullie nu kiezen voor een mobiele VR-kar of een losse docenttablet bij eigen brillen: alles draait lokaal in het praktijklokaal, zodat zowel de ICT-afdeling als de privacyfunctionaris (FG) tevreden zijn.
+            Of jullie nu kiezen voor een mobiele VR-kar of een losse docenttablet bij eigen brillen: het Docent Dashboard draait lokaal in het praktijklokaal, zodat zowel de ICT-afdeling als de privacyfunctionaris (FG) direct gerustgesteld zijn.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="bento-tile reveal-item">
-            <span class="card-step">GEEN LEERLINGACCOUNTS (AVG)</span>
+            <span class="card-step">KNOP ‘HULP NODIG’ IN VR (AVG)</span>
             <h3 class="h3-card">Werkt puur op brilnummer</h3>
             <p class="muted" style="margin:0;">
-              Studenten hoeven nergens in te loggen met naam of schoolmail. Elke bril meldt zich automatisch op nummer (bijv. <em>Bril 01</em>), en meekijken gebeurt pas als hulp nodig én gewenst is.
+              Studenten loggen nergens in met naam of schoolmail. Elke bril meldt zich op nummer (bijv. <em>Bril 01</em>), en live meekijken opent pas wanneer de student rechtsboven in VR op <strong>‘Hulp nodig’</strong> tikt.
             </p>
           </article>
 
@@ -328,131 +487,33 @@
 
           <article class="bento-tile reveal-item">
             <span class="card-step">KLAAR VOOR DE VOLGENDE GROEP</span>
-            <h3 class="h3-card">In één keer opstarten en afsluiten</h3>
+            <h3 class="h3-card">In één keer klaarzetten en afsluiten</h3>
             <p class="muted" style="margin:0;">
-              Aan het begin van de les zet je het juiste scenario klaar; aan het eind sluit je de apps gezamenlijk af. Zo wissel je binnen een minuut van klas.
+              Aan het begin van de les zet je de juiste oefening klaar; aan het eind sluit je de apps gezamenlijk af. Zo wissel je binnen een minuut rustig van klas.
             </p>
           </article>
         </div>
 
         <div class="ac24-notice" style="margin-top:2.5rem;">
-          <strong>Goed om te weten:</strong> Het Teacher Dashboard helpt de docent bij het opstarten, AVG-vriendelijk begeleiden en afsluiten van de algemene VR-voorbereiding. De persoonlijke instructie, controle en vrijgave vinden altijd plaats bij de echte draaibank, meterkast of installatie door een bevoegd vakdocent.
+          <strong>Goed om te weten:</strong> Het Docent Dashboard helpt de docent bij het klaarzetten, AVG-vriendelijk begeleiden (via de knop <em>Hulp nodig</em> rechtsboven in VR) en gezamenlijk afsluiten van de algemene VR-voorbereiding. De persoonlijke instructie, controle en vrijgave vinden altijd plaats bij de echte draaibank, meterkast of installatie door een bevoegd vakdocent.
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Modal: Voorbeeld A4 Praktijkrapport met de 3 onderdelen -->
-  <div class="modal-backdrop no-print" id="a4ReportModal" role="dialog" aria-modal="true" aria-labelledby="repModalTitle">
-    <div class="modal-sheet">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid rgba(11,25,44,0.10);padding-bottom:1.1rem;margin-bottom:1.25rem;flex-wrap:wrap;">
-        <div class="a4-header-brand">
-          <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="134" height="36" />
-          <div>
-            <span class="mono" style="font-size:0.7rem;color:var(--tb-cobalt);display:block;">LOKAAL PRINTBAAR A4-OVERZICHT (GEEN CLOUDOPSLAG · AVG)</span>
-            <h2 id="repModalTitle" class="h3-card" style="margin:0.1rem 0 0 0;font-size:1.22rem;">Draaibank VR — De 3 Onderdelen &amp; Praktijkvrijgave op School</h2>
-          </div>
-        </div>
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary btn-sm" id="btnPrintA4Report">Print A4 / Opslaan als PDF</button>
-          <button type="button" class="btn btn-secondary btn-sm" id="btnCloseReportModal">Sluiten</button>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-bottom:1.15rem;gap:0.75rem;">
-        <div style="padding:0.75rem 0.9rem;background:var(--tb-blueprint-paper);border-radius:14px;">
-          <span class="mono muted" style="font-size:0.68rem;display:block;">SESSIE / BRILNUMMER</span>
-          <strong id="repModalStudent">Bril 02 (naam pas op papier invullen · AVG)</strong>
-        </div>
-        <div style="padding:0.75rem 0.9rem;background:var(--tb-blueprint-paper);border-radius:14px;">
-          <span class="mono muted" style="font-size:0.68rem;display:block;">VOORBEREIDING</span>
-          <strong id="repModalKlas">Draaibank VR · 3 onderdelen</strong>
-        </div>
-        <div style="padding:0.75rem 0.9rem;background:var(--tb-blueprint-paper);border-radius:14px;">
-          <span class="mono muted" style="font-size:0.68rem;display:block;">NOODSTOP-OEFENING</span>
-          <strong id="repModalReaction" class="mono">Direct ingedrukt (0,6 sec)</strong>
-        </div>
-      </div>
-
-      <div class="tech-table-wrap" style="margin-bottom:1.15rem;">
-        <table class="tech-table" style="font-size:0.85rem;">
-          <thead>
-            <tr>
-              <th>Deel</th>
-              <th>Onderdeel in de Draaibank-app (NL &amp; EU-richtlijnen)</th>
-              <th>Status</th>
-              <th>Wat de student heeft doorlopen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="mono"><strong>1</strong></td>
-              <td><strong>De Buddy Check</strong> (PBM &amp; kleding)</td>
-              <td><span class="status-badge status-safe">Doorlopen</span></td>
-              <td>Medestudent gecontroleerd op kleding en sieraden, eigen veiligheidsbril op en werkhandschoenen uit</td>
-            </tr>
-            <tr>
-              <td class="mono"><strong>2</strong></td>
-              <td><strong>Voorbereiden &amp; veiligheid</strong></td>
-              <td><span class="status-badge status-safe">Doorlopen</span></td>
-              <td>Draaibank vrijgemaakt, spanningsloos ingespannen, klauwplaatsleutel direct eruit, kap dicht en noodstop geoefend</td>
-            </tr>
-            <tr>
-              <td class="mono"><strong>3</strong></td>
-              <td><strong>Praktijkgebruik</strong> (5 werkstukken)</td>
-              <td><span class="status-badge status-safe">Doorlopen</span></td>
-              <td>Oefenwerkstukken gedraaid volgens tekening, volledige stilstand (0 RPM) afgewacht en nagemeten met schuifmaat</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 5-Punts Praktijkvrijgave bij de echte draaibank -->
-      <div style="padding:1rem 1.1rem;background:var(--tb-blueprint-paper);border-radius:16px;margin-bottom:1rem;">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;">
-          <span class="mono" style="font-size:0.73rem;font-weight:600;color:var(--tb-cobalt);">SAMEN CONTROLEREN BIJ DE ECHTE DRAAIBANK OP SCHOOL (DOOR DE VAKDOCENT)</span>
-          <span class="status-badge status-safe" id="physCheckedCounter">5/5 afgevinkt ✓</span>
-        </div>
-        <div class="phys-checklist-grid">
-          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="Punt 1: PBM, haar & kleding" checked id="chkPhys01" /> <span><strong>Punt 1:</strong> Veiligheidsbril op, haar vast en géén handschoenen</span></label>
-          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="Punt 2: Noodstop & beschermkap" checked id="chkPhys02" /> <span><strong>Punt 2:</strong> Noodstop, rem en beschermkap op jullie eigen draaibank aangewezen</span></label>
-          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="Punt 3: Klauwplaatsleutel direct eruit" checked id="chkPhys03" /> <span><strong>Punt 3:</strong> Klauwplaatsleutel na het inspannen meteen teruggeplaatst</span></label>
-          <label class="phys-check-label"><input type="checkbox" name="physCheck" value="Punt 4: Toerental & vrije sleden" checked id="chkPhys04" /> <span><strong>Punt 4:</strong> Juiste toerental gekozen en vrije loop van de sleden gecontroleerd</span></label>
-          <label class="phys-check-label" style="grid-column:1/-1;"><input type="checkbox" name="physCheck" value="Punt 5: Vrijgave door vakdocent" checked id="chkPhys05" /> <span><strong>Punt 5:</strong> Mondelinge toelichting gegeven en vrijgegeven door de vakdocent</span></label>
-        </div>
-      </div>
-
-      <!-- Handtekeningveld met tekenpen -->
-      <div class="pen-canvas-wrap" style="margin-bottom:1rem;">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:0.75rem;margin-bottom:0.5rem;flex-wrap:wrap;">
-          <span class="mono" style="font-size:0.73rem;font-weight:600;color:var(--tb-deep-navy);" id="penSignatureStatus">Handtekening vakdocent geplaatst ✓</span>
-          <div class="btn-group" style="gap:0.4rem;">
-            <button type="button" class="btn btn-white btn-sm" id="btnDemoSignature" style="padding:0.3rem 0.75rem;font-size:0.76rem;">Voorbeeldhandtekening</button>
-            <button type="button" class="btn btn-outline btn-sm" id="btnClearSignature" style="padding:0.3rem 0.75rem;font-size:0.76rem;">Wissen</button>
-          </div>
-        </div>
-        <canvas id="penSignatureCanvas" class="pen-signature-canvas" width="720" height="110"></canvas>
-      </div>
-
-      <div class="ac24-notice" style="font-size:0.8rem;padding:0.9rem 1.1rem;">
-        <strong>Let op:</strong> Dit overzicht wordt lokaal gemaakt zonder opslag van persoonsgegevens (AVG) en laat zien dat de 3 onderdelen in VR zijn geoefend. Het geldt pas als praktijkvrijgave nadat de vakdocent de vijf punten hierboven bij de echte draaibank heeft gecontroleerd en ondertekend.
-      </div>
-    </div>
-  </div>
 
   <!-- Printweergave A4 -->
   <div class="print-report-only" id="printReportSheet" style="padding:28px;font-size:12px;line-height:1.55;">
     <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #0B5ED7;padding-bottom:14px;margin-bottom:16px;">
       <img src="assets/img/logo/TechBuildsVR_Logo_Primary_LightBG.svg" alt="TechBuilds VR" width="160" height="43" style="height:40px;width:auto;" />
       <div style="text-align:right;font-family:monospace;font-size:11px;color:#52657C;">
-        PRAKTIJKOVERZICHT &amp; VRIJGAVE (AVG-VRIENDELIJK)<br />
+        PRAKTIJKOVERZICHT &amp; VRIJGAVE (DOCENT DASHBOARD V2.4.0 · AVG-BEWUST)<br />
         www.techbuildsvr.nl · info@techbuildsvr.nl
       </div>
     </div>
     <h2 style="font-size:18px;margin:0 0 6px 0;">Draaibank VR — De 3 Onderdelen &amp; Praktijkvrijgave</h2>
-    <p style="margin:0 0 10px 0;"><strong>Sessie:</strong> <span id="printRepStudent">Bril 02 · Naam student (op papier): __________________________</span></p>
+    <p style="margin:0 0 10px 0;"><strong>Sessie:</strong> <span id="printRepStudent">Bril 01 · Naam student (op papier): __________________________</span></p>
     <p id="printPhysSummary" style="margin:0 0 14px 0;font-family:monospace;padding:8px 10px;background:#F2F6FA;border-radius:6px;">Afgetekende praktijkpunten: Punt 1 t/m Punt 5</p>
-    <p style="margin:0 0 18px 0;"><strong>Toelichting:</strong> Het doorlopen van de 3 onderdelen in deze algemene VR-voorbereiding (op basis van Nederlandse en Europese veiligheidsrichtlijnen) vervangt nooit de persoonlijke instructie, controle en vrijgave bij de echte machine door een bevoegd vakdocent.</p>
+    <p style="margin:0 0 18px 0;"><strong>Verplichte onderwijsverklaring (AC24):</strong> Het doorlopen van de 3 onderdelen in deze algemene VR-voorbereiding (op basis van Nederlandse en Europese veiligheidsrichtlijnen) vervangt nooit de persoonlijke instructie, controle en vrijgave bij de echte machine door een bevoegd vakdocent.</p>
     <div style="margin-top:20px;">
       <strong>Handtekening vakdocent:</strong>
       <img id="printSignaturePreview" alt="Handtekening vakdocent" style="max-width:340px;height:auto;border-bottom:1px solid #0B192C;margin-top:8px;display:none;" />
@@ -474,7 +535,7 @@
           <ul class="footer-links">
             <li><a href="index.html">Over ons</a></li>
             <li><a href="modules.html">Modules</a></li>
-            <li><a href="docentapp-tablet.html">Teacher Dashboard</a></li>
+            <li><a href="docentapp-tablet.html">Docent Dashboard</a></li>
             <li><a href="prijzen-contact.html">Pakketten en prijzen</a></li>
           </ul>
         </div>
@@ -507,8 +568,8 @@
 
   <div class="mobile-sticky-bar no-print" id="mobileStickyBar">
     <div class="mobile-sticky-copy">
-      Teacher Dashboard (AVG-bewust)
-      <span>Opstarten · meekijken op verzoek · afsluiten</span>
+      Docent Dashboard v2.4.0
+      <span>Klaarzetten · ‘Hulp nodig’ (AVG) · afsluiten</span>
     </div>
     <a href="prijzen-contact.html?onderwerp=demo#aanvraag" class="btn btn-primary btn-sm" id="mobileStickyDemoBtn">Plan demo</a>
   </div>

@@ -1,10 +1,10 @@
 /**
- * TechBuilds VR — Interactieve Website Logica (v2.3)
+ * TechBuilds VR — Interactieve Website Logica (v2.5)
  * Onderdelen:
  * 1. Vaste navigatiebalk, leesbalk, mobiele snelbalk, terug-naar-boven & subtiele scroll-animatie
- * 2. Interactieve Hero-tegels & fotowisselaar op de startpagina (index.html)
- * 3. Interactief stappenoverzicht voor Draaibank VR (1–6) én Elektrotechniek VR (1–6) volgens NL & EU-richtlijnen
- * 4. Interactief voorbeeld van het 13,1-inch Teacher Dashboard + printbaar A4-praktijkrapport (docentapp-tablet.html)
+ * 2. Interactieve Hero-tegels & fotowisselaar op de modulepagina (modules.html)
+ * 3. Interactief stappenoverzicht voor Draaibank VR (3 onderdelen) én Elektrotechniek VR (1–6) volgens NL & EU-richtlijnen
+ * 4. Interactief Docent Dashboard v2.4.0 (lichte Blueprint-UI in 3 tabbladen + AVG ‘Hulp nodig’-knop + A4-rapport)
  * 5. Vakgebied-wisselaar & Maatwerk-overzicht met directe e-mailkoppeling (maatwerk.html)
  * 6. Pakket- en modulekeuze (losse extra module + € 5.000,-), meerjarenoverzicht & aanvraagformulier (prijzen-contact.html)
  */
@@ -167,10 +167,10 @@
       linkHref: 'prijzen-contact.html?optie=2#pakket-keuze'
     },
     tablet: {
-      img: 'assets/img/brand/pakket_regietablet_vr_set.webp',
-      alt: '13,1-inch docenttablet met het Teacher Dashboard naast de bijbehorende tekenpen, een VR-bril en een schuifmaat',
-      caption: 'School kiest voor VR-kar of tablet: apps en scenario\'s opstarten, AVG-vriendelijk meekijken op verzoek en gezamenlijk afsluiten',
-      linkText: 'Bekijk het Teacher Dashboard →',
+      img: 'assets/img/dashboard/dashboard_01_klasoverzicht_v2_4.webp',
+      alt: 'Tabblad 1 Klasoverzicht van het lichte Docent Dashboard v2.4.0 op de 13,1-inch docenttablet met genummerde brillen en AVG-vriendelijke knop Hulp nodig',
+      caption: 'Docent Dashboard v2.4.0: oefeningen klaarzetten, pas meekijken zodra een student rechtsboven in VR op ‘Hulp nodig’ tikt (AVG) en gezamenlijk afsluiten',
+      linkText: 'Bekijk het Docent Dashboard →',
       linkHref: 'docentapp-tablet.html#live-simulator'
     }
   };
@@ -598,1104 +598,1285 @@
   }
 
   /* ------------------------------------------------------------------
-   * 4. 13,1-inch Teacher Dashboard (AVG-bewust) + A4-Praktijkoverzicht
+   * 4. Docent Dashboard v2.4.0 (Lichte Blueprint-UI · 3 Tabbladen · AVG ‘Hulp nodig’)
    * ------------------------------------------------------------------ */
+  const DD_HERO_SHOTS = {
+    '1': {
+      img: 'assets/img/dashboard/dashboard_01_klasoverzicht_v2_4.webp',
+      alt: 'Tabblad 1 Klasoverzicht van het lichte Docent Dashboard v2.4.0 met 10 genummerde VR-brillen, groepsknoppen voor opstarten en klaarzetten en oranje melding bij Hulp nodig',
+      caption: '<strong>Tab 1 — Klasoverzicht:</strong> apps openen, oefening klaarzetten voor de groep en direct zien wie rechtsboven in VR op ‘Hulp nodig’ tikt.'
+    },
+    '2': {
+      img: 'assets/img/dashboard/dashboard_02_avg_zelfstudie_klaarzetten_v2_4.webp',
+      alt: 'Tabblad 2 Leerling en Klaarzetten in AVG-zelfstudiemodus zonder live videobeeld zolang de student niet op Hulp nodig heeft getikt',
+      caption: '<strong>Tab 2a — Zelfstandig (AVG):</strong> geen ongevraagde videostream; de docent ziet alleen het actieve onderdeel en zet oefeningen klaar.'
+    },
+    '3': {
+      img: 'assets/img/dashboard/dashboard_03_live_meekijken_hulp_nodig_v2_4.webp',
+      alt: 'Tabblad 2 Live meekijken geopend nadat de student rechtsboven in VR op Hulp nodig tikte, met 1st-person VR-beeld naast de lichte 2D-werktekening',
+      caption: '<strong>Tab 2b — Na ‘Hulp nodig’ in VR:</strong> live meekijkbeeld (max. 1 bril tegelijk) naast de 2D-werktekening en groene knop ‘Hulp afgerond’.'
+    },
+    '4': {
+      img: 'assets/img/dashboard/dashboard_04_vrijgave_a4_rapport_v2_4.webp',
+      alt: 'Tabblad 3 Vrijgave en A4 Rapport met 5-punts controlelijst voor de echte draaibank, handtekeningveld voor de tekenpen en A4-voorbeeld',
+      caption: '<strong>Tab 3 — Vrijgave &amp; A4 Rapport:</strong> 5 vaste veiligheidspunten bij de echte draaibank nalopen, ondertekenen met de tekenpen en lokaal printen.'
+    }
+  };
+
+  const ddShotBtns = document.querySelectorAll('[data-dd-shot]');
+  if (ddShotBtns.length > 0) {
+    const elDdHeroImg = document.getElementById('ddHeroShotImg');
+    const elDdHeroCap = document.getElementById('ddHeroShotCaption');
+    let ddHeroTimer = null;
+
+    ddShotBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const key = btn.getAttribute('data-dd-shot');
+        const shot = DD_HERO_SHOTS[key];
+        if (!shot) return;
+
+        ddShotBtns.forEach(function (b) {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-selected', String(active));
+        });
+
+        if (elDdHeroImg) {
+          elDdHeroImg.classList.add('is-switching');
+          if (ddHeroTimer) clearTimeout(ddHeroTimer);
+          ddHeroTimer = setTimeout(function () {
+            elDdHeroImg.src = shot.img;
+            elDdHeroImg.alt = shot.alt;
+            elDdHeroImg.classList.remove('is-switching');
+          }, 95);
+        }
+        if (elDdHeroCap) {
+          elDdHeroCap.innerHTML = shot.caption;
+        }
+      });
+    });
+  }
+
   const cockpitRoot = document.getElementById('docentCockpitSim');
   if (cockpitRoot) {
-    const initialSlots = parseInt(cockpitRoot.getAttribute('data-slots') || '10', 10);
-    const BASE_HEADSETS = [
-      {
-        slotNum: 1, id: 'Bril 01', label: 'Zelfstandig bezig', mod: 'Deel 3 · Werkstuk 3 (Getrapte as)',
-        shortPart: 'Deel 3 · As', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 710, diaMain: 29.4, diaStep: 28.0, carriageX: 64.5,
-        overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 88,
-        note: 'Werkt zelfstandig aan Werkstuk 3 (Getrapte as). Geen leerlingnaam opgeslagen; meekijken pas bij hulpvraag (AVG).',
-        bookmarks: [
-          { frame: 8, label: 'Onderdeel 2 veilig afgerond', warn: false },
-          { frame: 22, label: 'Kopvlak gevlakt', warn: false },
-          { frame: 35, label: 'Maat Ø 29,4 mm bereikt', warn: false }
-        ]
+    const DD_EXERCISES = {
+      TOUR: {
+        key: 'TOUR', short: '0. Wegwijs (8 delen)',
+        title: 'Wegwijs op de draaibank (8 onderdelen)',
+        diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 80, rpm: 0,
+        note: 'Korte interactieve rondleiding langs vaste kop, beschermkap, klauwplaatsleutel, sledes en noodstop.'
       },
-      {
-        slotNum: 2, id: 'Bril 02', label: 'Vraagt hulp · meekijken gewenst', mod: 'Deel 2 · Voorbereiden & veiligheid',
-        shortPart: 'Deel 2 · Veilig', status: 'HULP GEVRAAGD', statusClass: 'status-danger',
-        consentToView: true, appClosed: false,
-        rpm: 0, diaMain: 30.0, diaStep: 30.0, carriageX: 118.0,
-        overheated: false, guardClosed: false, chuckKeyIn: true, runout: 0.03, reactionSec: '0,7 sec', battery: 92,
-        note: 'Student vraagt begeleiding en geeft toestemming om mee te kijken (AVG): klauwplaatsleutel zat nog in de drieklauw.',
-        bookmarks: [
-          { frame: 14, label: 'Werkstuk Ø 30 mm ingespannen', warn: false },
-          { frame: 28, label: 'Sleutel nog in klauwplaat', warn: true }
-        ]
+      M1: {
+        key: 'M1', short: '1. De Buddy Check',
+        title: '1. De Buddy Check (PBM & kleding)',
+        diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 80, rpm: 0,
+        note: 'Medestudent in 3D controleren, eigen veiligheidsbril opzetten en werkhandschoenen uittrekken.'
       },
-      {
-        slotNum: 3, id: 'Bril 03', label: 'Vraagt hulp · meekijken gewenst', mod: 'Deel 3 · Werkstuk 4 (Aluminium rol)',
-        shortPart: 'Deel 3 · Rol', status: 'HULP GEVRAAGD', statusClass: 'status-warn',
-        consentToView: true, appClosed: false,
-        rpm: 1000, diaMain: 29.6, diaStep: 28.4, carriageX: 82.0,
-        overheated: true, guardClosed: true, chuckKeyIn: false, runout: 0.04, reactionSec: '0,7 sec', battery: 76,
-        note: 'Student vraagt even mee te kijken bij Werkstuk 4: gekozen snedediepte geeft lichte trilling op de beitel.',
-        bookmarks: [
-          { frame: 12, label: 'Gestart met gesloten kap', warn: false },
-          { frame: 31, label: 'Trilling bij diepe aanzet', warn: true }
-        ]
+      P2: {
+        key: 'P2', short: '2. Voorbereiden',
+        title: '2. Voorbereiden & veiligheidstraining',
+        diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 84, rpm: 500,
+        note: 'Bank vrijmaken, spanningsloos opspannen, klauwplaatsleutel direct terug in houder, kap sluiten en noodstop.'
       },
-      {
-        slotNum: 4, id: 'Bril 04', label: 'Zelfstandig bezig', mod: 'Deel 3 · Werkstuk 5 (Centerpen)',
-        shortPart: 'Deel 3 · Pen', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 0, diaMain: 29.4, diaStep: 28.0, carriageX: 96.0,
-        overheated: false, guardClosed: true, chuckKeyIn: false, runout: 1.85, reactionSec: '0,6 sec', battery: 84,
-        note: 'Werkt zelfstandig aan Werkstuk 5 (Centerpen met storing). Noodstop netjes binnen 0,6 sec ingedrukt.',
-        bookmarks: [
-          { frame: 19, label: 'Slingering opgemerkt', warn: true },
-          { frame: 25, label: 'Noodstop ingedrukt (0,6 sec)', warn: false }
-        ]
+      OBJ_1: {
+        key: 'OBJ_1', short: '3.1 Gladde Paspen',
+        title: '3.1 Gladde Paspen (Ø 29,4 mm)',
+        diaStart: 30.0, diaTarget: 29.4, stepTarget: null, lenMm: 76, rpm: 500,
+        note: 'Langsdraaien van Ø 30,0 naar Ø 29,4 mm, uitloop naar 0 RPM afwachten en nameten met de schuifmaat.'
       },
-      {
-        slotNum: 5, id: 'Bril 05', label: 'Zelfstandig bezig', mod: 'Deel 1 · De Buddy Check',
-        shortPart: 'Deel 1 · Buddy', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 0, diaMain: 30.0, diaStep: 30.0, carriageX: 140.0,
-        overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,7 sec', battery: 95,
-        note: 'Bezig met Onderdeel 1 (De Buddy Check): kleding medestudent controleren, bril op en handschoenen uit.',
-        bookmarks: [
-          { frame: 16, label: 'Buddy Check & eigen PBM bezig', warn: false }
-        ]
+      OBJ_2: {
+        key: 'OBJ_2', short: '3.2 Afstandsbus',
+        title: '3.2 Afstandsbus (Kopvlak + Ø 29,0 mm)',
+        diaStart: 30.0, diaTarget: 29.0, stepTarget: null, lenMm: 64, rpm: 500,
+        note: 'Kopvlak vlakken en buitendiameter draaien naar Ø 29,0 mm met koeling aan.'
       },
-      {
-        slotNum: 6, id: 'Bril 06', label: 'Zelfstandig bezig', mod: 'Deel 3 · Werkstuk 1 (Paspen)',
-        shortPart: 'Deel 3 · Paspen', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 0, diaMain: 29.3, diaStep: 28.0, carriageX: 132.0,
-        overheated: false, guardClosed: false, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 81,
-        note: 'Werkt zelfstandig aan Werkstuk 1 (Gladde paspen): stilstand afgewacht en schuifmaat gepakt.',
-        bookmarks: [
-          { frame: 20, label: 'Stilstand (0 RPM) afgewacht', warn: false },
-          { frame: 33, label: 'Nagemeten met schuifmaat', warn: false }
-        ]
+      OBJ_3: {
+        key: 'OBJ_3', short: '3.3 Getrapte As',
+        title: '3.3 Getrapte As (Ø 29,4 & Ø 28,0 mm)',
+        diaStart: 30.0, diaTarget: 29.4, stepTarget: 28.0, lenMm: 90, rpm: 710,
+        note: 'Twee diameters volgens werktekening draaien (Ø 29,4 mm en trap Ø 28,0 mm over 34 mm lengte).'
       },
-      {
-        slotNum: 7, id: 'Bril 07', label: 'Zelfstandig bezig', mod: 'Deel 2 · Voorbereiden & veiligheid',
-        shortPart: 'Deel 2 · Veilig', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 0, diaMain: 30.0, diaStep: 30.0, carriageX: 140.0,
-        overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,7 sec', battery: 79,
-        note: 'Bezig met Onderdeel 2: vloer en draaibank vrijgemaakt en rondom de spil gecontroleerd.',
-        bookmarks: [
-          { frame: 18, label: 'Draaibank vrijgemaakt', warn: false }
-        ]
+      OBJ_4: {
+        key: 'OBJ_4', short: '3.4 Aluminium Rol',
+        title: '3.4 Aluminium Rol (Ø 28,6 mm)',
+        diaStart: 30.0, diaTarget: 28.6, stepTarget: null, lenMm: 72, rpm: 1000,
+        note: 'Hoger toerental (1000 RPM) op aluminium, beitelwissel en spanen veilig verwijderen.'
       },
-      {
-        slotNum: 8, id: 'Bril 08', label: 'Zelfstandig bezig', mod: 'Deel 3 · Werkstuk 2 (Afstandsbus)',
-        shortPart: 'Deel 3 · Bus', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 710, diaMain: 29.5, diaStep: 28.1, carriageX: 58.2,
-        overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 90,
-        note: 'Werkt zelfstandig aan Werkstuk 2 (Afstandsbus) met rustige langsvoeding.',
-        bookmarks: [
-          { frame: 10, label: 'Onderdeel 2 behaald', warn: false },
-          { frame: 30, label: 'Afstandsbus op lengte', warn: false }
-        ]
-      },
-      {
-        slotNum: 9, id: 'Bril 09', label: 'Zelfstandig bezig', mod: 'Wegwijs op de draaibank (2 min)',
-        shortPart: 'Wegwijs · 8 ptn', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 500, diaMain: 30.0, diaStep: 30.0, carriageX: 112.0,
-        overheated: false, guardClosed: true, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 87,
-        note: 'Bekijkt eerst rustig de korte rondleiding langs de 8 hoofdonderdelen van de draaibank.',
-        bookmarks: [{ frame: 24, label: '8 onderdelen bekeken', warn: false }]
-      },
-      {
-        slotNum: 10, id: 'Bril 10', label: 'Zelfstandig bezig', mod: 'Deel 1 · De Buddy Check',
-        shortPart: 'Deel 1 · Buddy', status: 'BEZIG', statusClass: 'status-safe',
-        consentToView: false, appClosed: false,
-        rpm: 0, diaMain: 29.4, diaStep: 28.0, carriageX: 138.0,
-        overheated: false, guardClosed: false, chuckKeyIn: false, runout: 0.02, reactionSec: '0,6 sec', battery: 93,
-        note: 'Bezig met Onderdeel 1 (De Buddy Check): eigen veiligheidsbril op en werkhandschoenen uitgedaan.',
-        bookmarks: [{ frame: 30, label: 'Eigen PBM gecontroleerd', warn: false }]
+      OBJ_5: {
+        key: 'OBJ_5', short: '3.5 Centerpen (storing)',
+        title: '3.5 Centerpen (met storing · Ø 28,4 mm)',
+        diaStart: 30.0, diaTarget: 28.4, stepTarget: null, lenMm: 82, rpm: 500,
+        note: 'Rustig handelen en veilig uitschakelen wanneer halverwege de machinelamp uitvalt.'
       }
-    ];
+    };
+    const DD_EX_ORDER = ['TOUR', 'M1', 'P2', 'OBJ_1', 'OBJ_2', 'OBJ_3', 'OBJ_4', 'OBJ_5'];
 
-    for (let n = 11; n <= 22; n++) {
-      const tpl = BASE_HEADSETS[(n - 1) % 10];
-      const padId = 'Bril ' + (n < 10 ? '0' + n : String(n));
-      BASE_HEADSETS.push({
-        slotNum: n,
-        id: padId,
-        label: 'Zelfstandig bezig',
-        mod: tpl.mod,
-        shortPart: tpl.shortPart,
-        status: 'BEZIG',
-        statusClass: 'status-safe',
-        consentToView: false,
-        appClosed: false,
-        rpm: tpl.rpm,
-        diaMain: tpl.diaMain,
-        diaStep: tpl.diaStep,
-        carriageX: tpl.carriageX,
-        overheated: false,
-        guardClosed: true,
-        chuckKeyIn: false,
-        runout: 0.02,
-        reactionSec: tpl.reactionSec,
-        battery: Math.max(72, 98 - n),
-        note: 'Werkt zelfstandig op ' + padId + ' zonder leerlingaccount (AVG).',
-        bookmarks: tpl.bookmarks
-      });
+    const DEFAULT_EX_CYCLE = ['OBJ_1', 'P2', 'OBJ_3', 'OBJ_2', 'P2', 'M1', 'OBJ_4', 'OBJ_1', 'OBJ_5', 'TOUR'];
+
+    function makeHeadset(slotNum) {
+      const padded = slotNum < 10 ? ('0' + slotNum) : String(slotNum);
+      const exKey = DEFAULT_EX_CYCLE[(slotNum - 1) % DEFAULT_EX_CYCLE.length];
+      return {
+        slot: slotNum,
+        name: 'Bril ' + padded,
+        appOpen: true,
+        paused: false,
+        help: slotNum === 2,
+        freeze: slotNum === 5,
+        exKey: exKey,
+        mode: slotNum <= 2 ? 'Stap-voor-stap' : 'Begeleid',
+        battery: 96 - ((slotNum * 3) % 24),
+        coolant: exKey === 'OBJ_2' || exKey === 'OBJ_3',
+        carriageX: 46 + ((slotNum * 7) % 36),
+        camView: 'OVERVIEW_3Q'
+      };
     }
 
-    let currentProfile = initialSlots === 20 ? 'kar20' : 'kar10';
-    let activeCount = initialSlots;
-    let HEADSETS = BASE_HEADSETS.slice(0, activeCount);
-    let selectedIdx = 1; /* Start op Bril 02 waar de student zelf om hulp en meekijken vraagt */
-    let groupPaused = false;
-    let appsClosed = false;
-    let coolantActive = true;
-    let scrubFrame = 35;
-    let activeSpectatorCam = 'OVERVIEW_3Q';
-    let statusFilter = 'all';
-    let replayInterval = null;
+    const allHeadsets = [];
+    for (let i = 1; i <= 24; i += 1) {
+      allHeadsets.push(makeHeadset(i));
+    }
 
-    const slotsContainer = document.getElementById('cockpitSlotsGrid');
-    const protocolLine = document.getElementById('cockpitProtocolLine');
-    const canvas = document.getElementById('cockpitBlueprintCanvas');
-    const elSelHeader = document.getElementById('cockpitSelHeader');
-    const elSelNote = document.getElementById('cockpitSelNote');
-    const elStreamBadge = document.getElementById('cockpitStreamBadge');
-    const elAvgStrip = document.getElementById('cockpitAvgStrip');
-    const elAvgText = document.getElementById('cockpitAvgText');
-    const btnToggleAvg = document.getElementById('btnToggleAvgConsent');
-    const elTelRpm = document.getElementById('telRpm');
-    const elTelCarriage = document.getElementById('telCarriage');
-    const elTelDia = document.getElementById('telDia');
-    const elTelGate = document.getElementById('telGate');
-    const elReplaySlider = document.getElementById('cockpitReplaySlider');
-    const elReplayReadout = document.getElementById('cockpitReplayReadout');
-    const btnReplayPlay = document.getElementById('btnReplayPlay');
-    const elBookmarks = document.getElementById('cockpitBookmarks');
-    const elLiveBanner = document.getElementById('cockpitLiveBanner');
-    const elActionToast = document.getElementById('cockpitActionToast');
-    const btnStartScenario = document.getElementById('btnCockpitStartScenario');
-    const btnGroupPause = document.getElementById('btnCockpitGroupPause');
-    const btnCloseApps = document.getElementById('btnCockpitCloseApps');
-    const btnOpenReport = document.getElementById('btnCockpitOpenReport');
-    const btnHeroOpenReport = document.getElementById('tabletHeroReportBtn');
+    let currentProfile = 'kar10';
+    let customUnlimitedCount = 12;
+    let activeTab = 'KLAS';
+    let activeFilter = 'ALL';
+    let selectedSlot = 1;
+    let stagedExKey = 'OBJ_1';
+    let stagedMode = 'Begeleid';
+    let isDarkTheme = false;
+    let bpHoverNormX = null;
+
+    const elSubtitle = document.getElementById('ddSubtitleLine');
+    const elStatusText = document.getElementById('ddStatusText');
+    const elHelpNavBadge = document.getElementById('ddHelpNavBadge');
+    const elThemeBtn = document.getElementById('ddThemeBtn');
+
+    const tabBtns = cockpitRoot.querySelectorAll('[data-dd-tab]');
+    const elTabKlas = document.getElementById('ddTabKlas');
+    const elTabLeerling = document.getElementById('ddTabLeerling');
+    const elTabRapport = document.getElementById('ddTabRapport');
+
+    const profileBtns = cockpitRoot.querySelectorAll('[data-cockpit-profile]');
     const heroProfileBtns = document.querySelectorAll('[data-hero-profile]');
-    const startPartBtns = cockpitRoot.querySelectorAll('[data-start-part]');
-    let toastFlashTimer = null;
+    const filterBtns = cockpitRoot.querySelectorAll('[data-dd-filter]');
+    const elCntAll = document.getElementById('ddCntAll');
+    const elCntSelf = document.getElementById('ddCntSelf');
+    const elCntHelp = document.getElementById('ddCntHelp');
+    const elCntFreeze = document.getElementById('ddCntFreeze');
 
-    const CAM_LABELS = {
-      OVERVIEW_3Q: 'Overzicht',
-      CUT_ZONE: 'Dicht op werkstuk',
-      CHUCK_CLOSE: 'Klauwplaat & kap',
-      SPEED_CHART: 'Toerentabel'
-    };
+    const btnOpenGroup = document.getElementById('ddBtnOpenGroup');
+    const selGroupEx = document.getElementById('ddGroupExSelect');
+    const btnStageGroup = document.getElementById('ddBtnStageGroup');
+    const btnPauseGroup = document.getElementById('ddBtnPauseGroup');
+    const btnCloseGroup = document.getElementById('ddBtnCloseGroup');
+    const elBentoGrid = document.getElementById('ddBentoGrid');
 
-    const PART_CONFIGS = {
-      '1': {
-        mod: 'Deel 1 · De Buddy Check',
-        shortPart: 'Deel 1 · Buddy',
-        note: 'App & scenario opgestart op Onderdeel 1 (De Buddy Check): medestudent controleren en eigen PBM kiezen.'
-      },
-      '2': {
-        mod: 'Deel 2 · Voorbereiden & veiligheid',
-        shortPart: 'Deel 2 · Veilig',
-        note: 'App & scenario opgestart op Onderdeel 2 (Voorbereiden & veiligheid): opspannen, sleutel eruit, kap dicht en noodstop.'
-      },
-      '3': {
-        mod: 'Deel 3 · Praktijkgebruik (5 werkstukken)',
-        shortPart: 'Deel 3 · 5 Obj',
-        note: 'App & scenario opgestart op Onderdeel 3: student kiest één van de 5 oefenwerkstukken.'
-      },
-      'TOUR': {
-        mod: 'Wegwijs op de draaibank (2 min)',
-        shortPart: 'Wegwijs · 8 ptn',
-        note: 'Korte 2-minuten rondleiding langs de 8 onderdelen van de draaibank klaargezet.'
-      }
-    };
+    const elStudentStrip = document.getElementById('ddStudentStrip');
+    const btnSimHelp = document.getElementById('ddSimHelpBtn');
+    const elLeftPane = document.getElementById('ddLeftGuidancePane');
+    const elRightStudentSub = document.getElementById('ddRightStudentSub');
+    const elAppOpenBadge = document.getElementById('ddAppOpenBadge');
+    const btnOpenOne = document.getElementById('ddBtnOpenOne');
+    const btnCloseOne = document.getElementById('ddBtnCloseOne');
+    const elExerciseGrid = document.getElementById('ddExerciseGrid');
+    const modeBtns = cockpitRoot.querySelectorAll('[data-dd-mode]');
+    const btnStageOne = document.getElementById('ddBtnStageOne');
+    const elContextTools = document.getElementById('ddContextToolsCard');
 
-    function stopReplayLoop() {
-      if (replayInterval) {
-        clearInterval(replayInterval);
-        replayInterval = null;
-      }
-      if (btnReplayPlay) {
-        btnReplayPlay.textContent = '▶ Afspelen';
-      }
-    }
-    cleanupFns.push(stopReplayLoop);
+    const physChecks = cockpitRoot.querySelectorAll('input[name="physCheck"]');
+    const elPhysCounter = document.getElementById('physCheckedCounter');
+    const elA4SlotLabel = document.getElementById('ddA4SlotLabel');
+    const elA4StudentLine = document.getElementById('ddA4StudentLine');
+    const elA4ActiveEx = document.getElementById('ddA4ActiveEx');
+    const elA4PhysSummary = document.getElementById('ddA4PhysSummary');
+    const sigCanvas = document.getElementById('penSignatureCanvas');
+    const a4SigPreview = document.getElementById('ddA4SigPreview');
+    const elSigStatus = document.getElementById('penSignatureStatus');
+    const btnDemoSig = document.getElementById('btnDemoSignature');
+    const btnClearSig = document.getElementById('btnClearSignature');
+    const btnPrintA4 = document.getElementById('btnPrintA4Report');
+    const btnHeroReport = document.getElementById('tabletHeroReportBtn');
 
-    function showToast(msg) {
-      if (elActionToast) elActionToast.textContent = msg;
-      if (elLiveBanner) {
-        elLiveBanner.classList.add('is-flash');
-        if (toastFlashTimer) clearTimeout(toastFlashTimer);
-        toastFlashTimer = setTimeout(function () {
-          elLiveBanner.classList.remove('is-flash');
-        }, 420);
-      }
+    const printRepStudent = document.getElementById('printRepStudent');
+    const printPhysSummary = document.getElementById('printPhysSummary');
+    const printSigImg = document.getElementById('printSignaturePreview');
+
+    function getActiveSlotsCount() {
+      if (currentProfile === 'kar10') return 10;
+      if (currentProfile === 'kar20') return 20;
+      return customUnlimitedCount;
     }
 
-    function refreshProtocolHeader() {
-      if (!protocolLine) return;
-      if (currentProfile === 'kar10') {
-        protocolLine.textContent = 'OPSTELLING · VR-KAR 10 (10 BRILLEN VERBONDEN · GEEN ACCOUNTS)';
-      } else if (currentProfile === 'kar20') {
-        protocolLine.textContent = 'OPSTELLING · VR-KAR 20 (20 BRILLEN VERBONDEN · GEEN ACCOUNTS)';
-      } else {
-        protocolLine.textContent = 'OPSTELLING · LOSSE TABLET (' + activeCount + ' EIGEN BRILLEN VERBONDEN · GEEN ACCOUNTS)';
+    function getVisibleRoster() {
+      return allHeadsets.slice(0, getActiveSlotsCount());
+    }
+
+    function getSelectedHeadset() {
+      const roster = getVisibleRoster();
+      let found = roster.find(function (h) { return h.slot === selectedSlot; });
+      if (!found) {
+        found = roster[0];
+        selectedSlot = found.slot;
+      }
+      return found;
+    }
+
+    function setStatusMsg(msg) {
+      if (elStatusText) {
+        elStatusText.textContent = msg;
       }
     }
 
-    function applyCockpitProfile(profKey) {
+    function setTab(tabKey) {
+      activeTab = tabKey;
+      tabBtns.forEach(function (b) {
+        const isAct = b.getAttribute('data-dd-tab') === tabKey;
+        b.classList.toggle('is-active', isAct);
+        b.setAttribute('aria-selected', String(isAct));
+      });
+      if (elTabKlas) elTabKlas.style.display = tabKey === 'KLAS' ? 'block' : 'none';
+      if (elTabLeerling) elTabLeerling.style.display = tabKey === 'LEERLING' ? 'block' : 'none';
+      if (elTabRapport) elTabRapport.style.display = tabKey === 'RAPPORT' ? 'block' : 'none';
+      renderAll();
+    }
+
+    function setProfile(profKey) {
       currentProfile = profKey;
-      cockpitRoot.querySelectorAll('[data-cockpit-profile]').forEach(function (b) {
-        const active = b.getAttribute('data-cockpit-profile') === profKey;
-        b.classList.toggle('is-active', active);
-        b.setAttribute('aria-selected', String(active));
+      profileBtns.forEach(function (b) {
+        b.classList.toggle('is-active', b.getAttribute('data-cockpit-profile') === profKey);
       });
-      heroProfileBtns.forEach(function (hb) {
-        hb.classList.toggle('is-active', hb.getAttribute('data-hero-profile') === profKey);
+      heroProfileBtns.forEach(function (b) {
+        b.classList.toggle('is-active', b.getAttribute('data-hero-profile') === profKey);
       });
-
-      if (profKey === 'kar10') {
-        activeCount = 10;
-      } else if (profKey === 'kar20') {
-        activeCount = 20;
-      } else {
-        activeCount = 12;
-      }
-      refreshProtocolHeader();
-      HEADSETS = BASE_HEADSETS.slice(0, activeCount);
-      if (selectedIdx >= HEADSETS.length) selectedIdx = 0;
-      updateCockpit();
-      showToast(
-        'Gewisseld naar ' +
-        (profKey === 'kar10' ? 'VR-Kar 10 (10 brillen)' : profKey === 'kar20' ? 'VR-Kar 20 (20 brillen)' : 'Losse docenttablet bij eigen brillen') +
-        ' — opstarten, AVG-meekijken en afsluiten werken overal hetzelfde.'
-      );
-    }
-
-    cockpitRoot.querySelectorAll('[data-cockpit-profile]').forEach(function (pBtn) {
-      pBtn.addEventListener('click', function () {
-        applyCockpitProfile(pBtn.getAttribute('data-cockpit-profile'));
-      });
-    });
-
-    heroProfileBtns.forEach(function (hb) {
-      hb.addEventListener('click', function () {
-        const prof = hb.getAttribute('data-hero-profile');
-        applyCockpitProfile(prof);
-        const simSec = document.getElementById('live-simulator');
-        if (simSec) {
-          simSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    cockpitRoot.querySelectorAll('[data-cockpit-filter]').forEach(function (fBtn) {
-      fBtn.addEventListener('click', function () {
-        statusFilter = fBtn.getAttribute('data-cockpit-filter');
-        cockpitRoot.querySelectorAll('[data-cockpit-filter]').forEach(function (b) {
-          b.classList.toggle('is-active', b === fBtn);
-        });
-        updateCockpit();
-      });
-    });
-
-    cockpitRoot.querySelectorAll('[data-spectator-cam]').forEach(function (cBtn) {
-      cBtn.addEventListener('click', function () {
-        activeSpectatorCam = cBtn.getAttribute('data-spectator-cam');
-        cockpitRoot.querySelectorAll('[data-spectator-cam]').forEach(function (b) {
-          b.classList.toggle('is-active', b === cBtn);
-        });
-        updateCockpit();
-        const h = HEADSETS[selectedIdx];
-        if (h.consentToView && !appsClosed && !h.appClosed) {
-          showToast('Meekijkhoek gewisseld naar "' + CAM_LABELS[activeSpectatorCam] + '" op ' + h.id + '.');
+      if (elSubtitle) {
+        if (profKey === 'kar10') {
+          elSubtitle.textContent = 'TechBuilds VR · 13,1-inch docenttablet · VR-Kar 10 (geen leerlingaccounts)';
+        } else if (profKey === 'kar20') {
+          elSubtitle.textContent = 'TechBuilds VR · 13,1-inch docenttablet · VR-Kar 20 (geen leerlingaccounts)';
         } else {
-          showToast('Meekijkhoek klaargezet — beeld is pas zichtbaar zodra de student op ' + h.id + ' meekijken wenst (AVG).');
+          elSubtitle.textContent = 'TechBuilds VR · Losse 13,1-inch docenttablet · Eigen brillen (' + customUnlimitedCount + ' gekoppeld)';
         }
-      });
-    });
-
-    function renderSlots() {
-      if (!slotsContainer) return;
-      let html = HEADSETS.map(function (h, idx) {
-        const isClosed = appsClosed || h.appClosed;
-        const needsHelp = !isClosed && h.status === 'HULP GEVRAAGD';
-        if (statusFilter === 'attention' && !needsHelp) {
-          return '';
-        }
-        if (statusFilter === 'active' && (isClosed || needsHelp)) {
-          return '';
-        }
-        let badgeText = h.status;
-        let badgeCls = h.statusClass;
-        if (isClosed) {
-          badgeText = 'AFGESLOTEN';
-          badgeCls = 'status-info';
-        } else if (groupPaused) {
-          badgeText = 'PAUZE';
-          badgeCls = 'status-warn';
-        }
-        const isSel = idx === selectedIdx;
-        const slotSub = isClosed
-          ? 'App netjes afgesloten'
-          : (h.consentToView ? 'Meekijken gewenst (AVG)' : 'Werkt zelfstandig (AVG)');
-        return (
-          '<button type="button" class="bril-slot ' + (isSel ? 'is-selected' : '') + '" data-slot-idx="' + idx + '" id="slotBtn_' + h.slotNum + '">' +
-            '<div class="bril-slot-top">' +
-              '<span class="mono" style="font-size:0.72rem;font-weight:600;color:' + (isSel ? '#38BDF8' : '#94A3B8') + ';">' + h.id + ' · ' + h.battery + '%</span>' +
-              '<span class="status-badge ' + badgeCls + '">' + badgeText + '</span>' +
-            '</div>' +
-            '<span class="bril-slot-name">' + slotSub + '</span>' +
-            '<span class="bril-slot-meta">' + (isClosed ? 'Klaar voor lader / volgende klas' : h.mod) + '</span>' +
-          '</button>'
-        );
-      }).join('');
-
-      if (currentProfile === 'unlimited' && activeCount < BASE_HEADSETS.length && statusFilter === 'all') {
-        html +=
-          '<button type="button" class="bril-slot" id="btnAddUnlimitedHeadset" style="border-style:dashed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">' +
-            '<span class="mono" style="font-size:0.76rem;color:#38BDF8;font-weight:600;">+ EIGEN BRIL KOPPELEN</span>' +
-            '<span class="bril-slot-meta">Meldt zich op brilnummer (AVG)</span>' +
-          '</button>';
       }
-
-      slotsContainer.innerHTML = html;
-
-      slotsContainer.querySelectorAll('[data-slot-idx]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          stopReplayLoop();
-          selectedIdx = parseInt(btn.getAttribute('data-slot-idx'), 10);
-          scrubFrame = 35;
-          if (elReplaySlider) elReplaySlider.value = '35';
-          updateCockpit();
-          const h = HEADSETS[selectedIdx];
-          if (appsClosed || h.appClosed) {
-            showToast(h.id + ' geselecteerd — de app op deze bril is netjes afgesloten.');
-          } else if (h.consentToView) {
-            showToast(h.id + ' geselecteerd — student vraagt hulp en wenst dat je even meekijkt (AVG).');
-          } else {
-            showToast(h.id + ' geselecteerd — student werkt zelfstandig; beeld blijft afgeschermd tot meekijken nodig en gewenst is (AVG).');
-          }
-        });
-      });
-
-      const addBtn = document.getElementById('btnAddUnlimitedHeadset');
-      if (addBtn) {
-        addBtn.addEventListener('click', function () {
-          if (activeCount < BASE_HEADSETS.length) {
-            activeCount += 1;
-            HEADSETS = BASE_HEADSETS.slice(0, activeCount);
-            selectedIdx = activeCount - 1;
-            refreshProtocolHeader();
-            updateCockpit();
-            showToast('Extra eigen VR-bril (' + HEADSETS[selectedIdx].id + ') gekoppeld op nummer zonder leerlingaccount.');
-          }
-        });
-      }
+      renderAll();
     }
 
-    function drawBlueprint(h, frameRatio) {
+    function enforceSingleHelpStream(activeHelpSlot) {
+      /* Bandbreedte- & AVG-afspraak: maximaal 1 actieve meekijkstream tegelijk */
+      allHeadsets.forEach(function (h) {
+        if (h.slot !== activeHelpSlot && h.help && activeTab === 'LEERLING' && selectedSlot === activeHelpSlot) {
+          /* Andere hulpvragen blijven zichtbaar in wachtrij op Tab 1, maar we streamen alleen de geselecteerde bril */
+        }
+      });
+    }
+
+    function drawLiveVrScene(canvas, h) {
       if (!canvas || !canvas.getContext) return;
       const ctx = canvas.getContext('2d');
       const w = canvas.width;
       const ht = canvas.height;
-      const isClosed = appsClosed || h.appClosed;
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
 
-      ctx.clearRect(0, 0, w, ht);
-      ctx.fillStyle = '#07111F';
+      /* Lichte, rustige VR-werkplaatsachtergrond */
+      const sky = ctx.createLinearGradient(0, 0, 0, ht);
+      sky.addColorStop(0, '#1B2E47');
+      sky.addColorStop(0.58, '#132338');
+      sky.addColorStop(1, '#0C1726');
+      ctx.fillStyle = sky;
       ctx.fillRect(0, 0, w, ht);
 
-      /* Subtiel technisch raster op de achtergrond */
-      ctx.strokeStyle = 'rgba(36, 70, 110, 0.22)';
+      /* Subtiel werkplaatsraster achterwand */
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.10)';
       ctx.lineWidth = 1;
-      for (let gx = 40; gx < w; gx += 40) {
+      for (let gx = 0; gx < w; gx += 36) {
         ctx.beginPath();
         ctx.moveTo(gx, 0);
-        ctx.lineTo(gx, ht - 26);
+        ctx.lineTo(gx, ht * 0.65);
         ctx.stroke();
       }
-      for (let gy = 36; gy < ht - 26; gy += 36) {
+
+      const zoom = h.camView === 'CUT_ZONE' ? 1.24 : (h.camView === 'CHUCK_CLOSE' ? 1.18 : 1.0);
+      ctx.save();
+      if (zoom > 1.0) {
+        const focusX = h.camView === 'CHUCK_CLOSE' ? w * 0.28 : w * 0.56;
+        const focusY = ht * 0.54;
+        ctx.translate(focusX, focusY);
+        ctx.scale(zoom, zoom);
+        ctx.translate(-focusX, -focusY);
+      }
+
+      /* Draaibankbed */
+      ctx.fillStyle = '#334155';
+      ctx.fillRect(28, 184, w - 56, 44);
+      ctx.fillStyle = '#64748B';
+      ctx.fillRect(28, 178, w - 56, 8);
+
+      /* Vaste kop links */
+      ctx.fillStyle = '#1E3A5F';
+      ctx.fillRect(26, 82, 92, 102);
+      ctx.strokeStyle = '#38BDF8';
+      ctx.lineWidth = 1.2;
+      ctx.strokeRect(26, 82, 92, 102);
+
+      /* Noodstopknop op vaste kop */
+      ctx.fillStyle = '#FACC15';
+      ctx.beginPath();
+      ctx.arc(62, 146, 13, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#DC2626';
+      ctx.beginPath();
+      ctx.arc(62, 146, 9, 0, Math.PI * 2);
+      ctx.fill();
+
+      /* Drieklauwplaat */
+      ctx.fillStyle = '#94A3B8';
+      ctx.fillRect(118, 98, 36, 72);
+      ctx.fillStyle = '#CBD5E1';
+      ctx.fillRect(146, 102, 12, 14);
+      ctx.fillRect(146, 152, 12, 14);
+
+      /* Werkstuk (cilinder met eventuele trap) */
+      const wpLenPx = Math.round(ex.lenMm * 1.65);
+      const wpDiaPx = Math.round(ex.diaTarget * 1.18);
+      const wpTop = Math.round(134 - wpDiaPx / 2);
+      const metalGrad = ctx.createLinearGradient(0, wpTop, 0, wpTop + wpDiaPx);
+      metalGrad.addColorStop(0, '#E2E8F0');
+      metalGrad.addColorStop(0.45, '#F8FAFC');
+      metalGrad.addColorStop(1, '#94A3B8');
+      ctx.fillStyle = metalGrad;
+
+      if (ex.stepTarget) {
+        const mainLen = Math.round(wpLenPx * 0.58);
+        const stepLen = wpLenPx - mainLen;
+        const stepDiaPx = Math.round(ex.stepTarget * 1.10);
+        const stepTop = Math.round(134 - stepDiaPx / 2);
+        ctx.fillRect(154, wpTop, mainLen, wpDiaPx);
+        ctx.fillRect(154 + mainLen, stepTop, stepLen, stepDiaPx);
+      } else {
+        ctx.fillRect(154, wpTop, wpLenPx, wpDiaPx);
+      }
+
+      /* Transparante beschermkap over drieklauw */
+      if (!h.freeze) {
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.16)';
+        ctx.strokeStyle = 'rgba(125, 211, 252, 0.72)';
+        ctx.lineWidth = 1.5;
+        ctx.fillRect(112, 74, 62, 96);
+        ctx.strokeRect(112, 74, 62, 96);
+      } else {
+        /* Klauwplaatsleutel zichtbaar bij veiligheidsstop */
+        ctx.fillStyle = '#F97316';
+        ctx.fillRect(129, 58, 10, 44);
+        ctx.fillRect(116, 56, 36, 8);
+      }
+
+      /* Beitelhouder & support op actuele X-positie */
+      const toolX = 166 + Math.min(wpLenPx + 14, Math.max(18, Math.round(h.carriageX * 1.25)));
+      ctx.fillStyle = '#475569';
+      ctx.fillRect(toolX - 16, 152, 46, 34);
+      ctx.fillStyle = '#F59E0B';
+      ctx.beginPath();
+      ctx.moveTo(toolX, 136);
+      ctx.lineTo(toolX + 12, 152);
+      ctx.lineTo(toolX - 6, 152);
+      ctx.closePath();
+      ctx.fill();
+
+      /* Koelstraal indien ingeschakeld */
+      if (h.coolant && !h.paused && ex.rpm > 0) {
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.85)';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(toolX + 26, 78);
+        ctx.quadraticCurveTo(toolX + 8, 106, toolX, 135);
+        ctx.stroke();
+      }
+
+      ctx.restore();
+
+      /* Bovenbalk in VR: links oefening, rechtsboven de ‘Hulp nodig’-knop van Draaibank VR v2.2.0 */
+      ctx.fillStyle = 'rgba(11, 25, 44, 0.84)';
+      ctx.fillRect(10, 10, 238, 28);
+      ctx.fillStyle = '#E2E8F0';
+      ctx.font = '600 11px Inter, sans-serif';
+      ctx.fillText('1e-persoon VR · ' + h.name + ' · ' + (h.paused ? '0 RPM' : (ex.rpm + ' RPM')), 18, 28);
+
+      /* De prominente knop rechtsboven in VR */
+      ctx.fillStyle = '#F59E0B';
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(w - 138, 10, 128, 28, 7) : ctx.rect(w - 138, 10, 128, 28);
+      ctx.fill();
+      ctx.fillStyle = '#0B192C';
+      ctx.font = '700 11px Inter, sans-serif';
+      ctx.fillText('🙋 Hulp actief (VR)', w - 129, 28);
+
+      /* Onderbalk telemetrie */
+      ctx.fillStyle = 'rgba(11, 25, 44, 0.86)';
+      ctx.fillRect(0, ht - 30, w, 30);
+      ctx.fillStyle = '#93C5FD';
+      ctx.font = '600 11px "JetBrains Mono", monospace';
+      const capLabel = h.freeze ? '⚠ Sleutel nog in klauwplaat' : ('Kap dicht ✓ · Koeling ' + (h.coolant ? 'AAN' : 'UIT'));
+      ctx.fillText(capLabel + ' · X = ' + h.carriageX.toFixed(1) + ' mm', 12, ht - 11);
+    }
+
+    function drawBlueprint2D(canvas, h) {
+      if (!canvas || !canvas.getContext) return;
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width;
+      const ht = canvas.height;
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+
+      /* Lichte Blueprint Paper achtergrond (#F8FBFF) */
+      ctx.fillStyle = '#F8FBFF';
+      ctx.fillRect(0, 0, w, ht);
+
+      /* Fijn technisch millimeter-raster */
+      ctx.strokeStyle = '#E4EEF8';
+      ctx.lineWidth = 1;
+      for (let gx = 20; gx < w; gx += 24) {
+        ctx.beginPath();
+        ctx.moveTo(gx, 0);
+        ctx.lineTo(gx, ht);
+        ctx.stroke();
+      }
+      for (let gy = 20; gy < ht; gy += 24) {
         ctx.beginPath();
         ctx.moveTo(0, gy);
         ctx.lineTo(w, gy);
         ctx.stroke();
       }
 
-      /* Toestand A: Apps zijn afgesloten */
-      if (isClosed) {
-        ctx.fillStyle = '#0D1E35';
-        ctx.strokeStyle = '#24466E';
-        ctx.lineWidth = 1.4;
-        ctx.fillRect(64, 34, w - 128, ht - 84);
-        ctx.strokeRect(64, 34, w - 128, ht - 84);
+      /* Binnenkader technische tekening */
+      ctx.strokeStyle = '#94A3B8';
+      ctx.lineWidth = 1.4;
+      ctx.strokeRect(10, 10, w - 20, ht - 20);
 
-        ctx.fillStyle = '#38BDF8';
-        ctx.font = '600 13px "JetBrains Mono", monospace';
-        ctx.fillText('⏹ APPS NETJES AFGESLOTEN OP ' + (appsClosed ? 'ALLE BRILLEN' : h.id.toUpperCase()), 90, 74);
+      /* Kopregel */
+      ctx.fillStyle = '#0B192C';
+      ctx.font = '700 11.5px "Space Grotesk", sans-serif';
+      ctx.fillText('2D WERKTEKENING · ' + ex.short.toUpperCase(), 20, 29);
+      ctx.fillStyle = '#0B5ED7';
+      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      ctx.fillText('TOLERANTIE ±0,1 MM · NL & EU', w - 188, 29);
 
-        ctx.fillStyle = '#E2E8F0';
-        ctx.font = '500 13px "Inter", sans-serif';
-        ctx.fillText('Geen leerlinggegevens bewaard · brillen zijn klaar voor de lader of volgende groep.', 90, 104);
-
-        ctx.fillStyle = '#94A3B8';
-        ctx.font = '400 11.5px "JetBrains Mono", monospace';
-        ctx.fillText('Klik op "▶ Start app & scenario" om een nieuw onderdeel klaar te zetten.', 90, 132);
-
-        ctx.fillStyle = 'rgba(7, 17, 31, 0.90)';
-        ctx.fillRect(0, ht - 26, w, 26);
-        ctx.fillStyle = '#94A3B8';
-        ctx.font = '400 10.5px "JetBrains Mono", monospace';
-        ctx.fillText('STATUS: APPS AFGESLOTEN  ·  GEEN CLOUDOPSLAG (AVG)  ·  ACCUNIVEAU ' + h.id.toUpperCase() + ': ' + h.battery + '%', 14, ht - 9);
-        return;
-      }
-
-      /* Toestand B: Student werkt zelfstandig (geen meekijk-verzoek, AVG-privacy actief) */
-      if (!h.consentToView) {
-        ctx.fillStyle = '#0D1E35';
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.42)';
-        ctx.lineWidth = 1.4;
-        ctx.fillRect(52, 28, w - 104, ht - 76);
-        ctx.strokeRect(52, 28, w - 104, ht - 76);
-
-        ctx.fillStyle = '#38BDF8';
-        ctx.font = '600 12.5px "JetBrains Mono", monospace';
-        ctx.fillText('AVG-PRIVACY ACTIEF OP ' + h.id.toUpperCase() + ' — STUDENT WERKT ZELFSTANDIG', 76, 66);
-
-        ctx.fillStyle = '#E2E8F0';
-        ctx.font = '500 13px "Inter", sans-serif';
-        ctx.fillText('Actief onderdeel: ' + h.mod, 76, 95);
-
-        ctx.fillStyle = '#94A3B8';
-        ctx.font = '400 12px "Inter", sans-serif';
-        ctx.fillText('Live meekijken staat standaard uit en opent alleen indien nodig én gewenst door de student.', 76, 121);
-        ctx.fillStyle = '#CBD5E1';
-        ctx.font = '500 11px "JetBrains Mono", monospace';
-        ctx.fillText('Tip: klik hierboven op "Simuleer hulpvraag student" om met toestemming mee te kijken.', 76, 146);
-
-        ctx.fillStyle = 'rgba(7, 17, 31, 0.90)';
-        ctx.fillRect(0, ht - 26, w, 26);
-        ctx.fillStyle = '#94A3B8';
-        ctx.font = '400 10.5px "JetBrains Mono", monospace';
-        ctx.fillText('MODUS: ZELFSTANDIG OEFENEN  ·  GEEN LEERLINGACCOUNT  ·  ONDERDEEL: ' + h.shortPart.toUpperCase(), 14, ht - 9);
-        return;
-      }
-
-      /* Toestand C: Student vraagt begeleiding en geeft toestemming om mee te kijken */
+      /* Hartlijn (streep-punt) */
+      const cy = 136;
       ctx.save();
-      if (activeSpectatorCam === 'CUT_ZONE') {
-        ctx.translate(-145, -18);
-        ctx.scale(1.28, 1.28);
-      } else if (activeSpectatorCam === 'CHUCK_CLOSE') {
-        ctx.translate(18, -22);
-        ctx.scale(1.32, 1.32);
-      }
+      ctx.strokeStyle = '#64748B';
+      ctx.setLineDash([12, 4, 2, 4]);
+      ctx.beginPath();
+      ctx.moveTo(34, cy);
+      ctx.lineTo(w - 34, cy);
+      ctx.stroke();
+      ctx.restore();
 
-      const cy = Math.round(ht * 0.48);
+      /* Orthografisch werkstukaanzicht */
+      const x0 = 78;
+      const totalW = 276;
+      const hMain = Math.round(ex.diaTarget * 2.45);
+      ctx.fillStyle = '#E6F0FC';
+      ctx.strokeStyle = '#0B192C';
+      ctx.lineWidth = 2;
 
-      if (activeSpectatorCam === 'SPEED_CHART') {
-        ctx.fillStyle = '#0D1E35';
-        ctx.strokeStyle = '#24466E';
-        ctx.lineWidth = 1.2;
-        ctx.fillRect(36, 28, w - 72, ht - 72);
-        ctx.strokeRect(36, 28, w - 72, ht - 72);
+      if (ex.stepTarget) {
+        const w1 = Math.round(totalW * 0.58);
+        const w2 = totalW - w1;
+        const hStep = Math.round(ex.stepTarget * 2.15);
+        ctx.fillRect(x0, cy - hMain / 2, w1, hMain);
+        ctx.strokeRect(x0, cy - hMain / 2, w1, hMain);
+        ctx.fillRect(x0 + w1, cy - hStep / 2, w2, hStep);
+        ctx.strokeRect(x0 + w1, cy - hStep / 2, w2, hStep);
 
-        ctx.fillStyle = '#38BDF8';
-        ctx.font = '600 12px "JetBrains Mono", monospace';
-        ctx.fillText('CONVENTIONELE DRAAIBANK — TOERENTABEL', 56, 54);
-
-        const speeds = [250, 355, 500, 710, 1000, 1400];
-        speeds.forEach(function (sp, idx) {
-          const bx = 56 + idx * 88;
-          const isCurrent = sp === h.rpm || (h.rpm === 0 && sp === 500);
-          ctx.fillStyle = isCurrent ? '#0B5ED7' : '#132946';
-          ctx.fillRect(bx, 74, 76, 56);
-          ctx.strokeStyle = isCurrent ? '#38BDF8' : '#26456B';
-          ctx.strokeRect(bx, 74, 76, 56);
-          ctx.fillStyle = '#FFFFFF';
-          ctx.font = '600 13px "JetBrains Mono", monospace';
-          ctx.fillText(sp + '', bx + 14, 100);
-          ctx.fillStyle = '#94A3B8';
-          ctx.font = '400 10px "JetBrains Mono", monospace';
-          ctx.fillText('RPM', bx + 14, 118);
-        });
-
-        ctx.fillStyle = '#CBD5E1';
-        ctx.font = '400 11px "JetBrains Mono", monospace';
-        ctx.fillText('Ingesteld op ' + h.id + ': ' + (groupPaused ? 0 : h.rpm) + ' RPM  ·  Startwaarde Onderdeel 2: 500 RPM', 56, 154);
-        ctx.restore();
+        /* Tweede maatlijn */
+        ctx.fillStyle = '#0B5ED7';
+        ctx.font = '700 11px "JetBrains Mono", monospace';
+        ctx.fillText('Ø ' + ex.stepTarget.toFixed(1).replace('.', ',') + ' mm', x0 + w1 + 14, cy - hStep / 2 - 8);
       } else {
-        /* Bedbanen van de draaibank onderlangs */
-        const bedY = cy + 64;
-        ctx.fillStyle = '#0F2036';
-        ctx.strokeStyle = '#254266';
-        ctx.lineWidth = 1.2;
-        ctx.fillRect(28, bedY, w - 56, 16);
-        ctx.strokeRect(28, bedY, w - 56, 16);
-
-        /* Hartlijn */
-        ctx.strokeStyle = '#23446B';
-        ctx.lineWidth = 1;
-        ctx.setLineDash([8, 5, 2, 5]);
-        ctx.beginPath();
-        ctx.moveTo(24, cy);
-        ctx.lineTo(w - 24, cy);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        /* Drieklauwplaat */
-        ctx.fillStyle = '#1B2B42';
-        ctx.strokeStyle = '#64748B';
-        ctx.lineWidth = 1.5;
-        ctx.fillRect(42, cy - 56, 56, 112);
-        ctx.strokeRect(42, cy - 56, 56, 112);
-
-        ctx.fillStyle = '#334863';
-        ctx.fillRect(86, cy - 45, 22, 16);
-        ctx.fillRect(86, cy + 29, 22, 16);
-
-        /* Klauwplaatbeschermkap */
-        ctx.strokeStyle = h.guardClosed ? '#22C55E' : '#F59E0B';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        if (h.guardClosed) {
-          ctx.rect(35, cy - 64, 78, 128);
-        } else {
-          ctx.moveTo(35, cy - 64);
-          ctx.lineTo(102, cy - 94);
-        }
-        ctx.stroke();
-
-        if (h.chuckKeyIn) {
-          ctx.fillStyle = '#EF4444';
-          ctx.fillRect(60, cy - 88, 14, 34);
-          ctx.fillStyle = '#FCA5A5';
-          ctx.font = '600 11px "JetBrains Mono", monospace';
-          ctx.fillText('SLEUTEL NOG IN KLAUWPLAAT (HULPVRAAG)', 130, 24);
-        }
-
-        const wobbleOffset = h.runout > 0.5 ? (scrubFrame % 2 === 0 ? 5 : -4) : 0;
-        const mainHalfH = Math.round((h.diaMain / 30.0) * 30);
-        const stepProgress = Math.min(1, Math.max(0.08, frameRatio));
-        const stepHalfH = Math.round((h.diaStep / 30.0) * 30);
-
-        /* Werkstuk hoofdcilinder + afgedraaide trap */
-        const totalStockLen = 330;
-        const turnedStepLen = Math.round(135 * stepProgress);
-        const unturnedLen = totalStockLen - turnedStepLen;
-
-        ctx.fillStyle = h.overheated ? '#D97706' : '#94A3B8';
-        ctx.strokeStyle = '#E2E8F0';
-        ctx.lineWidth = 1.2;
-        ctx.fillRect(108, cy - mainHalfH + wobbleOffset, unturnedLen, mainHalfH * 2);
-        ctx.strokeRect(108, cy - mainHalfH + wobbleOffset, unturnedLen, mainHalfH * 2);
-
-        ctx.fillStyle = h.overheated ? '#F59E0B' : '#CBD5E1';
-        ctx.fillRect(108 + unturnedLen, cy - stepHalfH - wobbleOffset, turnedStepLen, stepHalfH * 2);
-        ctx.strokeRect(108 + unturnedLen, cy - stepHalfH - wobbleOffset, turnedStepLen, stepHalfH * 2);
-
-        /* Meebewegende beitelslede + beitelhouder */
-        const toolTipX = 108 + unturnedLen + 4;
-        const toolTipY = cy + stepHalfH + 2;
-
-        if (coolantActive && !groupPaused && h.rpm > 0) {
-          ctx.strokeStyle = 'rgba(56, 189, 248, 0.55)';
-          ctx.lineWidth = 2;
-          ctx.setLineDash([4, 3]);
-          ctx.beginPath();
-          ctx.moveTo(toolTipX + 26, cy - 58);
-          ctx.lineTo(toolTipX, cy + stepHalfH - 2);
-          ctx.stroke();
-          ctx.setLineDash([]);
-        }
-
-        /* Snijpunt */
-        if (!groupPaused && h.rpm > 0) {
-          ctx.fillStyle = h.overheated ? 'rgba(245, 158, 11, 0.65)' : 'rgba(56, 189, 248, 0.45)';
-          ctx.beginPath();
-          ctx.arc(toolTipX - 2, toolTipY - 2, h.overheated ? 7 : 4.5, 0, Math.PI * 2);
-          ctx.fill();
-        }
-
-        /* Beitelpunt */
-        ctx.fillStyle = '#38BDF8';
-        ctx.beginPath();
-        ctx.moveTo(toolTipX, toolTipY);
-        ctx.lineTo(toolTipX + 14, toolTipY + 22);
-        ctx.lineTo(toolTipX - 8, toolTipY + 22);
-        ctx.closePath();
-        ctx.fill();
-
-        /* Dwarsslede & Langsslede op het bed */
-        const carriageW = 68;
-        const carriageLeft = Math.round(toolTipX - 24);
-        ctx.fillStyle = '#1B3556';
-        ctx.strokeStyle = '#38BDF8';
-        ctx.lineWidth = 1.2;
-        ctx.fillRect(carriageLeft, toolTipY + 22, 52, Math.max(14, bedY - (toolTipY + 22)));
-        ctx.strokeRect(carriageLeft, toolTipY + 22, 52, Math.max(14, bedY - (toolTipY + 22)));
-
-        ctx.fillStyle = '#24466E';
-        ctx.fillRect(carriageLeft - 8, bedY - 4, carriageW, 22);
-        ctx.strokeRect(carriageLeft - 8, bedY - 4, carriageW, 22);
-
-        /* Maatvoering boven het werkstuk */
-        ctx.fillStyle = '#38BDF8';
-        ctx.font = '600 11px "JetBrains Mono", monospace';
-        ctx.fillText('Ø ' + h.diaMain.toFixed(1).replace('.', ',') + ' ±0,2 mm', 116, cy - 40);
-        ctx.fillText('TRAP Ø ' + h.diaStep.toFixed(1).replace('.', ',') + ' mm', Math.max(255, toolTipX - 18), cy - 40);
-        ctx.restore();
+        ctx.fillRect(x0, cy - hMain / 2, totalW, hMain);
+        ctx.strokeRect(x0, cy - hMain / 2, totalW, hMain);
       }
 
-      /* Overzichtsbalk onderin het scherm */
-      const dynCarriage = (h.carriageX + (35 - scrubFrame) * 1.2).toFixed(1).replace('.', ',');
-      ctx.fillStyle = 'rgba(7, 17, 31, 0.90)';
-      ctx.fillRect(0, ht - 26, w, 26);
-      ctx.fillStyle = '#94A3B8';
-      ctx.font = '400 10.5px "JetBrains Mono", monospace';
-      ctx.fillText(
-        'MEEKIJKEN OP VERZOEK (AVG) · ' + CAM_LABELS[activeSpectatorCam] +
-        '  ·  SLEDE: ' + dynCarriage + ' mm' +
-        '  ·  ' + (h.guardClosed ? 'KAP DICHT' : 'KAP OPEN') +
-        '  ·  KOELING: ' + (coolantActive ? 'AAN' : 'UIT'),
-        14,
-        ht - 9
-      );
+      /* Hoofdmaatlijnen in Engineering Cobalt */
+      ctx.strokeStyle = '#0B5ED7';
+      ctx.fillStyle = '#0B5ED7';
+      ctx.lineWidth = 1.4;
+      const dimY = cy + hMain / 2 + 24;
+      ctx.beginPath();
+      ctx.moveTo(x0, cy + hMain / 2 + 4);
+      ctx.lineTo(x0, dimY + 5);
+      ctx.moveTo(x0 + totalW, cy + hMain / 2 + 4);
+      ctx.lineTo(x0 + totalW, dimY + 5);
+      ctx.moveTo(x0, dimY);
+      ctx.lineTo(x0 + totalW, dimY);
+      ctx.stroke();
+
+      ctx.font = '700 11px "JetBrains Mono", monospace';
+      ctx.fillText('L = ' + ex.lenMm + ',0 mm', x0 + totalW / 2 - 38, dimY - 5);
+      ctx.fillText('Doelmaat: Ø ' + ex.diaTarget.toFixed(1).replace('.', ',') + ' mm (ruw Ø 30,0)', x0, cy - hMain / 2 - 10);
+
+      /* Live beitelpositie-indicator of muis-hover meetlijn */
+      const markerX = bpHoverNormX !== null
+        ? Math.max(x0, Math.min(x0 + totalW, Math.round(bpHoverNormX * w)))
+        : Math.max(x0, Math.min(x0 + totalW, x0 + Math.round((h.carriageX / 100) * totalW)));
+
+      ctx.save();
+      ctx.strokeStyle = '#D97706';
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath();
+      ctx.moveTo(markerX, cy - hMain / 2 - 6);
+      ctx.lineTo(markerX, cy + hMain / 2 + 6);
+      ctx.stroke();
+      ctx.restore();
+
+      /* Titelblok onderaan */
+      ctx.fillStyle = '#0B192C';
+      ctx.fillRect(10, ht - 34, w - 20, 24);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      const relMm = (((markerX - x0) / totalW) * ex.lenMm).toFixed(1).replace('.', ',');
+      ctx.fillText('TechBuilds VR · Positie Z: ' + relMm + ' mm · Meten bij 0 RPM (schuifmaat)', 18, ht - 18);
     }
 
-    function updateCockpit() {
-      const h = HEADSETS[selectedIdx];
-      const ratio = scrubFrame / 35;
-      const isClosed = appsClosed || h.appClosed;
-      renderSlots();
+    function renderTab1() {
+      const roster = getVisibleRoster();
+      const cntAll = roster.length;
+      const cntHelp = roster.filter(function (h) { return h.appOpen && h.help; }).length;
+      const cntFreeze = roster.filter(function (h) { return h.appOpen && h.freeze; }).length;
+      const cntSelf = roster.filter(function (h) { return h.appOpen && !h.help && !h.freeze; }).length;
 
-      if (elSelHeader) {
-        if (isClosed) {
-          elSelHeader.textContent = h.id + ' — App netjes afgesloten (klaar voor volgende groep)';
-        } else if (h.consentToView) {
-          elSelHeader.textContent = h.id + ' — ' + h.mod + ' (meekijken gewenst · AVG)';
-        } else {
-          elSelHeader.textContent = h.id + ' — ' + h.mod + ' (zelfstandig bezig)';
-        }
-      }
-      if (elStreamBadge) {
-        elStreamBadge.textContent = 'GESELECTEERD: ' + h.id.toUpperCase();
-      }
-      if (elAvgStrip && elAvgText && btnToggleAvg) {
-        if (isClosed) {
-          elAvgStrip.classList.add('is-private');
-          elAvgText.textContent = '⏹ Apps op ' + (appsClosed ? 'alle brillen' : h.id) + ' zijn afgesloten. Geen sessiedata in de cloud opgeslagen.';
-          btnToggleAvg.textContent = 'Start app opnieuw';
-        } else if (h.consentToView) {
-          elAvgStrip.classList.remove('is-private');
-          elAvgText.textContent = '✓ Student op ' + h.id + ' vraagt hulp en geeft toestemming om mee te kijken (AVG).';
-          btnToggleAvg.textContent = 'Meekijken sluiten';
-        } else {
-          elAvgStrip.classList.add('is-private');
-          elAvgText.textContent = '🔒 AVG-vriendelijk: student op ' + h.id + ' werkt zelfstandig. Meekijken alleen indien nodig en gewenst.';
-          btnToggleAvg.textContent = 'Simuleer hulpvraag student';
-        }
-      }
-      if (elSelNote) {
-        if (isClosed) {
-          elSelNote.textContent = 'De apps zijn rustig afgesloten. Klik hieronder op één van de 3 onderdelen (of Wegwijs) om de app voor de volgende groep te starten.';
-        } else if (groupPaused) {
-          elSelNote.textContent = 'GROEP EVEN GEPAUZEERD: Alle brillen staan stil zodat je rustig klassikaal uitleg kunt geven.';
-        } else {
-          elSelNote.textContent = h.note;
-        }
-      }
-      if (btnCloseApps) {
-        btnCloseApps.textContent = appsClosed ? '▶ Apps weer gereedzetten' : '⏹ Sluit apps af';
+      if (elCntAll) elCntAll.textContent = String(cntAll);
+      if (elCntSelf) elCntSelf.textContent = String(cntSelf);
+      if (elCntHelp) elCntHelp.textContent = String(cntHelp);
+      if (elCntFreeze) elCntFreeze.textContent = String(cntFreeze);
+
+      if (elHelpNavBadge) {
+        elHelpNavBadge.textContent = '🙋 ' + cntHelp;
+        elHelpNavBadge.style.background = cntHelp > 0 ? '#D97706' : '#64748B';
       }
 
-      const dynCarriage = (h.carriageX + (35 - scrubFrame) * 1.2).toFixed(1).replace('.', ',');
-      if (elTelRpm) elTelRpm.textContent = isClosed ? 'Afgesloten' : h.shortPart;
-      if (elTelCarriage) elTelCarriage.textContent = (!isClosed && h.consentToView) ? (dynCarriage + ' mm') : 'Afgeschermd';
-      if (elTelDia) elTelDia.textContent = (!isClosed && h.consentToView) ? ('Ø ' + h.diaMain.toFixed(1).replace('.', ',') + ' mm') : 'AVG-privé';
-      if (elTelGate) {
-        if (isClosed) {
-          elTelGate.textContent = 'UIT';
-        } else if (!h.consentToView) {
-          elTelGate.textContent = 'ZELFSTANDIG';
-        } else {
-          elTelGate.textContent = h.chuckKeyIn ? 'SLEUTEL ERIN' : (h.guardClosed ? 'KAP DICHT ✓' : 'KAP OPEN');
+      filterBtns.forEach(function (b) {
+        b.classList.toggle('is-soft-active', b.getAttribute('data-dd-filter') === activeFilter);
+      });
+
+      if (!elBentoGrid) return;
+
+      const filtered = roster.filter(function (h) {
+        if (activeFilter === 'HELP') return h.appOpen && h.help;
+        if (activeFilter === 'FREEZE') return h.appOpen && h.freeze;
+        if (activeFilter === 'SELF') return h.appOpen && !h.help && !h.freeze;
+        return true;
+      });
+
+      let cardsHtml = filtered.map(function (h) {
+        const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+        let cardCls = 'dd-headset-card';
+        let badgeStyle = 'background:var(--dd-ok-bg);color:var(--dd-ok);border:1px solid var(--dd-ok-border);';
+        let badgeText = '✓ Zelfstandig';
+        let subHint = 'AVG: geen live video · rustig bezig';
+
+        if (!h.appOpen) {
+          badgeStyle = 'background:var(--dd-subtle);color:var(--dd-muted);border:1px solid var(--dd-border);';
+          badgeText = '⏹ App gesloten';
+          subHint = 'Tik om app of oefening klaar te zetten';
+        } else if (h.paused) {
+          badgeStyle = 'background:var(--dd-cobalt-soft);color:var(--dd-cobalt);border:1px solid var(--dd-cobalt);';
+          badgeText = '⏸ Gepauzeerd';
+          subHint = 'Groepspauze actief voor klassikale uitleg';
+        } else if (h.help) {
+          cardCls += ' is-help';
+          badgeStyle = 'background:#F59E0B;color:#0B192C;';
+          badgeText = '🙋 Hulp nodig';
+          subHint = 'Student tikte rechtsboven in VR → meekijken klaar';
+        } else if (h.freeze) {
+          cardCls += ' is-freeze';
+          badgeStyle = 'background:var(--dd-err-bg);color:var(--dd-err);border:1px solid var(--dd-err-border);';
+          badgeText = '⚠ Veiligheidsstop';
+          subHint = 'Sleutel nog in klauwplaat · leest uitleg in VR';
         }
-      }
-      if (elReplayReadout) {
-        if (isClosed) {
-          elReplayReadout.textContent = '⏹ APPS AFGESLOTEN';
-          elReplayReadout.style.color = '#94A3B8';
-        } else if (!h.consentToView) {
-          elReplayReadout.textContent = '🔒 PRIVACY ACTIEF (AVG)';
-          elReplayReadout.style.color = '#38BDF8';
-        } else {
-          elReplayReadout.style.color = '#22C55E';
-          elReplayReadout.textContent = scrubFrame >= 35
-            ? '● MEEKIJKEN OP VERZOEK'
-            : '⏪ SAMEN TERUGKIJKEN (-' + ((35 - scrubFrame) * 0.5).toFixed(1).replace('.', ',') + ' sec)';
+
+        if (h.slot === selectedSlot) {
+          cardCls += ' is-selected';
         }
+
+        return (
+          '<button type="button" class="' + cardCls + '" data-dd-select-slot="' + h.slot + '">' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;">' +
+              '<strong class="mono" style="font-size:13px;">' + h.name + '</strong>' +
+              '<span class="dd-badge" style="' + badgeStyle + '">' + badgeText + '</span>' +
+            '</div>' +
+            '<div style="margin:8px 0 6px 0;">' +
+              '<div style="font-weight:700;font-size:12.5px;line-height:1.3;">' + ex.short + '</div>' +
+              '<div style="font-size:11px;color:var(--dd-muted);margin-top:2px;line-height:1.32;">' + subHint + '</div>' +
+            '</div>' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;width:100%;padding-top:6px;border-top:1px solid var(--dd-border);font-size:11px;color:var(--dd-muted);">' +
+              '<span class="mono">Accu ' + h.battery + '%</span>' +
+              '<span style="color:var(--dd-cobalt);font-weight:700;">Openen →</span>' +
+            '</div>' +
+          '</button>'
+        );
+      }).join('');
+
+      if (currentProfile === 'unlimited' && activeFilter === 'ALL' && customUnlimitedCount < 24) {
+        cardsHtml += (
+          '<button type="button" class="dd-headset-card" id="ddAddExtraHeadsetBtn" style="border-style:dashed;align-items:center;justify-content:center;text-align:center;gap:6px;">' +
+            '<span style="font-size:20px;color:var(--dd-cobalt);font-weight:700;">+</span>' +
+            '<strong style="font-size:12.5px;color:var(--dd-cobalt);">Eigen bril koppelen</strong>' +
+            '<span style="font-size:11px;color:var(--dd-muted);">Geen licentie per bril</span>' +
+          '</button>'
+        );
       }
-      if (elBookmarks) {
-        elBookmarks.innerHTML = h.bookmarks.map(function (b) {
+
+      if (!cardsHtml) {
+        cardsHtml = '<div class="dd-card" style="grid-column:1 / -1;padding:18px;text-align:center;color:var(--dd-muted);font-size:13px;">Geen brillen in dit filter. Klik op <strong>Alle</strong> om het volledige klasoverzicht te zien.</div>';
+      }
+
+      elBentoGrid.innerHTML = cardsHtml;
+
+      elBentoGrid.querySelectorAll('[data-dd-select-slot]').forEach(function (cardBtn) {
+        cardBtn.addEventListener('click', function () {
+          selectedSlot = parseInt(cardBtn.getAttribute('data-dd-select-slot'), 10) || 1;
+          const sel = getSelectedHeadset();
+          stagedExKey = sel.exKey;
+          stagedMode = sel.mode;
+          setTab('LEERLING');
+        });
+      });
+
+      const addBtn = document.getElementById('ddAddExtraHeadsetBtn');
+      if (addBtn) {
+        addBtn.addEventListener('click', function () {
+          if (customUnlimitedCount < 24) {
+            customUnlimitedCount += 1;
+            setProfile('unlimited');
+            setStatusMsg('✓ Bril ' + (customUnlimitedCount < 10 ? '0' + customUnlimitedCount : customUnlimitedCount) + ' gekoppeld op het Docent Dashboard.');
+          }
+        });
+      }
+    }
+
+    function renderTab2() {
+      const roster = getVisibleRoster();
+      const h = getSelectedHeadset();
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+
+      if (elStudentStrip) {
+        elStudentStrip.innerHTML = roster.map(function (item) {
+          const act = item.slot === h.slot;
+          const suffix = (item.appOpen && item.help) ? ' 🙋' : ((item.appOpen && item.freeze) ? ' ⚠' : '');
           return (
-            '<button type="button" class="cmd-btn" data-bm-frame="' + b.frame + '" style="width:auto;padding:0.32rem 0.65rem;">' +
-              (b.warn ? '⚠ ' : '● ') + b.label +
+            '<button type="button" class="dd-pill ' + (act ? 'is-active' : '') + '" data-dd-strip-slot="' + item.slot + '" style="flex-shrink:0;">' +
+              item.name + suffix +
             '</button>'
           );
         }).join('');
-        elBookmarks.querySelectorAll('[data-bm-frame]').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            stopReplayLoop();
-            appsClosed = false;
-            h.appClosed = false;
-            h.consentToView = true;
-            scrubFrame = parseInt(btn.getAttribute('data-bm-frame'), 10);
-            if (elReplaySlider) elReplaySlider.value = String(scrubFrame);
-            updateCockpit();
-            showToast('Samen met de student op ' + h.id + ' teruggespoeld naar een gemarkeerd moment.');
+
+        elStudentStrip.querySelectorAll('[data-dd-strip-slot]').forEach(function (b) {
+          b.addEventListener('click', function () {
+            selectedSlot = parseInt(b.getAttribute('data-dd-strip-slot'), 10) || 1;
+            const nextH = getSelectedHeadset();
+            stagedExKey = nextH.exKey;
+            stagedMode = nextH.mode;
+            renderAll();
           });
         });
       }
 
-      drawBlueprint(h, ratio);
-
-      /* Werk het lokale A4-praktijkoverzicht AVG-vriendelijk bij op brilnummer */
-      const repStudent = document.getElementById('repModalStudent');
-      const repKlas = document.getElementById('repModalKlas');
-      const repReaction = document.getElementById('repModalReaction');
-      const printStudent = document.getElementById('printRepStudent');
-      if (repStudent) repStudent.textContent = h.id + ' (naam pas op papier invullen · AVG)';
-      if (repKlas) repKlas.textContent = 'Draaibank VR · 3 onderdelen';
-      if (repReaction) repReaction.textContent = 'Direct ingedrukt (' + h.reactionSec + ')';
-      if (printStudent) printStudent.textContent = h.id + ' · naam op papier (geen cloudopslag)';
-    }
-
-    if (btnToggleAvg) {
-      btnToggleAvg.addEventListener('click', function () {
-        const h = HEADSETS[selectedIdx];
-        if (appsClosed || h.appClosed) {
-          appsClosed = false;
-          h.appClosed = false;
-          updateCockpit();
-          showToast('Draaibank-app weer opgestart op ' + h.id + '.');
-          return;
-        }
-        h.consentToView = !h.consentToView;
-        if (h.consentToView) {
-          h.status = 'HULP GEVRAAGD';
-          h.statusClass = 'status-warn';
-          showToast('Student op ' + h.id + ' vraagt begeleiding en geeft toestemming om mee te kijken (AVG).');
+      if (btnSimHelp) {
+        if (!h.appOpen) {
+          btnSimHelp.className = 'dd-btn-outline';
+          btnSimHelp.textContent = 'Open eerst de VR-app om ‘Hulp nodig’ te testen';
+        } else if (h.help) {
+          btnSimHelp.className = 'dd-btn-ok';
+          btnSimHelp.textContent = '✓ Hulp afgerond — Sluit meekijken (AVG)';
         } else {
-          h.status = 'BEZIG';
-          h.statusClass = 'status-safe';
-          showToast('Meekijken gesloten op ' + h.id + ' — student werkt weer zelfstandig verder (AVG).');
+          btnSimHelp.className = 'dd-btn-warn';
+          btnSimHelp.textContent = '🙋 Simuleer VR-klik rechtsboven: ‘Hulp nodig’';
         }
-        updateCockpit();
-      });
-    }
+      }
 
-    function launchScenarioForGroup(partKey) {
-      const cfg = PART_CONFIGS[partKey] || PART_CONFIGS['1'];
-      stopReplayLoop();
-      appsClosed = false;
-      groupPaused = false;
-      if (btnGroupPause) btnGroupPause.textContent = '⏸ Pauzeer uitleg';
-      HEADSETS.forEach(function (item) {
-        item.appClosed = false;
-        item.mod = cfg.mod;
-        item.shortPart = cfg.shortPart;
-        item.note = cfg.note;
-        item.chuckKeyIn = false;
-        item.guardClosed = true;
-        item.status = 'BEZIG';
-        item.statusClass = 'status-safe';
-        item.consentToView = false;
-      });
-      updateCockpit();
-      showToast('App & scenario "' + cfg.mod + '" klaarstaan op alle verbonden brillen — studenten werken zelfstandig (AVG).');
-    }
-
-    if (btnStartScenario) {
-      btnStartScenario.addEventListener('click', function () {
-        launchScenarioForGroup('1');
-      });
-    }
-
-    startPartBtns.forEach(function (sBtn) {
-      sBtn.addEventListener('click', function () {
-        const pKey = sBtn.getAttribute('data-start-part');
-        launchScenarioForGroup(pKey);
-      });
-    });
-
-    if (btnCloseApps) {
-      btnCloseApps.addEventListener('click', function () {
-        stopReplayLoop();
-        appsClosed = !appsClosed;
-        if (appsClosed) {
-          HEADSETS.forEach(function (item) {
-            item.consentToView = false;
-          });
-          showToast('Alle apps zijn gezamenlijk en netjes afgesloten — brillen zijn klaar voor de lader of volgende groep.');
+      if (elRightStudentSub) {
+        elRightStudentSub.textContent = h.name + ' · Hulpniveau: ' + h.mode;
+      }
+      if (elAppOpenBadge) {
+        if (h.appOpen) {
+          elAppOpenBadge.style.cssText = 'background:var(--dd-ok-bg);color:var(--dd-ok);border:1px solid var(--dd-ok-border);';
+          elAppOpenBadge.textContent = '✓ VR-App Open';
         } else {
-          HEADSETS.forEach(function (item) {
-            item.appClosed = false;
+          elAppOpenBadge.style.cssText = 'background:var(--dd-subtle);color:var(--dd-muted);border:1px solid var(--dd-border);';
+          elAppOpenBadge.textContent = '⏹ VR-App Gesloten';
+        }
+      }
+
+      if (elExerciseGrid) {
+        elExerciseGrid.innerHTML = DD_EX_ORDER.map(function (k) {
+          const item = DD_EXERCISES[k];
+          const chosen = k === stagedExKey;
+          const running = h.appOpen && k === h.exKey;
+          return (
+            '<button type="button" class="dd-pill ' + (chosen ? 'is-soft-active' : '') + '" data-dd-pick-ex="' + k + '" style="justify-content:space-between;text-align:left;padding:7px 9px;">' +
+              '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + item.short + '</span>' +
+              (running ? '<span class="mono" style="font-size:10px;color:var(--dd-ok);">ACTIEF</span>' : '') +
+            '</button>'
+          );
+        }).join('');
+
+        elExerciseGrid.querySelectorAll('[data-dd-pick-ex]').forEach(function (eb) {
+          eb.addEventListener('click', function () {
+            stagedExKey = eb.getAttribute('data-dd-pick-ex');
+            renderTab2();
           });
-          showToast('Brillen staan weer klaar om een onderdeel op te starten.');
-        }
-        updateCockpit();
-      });
-    }
+        });
+      }
 
-    if (elReplaySlider) {
-      elReplaySlider.addEventListener('input', function () {
-        stopReplayLoop();
-        scrubFrame = parseInt(elReplaySlider.value, 10);
-        updateCockpit();
+      modeBtns.forEach(function (mb) {
+        mb.classList.toggle('is-soft-active', mb.getAttribute('data-dd-mode') === stagedMode);
       });
-    }
 
-    if (btnReplayPlay) {
-      btnReplayPlay.addEventListener('click', function () {
-        const h = HEADSETS[selectedIdx];
-        if (appsClosed || h.appClosed) {
-          showToast('Start eerst de app op ' + h.id + ' om een handeling samen terug te kijken.');
-          return;
-        }
-        if (!h.consentToView) {
-          h.consentToView = true;
-          h.status = 'HULP GEVRAAGD';
-          h.statusClass = 'status-warn';
-        }
-        if (replayInterval) {
-          stopReplayLoop();
-          showToast('Terugkijken even gepauzeerd.');
-          return;
-        }
-        if (scrubFrame >= 35) {
-          scrubFrame = 0;
-          if (elReplaySlider) elReplaySlider.value = '0';
-        }
-        btnReplayPlay.textContent = '⏸ Pauze';
-        showToast('Laatste handeling wordt samen met de student op ' + h.id + ' teruggekeken.');
-        updateCockpit();
-        replayInterval = setInterval(function () {
-          scrubFrame += 1;
-          if (elReplaySlider) elReplaySlider.value = String(scrubFrame);
-          updateCockpit();
-          if (scrubFrame >= 35) {
-            stopReplayLoop();
-            showToast('Terugkijken afgerond op ' + h.id + '.');
+      if (btnStageOne) {
+        const stEx = DD_EXERCISES[stagedExKey] || DD_EXERCISES.OBJ_1;
+        btnStageOne.textContent = '📋 Zet ‘' + stEx.short + '’ Klaar op ' + h.name;
+      }
+
+      /* Linkerkolom: AVG-gate vs. Live Meekijken na klik op ‘Hulp nodig’ in VR */
+      if (elLeftPane) {
+        if (!h.appOpen) {
+          elLeftPane.innerHTML =
+            '<div class="dd-card" style="padding:20px;">' +
+              '<span class="dd-badge mono" style="background:var(--dd-subtle);color:var(--dd-muted);border:1px solid var(--dd-border);margin-bottom:8px;">⏹ VR-APP NOG GESLOTEN</span>' +
+              '<h3 style="font-family:var(--tb-font-display);font-size:17px;margin:4px 0 8px 0;">' + h.name + ' staat klaar in het keuzescherm</h3>' +
+              '<p style="font-size:13px;color:var(--dd-muted);margin:0 0 14px 0;">Open de VR-app op deze bril of kies rechts direct een onderdeel om klaar te zetten zodat de student zonder zoeken kan beginnen.</p>' +
+              '<button type="button" class="dd-btn-primary" id="ddQuickOpenLeftBtn">🚀 VR-App Openen op ' + h.name + '</button>' +
+            '</div>';
+          const qBtn = document.getElementById('ddQuickOpenLeftBtn');
+          if (qBtn) {
+            qBtn.addEventListener('click', function () {
+              h.appOpen = true;
+              setStatusMsg('✓ VR-app geopend op ' + h.name + ' (' + ex.title + ').');
+              renderAll();
+            });
           }
-        }, 180);
-      });
+        } else if (!h.help) {
+          /* AVG-zelfstudiemodus: GEEN live videostream zolang student niet op ‘Hulp nodig’ tikt */
+          elLeftPane.innerHTML =
+            '<div class="dd-card" style="padding:16px;">' +
+              '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-bottom:11px;border-bottom:1px solid var(--dd-border);">' +
+                '<div style="display:flex;align-items:center;gap:8px;">' +
+                  '<span class="dd-badge" style="background:var(--dd-ok-bg);color:var(--dd-ok);border:1px solid var(--dd-ok-border);">🔒 AVG Privacy-by-Design</span>' +
+                  '<strong style="font-size:14px;">' + h.name + ' oefent zelfstandig</strong>' +
+                '</div>' +
+                '<span class="mono" style="font-size:11px;color:var(--dd-muted);">Geen live videostream actief</span>' +
+              '</div>' +
+
+              '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0;">' +
+                '<div style="background:var(--dd-bg);border:1px solid var(--dd-border);border-radius:9px;padding:9px 10px;">' +
+                  '<div class="mono" style="font-size:10.5px;color:var(--dd-muted);">ACTIEF ONDERDEEL</div>' +
+                  '<div style="font-weight:700;font-size:12.5px;margin-top:2px;">' + ex.short + '</div>' +
+                '</div>' +
+                '<div style="background:var(--dd-bg);border:1px solid var(--dd-border);border-radius:9px;padding:9px 10px;">' +
+                  '<div class="mono" style="font-size:10.5px;color:var(--dd-muted);">STATUS IN VR</div>' +
+                  '<div style="font-weight:700;font-size:12.5px;margin-top:2px;color:' + (h.freeze ? 'var(--dd-err)' : 'var(--dd-ok)') + ';">' + (h.freeze ? '⚠ Veiligheidsstop' : '✓ Rustig bezig') + '</div>' +
+                '</div>' +
+                '<div style="background:var(--dd-bg);border:1px solid var(--dd-border);border-radius:9px;padding:9px 10px;">' +
+                  '<div class="mono" style="font-size:10.5px;color:var(--dd-muted);">HULPNIVEAU &amp; ACCU</div>' +
+                  '<div style="font-weight:700;font-size:12.5px;margin-top:2px;">' + h.mode + ' · ' + h.battery + '%</div>' +
+                '</div>' +
+              '</div>' +
+
+              /* Schematisch voorbeeld van het VR-scherm van de student met de knop rechtsboven */
+              '<div style="background:#0F1E33;color:#F8FAFC;border-radius:11px;padding:15px 16px;border:1px solid #253B59;">' +
+                '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px;">' +
+                  '<span class="mono" style="font-size:11px;color:#93C5FD;">SCHERM VAN DE STUDENT IN VR (' + h.name.toUpperCase() + ')</span>' +
+                  '<button type="button" class="dd-btn-warn" id="ddInVrHelpTrigger" style="background:#F59E0B;color:#0B192C;border-color:#F59E0B;padding:5px 11px;font-size:11.5px;">🙋 Hulp nodig (rechtsboven in VR)</button>' +
+                '</div>' +
+                '<p style="font-size:12.5px;color:#CBD5E1;margin:0;line-height:1.5;">' +
+                  'Zolang de student zelfstandig oefent, blijft de videostream uitgeschakeld. Zo voelt elke leerling zich vrij om rustig te oefenen in VR. <strong>Klik hierboven op ‘🙋 Hulp nodig’</strong> om te zien hoe het live meekijkbeeld en de 2D-werktekening op de docenttablet openen.' +
+                '</p>' +
+              '</div>' +
+            '</div>';
+
+          const vrTrig = document.getElementById('ddInVrHelpTrigger');
+          if (vrTrig) {
+            vrTrig.addEventListener('click', function () {
+              h.help = true;
+              enforceSingleHelpStream(h.slot);
+              setStatusMsg('🙋 Student op ' + h.name + ' tikte rechtsboven in VR op ‘Hulp nodig’ — live meekijken geopend.');
+              renderAll();
+            });
+          }
+        } else {
+          /* Student tikte op ‘Hulp nodig’ rechtsboven in VR -> Live Split-Studio actief! */
+          elLeftPane.innerHTML =
+            '<div class="dd-card" style="padding:14px;border:2px solid var(--dd-warn-border);">' +
+              '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:9px 12px;background:var(--dd-warn-bg);border:1px solid var(--dd-warn-border);border-radius:9px;margin-bottom:12px;">' +
+                '<div>' +
+                  '<strong style="font-size:13px;color:var(--dd-warn);">🙋 ' + h.name + ' tikte rechtsboven in VR op ‘Hulp nodig’</strong>' +
+                  '<div style="font-size:11.5px;color:var(--dd-fg);">Live meekijken tijdelijk geopend met toestemming van student (max. 1 bril tegelijk)</div>' +
+                '</div>' +
+                '<button type="button" class="dd-btn-ok" id="ddFinishHelpBtn">✓ Hulp afgerond — Sluit meekijken</button>' +
+              '</div>' +
+
+              '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px;">' +
+                '<span style="font-size:12px;font-weight:700;">Actief: ' + ex.title + '</span>' +
+                '<div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;">' +
+                  '<span class="mono" style="font-size:10.5px;color:var(--dd-muted);">KIJKHOEK:</span>' +
+                  '<button type="button" class="dd-pill ' + (h.camView === 'OVERVIEW_3Q' ? 'is-soft-active' : '') + '" data-dd-cam="OVERVIEW_3Q" style="padding:3px 8px;font-size:11px;">Overzicht</button>' +
+                  '<button type="button" class="dd-pill ' + (h.camView === 'CUT_ZONE' ? 'is-soft-active' : '') + '" data-dd-cam="CUT_ZONE" style="padding:3px 8px;font-size:11px;">Snijzone</button>' +
+                  '<button type="button" class="dd-pill ' + (h.camView === 'CHUCK_CLOSE' ? 'is-soft-active' : '') + '" data-dd-cam="CHUCK_CLOSE" style="padding:3px 8px;font-size:11px;">Drieklauw</button>' +
+                '</div>' +
+              '</div>' +
+
+              '<div class="dd-split-canvases">' +
+                '<div>' +
+                  '<canvas id="ddLiveVrCanvas" width="460" height="270" style="width:100%;height:auto;border-radius:9px;display:block;border:1px solid var(--dd-border);"></canvas>' +
+                '</div>' +
+                '<div>' +
+                  '<canvas id="ddLiveBpCanvas" width="460" height="270" style="width:100%;height:auto;border-radius:9px;display:block;border:1px solid var(--dd-border);cursor:crosshair;" title="Beweeg over de werktekening om de positie af te lezen"></canvas>' +
+                '</div>' +
+              '</div>' +
+              '<p style="font-size:11.5px;color:var(--dd-muted);margin:8px 0 0 0;">' + ex.note + '</p>' +
+            '</div>';
+
+          const finBtn = document.getElementById('ddFinishHelpBtn');
+          if (finBtn) {
+            finBtn.addEventListener('click', function () {
+              h.help = false;
+              h.freeze = false;
+              setStatusMsg('✓ Hulpvraag op ' + h.name + ' afgerond — live meekijken weer netjes gesloten (AVG).');
+              renderAll();
+            });
+          }
+
+          elLeftPane.querySelectorAll('[data-dd-cam]').forEach(function (cb) {
+            cb.addEventListener('click', function () {
+              h.camView = cb.getAttribute('data-dd-cam');
+              renderTab2();
+            });
+          });
+
+          const vrCnv = document.getElementById('ddLiveVrCanvas');
+          const bpCnv = document.getElementById('ddLiveBpCanvas');
+          drawLiveVrScene(vrCnv, h);
+          drawBlueprint2D(bpCnv, h);
+
+          if (bpCnv) {
+            bpCnv.addEventListener('mousemove', function (ev) {
+              const r = bpCnv.getBoundingClientRect();
+              bpHoverNormX = (ev.clientX - r.left) / Math.max(1, r.width);
+              drawBlueprint2D(bpCnv, h);
+            });
+            bpCnv.addEventListener('mouseleave', function () {
+              bpHoverNormX = null;
+              drawBlueprint2D(bpCnv, h);
+            });
+          }
+        }
+      }
+
+      /* Rechterkolom onderkaart: directe begeleidingsknoppen tijdens ‘Hulp nodig’ */
+      if (elContextTools) {
+        if (h.appOpen && h.help) {
+          elContextTools.innerHTML =
+            '<div style="font-family:var(--tb-font-display);font-weight:700;font-size:14px;margin-bottom:6px;">🛠 Directe Hulpknoppen tijdens Meekijken</div>' +
+            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">' +
+              '<button type="button" class="dd-btn-outline" id="ddToolCoolant">💧 Koeling ' + (h.coolant ? 'Uitzetten' : 'Aanzetten') + '</button>' +
+              '<button type="button" class="dd-btn-outline" id="ddToolHeight">📏 Werkhoogte ijken</button>' +
+              '<button type="button" class="dd-btn-outline" id="ddToolResetStop">🔄 Veiligheidsstop vrijgeven</button>' +
+              '<button type="button" class="dd-btn-outline" id="ddToolToRapport">✅ Naar Vrijgave (Tab 3)</button>' +
+            '</div>';
+
+          const bCool = document.getElementById('ddToolCoolant');
+          const bHeight = document.getElementById('ddToolHeight');
+          const bReset = document.getElementById('ddToolResetStop');
+          const bToRap = document.getElementById('ddToolToRapport');
+
+          if (bCool) {
+            bCool.addEventListener('click', function () {
+              h.coolant = !h.coolant;
+              setStatusMsg('💧 Koeling op ' + h.name + ' ' + (h.coolant ? 'ingeschakeld' : 'uitgeschakeld') + '.');
+              renderTab2();
+            });
+          }
+          if (bHeight) {
+            bHeight.addEventListener('click', function () {
+              setStatusMsg('📏 Werkhoogte van de draaibank automatisch afgestemd voor ' + h.name + '.');
+            });
+          }
+          if (bReset) {
+            bReset.addEventListener('click', function () {
+              h.freeze = false;
+              setStatusMsg('✓ Veiligheidsmelding besproken en vrijgegeven op ' + h.name + '.');
+              renderAll();
+            });
+          }
+          if (bToRap) {
+            bToRap.addEventListener('click', function () {
+              setTab('RAPPORT');
+            });
+          }
+        } else {
+          elContextTools.innerHTML =
+            '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">' +
+              '<div>' +
+                '<div style="font-family:var(--tb-font-display);font-weight:700;font-size:13.5px;">✅ Klaar met VR-oefenen?</div>' +
+                '<div style="font-size:12px;color:var(--dd-muted);">Loop samen de 5 punten bij de echte draaibank na op Tabblad 3.</div>' +
+              '</div>' +
+              '<button type="button" class="dd-btn-outline" id="ddJumpToRapportBtn">Naar Tab 3: Vrijgave →</button>' +
+            '</div>';
+          const jBtn = document.getElementById('ddJumpToRapportBtn');
+          if (jBtn) {
+            jBtn.addEventListener('click', function () {
+              setTab('RAPPORT');
+            });
+          }
+        }
+      }
     }
 
-    if (btnGroupPause) {
-      btnGroupPause.addEventListener('click', function () {
-        appsClosed = false;
-        groupPaused = !groupPaused;
-        btnGroupPause.textContent = groupPaused ? '▶ Hervat groep' : '⏸ Pauzeer uitleg';
-        updateCockpit();
-        showToast(groupPaused
-          ? 'Groep even gepauzeerd: alle VR-brillen staan stil voor korte uitleg van de docent.'
-          : 'Oefening hervat: studenten werken weer verder.');
+    function syncA4ChecklistAndHeader() {
+      const h = getSelectedHeadset();
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+
+      if (elA4SlotLabel) elA4SlotLabel.textContent = h.name.toUpperCase() + ' · AVG-BEWUST';
+      if (elA4StudentLine) elA4StudentLine.textContent = h.name + ' (naam pas op papier invullen · AVG)';
+      if (elA4ActiveEx) elA4ActiveEx.textContent = ex.title;
+      if (printRepStudent) {
+        printRepStudent.textContent = h.name + ' · Actief onderdeel: ' + ex.title + ' · Naam student (op papier): ______________________';
+      }
+
+      const total = physChecks.length || 5;
+      const checkedList = [];
+      const summaryLines = [];
+
+      physChecks.forEach(function (chk, idx) {
+        const num = idx + 1;
+        if (chk.checked) {
+          checkedList.push(chk.value);
+          summaryLines.push('<div style="color:#15803D;font-weight:600;">✓ ' + chk.value + '</div>');
+        } else {
+          summaryLines.push('<div style="color:#B45309;">○ Punt ' + num + ': nog samen nalopen bij de echte draaibank</div>');
+        }
       });
+
+      if (elPhysCounter) {
+        elPhysCounter.textContent = checkedList.length + '/' + total + ' afgevinkt' + (checkedList.length === total ? ' ✓' : '');
+      }
+      if (elA4PhysSummary) {
+        elA4PhysSummary.innerHTML = summaryLines.join('');
+      }
+      if (printPhysSummary) {
+        printPhysSummary.textContent = checkedList.length > 0
+          ? ('Afgetekende praktijkpunten bij echte draaibank (' + checkedList.length + '/' + total + '): ' + checkedList.join(' · '))
+          : 'Nog samen bij de echte draaibank langs te lopen: Punt 1 t/m Punt 5';
+      }
     }
 
-    cockpitRoot.querySelectorAll('[data-teacher-cmd]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        const cmd = btn.getAttribute('data-teacher-cmd');
-        const h = HEADSETS[selectedIdx];
-        if (cmd === 'CLOSE_ONE') {
-          stopReplayLoop();
-          h.appClosed = true;
-          h.consentToView = false;
-          updateCockpit();
-          showToast('App op ' + h.id + ' netjes afgesloten — bril kan terug in de lader.');
-          return;
-        }
-        if (cmd === 'COOLANT') {
-          coolantActive = !coolantActive;
-          updateCockpit();
-          showToast('Koeling ' + (coolantActive ? 'aangezet' : 'uitgezet') + ' op ' + h.id + '.');
-          return;
-        }
-        if (cmd === 'AC21') {
-          h.appClosed = false;
-          h.chuckKeyIn = false;
-          h.guardClosed = true;
-          h.status = 'BEZIG';
-          h.statusClass = 'status-safe';
-          h.note = 'Opstelling samen besproken op ' + h.id + ': sleutel terug in houder en kap gesloten.';
-          updateCockpit();
-          showToast('Opstelling besproken op ' + h.id + ' — student kan veilig verder.');
-          return;
-        }
-        const messages = {
-          CALIBRATE: 'Werkhoogte van de draaibank rustig afgestemd op ' + h.id + '.'
-        };
-        showToast(messages[cmd] || ('Begeleidingsactie uitgevoerd op ' + h.id + '.'));
-      });
-    });
-
-    /* A4-Praktijkrapport Modal & Handtekeningveld */
-    const reportModal = document.getElementById('a4ReportModal');
-    const btnCloseReport = document.getElementById('btnCloseReportModal');
-    const btnPrintReport = document.getElementById('btnPrintA4Report');
-    const sigCanvas = document.getElementById('penSignatureCanvas');
-    const btnClearSig = document.getElementById('btnClearSignature');
-    const btnDemoSig = document.getElementById('btnDemoSignature');
-    const sigStatus = document.getElementById('penSignatureStatus');
-    const printSigImg = document.getElementById('printSignaturePreview');
-    const printPhysSummary = document.getElementById('printPhysSummary');
-    const physCounter = document.getElementById('physCheckedCounter');
+    /* Tekenpen-handtekening op Tabblad 3 + live kopie op het A4-voorbeeld */
     let hasSignature = false;
+    let isDrawingSig = false;
 
-    function syncPhysCounter() {
-      if (!reportModal || !physCounter) return;
-      const allChecks = reportModal.querySelectorAll('input[name="physCheck"]');
-      const checked = reportModal.querySelectorAll('input[name="physCheck"]:checked');
-      physCounter.textContent = checked.length + '/' + allChecks.length + ' afgevinkt' + (checked.length === allChecks.length ? ' ✓' : '');
-      physCounter.className = checked.length === allChecks.length
-        ? 'status-badge status-safe'
-        : 'status-badge status-info';
-    }
-
-    if (reportModal) {
-      reportModal.querySelectorAll('input[name="physCheck"]').forEach(function (chk) {
-        chk.addEventListener('change', syncPhysCounter);
-      });
-      syncPhysCounter();
+    function mirrorSignatureToA4() {
+      if (!sigCanvas || !a4SigPreview || !a4SigPreview.getContext) return;
+      const pCtx = a4SigPreview.getContext('2d');
+      pCtx.clearRect(0, 0, a4SigPreview.width, a4SigPreview.height);
+      pCtx.fillStyle = '#FFFFFF';
+      pCtx.fillRect(0, 0, a4SigPreview.width, a4SigPreview.height);
+      if (hasSignature) {
+        pCtx.drawImage(sigCanvas, 0, 0, a4SigPreview.width, a4SigPreview.height);
+      } else {
+        pCtx.fillStyle = '#94A3B8';
+        pCtx.font = '500 11px Inter, sans-serif';
+        pCtx.fillText('(Nog niet ondertekend)', 14, 36);
+      }
     }
 
     function drawSampleSignature() {
       if (!sigCanvas || !sigCanvas.getContext) return;
-      const sctx = sigCanvas.getContext('2d');
-      sctx.clearRect(0, 0, sigCanvas.width, sigCanvas.height);
-      sctx.strokeStyle = '#0B5ED7';
-      sctx.lineWidth = 2.4;
-      sctx.lineCap = 'round';
-      sctx.lineJoin = 'round';
-      sctx.beginPath();
-      sctx.moveTo(38, 74);
-      sctx.bezierCurveTo(68, 22, 98, 86, 134, 44);
-      sctx.bezierCurveTo(156, 20, 170, 78, 206, 56);
-      sctx.bezierCurveTo(244, 34, 290, 68, 355, 48);
-      sctx.stroke();
-      sctx.fillStyle = '#52657C';
-      sctx.font = '500 11px "JetBrains Mono", monospace';
-      sctx.fillText('Getekend door vakdocent · Praktijkvrijgave', 38, 96);
+      const sCtx = sigCanvas.getContext('2d');
+      sCtx.clearRect(0, 0, sigCanvas.width, sigCanvas.height);
+      sCtx.strokeStyle = '#0B5ED7';
+      sCtx.lineWidth = 2.4;
+      sCtx.lineCap = 'round';
+      sCtx.lineJoin = 'round';
+
+      sCtx.beginPath();
+      sCtx.moveTo(44, 78);
+      sCtx.bezierCurveTo(68, 28, 108, 30, 96, 74);
+      sCtx.bezierCurveTo(88, 92, 128, 48, 152, 66);
+      sCtx.bezierCurveTo(174, 82, 198, 42, 224, 64);
+      sCtx.bezierCurveTo(248, 82, 286, 52, 336, 62);
+      sCtx.stroke();
+
+      sCtx.beginPath();
+      sCtx.moveTo(40, 90);
+      sCtx.quadraticCurveTo(188, 78, 356, 86);
+      sCtx.stroke();
+
       hasSignature = true;
-      if (sigStatus) sigStatus.textContent = 'Handtekening vakdocent geplaatst ✓';
+      if (elSigStatus) {
+        elSigStatus.textContent = 'Handtekening vakdocent geplaatst ✓ (teken gerust zelf in het vak)';
+      }
+      mirrorSignatureToA4();
+    }
+
+    function clearSignaturePad() {
+      if (!sigCanvas || !sigCanvas.getContext) return;
+      const sCtx = sigCanvas.getContext('2d');
+      sCtx.clearRect(0, 0, sigCanvas.width, sigCanvas.height);
+      hasSignature = false;
+      if (elSigStatus) {
+        elSigStatus.textContent = 'Zet hieronder met muis, vinger of tekenpen de handtekening voor praktijkvrijgave:';
+      }
+      mirrorSignatureToA4();
     }
 
     if (sigCanvas && sigCanvas.getContext) {
-      const sctx = sigCanvas.getContext('2d');
-      let drawing = false;
-
-      function getPos(e) {
+      const sCtx = sigCanvas.getContext('2d');
+      const getSigPos = function (ev) {
         const rect = sigCanvas.getBoundingClientRect();
-        const scaleX = sigCanvas.width / rect.width;
-        const scaleY = sigCanvas.height / rect.height;
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const scaleX = sigCanvas.width / Math.max(1, rect.width);
+        const scaleY = sigCanvas.height / Math.max(1, rect.height);
         return {
-          x: (clientX - rect.left) * scaleX,
-          y: (clientY - rect.top) * scaleY
+          x: (ev.clientX - rect.left) * scaleX,
+          y: (ev.clientY - rect.top) * scaleY
         };
-      }
+      };
 
-      sigCanvas.addEventListener('pointerdown', function (e) {
-        drawing = true;
-        const p = getPos(e);
-        sctx.strokeStyle = '#0B5ED7';
-        sctx.lineWidth = 2.4;
-        sctx.lineCap = 'round';
-        sctx.lineJoin = 'round';
-        sctx.beginPath();
-        sctx.moveTo(p.x, p.y);
+      sigCanvas.addEventListener('pointerdown', function (ev) {
+        if (!hasSignature) {
+          sCtx.clearRect(0, 0, sigCanvas.width, sigCanvas.height);
+        }
+        isDrawingSig = true;
+        const p = getSigPos(ev);
+        sCtx.strokeStyle = '#0B5ED7';
+        sCtx.lineWidth = 2.4;
+        sCtx.lineCap = 'round';
+        sCtx.lineJoin = 'round';
+        sCtx.beginPath();
+        sCtx.moveTo(p.x, p.y);
+        if (sigCanvas.setPointerCapture) {
+          try { sigCanvas.setPointerCapture(ev.pointerId); } catch (_) { /* ignore */ }
+        }
+      });
+
+      sigCanvas.addEventListener('pointermove', function (ev) {
+        if (!isDrawingSig) return;
+        const p = getSigPos(ev);
+        sCtx.lineTo(p.x, p.y);
+        sCtx.stroke();
         hasSignature = true;
-        if (sigStatus) sigStatus.textContent = 'Handtekening vakdocent geplaatst ✓';
+        if (elSigStatus) {
+          elSigStatus.textContent = 'Handtekening vakdocent geplaatst ✓';
+        }
+        mirrorSignatureToA4();
       });
 
-      sigCanvas.addEventListener('pointermove', function (e) {
-        if (!drawing) return;
-        const p = getPos(e);
-        sctx.lineTo(p.x, p.y);
-        sctx.stroke();
-      });
-
-      ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (evName) {
-        sigCanvas.addEventListener(evName, function () {
-          drawing = false;
-        });
-      });
+      const stopDrawing = function () {
+        isDrawingSig = false;
+      };
+      sigCanvas.addEventListener('pointerup', stopDrawing);
+      sigCanvas.addEventListener('pointercancel', stopDrawing);
+      sigCanvas.addEventListener('pointerleave', stopDrawing);
 
       drawSampleSignature();
     }
 
-    if (btnClearSig && sigCanvas) {
-      btnClearSig.addEventListener('click', function () {
-        sigCanvas.getContext('2d').clearRect(0, 0, sigCanvas.width, sigCanvas.height);
-        hasSignature = false;
-        if (sigStatus) sigStatus.textContent = 'Zet hierboven een handtekening met muis, vinger of tekenpen';
-      });
-    }
+    if (btnDemoSig) btnDemoSig.addEventListener('click', drawSampleSignature);
+    if (btnClearSig) btnClearSig.addEventListener('click', clearSignaturePad);
 
-    if (btnDemoSig) {
-      btnDemoSig.addEventListener('click', drawSampleSignature);
-    }
+    physChecks.forEach(function (chk) {
+      chk.addEventListener('change', syncA4ChecklistAndHeader);
+    });
 
-    function openReportModal() {
-      if (reportModal) {
-        reportModal.classList.add('is-open');
-        syncPhysCounter();
-      }
-    }
-
-    if (btnOpenReport) btnOpenReport.addEventListener('click', openReportModal);
-    if (btnHeroOpenReport) btnHeroOpenReport.addEventListener('click', openReportModal);
-
-    if (btnCloseReport && reportModal) {
-      btnCloseReport.addEventListener('click', function () {
-        reportModal.classList.remove('is-open');
-      });
-      reportModal.addEventListener('click', function (ev) {
-        if (ev.target === reportModal) reportModal.classList.remove('is-open');
-      });
-    }
-
-    if (btnPrintReport) {
-      btnPrintReport.addEventListener('click', function () {
+    if (btnPrintA4) {
+      btnPrintA4.addEventListener('click', function () {
+        syncA4ChecklistAndHeader();
         if (sigCanvas && printSigImg && hasSignature) {
           printSigImg.src = sigCanvas.toDataURL('image/png');
           printSigImg.style.display = 'block';
-        }
-        if (printPhysSummary && reportModal) {
-          const checked = Array.from(reportModal.querySelectorAll('input[name="physCheck"]:checked')).map(function (c) {
-            return c.value;
-          });
-          printPhysSummary.textContent = checked.length > 0
-            ? ('Afgetekende praktijkpunten: ' + checked.join(' · '))
-            : 'Nog samen bij de echte draaibank langs te lopen: Punt 1 t/m Punt 5';
+        } else if (printSigImg) {
+          printSigImg.style.display = 'none';
         }
         window.print();
       });
     }
 
-    updateCockpit();
+    function renderAll() {
+      renderTab1();
+      if (activeTab === 'LEERLING') {
+        renderTab2();
+      }
+      syncA4ChecklistAndHeader();
+      mirrorSignatureToA4();
+    }
+
+    /* Event-listeners voor Tabbladen, Profielen, Filters & Groepsacties */
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setTab(btn.getAttribute('data-dd-tab'));
+      });
+    });
+
+    profileBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setProfile(btn.getAttribute('data-cockpit-profile'));
+      });
+    });
+
+    heroProfileBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setProfile(btn.getAttribute('data-hero-profile'));
+        const simSec = document.getElementById('live-simulator');
+        if (simSec && !isHeadless) {
+          simSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        activeFilter = btn.getAttribute('data-dd-filter');
+        renderTab1();
+      });
+    });
+
+    if (elThemeBtn) {
+      elThemeBtn.addEventListener('click', function () {
+        isDarkTheme = !isDarkTheme;
+        cockpitRoot.classList.toggle('is-dark', isDarkTheme);
+        elThemeBtn.textContent = isDarkTheme ? '☀ Licht' : '☾ Donker';
+      });
+    }
+
+    if (btnOpenGroup) {
+      btnOpenGroup.addEventListener('click', function () {
+        getVisibleRoster().forEach(function (h) {
+          h.appOpen = true;
+          h.paused = false;
+        });
+        setStatusMsg('🚀 VR-app geopend op alle ' + getActiveSlotsCount() + ' brillen in de groep.');
+        renderAll();
+      });
+    }
+
+    if (btnStageGroup) {
+      btnStageGroup.addEventListener('click', function () {
+        const chosenKey = (selGroupEx && DD_EXERCISES[selGroupEx.value]) ? selGroupEx.value : 'OBJ_1';
+        const chosenEx = DD_EXERCISES[chosenKey];
+        getVisibleRoster().forEach(function (h) {
+          h.appOpen = true;
+          h.paused = false;
+          h.exKey = chosenKey;
+          h.freeze = false;
+        });
+        stagedExKey = chosenKey;
+        setStatusMsg('📋 Klaargezet voor alle ' + getActiveSlotsCount() + ' brillen: ' + chosenEx.title + '.');
+        renderAll();
+      });
+    }
+
+    if (btnPauseGroup) {
+      btnPauseGroup.addEventListener('click', function () {
+        const roster = getVisibleRoster();
+        const anyUnpaused = roster.some(function (h) { return h.appOpen && !h.paused; });
+        roster.forEach(function (h) {
+          if (h.appOpen) h.paused = anyUnpaused;
+        });
+        btnPauseGroup.textContent = anyUnpaused ? '▶ Hervat Groep' : '⏸ Pauzeer Groep';
+        setStatusMsg(anyUnpaused
+          ? '⏸ Alle brillen rustig gepauzeerd voor klassikale toelichting door de docent.'
+          : '▶ Groep hervat — studenten oefenen weer verder in VR.');
+        renderAll();
+      });
+    }
+
+    if (btnCloseGroup) {
+      btnCloseGroup.addEventListener('click', function () {
+        getVisibleRoster().forEach(function (h) {
+          h.appOpen = false;
+          h.help = false;
+          h.paused = false;
+        });
+        btnPauseGroup.textContent = '⏸ Pauzeer Groep';
+        setStatusMsg('⏹ Alle VR-apps netjes afgesloten — brillen staan klaar voor de volgende klas.');
+        renderAll();
+      });
+    }
+
+    if (btnSimHelp) {
+      btnSimHelp.addEventListener('click', function () {
+        const h = getSelectedHeadset();
+        if (!h.appOpen) {
+          h.appOpen = true;
+        }
+        h.help = !h.help;
+        if (h.help) {
+          enforceSingleHelpStream(h.slot);
+          setStatusMsg('🙋 Student op ' + h.name + ' tikte rechtsboven in VR op ‘Hulp nodig’ — live meekijkbeeld geopend.');
+        } else {
+          setStatusMsg('✓ Hulpvraag op ' + h.name + ' afgerond — live meekijken weer gesloten (AVG).');
+        }
+        renderAll();
+      });
+    }
+
+    if (btnOpenOne) {
+      btnOpenOne.addEventListener('click', function () {
+        const h = getSelectedHeadset();
+        h.appOpen = true;
+        h.paused = false;
+        setStatusMsg('🚀 VR-app geopend op ' + h.name + '.');
+        renderAll();
+      });
+    }
+
+    if (btnCloseOne) {
+      btnCloseOne.addEventListener('click', function () {
+        const h = getSelectedHeadset();
+        h.appOpen = false;
+        h.help = false;
+        setStatusMsg('⏹ VR-app netjes gesloten op ' + h.name + '.');
+        renderAll();
+      });
+    }
+
+    modeBtns.forEach(function (mb) {
+      mb.addEventListener('click', function () {
+        stagedMode = mb.getAttribute('data-dd-mode');
+        renderTab2();
+      });
+    });
+
+    if (btnStageOne) {
+      btnStageOne.addEventListener('click', function () {
+        const h = getSelectedHeadset();
+        const ex = DD_EXERCISES[stagedExKey] || DD_EXERCISES.OBJ_1;
+        h.appOpen = true;
+        h.paused = false;
+        h.exKey = stagedExKey;
+        h.mode = stagedMode;
+        h.freeze = false;
+        setStatusMsg('📋 Klaargezet op ' + h.name + ': ' + ex.title + ' (' + stagedMode + ').');
+        renderAll();
+      });
+    }
+
+    if (btnHeroReport) {
+      btnHeroReport.addEventListener('click', function () {
+        setTab('RAPPORT');
+        const simSec = document.getElementById('live-simulator');
+        if (simSec) {
+          simSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+
+    renderAll();
 
     const docParams = new URLSearchParams(window.location.search);
     if (docParams.get('rapport') === 'open') {
-      openReportModal();
+      setTab('RAPPORT');
+    } else if (docParams.get('tab') === 'leerling') {
+      setTab('LEERLING');
     }
   }
 
@@ -1795,7 +1976,7 @@
         'Voor wie        : ' + doelgroep + '\n' +
         'Leerdoelen      : ' + goalsList + '\n' +
         'Gewenste vorm   : ' + pakketStatus + '\n' +
-        'Begeleiding     : Gewoon zichtbaar op het 13,1-inch Teacher Dashboard + A4-rapport\n' +
+        'Begeleiding     : Gewoon zichtbaar op het 13,1-inch Docent Dashboard + A4-rapport\n' +
         'Doorlooptijd    : Gemiddeld 6 tot 10 weken van inventarisatie tot gebruik in de les';
 
       return { domein: domein, machine: machine, fullText: fullText };
@@ -1881,13 +2062,13 @@
       annual: 1500,
       firstYearIncluded: true,
       heroImg: 'assets/img/brand/pakket_regietablet_vr_set.webp',
-      heroCaption: 'Optie 1 (€ 10.000,-): Losse 13,1-inch docenttablet voor eigen VR-brillen — opstarten, AVG-meekijken en afsluiten (incl. 1 module)',
+      heroCaption: 'Optie 1 (€ 10.000,-): Losse 13,1-inch docenttablet met Docent Dashboard voor eigen VR-brillen — klaarzetten, AVG-meekijken en afsluiten (incl. 1 module)',
       unitSingle: '1 Losse docenttablet-set (eigen brillen)',
       unitPlural: 'Losse docenttablet-sets (eigen brillen)',
-      hwSub: 'Losse 13,1-inch docenttablet (tekenpen & stevige hoes) om eigen VR-brillen op te starten, AVG-bewust te begeleiden en af te sluiten',
+      hwSub: 'Losse 13,1-inch docenttablet (tekenpen & stevige hoes) met Docent Dashboard om eigen VR-brillen op te starten, AVG-bewust te begeleiden en af te sluiten',
       srvSub: 'Hulp op afstand en software-updates (1e jaar bij de aanschaf inbegrepen)',
       ruleHint: 'Het 1e jaar service zit bij de prijs in; vanaf jaar 2 betaal je € 1.500,- per jaar excl. BTW.',
-      formValue: 'Optie 1: Teacher Dashboard & Eigen Brillen (€ 10.000,- excl. BTW, 1e jr incl., daarna € 1.500,-/jr)'
+      formValue: 'Optie 1: Docent Dashboard & Eigen Brillen (€ 10.000,- excl. BTW, 1e jr incl., daarna € 1.500,-/jr)'
     },
     'optie-2-vr-kar-10': {
       num: '2',
