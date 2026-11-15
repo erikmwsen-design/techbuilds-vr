@@ -3,7 +3,7 @@
  * Onderdelen:
  * 1. Vaste navigatiebalk, leesbalk, mobiele snelbalk, terug-naar-boven & subtiele scroll-animatie
  * 2. Interactieve Hero-tegels & fotowisselaar op het overzicht van VR-applicaties (modules.html)
- * 3. Interactief stappenoverzicht voor Elektrotechniek VR (1–6) én Draaibank VR v2.5.6 (3 onderdelen + sub-views) volgens NL & EU-richtlijnen
+ * 3. Interactief stappenoverzicht voor Elektrotechniek VR (1–6) én Draaibank VR v2.5.7 (3 onderdelen + sub-views) volgens NL & EU-richtlijnen
  * 4. Interactief Docent Dashboard v2.4.0 (multi-app regie, 10/20/eigen brillen, AVG ‘Hulp nodig’-knop met echte VR-renders + A4-rapport)
  * 5. Vakgebied-wisselaar & Maatwerk-overzicht met directe e-mailkoppeling (maatwerk.html)
  * 6. Pakket- en VR-applicatiekeuze (Elektrotechniek VR eerst, extra app + € 5.000,-), meerjarenoverzicht & aanvraagformulier (prijzen-contact.html)
@@ -161,8 +161,8 @@
     },
     modules: {
       img: 'assets/img/draaibank/draaibank_06_vr_keuzemenu_3_onderdelen.webp',
-      alt: 'Vernieuwd XL-startmenu in Draaibank VR v2.5.6 met vector-iconen voor 1. De Buddy Check, 2. Voorbereiden en Veiligheid, 3. Gebruik: 5 Objecten en de knop Hulp nodig rechtsboven',
-      caption: 'Draaibank VR (v2.5.6): 1. De Buddy Check (1-klik sieraden) · 2. Voorbereiden & noodstop · 3. Praktijkgebruik (5 werkstukken in 2 fasen)',
+      alt: 'Vernieuwd XL-startmenu in Draaibank VR v2.5.7 met vector-iconen voor 1. De Buddy Check, 2. Voorbereiden en Veiligheid, 3. Gebruik: 5 Objecten en de knop Hulp nodig rechtsboven',
+      caption: 'Draaibank VR (v2.5.7): 1. De Buddy Check (1-klik sieraden) · 2. Voorbereiden & noodstop · 3. Praktijkgebruik (5 werkstukken in 2 fasen)',
       linkText: 'Bekijk Draaibank VR →',
       linkHref: 'training-draaibank.html'
     },
@@ -225,53 +225,53 @@
   }
 
   /* ------------------------------------------------------------------
-   * 3. Interactief Overzicht Elektrotechniek VR (E1–E6) & Draaibank VR v2.5.6 (3 onderdelen)
+   * 3. Interactief Overzicht Elektrotechniek VR (E1–E6) & Draaibank VR v2.5.7 (3 onderdelen)
    * ------------------------------------------------------------------ */
   const DRAAIBANK_MODULE_ORDER = ['M1', 'M2', 'M3'];
   const DRAAIBANK_MODULES_DATA = {
     M1: {
-      code: 'ONDERDEEL 1 · PERSOONLIJKE VEILIGHEID (BUILD V2.5.6)',
+      code: 'ONDERDEEL 1 · PERSOONLIJKE VEILIGHEID (BUILD V2.5.7)',
       standplaats: 'Persoonlijke veiligheid · Breed 6-tegels scherm rechts',
-      title: 'De Buddy Check (handschoenen uit & 1-klik sieraden)',
-      summary: 'Voordat een student in de buurt van een draaibank komt, controleert hij of zij op het brede 16:10 scherm rechts eerst een medestudent in 3D en brengt daarna de eigen PBM op orde: oranje werkhandschoenen verplicht uittrekken bij Stap 5 en oorbellen, polshorloge en ringen bij Stap 6 met één klik in het bakje Sieraden leggen.',
+      title: 'De Buddy Check (mouwen op, handschoenen uit & 1-klik sieraden)',
+      summary: 'Voordat een student in de buurt van een draaibank komt, controleert hij of zij op het brede 16:10 scherm rechts eerst een medestudent in 3D en brengt alle kleding- en PBM-punten op orde: mouwen bij Stap 4 strak boven de elleboog opstropen (met blote onderarmen), oranje werkhandschoenen verplicht uittrekken bij Stap 5 en oorbellen, polshorloge en ringen bij Stap 6 met één klik in het bakje Sieraden leggen.',
       image: 'assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp',
       altImage: 'assets/img/draaibank/draaibank_00a_buddy_check_start.webp',
-      caption: 'Na de controle (v2.5.6): medestudent gecorrigeerd, werkhandschoenen uit bij Stap 5, oorbellen/horloge/ringen met 1 klik in Sieraden bij Stap 6 en eigen veiligheidsbril op.',
-      altCaption: 'Start van Onderdeel 1 (v2.5.6): 6-tegels scherm rechts, medestudent met los haar en open mouwen, en speler start met oranje werkhandschoenen aan en 3D sieraden om.',
+      caption: 'Na de controle (v2.5.7 · 6/6 groen): mouwen in 3D boven de elleboog opgestroopt, blote onderarmen en handen, werkhandschoenen en sieraden in de bakjes, en eigen veiligheidsbril & S3-schoenen goedgekeurd.',
+      altCaption: 'Start van Onderdeel 1 (v2.5.7): 6-tegels scherm rechts met tegel 4 Mouwen op, medestudent met los haar, losse lange mouwen, oranje werkhandschoenen en 3D sieraden om.',
       hasBuddyToggle: true,
       hasObjectsBox: false,
       gateSafeMsg: 'punten in orde — Student mag door naar Onderdeel 2 bij de draaibank',
       gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de veiligheidspunten aan voor toegang tot Onderdeel 2',
       telRpm: 'Stilstand · 6 tegels',
-      telTol: 'Arbobesluit & 1-klik sieraden',
+      telTol: 'Mouwen op & 1-klik sieraden',
       telPos: 'Rechts 16:10 scherm',
       subViews: [
         {
           img: 'assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp',
-          label: 'Na controle (6/6 gereed)',
-          caption: 'Na de controle (v2.5.6): medestudent gecorrigeerd, werkhandschoenen uit, oorbellen/horloge/ringen met 1 klik in Sieraden en eigen veiligheidsbril op.',
+          label: 'Na controle (6/6 veilig)',
+          caption: 'Na de controle (v2.5.7 · 6/6 groen): mouwen in 3D boven de elleboog opgestroopt, blote onderarmen en handen, werkhandschoenen en sieraden in de bakjes, en eigen PBM op orde.',
           state: 'after'
         },
         {
           img: 'assets/img/draaibank/draaibank_00a_buddy_check_start.webp',
-          label: 'Start (handschoenen & sieraden aan)',
-          caption: 'Start van Onderdeel 1 (v2.5.6): 6-tegels scherm rechts, oranje werkhandschoenen nog aan en subtiele gouden oorbellen, polshorloge en ringen zichtbaar.',
+          label: 'Start (losse mouwen & handschoenen)',
+          caption: 'Start van Onderdeel 1 (v2.5.7): 6-tegels scherm rechts met tegel 4 Mouwen op, losse lange mouwen, oranje werkhandschoenen aan en gouden sieraden zichtbaar.',
           state: 'before'
         }
       ],
       checks: [
-        'Medestudent van top tot teen nalopen op loshangend haar, losse mouwen, sieraden en open schoenen via het brede 6-tegels scherm rechts',
-        'Bij Stap 5 verplicht de eigen oranje werkhandschoenen uittrekken (intrekgevaar) en bij Stap 6 oplichtende 3D oorbellen, polshorloge en ringen met 1 klik op Sieraden afleggen',
-        'Eigen veiligheidsbril opzetten; pas wanneer alle 6 tegels groen zijn, gaat de student door naar de draaibank'
+        'Medestudent in 3D nalopen op bril, gehoorkap, vastgezet haar en bij Stap 4 mouwen strak boven de elleboog opstropen (met zichtbare blote onderarmen)',
+        'Bij Stap 5 verplicht de oranje werkhandschoenen uittrekken (intrekgevaar) en bij Stap 6 oplichtende 3D oorbellen, polshorloge en ringen met 1 klik in bakje Sieraden leggen',
+        'Eigen veiligheidsbril en S3-schoenen controleren; pas wanneer alle 6 tegels groen zijn, opent de knop Naar Draaibank'
       ]
     },
     M2: {
-      code: 'ONDERDEEL 2 · OPBOUWEN, INTERLOCK & NOODSTOP (BUILD V2.5.6)',
+      code: 'ONDERDEEL 2 · OPBOUWEN, INTERLOCK & NOODSTOP (BUILD V2.5.7)',
       standplaats: 'Compacte draaibank · Zittend of staand oefenen',
       title: 'Voorbereiden & veiligheidstraining',
       summary: 'Recht voor de compacte draaibank — met volledig vrij zicht op het 16:10 6-tegels instructiescherm rechts en gespiegelde 3D VR-controllers — oefent de student het veilig vrijmaken, opspannen en ingrijpen volgens (EU) 2023/1230, EN ISO 23125 en EN ISO 13850.',
       image: 'assets/img/draaibank/draaibank_05_vr_veiligheidsstop_m6.webp',
-      caption: 'Onderdeel 2 — Stap 5 (v2.5.6): bank vrijgemaakt, sleutel in houder, kap gesloten, 500 RPM proefdraaien en direct op de rode noodstop drukken bij zichtbare slingering.',
+      caption: 'Onderdeel 2 — Stap 5 (v2.5.7): bank vrijgemaakt, sleutel in houder, kap gesloten, 500 RPM proefdraaien en direct op de rode noodstop drukken bij zichtbare slingering.',
       hasBuddyToggle: false,
       hasObjectsBox: false,
       telRpm: '500 RPM → Noodstop',
@@ -281,17 +281,17 @@
         {
           img: 'assets/img/draaibank/draaibank_05_vr_veiligheidsstop_m6.webp',
           label: 'Stap 5 · Slingering & noodstop',
-          caption: 'Onderdeel 2 — Stap 5 (v2.5.6): proefdraaien op 500 RPM en direct op de noodstop drukken zodra het werkstuk zichtbaar slingert.'
+          caption: 'Onderdeel 2 — Stap 5 (v2.5.7): proefdraaien op 500 RPM en direct op de noodstop drukken zodra het werkstuk zichtbaar slingert.'
         },
         {
           img: 'assets/img/draaibank/draaibank_02_vr_werkplaats_overzicht.webp',
           label: 'Werkplek & 3D-controllers',
-          caption: 'Onderdeel 2 — Overzicht (v2.5.6): compacte draaibank met vrij zicht op het 16:10 6-tegels scherm rechts en gespiegelde 3D-controllers (zittend of staand).'
+          caption: 'Onderdeel 2 — Overzicht (v2.5.7): compacte draaibank met vrij zicht op het 16:10 6-tegels scherm rechts en gespiegelde 3D-controllers (zittend of staand).'
         },
         {
           img: 'assets/img/draaibank/draaibank_01_machine_3d_model.webp',
           label: '3D Draaibank & interlocks',
-          caption: 'Onderdeel 2 — Close-up (v2.5.6): drieklauwplaat met beschermkap-interlock, klauwplaatsleutelhouder, noodstop en handwielen met schaalverdeling.'
+          caption: 'Onderdeel 2 — Close-up (v2.5.7): drieklauwplaat met beschermkap-interlock, klauwplaatsleutelhouder, noodstop en handwielen met schaalverdeling.'
         }
       ],
       checks: [
@@ -301,12 +301,12 @@
       ]
     },
     M3: {
-      code: 'ONDERDEEL 3 · VERPLICHTE 2-FASEN OPBOUW (BUILD V2.5.6)',
+      code: 'ONDERDEEL 3 · VERPLICHTE 2-FASEN OPBOUW (BUILD V2.5.7)',
       standplaats: '5 werkstukken · Fase 1/2 Check + Fase 2/2 Draaien & Meten',
       title: 'Praktijkgebruik: 5 werkstukken in 2 fasen',
       summary: 'In Onderdeel 3 start élk van de vijf werkstukken (3.1 t/m 3.5) bewust op een onvoorbereide draaibank met Fase 1/2 — Voorbereidende check (verplicht), gevolgd door Fase 2/2 — Object draaien, volledige stilstand (0 RPM) afwachten en nameten met de 3D-schuifmaat en 2,5× Nonius-loep.',
       image: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
-      caption: 'Onderdeel 3 — Fase 2/2 (v2.5.6): na de verplichte voorbereidende check draait de student het werkstuk volgens de live werktekening op het 16:10 scherm rechts.',
+      caption: 'Onderdeel 3 — Fase 2/2 (v2.5.7): na de verplichte voorbereidende check draait de student het werkstuk volgens de live werktekening op het 16:10 scherm rechts.',
       hasBuddyToggle: false,
       hasObjectsBox: true,
       telRpm: 'Fase 1/2 + 2/2 → 0 RPM',
@@ -316,17 +316,17 @@
         {
           img: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
           label: 'Fase 2/2 · Trapdraaien & tekening',
-          caption: 'Onderdeel 3 — Fase 2/2 (v2.5.6): werken met handwielen, schaalverdeling en live werktekening nadat Fase 1/2 (voorbereidende check) groen is afgerond.'
+          caption: 'Onderdeel 3 — Fase 2/2 (v2.5.7): werken met handwielen, schaalverdeling en live werktekening nadat Fase 1/2 (voorbereidende check) groen is afgerond.'
         },
         {
           img: 'assets/img/draaibank/draaibank_04_vr_schuifmaat_nameten.webp',
           label: '0 RPM · 3D Schuifmaat + 2,5× loep',
-          caption: 'Onderdeel 3 — Nameten (v2.5.6): pas bij 0 RPM stilstand opent de kap en meet de student bij de klauwplaat na met de 3D-schuifmaat en 2,5× Nonius-loep.'
+          caption: 'Onderdeel 3 — Nameten (v2.5.7): pas bij 0 RPM stilstand opent de kap en meet de student bij de klauwplaat na met de 3D-schuifmaat en 2,5× Nonius-loep.'
         },
         {
           img: 'assets/img/draaibank/draaibank_07_vr_vijf_objecten.webp',
           label: 'XL Keuzemenu · 5 werkstukken',
-          caption: 'Onderdeel 3 — XL Keuzescherm (v2.5.6): keuze uit de 5 oplopende praktijkwerkstukken (3.1 Gladde Paspen t/m 3.5 Centerpen met storing).'
+          caption: 'Onderdeel 3 — XL Keuzescherm (v2.5.7): keuze uit de 5 oplopende praktijkwerkstukken (3.1 Gladde Paspen t/m 3.5 Centerpen met storing).'
         }
       ],
       checks: [
@@ -792,7 +792,7 @@
         key: 'M1',
         domain: 'draaibank',
         short: 'Draaibank · 1. Buddy Check',
-        title: 'Draaibank VR v2.5.6 · 1. De Buddy Check (1-klik sieraden)',
+        title: 'Draaibank VR v2.5.7 · 1. De Buddy Check (1-klik sieraden)',
         vrImg: 'assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp',
         diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 80, rpm: 0,
         note: 'Medestudent in 3D controleren, eigen veiligheidsbril opzetten, werkhandschoenen bij stap 5 uittrekken en 3D-oorbellen, horloge en ringen met 1 klik in het bakje leggen.'
@@ -801,7 +801,7 @@
         key: 'P2',
         domain: 'draaibank',
         short: 'Draaibank · 2. Voorbereiden',
-        title: 'Draaibank VR v2.5.6 · 2. Voorbereiden & noodstop',
+        title: 'Draaibank VR v2.5.7 · 2. Voorbereiden & noodstop',
         vrImg: 'assets/img/draaibank/draaibank_05_vr_veiligheidsstop_m6.webp',
         diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 84, rpm: 500,
         note: 'Bank vrijmaken, spanningsloos opspannen, klauwplaatsleutel direct terug in houder, beschermkap sluiten en bij slingerend werkstuk direct de noodstop indrukken.'
@@ -810,7 +810,7 @@
         key: 'OBJ_1',
         domain: 'draaibank',
         short: 'Draaibank · 3.1 Gladde Paspen',
-        title: 'Draaibank VR v2.5.6 · 3.1 Gladde Paspen (Fase 1/2 + 2/2 · Ø 29,4 mm)',
+        title: 'Draaibank VR v2.5.7 · 3.1 Gladde Paspen (Fase 1/2 + 2/2 · Ø 29,4 mm)',
         vrImg: 'assets/img/draaibank/draaibank_04_vr_schuifmaat_nameten.webp',
         diaStart: 30.0, diaTarget: 29.4, stepTarget: null, lenMm: 76, rpm: 500,
         note: 'Verplichte Fase 1/2 voorbereidende check op onvoorbereide bank, gevolgd door Fase 2/2 draaien naar Ø 29,4 mm, wachten tot 0 RPM en nameten met 2,5× Nonius-loep.'
@@ -819,7 +819,7 @@
         key: 'OBJ_3',
         domain: 'draaibank',
         short: 'Draaibank · 3.3 Getrapte As',
-        title: 'Draaibank VR v2.5.6 · 3.3 Getrapte As (Fase 1/2 + 2/2 · Ø 29,4 & 28,0 mm)',
+        title: 'Draaibank VR v2.5.7 · 3.3 Getrapte As (Fase 1/2 + 2/2 · Ø 29,4 & 28,0 mm)',
         vrImg: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
         diaStart: 30.0, diaTarget: 29.4, stepTarget: 28.0, lenMm: 90, rpm: 710,
         note: 'Eerst Fase 1/2 voorbereidende check afronden; daarna twee diameters volgens werktekening draaien (Ø 29,4 mm en trap Ø 28,0 mm over 34 mm lengte).'
@@ -828,7 +828,7 @@
         key: 'OBJ_5',
         domain: 'draaibank',
         short: 'Draaibank · 3.5 Centerpen',
-        title: 'Draaibank VR v2.5.6 · 3.5 Centerpen (Fase 1/2 + 2/2 · met storing)',
+        title: 'Draaibank VR v2.5.7 · 3.5 Centerpen (Fase 1/2 + 2/2 · met storing)',
         vrImg: 'assets/img/draaibank/draaibank_02_vr_werkplaats_overzicht.webp',
         diaStart: 30.0, diaTarget: 28.4, stepTarget: null, lenMm: 82, rpm: 500,
         note: 'Fase 1/2 voorbereidende check + Fase 2/2 draaien naar Ø 28,4 mm en rustig uitschakelen wanneer halverwege de machinelamp uitvalt.'
@@ -874,9 +874,9 @@
         cardTitle: '✅ 5-Punts Praktijkvrijgave (Echte Draaibank op School)',
         cardIntro: 'Loop deze vijf vaste veiligheidspunten samen met de student na bij de echte draaibank in het praktijklokaal:',
         boxTitle: 'PRAKTIJKVRIJGAVE ECHTE DRAAIBANK:',
-        appSub: 'Draaibank VR v2.5.6 · Algemene voorbereiding (NL & EU-richtlijnen) · Docent Dashboard v2.4.0',
-        prepName: 'Draaibank VR v2.5.6 (Machinerichtlijn & EN ISO 23125)',
-        printTitle: 'TechBuilds VR — Praktijkoverzicht & Vrijgave (Draaibank VR v2.5.6)',
+        appSub: 'Draaibank VR v2.5.7 · Algemene voorbereiding (NL & EU-richtlijnen) · Docent Dashboard v2.4.0',
+        prepName: 'Draaibank VR v2.5.7 (Machinerichtlijn & EN ISO 23125)',
+        printTitle: 'TechBuilds VR — Praktijkoverzicht & Vrijgave (Draaibank VR v2.5.7)',
         items: [
           { val: 'Punt 1: Veiligheidsbril op, mouwen strak, werkhandschoenen uit en sieraden af', html: '<strong>Punt 1:</strong> Veiligheidsbril op, mouwen strak, werkhandschoenen uit en sieraden af' },
           { val: 'Punt 2: Noodstop, hoofdschakelaar en beschermkappen op echte draaibank aangewezen', html: '<strong>Punt 2:</strong> Noodstop, hoofdschakelaar en beschermkappen op echte draaibank aangewezen' },
@@ -1150,7 +1150,7 @@
       ctx.font = '600 11px Inter, sans-serif';
       const rightStat = ex.domain === 'elektro'
         ? (h.paused ? 'Gepauzeerd' : (ex.voltageV + ' V · NEN 3140'))
-        : (h.paused ? '0 RPM' : (ex.rpm + ' RPM · v2.5.6'));
+        : (h.paused ? '0 RPM' : (ex.rpm + ' RPM · v2.5.7'));
       ctx.fillText('1e-persoon VR · ' + h.name + ' · ' + rightStat, 18, 28);
 
       ctx.fillStyle = '#F59E0B';
@@ -1290,7 +1290,7 @@
         return;
       }
 
-      /* 2D Werktekening Draaibank VR v2.5.6 */
+      /* 2D Werktekening Draaibank VR v2.5.7 */
       ctx.fillStyle = '#0B192C';
       ctx.font = '700 11.5px "Space Grotesk", sans-serif';
       ctx.fillText('2D WERKTEKENING · ' + ex.short.toUpperCase(), 20, 29);
@@ -2318,13 +2318,13 @@
     },
     draaibank: {
       fee: 0,
-      sub: '1 VR-applicatie inbegrepen: Draaibank VR (v2.5.6) — 3 onderdelen (Buddy Check, Voorbereiden & 5 werkstukken)',
+      sub: '1 VR-applicatie inbegrepen: Draaibank VR (v2.5.7) — 3 onderdelen (Buddy Check, Voorbereiden & 5 werkstukken)',
       feeText: '€ 0,- (inbegrepen)',
       formValue: 'Draaibank VR — Algemene voorbereiding draaibank (inbegrepen)'
     },
     beide: {
       fee: EXTRA_MODULE_PRICE,
-      sub: 'Elektrotechniek VR + Draaibank VR (v2.5.6) samen op dezelfde docenttablet en VR-brillen',
+      sub: 'Elektrotechniek VR + Draaibank VR (v2.5.7) samen op dezelfde docenttablet en VR-brillen',
       feeText: '+ € 5.000,- (eenmalig)',
       formValue: 'Beide modules: Draaibank VR + Elektrotechniek VR (+ € 5.000,- eenmalig excl. BTW)'
     }
@@ -2494,7 +2494,7 @@
 
       if (showBanner && elSelectedBanner && elSelectedBannerTitle) {
         const curMod = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'elektro';
-        const modSuffix = curMod === 'beide' ? ' + extra VR-applicatie (€ 5.000,-)' : (curMod === 'elektro' ? ' · Elektrotechniek VR' : ' · Draaibank VR v2.5.6');
+        const modSuffix = curMod === 'beide' ? ' + extra VR-applicatie (€ 5.000,-)' : (curMod === 'elektro' ? ' · Elektrotechniek VR' : ' · Draaibank VR v2.5.7');
         elSelectedBannerTitle.textContent = '✓ ' + pkg.bannerTitle + modSuffix;
         elSelectedBanner.style.display = 'flex';
       }
