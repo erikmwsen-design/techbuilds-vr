@@ -1,12 +1,12 @@
 /**
- * TechBuilds VR — Interactieve Website Logica (v2.5)
+ * TechBuilds VR — Interactieve Website Logica (v2.7.0)
  * Onderdelen:
  * 1. Vaste navigatiebalk, leesbalk, mobiele snelbalk, terug-naar-boven & subtiele scroll-animatie
- * 2. Interactieve Hero-tegels & fotowisselaar op de modulepagina (modules.html)
- * 3. Interactief stappenoverzicht voor Draaibank VR (3 onderdelen) én Elektrotechniek VR (1–6) volgens NL & EU-richtlijnen
- * 4. Interactief Docent Dashboard v2.4.0 (lichte Blueprint-UI in 3 tabbladen + AVG ‘Hulp nodig’-knop + A4-rapport)
+ * 2. Interactieve Hero-tegels & fotowisselaar op het overzicht van VR-applicaties (modules.html)
+ * 3. Interactief stappenoverzicht voor Elektrotechniek VR (1–6) én Draaibank VR v2.5.6 (3 onderdelen + sub-views) volgens NL & EU-richtlijnen
+ * 4. Interactief Docent Dashboard v2.4.0 (multi-app regie, 10/20/eigen brillen, AVG ‘Hulp nodig’-knop met echte VR-renders + A4-rapport)
  * 5. Vakgebied-wisselaar & Maatwerk-overzicht met directe e-mailkoppeling (maatwerk.html)
- * 6. Pakket- en modulekeuze (losse extra module + € 5.000,-), meerjarenoverzicht & aanvraagformulier (prijzen-contact.html)
+ * 6. Pakket- en VR-applicatiekeuze (Elektrotechniek VR eerst, extra app + € 5.000,-), meerjarenoverzicht & aanvraagformulier (prijzen-contact.html)
  */
 
 (function () {
@@ -140,24 +140,31 @@
   const HERO_SCENES = {
     praktijklokaal: {
       img: 'assets/img/brand/hero_techbuilds_vr_werkplaats.webp',
-      alt: 'Praktijklokaal waar een student met een VR-bril oefent voor de draaibank terwijl de vakdocent begeleidt met de docenttablet',
-      caption: 'Algemene praktijkvoorbereiding volgens NL- en EU-richtlijnen · geen typetraining · AVG-vriendelijk begeleiden',
-      linkText: 'Alle modules →',
+      alt: 'Modern technisch praktijklokaal voor elektrotechniek, installatietechniek en mechatronica met studenten in VR en een vakdocent met het Docent Dashboard op de tablet',
+      caption: 'Technische VR-applicaties volgens NL- en EU-richtlijnen · geen typetraining · AVG-vriendelijk begeleiden',
+      linkText: 'Alle VR-applicaties →',
       linkHref: 'modules.html'
-    },
-    modules: {
-      img: 'assets/img/draaibank/draaibank_06_vr_keuzemenu_3_onderdelen.webp',
-      alt: 'Startmenu in de Draaibank VR-app met de 3 onderdelen: 1. De Buddy Check, 2. Voorbereiden en Veiligheid, 3. Gebruik: 5 Objecten',
-      caption: 'Draaibank VR: 1. De Buddy Check · 2. Voorbereiden & veiligheid · 3. Praktijkgebruik (5 werkstukken)',
-      linkText: 'Bekijk Draaibank VR →',
-      linkHref: 'training-draaibank.html'
     },
     elektro: {
       img: 'assets/img/elektro/hero_elektro_werkplaats.webp',
       alt: 'Elektrotechnieklokaal waar een student met een VR-bril oefent bij een meterkast en schakelkast',
-      caption: 'Elektrotechniek VR (NEN 3140 & EN 50110): veilig afschakelen, vergrendelen en tweepolig nameten bij meterkast en schakelkast',
+      caption: 'Elektrotechniek VR (NEN 3140 & EN 50110): veilig afschakelen, vergrendelen en tweepolig 0 V nameten bij meterkast en schakelkast',
       linkText: 'Bekijk Elektrotechniek VR →',
       linkHref: 'training-elektrotechniek.html'
+    },
+    tablet: {
+      img: 'assets/img/dashboard/dashboard_01_klasoverzicht_v2_4.webp',
+      alt: 'Tabblad 1 Klasoverzicht van het lichte Docent Dashboard v2.4.0 op de 13,1-inch docenttablet met 10 genummerde brillen en keuze tussen VR-applicaties',
+      caption: 'Docent Dashboard v2.4.0: meerdere VR-applicaties klaarzetten, pas meekijken zodra een student rechtsboven in VR op ‘Hulp nodig’ tikt (AVG) en gezamenlijk afsluiten',
+      linkText: 'Bekijk het Docent Dashboard →',
+      linkHref: 'docentapp-tablet.html#live-simulator'
+    },
+    modules: {
+      img: 'assets/img/draaibank/draaibank_06_vr_keuzemenu_3_onderdelen.webp',
+      alt: 'Vernieuwd XL-startmenu in Draaibank VR v2.5.6 met vector-iconen voor 1. De Buddy Check, 2. Voorbereiden en Veiligheid, 3. Gebruik: 5 Objecten en de knop Hulp nodig rechtsboven',
+      caption: 'Draaibank VR (v2.5.6): 1. De Buddy Check (1-klik sieraden) · 2. Voorbereiden & noodstop · 3. Praktijkgebruik (5 werkstukken in 2 fasen)',
+      linkText: 'Bekijk Draaibank VR →',
+      linkHref: 'training-draaibank.html'
     },
     kar: {
       img: 'assets/img/hardware/hardware_02_mobiele_vr_kar_10_en_tablet.webp',
@@ -165,13 +172,6 @@
       caption: 'Slechts één gewoon stopcontact nodig · ingebouwde wifi- en 5G-verbinding · los van de school-wifi',
       linkText: 'Bekijk de VR-Karren →',
       linkHref: 'prijzen-contact.html?optie=2#pakket-keuze'
-    },
-    tablet: {
-      img: 'assets/img/dashboard/dashboard_01_klasoverzicht_v2_4.webp',
-      alt: 'Tabblad 1 Klasoverzicht van het lichte Docent Dashboard v2.4.0 op de 13,1-inch docenttablet met genummerde brillen en AVG-vriendelijke knop Hulp nodig',
-      caption: 'Docent Dashboard v2.4.0: oefeningen klaarzetten, pas meekijken zodra een student rechtsboven in VR op ‘Hulp nodig’ tikt (AVG) en gezamenlijk afsluiten',
-      linkText: 'Bekijk het Docent Dashboard →',
-      linkHref: 'docentapp-tablet.html#live-simulator'
     }
   };
 
@@ -180,7 +180,7 @@
     const elHeroImg = document.getElementById('heroStageImg');
     const elHeroCaption = document.getElementById('heroSceneCaption');
     const elHeroLink = document.getElementById('heroSceneLink');
-    let currentHeroScene = 'modules';
+    let currentHeroScene = 'elektro';
     let switchTimer = null;
 
     function setHeroScene(sceneKey) {
@@ -225,66 +225,114 @@
   }
 
   /* ------------------------------------------------------------------
-   * 3. Interactief Overzicht Draaibank VR (3 onderdelen) & Elektrotechniek VR (E1–E6)
+   * 3. Interactief Overzicht Elektrotechniek VR (E1–E6) & Draaibank VR v2.5.6 (3 onderdelen)
    * ------------------------------------------------------------------ */
   const DRAAIBANK_MODULE_ORDER = ['M1', 'M2', 'M3'];
   const DRAAIBANK_MODULES_DATA = {
     M1: {
-      code: 'ONDERDEEL 1 · PERSOONLIJKE VEILIGHEID',
-      standplaats: 'Persoonlijke veiligheid · Vóór de draaibank',
-      title: 'De Buddy Check (PBM & kledingkeuring)',
-      summary: 'Voordat een student in de buurt van een draaibank komt, controleert hij of zij eerst een medestudent in 3D op zes verplichte aandachtspunten en brengt daarna de eigen beschermingsmiddelen op orde volgens de Nederlandse en Europese werkplaatsregels.',
+      code: 'ONDERDEEL 1 · PERSOONLIJKE VEILIGHEID (BUILD V2.5.6)',
+      standplaats: 'Persoonlijke veiligheid · Breed 6-tegels scherm rechts',
+      title: 'De Buddy Check (handschoenen uit & 1-klik sieraden)',
+      summary: 'Voordat een student in de buurt van een draaibank komt, controleert hij of zij op het brede 16:10 scherm rechts eerst een medestudent in 3D en brengt daarna de eigen PBM op orde: oranje werkhandschoenen verplicht uittrekken bij Stap 5 en oorbellen, polshorloge en ringen bij Stap 6 met één klik in het bakje Sieraden leggen.',
       image: 'assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp',
       altImage: 'assets/img/draaibank/draaibank_00a_buddy_check_start.webp',
-      caption: 'Na de controle: medestudent gecorrigeerd, eigen veiligheidsbril op en werkhandschoenen verplicht uitgetrokken.',
-      altCaption: 'Vóór de controle: loshangend haar, sieraden om de pols en werkhandschoenen aan bij draaiende delen.',
+      caption: 'Na de controle (v2.5.6): medestudent gecorrigeerd, werkhandschoenen uit bij Stap 5, oorbellen/horloge/ringen met 1 klik in Sieraden bij Stap 6 en eigen veiligheidsbril op.',
+      altCaption: 'Start van Onderdeel 1 (v2.5.6): 6-tegels scherm rechts, medestudent met los haar en open mouwen, en speler start met oranje werkhandschoenen aan en 3D sieraden om.',
       hasBuddyToggle: true,
       hasObjectsBox: false,
       gateSafeMsg: 'punten in orde — Student mag door naar Onderdeel 2 bij de draaibank',
       gateWarnMsg: 'punten gecontroleerd — Vink alle 4 de veiligheidspunten aan voor toegang tot Onderdeel 2',
-      telRpm: 'Stilstand (vooraf)',
-      telTol: 'Arbobesluit & PBM',
-      telPos: 'Vaste plek · 2 knoppen',
+      telRpm: 'Stilstand · 6 tegels',
+      telTol: 'Arbobesluit & 1-klik sieraden',
+      telPos: 'Rechts 16:10 scherm',
+      subViews: [
+        {
+          img: 'assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp',
+          label: 'Na controle (6/6 gereed)',
+          caption: 'Na de controle (v2.5.6): medestudent gecorrigeerd, werkhandschoenen uit, oorbellen/horloge/ringen met 1 klik in Sieraden en eigen veiligheidsbril op.',
+          state: 'after'
+        },
+        {
+          img: 'assets/img/draaibank/draaibank_00a_buddy_check_start.webp',
+          label: 'Start (handschoenen & sieraden aan)',
+          caption: 'Start van Onderdeel 1 (v2.5.6): 6-tegels scherm rechts, oranje werkhandschoenen nog aan en subtiele gouden oorbellen, polshorloge en ringen zichtbaar.',
+          state: 'before'
+        }
+      ],
       checks: [
-        'Medestudent van top tot teen nalopen op los haar, openstaande mouwen, sieraden, gehoorbescherming en veiligheidsschoenen',
-        'Zelf een veiligheidsbril opzetten en werkhandschoenen verplicht uittrekken vanwege intrekgevaar bij draaiende delen',
-        'Pas wanneer alle punten kloppen, gaat de student door naar de draaibank'
+        'Medestudent van top tot teen nalopen op loshangend haar, losse mouwen, sieraden en open schoenen via het brede 6-tegels scherm rechts',
+        'Bij Stap 5 verplicht de eigen oranje werkhandschoenen uittrekken (intrekgevaar) en bij Stap 6 oplichtende 3D oorbellen, polshorloge en ringen met 1 klik op Sieraden afleggen',
+        'Eigen veiligheidsbril opzetten; pas wanneer alle 6 tegels groen zijn, gaat de student door naar de draaibank'
       ]
     },
     M2: {
-      code: 'ONDERDEEL 2 · OPBOUWEN, OPSPANNEN & NOODSTOP',
-      standplaats: 'Aan de conventionele draaibank',
+      code: 'ONDERDEEL 2 · OPBOUWEN, INTERLOCK & NOODSTOP (BUILD V2.5.6)',
+      standplaats: 'Compacte draaibank · Zittend of staand oefenen',
       title: 'Voorbereiden & veiligheidstraining',
-      summary: 'Recht voor de draaibank oefent de student het veilig klaarmaken van de werkplek en het direct ingrijpen bij gevaar — gewoontes die volgens de Europese Machinerichtlijn, EN ISO 23125 en EN ISO 13850 op elke draaibank gelden.',
+      summary: 'Recht voor de compacte draaibank — met volledig vrij zicht op het 16:10 6-tegels instructiescherm rechts en gespiegelde 3D VR-controllers — oefent de student het veilig vrijmaken, opspannen en ingrijpen volgens (EU) 2023/1230, EN ISO 23125 en EN ISO 13850.',
       image: 'assets/img/draaibank/draaibank_05_vr_veiligheidsstop_m6.webp',
-      caption: 'Onderdeel 2: bank vrijmaken, spanningsloos opspannen, sleutel direct terugplaatsen, 500 RPM instellen en direct de noodstop indrukken bij slingering.',
+      caption: 'Onderdeel 2 — Stap 5 (v2.5.6): bank vrijgemaakt, sleutel in houder, kap gesloten, 500 RPM proefdraaien en direct op de rode noodstop drukken bij zichtbare slingering.',
       hasBuddyToggle: false,
       hasObjectsBox: false,
       telRpm: '500 RPM → Noodstop',
-      telTol: 'EN ISO 23125 & 13850',
-      telPos: 'Sleutel direct in houder',
+      telTol: '(EU) 2023/1230 & ISO 23125',
+      telPos: 'Zittend of staand',
+      subViews: [
+        {
+          img: 'assets/img/draaibank/draaibank_05_vr_veiligheidsstop_m6.webp',
+          label: 'Stap 5 · Slingering & noodstop',
+          caption: 'Onderdeel 2 — Stap 5 (v2.5.6): proefdraaien op 500 RPM en direct op de noodstop drukken zodra het werkstuk zichtbaar slingert.'
+        },
+        {
+          img: 'assets/img/draaibank/draaibank_02_vr_werkplaats_overzicht.webp',
+          label: 'Werkplek & 3D-controllers',
+          caption: 'Onderdeel 2 — Overzicht (v2.5.6): compacte draaibank met vrij zicht op het 16:10 6-tegels scherm rechts en gespiegelde 3D-controllers (zittend of staand).'
+        },
+        {
+          img: 'assets/img/draaibank/draaibank_01_machine_3d_model.webp',
+          label: '3D Draaibank & interlocks',
+          caption: 'Onderdeel 2 — Close-up (v2.5.6): drieklauwplaat met beschermkap-interlock, klauwplaatsleutelhouder, noodstop en handwielen met schaalverdeling.'
+        }
+      ],
       checks: [
-        'Los gereedschap van het machinebed halen, rondom de spil controleren en het werkstuk spanningsloos kort opspannen',
+        'Los gereedschap van het machinebed halen, vrij zicht op het 6-tegels instructiescherm rechts houden en het werkstuk spanningsloos kort opspannen',
         'De klauwplaatsleutel direct terug in de houder plaatsen en de beschermkap sluiten (anders start de draaibank niet)',
-        'Passend toerental (500 RPM) instellen, proefdraaien en direct op de rode noodstop drukken bij zichtbare slingering'
+        'Comfortabel zittend of staand oefenen met gespiegelde 3D-controllers, 500 RPM instellen en direct de noodstop indrukken bij slingering'
       ]
     },
     M3: {
-      code: 'ONDERDEEL 3 · ZELFSTANDIG OEFENEN & NAMETEN',
-      standplaats: '5 oplopende praktijkwerkstukken',
-      title: 'Praktijkgebruik: 5 werkstukken draaien en meten',
-      summary: 'In het derde onderdeel past de student alle veiligheidsregels zelfstandig toe op vijf oplopende praktijkopdrachten met werktekening — inclusief rustig wachten tot de klauwplaat volledig stilstaat (0 RPM) voordat er met de schuifmaat wordt gemeten.',
+      code: 'ONDERDEEL 3 · VERPLICHTE 2-FASEN OPBOUW (BUILD V2.5.6)',
+      standplaats: '5 werkstukken · Fase 1/2 Check + Fase 2/2 Draaien & Meten',
+      title: 'Praktijkgebruik: 5 werkstukken in 2 fasen',
+      summary: 'In Onderdeel 3 start élk van de vijf werkstukken (3.1 t/m 3.5) bewust op een onvoorbereide draaibank met Fase 1/2 — Voorbereidende check (verplicht), gevolgd door Fase 2/2 — Object draaien, volledige stilstand (0 RPM) afwachten en nameten met de 3D-schuifmaat en 2,5× Nonius-loep.',
       image: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
-      caption: 'Onderdeel 3: zelfstandig werken met handwielen, schaalverdeling en werktekening, gevolgd door nameten met de schuifmaat bij volledige stilstand.',
+      caption: 'Onderdeel 3 — Fase 2/2 (v2.5.6): na de verplichte voorbereidende check draait de student het werkstuk volgens de live werktekening op het 16:10 scherm rechts.',
       hasBuddyToggle: false,
       hasObjectsBox: true,
-      telRpm: '500 / 1000 → 0 RPM',
-      telTol: '5 werkstukken + schuifmaat',
-      telPos: 'Meten bij stilstand',
+      telRpm: 'Fase 1/2 + 2/2 → 0 RPM',
+      telTol: '3D Schuifmaat + 2,5× loep',
+      telPos: '5 werkstukken · AVG',
+      subViews: [
+        {
+          img: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
+          label: 'Fase 2/2 · Trapdraaien & tekening',
+          caption: 'Onderdeel 3 — Fase 2/2 (v2.5.6): werken met handwielen, schaalverdeling en live werktekening nadat Fase 1/2 (voorbereidende check) groen is afgerond.'
+        },
+        {
+          img: 'assets/img/draaibank/draaibank_04_vr_schuifmaat_nameten.webp',
+          label: '0 RPM · 3D Schuifmaat + 2,5× loep',
+          caption: 'Onderdeel 3 — Nameten (v2.5.6): pas bij 0 RPM stilstand opent de kap en meet de student bij de klauwplaat na met de 3D-schuifmaat en 2,5× Nonius-loep.'
+        },
+        {
+          img: 'assets/img/draaibank/draaibank_07_vr_vijf_objecten.webp',
+          label: 'XL Keuzemenu · 5 werkstukken',
+          caption: 'Onderdeel 3 — XL Keuzescherm (v2.5.6): keuze uit de 5 oplopende praktijkwerkstukken (3.1 Gladde Paspen t/m 3.5 Centerpen met storing).'
+        }
+      ],
       checks: [
-        'Keuze uit 5 opbouwende werkstukken: van een eenvoudige gladde paspen tot een getrapte as en een storingsopdracht',
-        'Pas de kap openen en nameten met de schuifmaat nadat de klauwplaat na het stoppen volledig stilstaat (0 RPM)',
-        'Spanen veilig verwijderen met spanenhaak en kwast en de draaibank netjes achterlaten'
+        'Elk werkstuk begint verplicht met Fase 1/2 — Voorbereidende check (6 tegels op een onvoorbereide bank), zodat veilig voorbereiden een vaste gewoonte wordt',
+        'In Fase 2/2 draait de student het gekozen werkstuk volgens de werktekening en wacht rustig tot de klauwplaat volledig stilstaat (0 RPM)',
+        'Nauwkeurig nameten bij de klauwplaat met de 3D-schuifmaat en 2,5× Nonius-loep, en spanen veilig verwijderen met spanenhaak en kwast'
       ]
     }
   };
@@ -412,6 +460,7 @@
 
     let activeModKey = FIRST_MOD_KEY;
     let m1State = 'after';
+    let activeSubViewIdx = 0;
 
     const elStepCounter = document.getElementById('modStepCounter');
     const elStandplaatsHint = document.getElementById('modStandplaatsHint');
@@ -423,6 +472,7 @@
     const elTitle = document.getElementById('modViewTitle');
     const elSummary = document.getElementById('modViewSummary');
     const elImg = document.getElementById('modViewImg');
+    const elSubViewBar = document.getElementById('modSubViewBar');
     const elCaption = document.getElementById('modViewCaption');
     const elTelRpm = document.getElementById('modTelRpm');
     const elTelTol = document.getElementById('modTelTol');
@@ -436,6 +486,44 @@
     const elM1GateBanner = document.getElementById('m1GateBanner');
     const jumpModuleBtns = document.querySelectorAll('[data-jump-module]');
 
+    function renderSubViews(m) {
+      if (!elSubViewBar) return;
+      if (!m || !Array.isArray(m.subViews) || m.subViews.length === 0) {
+        elSubViewBar.style.display = 'none';
+        elSubViewBar.innerHTML = '';
+        return;
+      }
+      elSubViewBar.style.display = 'flex';
+      elSubViewBar.innerHTML = m.subViews.map(function (sv, idx) {
+        const isAct = idx === activeSubViewIdx;
+        return (
+          '<button type="button" class="studio-subview-pill' + (isAct ? ' is-active' : '') + '" data-subview-idx="' + idx + '">' +
+            sv.label +
+          '</button>'
+        );
+      }).join('');
+
+      elSubViewBar.querySelectorAll('[data-subview-idx]').forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          const idx = parseInt(pill.getAttribute('data-subview-idx'), 10) || 0;
+          const sv = m.subViews[idx];
+          if (!sv) return;
+          activeSubViewIdx = idx;
+          if (sv.state && activeModKey === FIRST_MOD_KEY) {
+            m1State = sv.state;
+            m1Chips.forEach(function (c) {
+              c.classList.toggle('is-checked', sv.state === 'after');
+            });
+            syncM1View();
+          } else {
+            if (elImg) elImg.src = sv.img;
+            if (elCaption) elCaption.textContent = sv.caption;
+            renderSubViews(m);
+          }
+        });
+      });
+    }
+
     function syncM1View() {
       const m = MODULES_DATA[FIRST_MOD_KEY];
       const checkedCount = Array.from(m1Chips).filter(function (c) {
@@ -443,6 +531,10 @@
       }).length;
       const totalChips = m1Chips.length || 4;
       const isBefore = m1State === 'before';
+
+      if (Array.isArray(m.subViews) && m.subViews.length >= 2) {
+        activeSubViewIdx = isBefore ? 1 : 0;
+      }
 
       if (elImg && activeModKey === FIRST_MOD_KEY) {
         elImg.src = isBefore ? m.altImage : m.image;
@@ -465,12 +557,16 @@
           elM1GateBanner.textContent = '⚠ ' + checkedCount + '/' + totalChips + ' ' + m.gateWarnMsg;
         }
       }
+      if (activeModKey === FIRST_MOD_KEY) {
+        renderSubViews(m);
+      }
     }
 
     function renderModule(key) {
       const m = MODULES_DATA[key];
       if (!m) return;
       activeModKey = key;
+      activeSubViewIdx = (key === FIRST_MOD_KEY && m1State === 'before' && Array.isArray(m.subViews) && m.subViews.length >= 2) ? 1 : 0;
       const idx = MODULE_ORDER.indexOf(key);
       const stepNum = idx >= 0 ? idx + 1 : 1;
 
@@ -515,6 +611,8 @@
       }
       if (key === FIRST_MOD_KEY) {
         syncM1View();
+      } else {
+        renderSubViews(m);
       }
     }
 
@@ -598,28 +696,28 @@
   }
 
   /* ------------------------------------------------------------------
-   * 4. Docent Dashboard v2.4.0 (Lichte Blueprint-UI · 3 Tabbladen · AVG ‘Hulp nodig’)
+   * 4. Docent Dashboard v2.4.0 (Lichte Blueprint-UI · Multi-App · 3 Tabbladen · AVG ‘Hulp nodig’)
    * ------------------------------------------------------------------ */
   const DD_HERO_SHOTS = {
     '1': {
       img: 'assets/img/dashboard/dashboard_01_klasoverzicht_v2_4.webp',
-      alt: 'Tabblad 1 Klasoverzicht van het lichte Docent Dashboard v2.4.0 met 10 genummerde VR-brillen, groepsknoppen voor opstarten en klaarzetten en oranje melding bij Hulp nodig',
-      caption: '<strong>Tab 1 — Klasoverzicht:</strong> apps openen, oefening klaarzetten voor de groep en direct zien wie rechtsboven in VR op ‘Hulp nodig’ tikt.'
+      alt: 'Tabblad 1 Klasoverzicht van het lichte Docent Dashboard v2.4.0 met 10 genummerde VR-brillen (Bril 01 t/m Bril 10), keuze uit Elektrotechniek VR en Draaibank VR en oranje melding bij Hulp nodig',
+      caption: '<strong>Tab 1 — Klasoverzicht (Bril 01 t/m 10):</strong> VR-applicaties openen, een oefening klaarzetten voor de groep en direct zien wie rechtsboven in VR op ‘Hulp nodig’ tikt.'
     },
     '2': {
       img: 'assets/img/dashboard/dashboard_02_avg_zelfstudie_klaarzetten_v2_4.webp',
-      alt: 'Tabblad 2 Leerling en Klaarzetten in AVG-zelfstudiemodus zonder live videobeeld zolang de student niet op Hulp nodig heeft getikt',
-      caption: '<strong>Tab 2a — Zelfstandig (AVG):</strong> geen ongevraagde videostream; de docent ziet alleen het actieve onderdeel en zet oefeningen klaar.'
+      alt: 'Tabblad 2 Leerling en Klaarzetten met 10 genummerde brillen in AVG-zelfstudiemodus zonder live videobeeld zolang de student niet op Hulp nodig heeft getikt',
+      caption: '<strong>Tab 2a — Zelfstandig (AVG):</strong> geen ongevraagde videostream; de docent ziet per brilnummer (01–10) alleen het actieve onderdeel en zet VR-applicaties klaar.'
     },
     '3': {
       img: 'assets/img/dashboard/dashboard_03_live_meekijken_hulp_nodig_v2_4.webp',
-      alt: 'Tabblad 2 Live meekijken geopend nadat de student rechtsboven in VR op Hulp nodig tikte, met 1st-person VR-beeld naast de lichte 2D-werktekening',
-      caption: '<strong>Tab 2b — Na ‘Hulp nodig’ in VR:</strong> live meekijkbeeld (max. 1 bril tegelijk) naast de 2D-werktekening en groene knop ‘Hulp afgerond’.'
+      alt: 'Tabblad 2 Live meekijken geopend nadat de student rechtsboven in VR op Hulp nodig tikte, met 1e-persoons VR-beeld naast het 2D-schema of de werktekening',
+      caption: '<strong>Tab 2b — Na ‘Hulp nodig’ in VR:</strong> live 1e-persoons VR-beeld (max. 1 bril tegelijk) naast het 2D-schema of de werktekening en groene knop ‘Hulp afgerond’.'
     },
     '4': {
       img: 'assets/img/dashboard/dashboard_04_vrijgave_a4_rapport_v2_4.webp',
-      alt: 'Tabblad 3 Vrijgave en A4 Rapport met 5-punts controlelijst voor de echte draaibank, handtekeningveld voor de tekenpen en A4-voorbeeld',
-      caption: '<strong>Tab 3 — Vrijgave &amp; A4 Rapport:</strong> 5 vaste veiligheidspunten bij de echte draaibank nalopen, ondertekenen met de tekenpen en lokaal printen.'
+      alt: 'Tabblad 3 Vrijgave en A4 Rapport met geoefende onderdelen, 5-punts controlelijst voor de echte installatie of machine, handtekeningveld voor de tekenpen en A4-voorbeeld',
+      caption: '<strong>Tab 3 — Vrijgave &amp; A4 Rapport:</strong> geoefende onderdelen en 5 vaste veiligheidspunten bij de echte kast of machine nalopen, ondertekenen met de tekenpen en lokaal printen.'
     }
   };
 
@@ -660,58 +758,167 @@
   const cockpitRoot = document.getElementById('docentCockpitSim');
   if (cockpitRoot) {
     const DD_EXERCISES = {
-      TOUR: {
-        key: 'TOUR', short: '0. Wegwijs (8 delen)',
-        title: 'Wegwijs op de draaibank (8 onderdelen)',
-        diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 80, rpm: 0,
-        note: 'Korte interactieve rondleiding langs vaste kop, beschermkap, klauwplaatsleutel, sledes en noodstop.'
+      EL_1: {
+        key: 'EL_1',
+        domain: 'elektro',
+        short: 'Elektro · 1. Buddy Check',
+        title: 'Elektrotechniek VR · 1. Buddy Check & 1000V-set',
+        vrImg: 'assets/img/elektro/elektro_00b_buddy_check_na.webp',
+        voltageV: 230,
+        circuitCode: 'Q4 · KRACHTGROEP 400/230 V',
+        note: 'Sieraden en horloge afdoen, veiligheidsbril opzetten en het 1000V-geïsoleerde gereedschap plus de tweepolige spanningzoeker vooraf controleren (NEN 3140).'
+      },
+      EL_3: {
+        key: 'EL_3',
+        domain: 'elektro',
+        short: 'Elektro · 3. Vergrendelen (LOTO)',
+        title: 'Elektrotechniek VR · 3. Scheiden & vergrendelen (LOTO)',
+        vrImg: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
+        voltageV: 0,
+        circuitCode: 'Q0 + Q4 · HOOFDSCHAKELAAR 0 + HANGSLOT',
+        note: 'Belasting rustig afschakelen, de juiste groep en hoofdschakelaar op 0 zetten en direct vergrendelen met persoonlijk hangslot en naamkaart (EN 50110).'
+      },
+      EL_4: {
+        key: 'EL_4',
+        domain: 'elektro',
+        short: 'Elektro · 4. Tweepolig 0 V',
+        title: 'Elektrotechniek VR · 4. Tweepolig nameten (0 V)',
+        vrImg: 'assets/img/elektro/elektro_02_tweepolig_meten.webp',
+        voltageV: 0,
+        circuitCode: 'Q4 · L1-L2-L3-N-PE = 0,0 V',
+        note: 'Tweepolige spanningzoeker vooraf en achteraf op een bekende spanningsbron testen en tussen alle geleiders onderling én tegen aarde 0 V aantonen.'
       },
       M1: {
-        key: 'M1', short: '1. De Buddy Check',
-        title: '1. De Buddy Check (PBM & kleding)',
+        key: 'M1',
+        domain: 'draaibank',
+        short: 'Draaibank · 1. Buddy Check',
+        title: 'Draaibank VR v2.5.6 · 1. De Buddy Check (1-klik sieraden)',
+        vrImg: 'assets/img/draaibank/draaibank_00b_buddy_check_compleet.webp',
         diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 80, rpm: 0,
-        note: 'Medestudent in 3D controleren, eigen veiligheidsbril opzetten en werkhandschoenen uittrekken.'
+        note: 'Medestudent in 3D controleren, eigen veiligheidsbril opzetten, werkhandschoenen bij stap 5 uittrekken en 3D-oorbellen, horloge en ringen met 1 klik in het bakje leggen.'
       },
       P2: {
-        key: 'P2', short: '2. Voorbereiden',
-        title: '2. Voorbereiden & veiligheidstraining',
+        key: 'P2',
+        domain: 'draaibank',
+        short: 'Draaibank · 2. Voorbereiden',
+        title: 'Draaibank VR v2.5.6 · 2. Voorbereiden & noodstop',
+        vrImg: 'assets/img/draaibank/draaibank_05_vr_veiligheidsstop_m6.webp',
         diaStart: 30.0, diaTarget: 30.0, stepTarget: null, lenMm: 84, rpm: 500,
-        note: 'Bank vrijmaken, spanningsloos opspannen, klauwplaatsleutel direct terug in houder, kap sluiten en noodstop.'
+        note: 'Bank vrijmaken, spanningsloos opspannen, klauwplaatsleutel direct terug in houder, beschermkap sluiten en bij slingerend werkstuk direct de noodstop indrukken.'
       },
       OBJ_1: {
-        key: 'OBJ_1', short: '3.1 Gladde Paspen',
-        title: '3.1 Gladde Paspen (Ø 29,4 mm)',
+        key: 'OBJ_1',
+        domain: 'draaibank',
+        short: 'Draaibank · 3.1 Gladde Paspen',
+        title: 'Draaibank VR v2.5.6 · 3.1 Gladde Paspen (Fase 1/2 + 2/2 · Ø 29,4 mm)',
+        vrImg: 'assets/img/draaibank/draaibank_04_vr_schuifmaat_nameten.webp',
         diaStart: 30.0, diaTarget: 29.4, stepTarget: null, lenMm: 76, rpm: 500,
-        note: 'Langsdraaien van Ø 30,0 naar Ø 29,4 mm, uitloop naar 0 RPM afwachten en nameten met de schuifmaat.'
-      },
-      OBJ_2: {
-        key: 'OBJ_2', short: '3.2 Afstandsbus',
-        title: '3.2 Afstandsbus (Kopvlak + Ø 29,0 mm)',
-        diaStart: 30.0, diaTarget: 29.0, stepTarget: null, lenMm: 64, rpm: 500,
-        note: 'Kopvlak vlakken en buitendiameter draaien naar Ø 29,0 mm met koeling aan.'
+        note: 'Verplichte Fase 1/2 voorbereidende check op onvoorbereide bank, gevolgd door Fase 2/2 draaien naar Ø 29,4 mm, wachten tot 0 RPM en nameten met 2,5× Nonius-loep.'
       },
       OBJ_3: {
-        key: 'OBJ_3', short: '3.3 Getrapte As',
-        title: '3.3 Getrapte As (Ø 29,4 & Ø 28,0 mm)',
+        key: 'OBJ_3',
+        domain: 'draaibank',
+        short: 'Draaibank · 3.3 Getrapte As',
+        title: 'Draaibank VR v2.5.6 · 3.3 Getrapte As (Fase 1/2 + 2/2 · Ø 29,4 & 28,0 mm)',
+        vrImg: 'assets/img/draaibank/draaibank_03_vr_trapdraaien_werktekening.webp',
         diaStart: 30.0, diaTarget: 29.4, stepTarget: 28.0, lenMm: 90, rpm: 710,
-        note: 'Twee diameters volgens werktekening draaien (Ø 29,4 mm en trap Ø 28,0 mm over 34 mm lengte).'
-      },
-      OBJ_4: {
-        key: 'OBJ_4', short: '3.4 Aluminium Rol',
-        title: '3.4 Aluminium Rol (Ø 28,6 mm)',
-        diaStart: 30.0, diaTarget: 28.6, stepTarget: null, lenMm: 72, rpm: 1000,
-        note: 'Hoger toerental (1000 RPM) op aluminium, beitelwissel en spanen veilig verwijderen.'
+        note: 'Eerst Fase 1/2 voorbereidende check afronden; daarna twee diameters volgens werktekening draaien (Ø 29,4 mm en trap Ø 28,0 mm over 34 mm lengte).'
       },
       OBJ_5: {
-        key: 'OBJ_5', short: '3.5 Centerpen (storing)',
-        title: '3.5 Centerpen (met storing · Ø 28,4 mm)',
+        key: 'OBJ_5',
+        domain: 'draaibank',
+        short: 'Draaibank · 3.5 Centerpen',
+        title: 'Draaibank VR v2.5.6 · 3.5 Centerpen (Fase 1/2 + 2/2 · met storing)',
+        vrImg: 'assets/img/draaibank/draaibank_02_vr_werkplaats_overzicht.webp',
         diaStart: 30.0, diaTarget: 28.4, stepTarget: null, lenMm: 82, rpm: 500,
-        note: 'Rustig handelen en veilig uitschakelen wanneer halverwege de machinelamp uitvalt.'
+        note: 'Fase 1/2 voorbereidende check + Fase 2/2 draaien naar Ø 28,4 mm en rustig uitschakelen wanneer halverwege de machinelamp uitvalt.'
       }
     };
-    const DD_EX_ORDER = ['TOUR', 'M1', 'P2', 'OBJ_1', 'OBJ_2', 'OBJ_3', 'OBJ_4', 'OBJ_5'];
+    const DD_EX_ORDER = ['EL_1', 'EL_3', 'EL_4', 'M1', 'P2', 'OBJ_1', 'OBJ_3', 'OBJ_5'];
 
-    const DEFAULT_EX_CYCLE = ['OBJ_1', 'P2', 'OBJ_3', 'OBJ_2', 'P2', 'M1', 'OBJ_4', 'OBJ_1', 'OBJ_5', 'TOUR'];
+    const DEFAULT_EX_CYCLE = ['EL_4', 'EL_3', 'OBJ_3', 'EL_1', 'P2', 'M1', 'OBJ_1', 'EL_4', 'OBJ_5', 'EL_3'];
+
+    const DD_DOMAIN_PHYS = {
+      elektro: {
+        cardTitle: '✅ 5-Punts Praktijkvrijgave (Echte Meterkast of Schakelkast)',
+        cardIntro: 'Loop deze vijf vaste veiligheidspunten samen met de student na bij de echte oefenkast of verdeler in het praktijklokaal:',
+        boxTitle: 'PRAKTIJKVRIJGAVE ECHTE SCHAKELKAST:',
+        appSub: 'Elektrotechniek VR · Algemene voorbereiding (NL & EU-richtlijnen) · Docent Dashboard v2.4.0',
+        prepName: 'Elektrotechniek VR (NEN 3140 & EN 50110)',
+        printTitle: 'TechBuilds VR — Praktijkoverzicht & Vrijgave (Elektrotechniek VR)',
+        items: [
+          { val: 'Punt 1: Veiligheidsbril op, sieraden af en 1000V-gereedschap gecontroleerd', html: '<strong>Punt 1:</strong> Veiligheidsbril op, sieraden af en 1000V-gereedschap gecontroleerd' },
+          { val: 'Punt 2: Juiste groep en installatieschema op jullie schakelkast aangewezen', html: '<strong>Punt 2:</strong> Juiste groep en installatieschema op jullie schakelkast aangewezen' },
+          { val: 'Punt 3: Hoofdschakelaar op 0 en eigen hangslot met naamkaart geplaatst', html: '<strong>Punt 3:</strong> Hoofdschakelaar op 0 en eigen hangslot met naamkaart geplaatst' },
+          { val: 'Punt 4: Tweepolige spanningzoeker vooraf en achteraf getest (0 V aangetoond)', html: '<strong>Punt 4:</strong> Tweepolige spanningzoeker vooraf en achteraf getest (0 V aangetoond)' },
+          { val: 'Punt 5: Naastgelegen delen afgeschermd en vrijgegeven door vakdocent', html: '<strong>Punt 5:</strong> Naastgelegen delen afgeschermd en vrijgegeven door vakdocent' }
+        ],
+        rowsHtml:
+          '<tr>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">1–2 · Buddy &amp; Schema</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;">Sieraden af, 1000V-gereedschap gecontroleerd &amp; installatieschema gelezen</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;color:#15803D;font-weight:700;">✓ Doorlopen</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">3 · Vergrendelen (LOTO)</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;">Belasting afgeschakeld, hoofdschakelaar op 0 &amp; persoonlijk hangslot geplaatst</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;color:#15803D;font-weight:700;">✓ Doorlopen</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">4–6 · Nameten &amp; Afronden</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;">Tweepolig 0 V aangetoond (voor/na-test), naastgelegen delen afgeschermd</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;color:#0B5ED7;font-weight:700;">✓ Geoefend</td>' +
+          '</tr>'
+      },
+      draaibank: {
+        cardTitle: '✅ 5-Punts Praktijkvrijgave (Echte Draaibank op School)',
+        cardIntro: 'Loop deze vijf vaste veiligheidspunten samen met de student na bij de echte draaibank in het praktijklokaal:',
+        boxTitle: 'PRAKTIJKVRIJGAVE ECHTE DRAAIBANK:',
+        appSub: 'Draaibank VR v2.5.6 · Algemene voorbereiding (NL & EU-richtlijnen) · Docent Dashboard v2.4.0',
+        prepName: 'Draaibank VR v2.5.6 (Machinerichtlijn & EN ISO 23125)',
+        printTitle: 'TechBuilds VR — Praktijkoverzicht & Vrijgave (Draaibank VR v2.5.6)',
+        items: [
+          { val: 'Punt 1: Veiligheidsbril op, mouwen strak, werkhandschoenen uit en sieraden af', html: '<strong>Punt 1:</strong> Veiligheidsbril op, mouwen strak, werkhandschoenen uit en sieraden af' },
+          { val: 'Punt 2: Noodstop, hoofdschakelaar en beschermkappen op echte draaibank aangewezen', html: '<strong>Punt 2:</strong> Noodstop, hoofdschakelaar en beschermkappen op echte draaibank aangewezen' },
+          { val: 'Punt 3: Werkstuk spanningsloos opgespannen en klauwplaatsleutel direct teruggehangen', html: '<strong>Punt 3:</strong> Werkstuk spanningsloos opgespannen en klauwplaatsleutel direct teruggehangen' },
+          { val: 'Punt 4: Juist toerental gekozen op echte bank en vrije loop gecontroleerd', html: '<strong>Punt 4:</strong> Juist toerental gekozen op echte bank en vrije loop gecontroleerd' },
+          { val: 'Punt 5: Wachten op 0 RPM stilstand vóór meten met schuifmaat (vrijgegeven door docent)', html: '<strong>Punt 5:</strong> Wachten op 0 RPM stilstand vóór meten met schuifmaat (vrijgegeven)' }
+        ],
+        rowsHtml:
+          '<tr>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">1 · De Buddy Check</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;">3D-medestudent gecontroleerd, bril op, handschoenen uit &amp; 1-klik sieradenbakje</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;color:#15803D;font-weight:700;">✓ Doorlopen</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">2 · Voorbereiden &amp; Noodstop</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;">Bank vrijgemaakt, sleutel direct in houder, kap dicht &amp; noodstop geoefend</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;color:#15803D;font-weight:700;">✓ Doorlopen</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;font-weight:700;">3 · Werkstuk (Fase 1/2 + 2/2)</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;">Verplichte voorbereidende check + draaien op maat &amp; meten bij 0 RPM (Nonius 2,5×)</td>' +
+            '<td style="padding:6px 8px;border:1px solid #DCE6F1;color:#0B5ED7;font-weight:700;">✓ Geoefend</td>' +
+          '</tr>'
+      }
+    };
+
+    /* Preload echte VR-renders voor het live meekijkpaneel op Tabblad 2 */
+    const ddVrImgCache = {};
+    function getPreloadedVrImage(srcPath) {
+      if (!srcPath) return null;
+      if (ddVrImgCache[srcPath]) return ddVrImgCache[srcPath];
+      const img = new Image();
+      ddVrImgCache[srcPath] = img;
+      img.onload = function () {
+        const liveCnv = document.getElementById('ddLiveVrCanvas');
+        if (liveCnv && activeTab === 'LEERLING') {
+          drawLiveVrScene(liveCnv, getSelectedHeadset());
+        }
+      };
+      img.src = srcPath;
+      return img;
+    }
 
     function makeHeadset(slotNum) {
       const padded = slotNum < 10 ? ('0' + slotNum) : String(slotNum);
@@ -726,7 +933,8 @@
         exKey: exKey,
         mode: slotNum <= 2 ? 'Stap-voor-stap' : 'Begeleid',
         battery: 96 - ((slotNum * 3) % 24),
-        coolant: exKey === 'OBJ_2' || exKey === 'OBJ_3',
+        coolant: exKey === 'OBJ_3',
+        testerChecked: true,
         carriageX: 46 + ((slotNum * 7) % 36),
         camView: 'OVERVIEW_3Q'
       };
@@ -742,10 +950,11 @@
     let activeTab = 'KLAS';
     let activeFilter = 'ALL';
     let selectedSlot = 1;
-    let stagedExKey = 'OBJ_1';
+    let stagedExKey = 'EL_4';
     let stagedMode = 'Begeleid';
     let isDarkTheme = false;
     let bpHoverNormX = null;
+    let lastChecklistDomain = 'elektro';
 
     const elSubtitle = document.getElementById('ddSubtitleLine');
     const elStatusText = document.getElementById('ddStatusText');
@@ -785,7 +994,13 @@
     const elContextTools = document.getElementById('ddContextToolsCard');
 
     const physChecks = cockpitRoot.querySelectorAll('input[name="physCheck"]');
+    const elPhysCardTitle = document.getElementById('ddPhysCardTitle');
+    const elPhysCardIntro = document.getElementById('ddPhysCardIntro');
     const elPhysCounter = document.getElementById('physCheckedCounter');
+    const elA4AppSub = document.getElementById('ddA4AppSub');
+    const elA4PrepName = document.getElementById('ddA4PrepName');
+    const elA4TableBody = document.getElementById('ddA4TableBody');
+    const elA4PhysBoxTitle = document.getElementById('ddA4PhysBoxTitle');
     const elA4SlotLabel = document.getElementById('ddA4SlotLabel');
     const elA4StudentLine = document.getElementById('ddA4StudentLine');
     const elA4ActiveEx = document.getElementById('ddA4ActiveEx');
@@ -798,6 +1013,7 @@
     const btnPrintA4 = document.getElementById('btnPrintA4Report');
     const btnHeroReport = document.getElementById('tabletHeroReportBtn');
 
+    const printRepTitle = document.getElementById('printRepTitle');
     const printRepStudent = document.getElementById('printRepStudent');
     const printPhysSummary = document.getElementById('printPhysSummary');
     const printSigImg = document.getElementById('printSignaturePreview');
@@ -851,9 +1067,9 @@
       });
       if (elSubtitle) {
         if (profKey === 'kar10') {
-          elSubtitle.textContent = 'TechBuilds VR · 13,1-inch docenttablet · VR-Kar 10 (geen leerlingaccounts)';
+          elSubtitle.textContent = 'TechBuilds VR · 13,1-inch docenttablet · VR-Kar 10 (Bril 01 t/m 10 · geen leerlingaccounts)';
         } else if (profKey === 'kar20') {
-          elSubtitle.textContent = 'TechBuilds VR · 13,1-inch docenttablet · VR-Kar 20 (geen leerlingaccounts)';
+          elSubtitle.textContent = 'TechBuilds VR · 13,1-inch docenttablet · VR-Kar 20 (Bril 01 t/m 20 · geen leerlingaccounts)';
         } else {
           elSubtitle.textContent = 'TechBuilds VR · Losse 13,1-inch docenttablet · Eigen brillen (' + customUnlimitedCount + ' gekoppeld)';
         }
@@ -875,133 +1091,68 @@
       const ctx = canvas.getContext('2d');
       const w = canvas.width;
       const ht = canvas.height;
-      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.EL_4;
+      const vrImg = getPreloadedVrImage(ex.vrImg);
 
-      /* Lichte, rustige VR-werkplaatsachtergrond */
+      /* Donkere achtergrond tijdens laden + zoom-ondersteuning */
       const sky = ctx.createLinearGradient(0, 0, 0, ht);
-      sky.addColorStop(0, '#1B2E47');
-      sky.addColorStop(0.58, '#132338');
-      sky.addColorStop(1, '#0C1726');
+      sky.addColorStop(0, '#162840');
+      sky.addColorStop(1, '#0B1726');
       ctx.fillStyle = sky;
       ctx.fillRect(0, 0, w, ht);
-
-      /* Subtiel werkplaatsraster achterwand */
-      ctx.strokeStyle = 'rgba(148, 163, 184, 0.10)';
-      ctx.lineWidth = 1;
-      for (let gx = 0; gx < w; gx += 36) {
-        ctx.beginPath();
-        ctx.moveTo(gx, 0);
-        ctx.lineTo(gx, ht * 0.65);
-        ctx.stroke();
-      }
 
       const zoom = h.camView === 'CUT_ZONE' ? 1.24 : (h.camView === 'CHUCK_CLOSE' ? 1.18 : 1.0);
       ctx.save();
       if (zoom > 1.0) {
-        const focusX = h.camView === 'CHUCK_CLOSE' ? w * 0.28 : w * 0.56;
-        const focusY = ht * 0.54;
+        const focusX = h.camView === 'CHUCK_CLOSE' ? w * 0.32 : w * 0.54;
+        const focusY = ht * 0.52;
         ctx.translate(focusX, focusY);
         ctx.scale(zoom, zoom);
         ctx.translate(-focusX, -focusY);
       }
 
-      /* Draaibankbed */
-      ctx.fillStyle = '#334155';
-      ctx.fillRect(28, 184, w - 56, 44);
-      ctx.fillStyle = '#64748B';
-      ctx.fillRect(28, 178, w - 56, 8);
-
-      /* Vaste kop links */
-      ctx.fillStyle = '#1E3A5F';
-      ctx.fillRect(26, 82, 92, 102);
-      ctx.strokeStyle = '#38BDF8';
-      ctx.lineWidth = 1.2;
-      ctx.strokeRect(26, 82, 92, 102);
-
-      /* Noodstopknop op vaste kop */
-      ctx.fillStyle = '#FACC15';
-      ctx.beginPath();
-      ctx.arc(62, 146, 13, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = '#DC2626';
-      ctx.beginPath();
-      ctx.arc(62, 146, 9, 0, Math.PI * 2);
-      ctx.fill();
-
-      /* Drieklauwplaat */
-      ctx.fillStyle = '#94A3B8';
-      ctx.fillRect(118, 98, 36, 72);
-      ctx.fillStyle = '#CBD5E1';
-      ctx.fillRect(146, 102, 12, 14);
-      ctx.fillRect(146, 152, 12, 14);
-
-      /* Werkstuk (cilinder met eventuele trap) */
-      const wpLenPx = Math.round(ex.lenMm * 1.65);
-      const wpDiaPx = Math.round(ex.diaTarget * 1.18);
-      const wpTop = Math.round(134 - wpDiaPx / 2);
-      const metalGrad = ctx.createLinearGradient(0, wpTop, 0, wpTop + wpDiaPx);
-      metalGrad.addColorStop(0, '#E2E8F0');
-      metalGrad.addColorStop(0.45, '#F8FAFC');
-      metalGrad.addColorStop(1, '#94A3B8');
-      ctx.fillStyle = metalGrad;
-
-      if (ex.stepTarget) {
-        const mainLen = Math.round(wpLenPx * 0.58);
-        const stepLen = wpLenPx - mainLen;
-        const stepDiaPx = Math.round(ex.stepTarget * 1.10);
-        const stepTop = Math.round(134 - stepDiaPx / 2);
-        ctx.fillRect(154, wpTop, mainLen, wpDiaPx);
-        ctx.fillRect(154 + mainLen, stepTop, stepLen, stepDiaPx);
+      if (vrImg && vrImg.complete && vrImg.naturalWidth > 0) {
+        /* Teken echte 1e-persoons VR-render (object-fit: cover) */
+        const srcRatio = vrImg.naturalWidth / vrImg.naturalHeight;
+        const dstRatio = w / ht;
+        let sx = 0;
+        let sy = 0;
+        let sw = vrImg.naturalWidth;
+        let sh = vrImg.naturalHeight;
+        if (srcRatio > dstRatio) {
+          sw = Math.round(vrImg.naturalHeight * dstRatio);
+          sx = Math.round((vrImg.naturalWidth - sw) / 2);
+        } else {
+          sh = Math.round(vrImg.naturalWidth / dstRatio);
+          sy = Math.round((vrImg.naturalHeight - sh) / 2);
+        }
+        ctx.drawImage(vrImg, sx, sy, sw, sh, 0, 0, w, ht);
       } else {
-        ctx.fillRect(154, wpTop, wpLenPx, wpDiaPx);
+        /* Directe vector-fallback voordat de afbeelding geladen is */
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.16)';
+        ctx.lineWidth = 1;
+        for (let gx = 0; gx < w; gx += 36) {
+          ctx.beginPath();
+          ctx.moveTo(gx, 0);
+          ctx.lineTo(gx, ht);
+          ctx.stroke();
+        }
+        ctx.fillStyle = '#E2E8F0';
+        ctx.font = '600 13px Inter, sans-serif';
+        ctx.fillText('1e-persoons VR-beeld laden (' + ex.short + ')…', 24, Math.round(ht / 2));
       }
-
-      /* Transparante beschermkap over drieklauw */
-      if (!h.freeze) {
-        ctx.fillStyle = 'rgba(56, 189, 248, 0.16)';
-        ctx.strokeStyle = 'rgba(125, 211, 252, 0.72)';
-        ctx.lineWidth = 1.5;
-        ctx.fillRect(112, 74, 62, 96);
-        ctx.strokeRect(112, 74, 62, 96);
-      } else {
-        /* Klauwplaatsleutel zichtbaar bij veiligheidsstop */
-        ctx.fillStyle = '#F97316';
-        ctx.fillRect(129, 58, 10, 44);
-        ctx.fillRect(116, 56, 36, 8);
-      }
-
-      /* Beitelhouder & support op actuele X-positie */
-      const toolX = 166 + Math.min(wpLenPx + 14, Math.max(18, Math.round(h.carriageX * 1.25)));
-      ctx.fillStyle = '#475569';
-      ctx.fillRect(toolX - 16, 152, 46, 34);
-      ctx.fillStyle = '#F59E0B';
-      ctx.beginPath();
-      ctx.moveTo(toolX, 136);
-      ctx.lineTo(toolX + 12, 152);
-      ctx.lineTo(toolX - 6, 152);
-      ctx.closePath();
-      ctx.fill();
-
-      /* Koelstraal indien ingeschakeld */
-      if (h.coolant && !h.paused && ex.rpm > 0) {
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.85)';
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.moveTo(toolX + 26, 78);
-        ctx.quadraticCurveTo(toolX + 8, 106, toolX, 135);
-        ctx.stroke();
-      }
-
       ctx.restore();
 
-      /* Bovenbalk in VR: links oefening, rechtsboven de ‘Hulp nodig’-knop van Draaibank VR v2.2.0 */
+      /* Bovenbalk in VR: links actieve bril & status, rechtsboven de knop ‘Hulp nodig’ */
       ctx.fillStyle = 'rgba(11, 25, 44, 0.84)';
-      ctx.fillRect(10, 10, 238, 28);
+      ctx.fillRect(10, 10, 266, 28);
       ctx.fillStyle = '#E2E8F0';
       ctx.font = '600 11px Inter, sans-serif';
-      ctx.fillText('1e-persoon VR · ' + h.name + ' · ' + (h.paused ? '0 RPM' : (ex.rpm + ' RPM')), 18, 28);
+      const rightStat = ex.domain === 'elektro'
+        ? (h.paused ? 'Gepauzeerd' : (ex.voltageV + ' V · NEN 3140'))
+        : (h.paused ? '0 RPM' : (ex.rpm + ' RPM · v2.5.6'));
+      ctx.fillText('1e-persoon VR · ' + h.name + ' · ' + rightStat, 18, 28);
 
-      /* De prominente knop rechtsboven in VR */
       ctx.fillStyle = '#F59E0B';
       ctx.beginPath();
       ctx.roundRect ? ctx.roundRect(w - 138, 10, 128, 28, 7) : ctx.rect(w - 138, 10, 128, 28);
@@ -1010,13 +1161,22 @@
       ctx.font = '700 11px Inter, sans-serif';
       ctx.fillText('🙋 Hulp actief (VR)', w - 129, 28);
 
-      /* Onderbalk telemetrie */
-      ctx.fillStyle = 'rgba(11, 25, 44, 0.86)';
+      /* Onderbalk telemetrie passend bij de gekozen VR-applicatie */
+      ctx.fillStyle = 'rgba(11, 25, 44, 0.88)';
       ctx.fillRect(0, ht - 30, w, 30);
       ctx.fillStyle = '#93C5FD';
       ctx.font = '600 11px "JetBrains Mono", monospace';
-      const capLabel = h.freeze ? '⚠ Sleutel nog in klauwplaat' : ('Kap dicht ✓ · Koeling ' + (h.coolant ? 'AAN' : 'UIT'));
-      ctx.fillText(capLabel + ' · X = ' + h.carriageX.toFixed(1) + ' mm', 12, ht - 11);
+      if (ex.domain === 'elektro') {
+        const elTele = h.freeze
+          ? '⚠ Veiligheidsmelding: eerst hoofdschakelaar vergrendelen (LOTO)'
+          : (ex.circuitCode + ' · Voor/na-test ' + (h.testerChecked ? 'OK ✓' : 'open'));
+        ctx.fillText(elTele, 12, ht - 11);
+      } else {
+        const capLabel = h.freeze
+          ? '⚠ Veiligheidsstop actief in VR'
+          : ('Fase 1/2 ✓ · Kap dicht · Koeling ' + (h.coolant ? 'AAN' : 'UIT'));
+        ctx.fillText(capLabel + ' · X = ' + h.carriageX.toFixed(1) + ' mm', 12, ht - 11);
+      }
     }
 
     function drawBlueprint2D(canvas, h) {
@@ -1024,7 +1184,7 @@
       const ctx = canvas.getContext('2d');
       const w = canvas.width;
       const ht = canvas.height;
-      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.EL_4;
 
       /* Lichte Blueprint Paper achtergrond (#F8FBFF) */
       ctx.fillStyle = '#F8FBFF';
@@ -1046,18 +1206,97 @@
         ctx.stroke();
       }
 
-      /* Binnenkader technische tekening */
+      /* Binnenkader technisch schema / werktekening */
       ctx.strokeStyle = '#94A3B8';
       ctx.lineWidth = 1.4;
       ctx.strokeRect(10, 10, w - 20, ht - 20);
 
-      /* Kopregel */
+      if (ex.domain === 'elektro') {
+        /* 2D Installatieschema (NEN 3140 & EN 50110) */
+        ctx.fillStyle = '#0B192C';
+        ctx.font = '700 11.5px "Space Grotesk", sans-serif';
+        ctx.fillText('2D INSTALLATIESCHEMA · ' + ex.short.toUpperCase(), 20, 29);
+        ctx.fillStyle = '#0B5ED7';
+        ctx.font = '600 10.5px "JetBrains Mono", monospace';
+        ctx.fillText('NEN 3140 & EN 50110', w - 142, 29);
+
+        const rails = ['L1', 'L2', 'L3', 'N', 'PE'];
+        const railColors = ['#0B192C', '#0B192C', '#0B192C', '#0B5ED7', '#15803D'];
+        const xStart = 76;
+        const xSpacing = 74;
+
+        /* Hoofdschakelaar Q0 balk */
+        ctx.fillStyle = '#E6F0FC';
+        ctx.strokeStyle = '#0B5ED7';
+        ctx.lineWidth = 1.5;
+        ctx.fillRect(52, 66, w - 104, 34);
+        ctx.strokeRect(52, 66, w - 104, 34);
+        ctx.fillStyle = '#0B192C';
+        ctx.font = '700 10.5px "JetBrains Mono", monospace';
+        const lotoState = ex.voltageV === 0 ? 'Q0 = 0 (VERGRENDELD · LOTO HANGSLOT ✓)' : 'Q0 = 1 (VOORBEREIDING & 1000V-CHECK)';
+        ctx.fillText(lotoState, 64, 87);
+
+        /* Geleiders L1, L2, L3, N, PE + klemmenstrook X4 */
+        rails.forEach(function (lbl, idx) {
+          const rx = xStart + idx * xSpacing;
+          ctx.strokeStyle = railColors[idx];
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(rx, 46);
+          ctx.lineTo(rx, 66);
+          ctx.moveTo(rx, 100);
+          ctx.lineTo(rx, 198);
+          ctx.stroke();
+
+          /* Klemcirkel op klemmenstrook */
+          ctx.fillStyle = '#FFFFFF';
+          ctx.beginPath();
+          ctx.arc(rx, 152, 9, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.fillStyle = railColors[idx];
+          ctx.font = '700 11px "JetBrains Mono", monospace';
+          ctx.fillText(lbl, rx - 7, 214);
+        });
+
+        /* Interactieve 2-polige meetpen-indicator */
+        const activeIdx = bpHoverNormX !== null
+          ? Math.max(0, Math.min(4, Math.floor(bpHoverNormX * 5)))
+          : 0;
+        const probeX = xStart + activeIdx * xSpacing;
+        const refX = xStart + 3 * xSpacing; /* N-rail */
+
+        ctx.save();
+        ctx.strokeStyle = '#D97706';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([4, 3]);
+        ctx.beginPath();
+        ctx.moveTo(probeX, 152);
+        ctx.quadraticCurveTo((probeX + refX) / 2, 118, refX, 152);
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.fillStyle = '#D97706';
+        ctx.font = '700 10.5px "JetBrains Mono", monospace';
+        ctx.fillText('2-polige meting (' + rails[activeIdx] + '–N): ' + ex.voltageV + ',0 V', 64, 128);
+
+        /* Titelblok onderaan */
+        ctx.fillStyle = '#0B192C';
+        ctx.fillRect(10, ht - 34, w - 20, 24);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '600 10.5px "JetBrains Mono", monospace';
+        ctx.fillText('TechBuilds VR · Tweepolig testen voor/na meting · 0 V aantonen', 18, ht - 18);
+        return;
+      }
+
+      /* 2D Werktekening Draaibank VR v2.5.6 */
       ctx.fillStyle = '#0B192C';
       ctx.font = '700 11.5px "Space Grotesk", sans-serif';
       ctx.fillText('2D WERKTEKENING · ' + ex.short.toUpperCase(), 20, 29);
       ctx.fillStyle = '#0B5ED7';
       ctx.font = '600 10.5px "JetBrains Mono", monospace';
-      ctx.fillText('TOLERANTIE ±0,1 MM · NL & EU', w - 188, 29);
+      ctx.fillText('FASE 1/2 + 2/2 · ±0,1 MM', w - 168, 29);
 
       /* Hartlijn (streep-punt) */
       const cy = 136;
@@ -1087,7 +1326,6 @@
         ctx.fillRect(x0 + w1, cy - hStep / 2, w2, hStep);
         ctx.strokeRect(x0 + w1, cy - hStep / 2, w2, hStep);
 
-        /* Tweede maatlijn */
         ctx.fillStyle = '#0B5ED7';
         ctx.font = '700 11px "JetBrains Mono", monospace';
         ctx.fillText('Ø ' + ex.stepTarget.toFixed(1).replace('.', ',') + ' mm', x0 + w1 + 14, cy - hStep / 2 - 8);
@@ -1134,7 +1372,7 @@
       ctx.fillStyle = '#FFFFFF';
       ctx.font = '600 10.5px "JetBrains Mono", monospace';
       const relMm = (((markerX - x0) / totalW) * ex.lenMm).toFixed(1).replace('.', ',');
-      ctx.fillText('TechBuilds VR · Positie Z: ' + relMm + ' mm · Meten bij 0 RPM (schuifmaat)', 18, ht - 18);
+      ctx.fillText('TechBuilds VR · Positie Z: ' + relMm + ' mm · Meten bij 0 RPM (2,5× Nonius)', 18, ht - 18);
     }
 
     function renderTab1() {
@@ -1168,7 +1406,7 @@
       });
 
       let cardsHtml = filtered.map(function (h) {
-        const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+        const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.EL_4;
         let cardCls = 'dd-headset-card';
         let badgeStyle = 'background:var(--dd-ok-bg);color:var(--dd-ok);border:1px solid var(--dd-ok-border);';
         let badgeText = '✓ Zelfstandig';
@@ -1177,7 +1415,7 @@
         if (!h.appOpen) {
           badgeStyle = 'background:var(--dd-subtle);color:var(--dd-muted);border:1px solid var(--dd-border);';
           badgeText = '⏹ App gesloten';
-          subHint = 'Tik om app of oefening klaar te zetten';
+          subHint = 'Tik om VR-applicatie klaar te zetten';
         } else if (h.paused) {
           badgeStyle = 'background:var(--dd-cobalt-soft);color:var(--dd-cobalt);border:1px solid var(--dd-cobalt);';
           badgeText = '⏸ Gepauzeerd';
@@ -1191,7 +1429,9 @@
           cardCls += ' is-freeze';
           badgeStyle = 'background:var(--dd-err-bg);color:var(--dd-err);border:1px solid var(--dd-err-border);';
           badgeText = '⚠ Veiligheidsstop';
-          subHint = 'Sleutel nog in klauwplaat · leest uitleg in VR';
+          subHint = ex.domain === 'elektro'
+            ? 'Eerst vergrendelen (LOTO) · leest uitleg in VR'
+            : 'Sleutel nog in klauwplaat · leest uitleg in VR';
         }
 
         if (h.slot === selectedSlot) {
@@ -1257,7 +1497,7 @@
     function renderTab2() {
       const roster = getVisibleRoster();
       const h = getSelectedHeadset();
-      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.EL_4;
 
       if (elStudentStrip) {
         elStudentStrip.innerHTML = roster.map(function (item) {
@@ -1284,7 +1524,7 @@
       if (btnSimHelp) {
         if (!h.appOpen) {
           btnSimHelp.className = 'dd-btn-outline';
-          btnSimHelp.textContent = 'Open eerst de VR-app om ‘Hulp nodig’ te testen';
+          btnSimHelp.textContent = 'Open eerst de VR-applicatie om ‘Hulp nodig’ te testen';
         } else if (h.help) {
           btnSimHelp.className = 'dd-btn-ok';
           btnSimHelp.textContent = '✓ Hulp afgerond — Sluit meekijken (AVG)';
@@ -1333,7 +1573,7 @@
       });
 
       if (btnStageOne) {
-        const stEx = DD_EXERCISES[stagedExKey] || DD_EXERCISES.OBJ_1;
+        const stEx = DD_EXERCISES[stagedExKey] || DD_EXERCISES.EL_4;
         btnStageOne.textContent = '📋 Zet ‘' + stEx.short + '’ Klaar op ' + h.name;
       }
 
@@ -1342,16 +1582,16 @@
         if (!h.appOpen) {
           elLeftPane.innerHTML =
             '<div class="dd-card" style="padding:20px;">' +
-              '<span class="dd-badge mono" style="background:var(--dd-subtle);color:var(--dd-muted);border:1px solid var(--dd-border);margin-bottom:8px;">⏹ VR-APP NOG GESLOTEN</span>' +
+              '<span class="dd-badge mono" style="background:var(--dd-subtle);color:var(--dd-muted);border:1px solid var(--dd-border);margin-bottom:8px;">⏹ VR-APPLICATIE NOG GESLOTEN</span>' +
               '<h3 style="font-family:var(--tb-font-display);font-size:17px;margin:4px 0 8px 0;">' + h.name + ' staat klaar in het keuzescherm</h3>' +
-              '<p style="font-size:13px;color:var(--dd-muted);margin:0 0 14px 0;">Open de VR-app op deze bril of kies rechts direct een onderdeel om klaar te zetten zodat de student zonder zoeken kan beginnen.</p>' +
-              '<button type="button" class="dd-btn-primary" id="ddQuickOpenLeftBtn">🚀 VR-App Openen op ' + h.name + '</button>' +
+              '<p style="font-size:13px;color:var(--dd-muted);margin:0 0 14px 0;">Open de gewenste VR-applicatie op deze bril of kies rechts direct een onderdeel van Elektrotechniek VR of Draaibank VR om klaar te zetten.</p>' +
+              '<button type="button" class="dd-btn-primary" id="ddQuickOpenLeftBtn">🚀 VR-Applicatie Openen op ' + h.name + '</button>' +
             '</div>';
           const qBtn = document.getElementById('ddQuickOpenLeftBtn');
           if (qBtn) {
             qBtn.addEventListener('click', function () {
               h.appOpen = true;
-              setStatusMsg('✓ VR-app geopend op ' + h.name + ' (' + ex.title + ').');
+              setStatusMsg('✓ VR-applicatie geopend op ' + h.name + ' (' + ex.title + ').');
               renderAll();
             });
           }
@@ -1369,7 +1609,7 @@
 
               '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0;">' +
                 '<div style="background:var(--dd-bg);border:1px solid var(--dd-border);border-radius:9px;padding:9px 10px;">' +
-                  '<div class="mono" style="font-size:10.5px;color:var(--dd-muted);">ACTIEF ONDERDEEL</div>' +
+                  '<div class="mono" style="font-size:10.5px;color:var(--dd-muted);">ACTIEVE VR-APPLICATIE</div>' +
                   '<div style="font-weight:700;font-size:12.5px;margin-top:2px;">' + ex.short + '</div>' +
                 '</div>' +
                 '<div style="background:var(--dd-bg);border:1px solid var(--dd-border);border-radius:9px;padding:9px 10px;">' +
@@ -1382,14 +1622,13 @@
                 '</div>' +
               '</div>' +
 
-              /* Schematisch voorbeeld van het VR-scherm van de student met de knop rechtsboven */
               '<div style="background:#0F1E33;color:#F8FAFC;border-radius:11px;padding:15px 16px;border:1px solid #253B59;">' +
                 '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px;">' +
                   '<span class="mono" style="font-size:11px;color:#93C5FD;">SCHERM VAN DE STUDENT IN VR (' + h.name.toUpperCase() + ')</span>' +
                   '<button type="button" class="dd-btn-warn" id="ddInVrHelpTrigger" style="background:#F59E0B;color:#0B192C;border-color:#F59E0B;padding:5px 11px;font-size:11.5px;">🙋 Hulp nodig (rechtsboven in VR)</button>' +
                 '</div>' +
                 '<p style="font-size:12.5px;color:#CBD5E1;margin:0;line-height:1.5;">' +
-                  'Zolang de student zelfstandig oefent, blijft de videostream uitgeschakeld. Zo voelt elke leerling zich vrij om rustig te oefenen in VR. <strong>Klik hierboven op ‘🙋 Hulp nodig’</strong> om te zien hoe het live meekijkbeeld en de 2D-werktekening op de docenttablet openen.' +
+                  'Zolang de student zelfstandig oefent, blijft de videostream uitgeschakeld. Zo voelt elke leerling zich vrij om rustig te oefenen in VR. <strong>Klik hierboven op ‘🙋 Hulp nodig’</strong> om te zien hoe het live 1e-persoons VR-beeld en het 2D-schema of de werktekening openen.' +
                 '</p>' +
               '</div>' +
             '</div>';
@@ -1405,6 +1644,12 @@
           }
         } else {
           /* Student tikte op ‘Hulp nodig’ rechtsboven in VR -> Live Split-Studio actief! */
+          const camMidLabel = ex.domain === 'elektro' ? 'Meetpunt' : 'Snijzone';
+          const camCloseLabel = ex.domain === 'elektro' ? 'Vergrendeling' : 'Drieklauw';
+          const bpHoverHint = ex.domain === 'elektro'
+            ? 'Beweeg over het installatieschema om een geleider te meten'
+            : 'Beweeg over de werktekening om de Z-positie af te lezen';
+
           elLeftPane.innerHTML =
             '<div class="dd-card" style="padding:14px;border:2px solid var(--dd-warn-border);">' +
               '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:9px 12px;background:var(--dd-warn-bg);border:1px solid var(--dd-warn-border);border-radius:9px;margin-bottom:12px;">' +
@@ -1420,8 +1665,8 @@
                 '<div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;">' +
                   '<span class="mono" style="font-size:10.5px;color:var(--dd-muted);">KIJKHOEK:</span>' +
                   '<button type="button" class="dd-pill ' + (h.camView === 'OVERVIEW_3Q' ? 'is-soft-active' : '') + '" data-dd-cam="OVERVIEW_3Q" style="padding:3px 8px;font-size:11px;">Overzicht</button>' +
-                  '<button type="button" class="dd-pill ' + (h.camView === 'CUT_ZONE' ? 'is-soft-active' : '') + '" data-dd-cam="CUT_ZONE" style="padding:3px 8px;font-size:11px;">Snijzone</button>' +
-                  '<button type="button" class="dd-pill ' + (h.camView === 'CHUCK_CLOSE' ? 'is-soft-active' : '') + '" data-dd-cam="CHUCK_CLOSE" style="padding:3px 8px;font-size:11px;">Drieklauw</button>' +
+                  '<button type="button" class="dd-pill ' + (h.camView === 'CUT_ZONE' ? 'is-soft-active' : '') + '" data-dd-cam="CUT_ZONE" style="padding:3px 8px;font-size:11px;">' + camMidLabel + '</button>' +
+                  '<button type="button" class="dd-pill ' + (h.camView === 'CHUCK_CLOSE' ? 'is-soft-active' : '') + '" data-dd-cam="CHUCK_CLOSE" style="padding:3px 8px;font-size:11px;">' + camCloseLabel + '</button>' +
                 '</div>' +
               '</div>' +
 
@@ -1430,7 +1675,7 @@
                   '<canvas id="ddLiveVrCanvas" width="460" height="270" style="width:100%;height:auto;border-radius:9px;display:block;border:1px solid var(--dd-border);"></canvas>' +
                 '</div>' +
                 '<div>' +
-                  '<canvas id="ddLiveBpCanvas" width="460" height="270" style="width:100%;height:auto;border-radius:9px;display:block;border:1px solid var(--dd-border);cursor:crosshair;" title="Beweeg over de werktekening om de positie af te lezen"></canvas>' +
+                  '<canvas id="ddLiveBpCanvas" width="460" height="270" style="width:100%;height:auto;border-radius:9px;display:block;border:1px solid var(--dd-border);cursor:crosshair;" title="' + bpHoverHint + '"></canvas>' +
                 '</div>' +
               '</div>' +
               '<p style="font-size:11.5px;color:var(--dd-muted);margin:8px 0 0 0;">' + ex.note + '</p>' +
@@ -1475,30 +1720,39 @@
       /* Rechterkolom onderkaart: directe begeleidingsknoppen tijdens ‘Hulp nodig’ */
       if (elContextTools) {
         if (h.appOpen && h.help) {
+          const primaryToolLabel = ex.domain === 'elektro'
+            ? ('⚡ Voor/na-test ' + (h.testerChecked ? 'bevestigd ✓' : 'markeren'))
+            : ('💧 Koeling ' + (h.coolant ? 'Uitzetten' : 'Aanzetten'));
+
           elContextTools.innerHTML =
             '<div style="font-family:var(--tb-font-display);font-weight:700;font-size:14px;margin-bottom:6px;">🛠 Directe Hulpknoppen tijdens Meekijken</div>' +
             '<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">' +
-              '<button type="button" class="dd-btn-outline" id="ddToolCoolant">💧 Koeling ' + (h.coolant ? 'Uitzetten' : 'Aanzetten') + '</button>' +
+              '<button type="button" class="dd-btn-outline" id="ddToolPrimary">' + primaryToolLabel + '</button>' +
               '<button type="button" class="dd-btn-outline" id="ddToolHeight">📏 Werkhoogte ijken</button>' +
               '<button type="button" class="dd-btn-outline" id="ddToolResetStop">🔄 Veiligheidsstop vrijgeven</button>' +
               '<button type="button" class="dd-btn-outline" id="ddToolToRapport">✅ Naar Vrijgave (Tab 3)</button>' +
             '</div>';
 
-          const bCool = document.getElementById('ddToolCoolant');
+          const bPrim = document.getElementById('ddToolPrimary');
           const bHeight = document.getElementById('ddToolHeight');
           const bReset = document.getElementById('ddToolResetStop');
           const bToRap = document.getElementById('ddToolToRapport');
 
-          if (bCool) {
-            bCool.addEventListener('click', function () {
-              h.coolant = !h.coolant;
-              setStatusMsg('💧 Koeling op ' + h.name + ' ' + (h.coolant ? 'ingeschakeld' : 'uitgeschakeld') + '.');
+          if (bPrim) {
+            bPrim.addEventListener('click', function () {
+              if (ex.domain === 'elektro') {
+                h.testerChecked = !h.testerChecked;
+                setStatusMsg('⚡ Tweepolige voor/na-test op ' + h.name + ' besproken (' + (h.testerChecked ? 'bevestigd ✓' : 'opnieuw uitvoeren') + ').');
+              } else {
+                h.coolant = !h.coolant;
+                setStatusMsg('💧 Koeling op ' + h.name + ' ' + (h.coolant ? 'ingeschakeld' : 'uitgeschakeld') + '.');
+              }
               renderTab2();
             });
           }
           if (bHeight) {
             bHeight.addEventListener('click', function () {
-              setStatusMsg('📏 Werkhoogte van de draaibank automatisch afgestemd voor ' + h.name + '.');
+              setStatusMsg('📏 Werkhoogte van de VR-opstelling automatisch afgestemd voor ' + h.name + '.');
             });
           }
           if (bReset) {
@@ -1518,7 +1772,7 @@
             '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">' +
               '<div>' +
                 '<div style="font-family:var(--tb-font-display);font-weight:700;font-size:13.5px;">✅ Klaar met VR-oefenen?</div>' +
-                '<div style="font-size:12px;color:var(--dd-muted);">Loop samen de 5 punten bij de echte draaibank na op Tabblad 3.</div>' +
+                '<div style="font-size:12px;color:var(--dd-muted);">Loop samen de 5 punten bij de echte schakelkast of machine na op Tabblad 3.</div>' +
               '</div>' +
               '<button type="button" class="dd-btn-outline" id="ddJumpToRapportBtn">Naar Tab 3: Vrijgave →</button>' +
             '</div>';
@@ -1534,18 +1788,42 @@
 
     function syncA4ChecklistAndHeader() {
       const h = getSelectedHeadset();
-      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.OBJ_1;
+      const ex = DD_EXERCISES[h.exKey] || DD_EXERCISES.EL_4;
+      const domKey = ex.domain === 'draaibank' ? 'draaibank' : 'elektro';
+      const domCfg = DD_DOMAIN_PHYS[domKey];
+
+      /* Werk de 5 controlepunten en A4-tabel bij wanneer tussen VR-applicaties wordt gewisseld */
+      if (domKey !== lastChecklistDomain) {
+        lastChecklistDomain = domKey;
+        physChecks.forEach(function (chk, idx) {
+          const item = domCfg.items[idx];
+          if (!item) return;
+          chk.value = item.val;
+          chk.checked = true;
+          const lbl = document.getElementById('lblPhys0' + (idx + 1));
+          if (lbl) lbl.innerHTML = item.html;
+        });
+      }
+
+      if (elPhysCardTitle) elPhysCardTitle.textContent = domCfg.cardTitle;
+      if (elPhysCardIntro) elPhysCardIntro.textContent = domCfg.cardIntro;
+      if (elA4AppSub) elA4AppSub.textContent = domCfg.appSub;
+      if (elA4PrepName) elA4PrepName.textContent = domCfg.prepName;
+      if (elA4TableBody) elA4TableBody.innerHTML = domCfg.rowsHtml;
+      if (elA4PhysBoxTitle) elA4PhysBoxTitle.textContent = domCfg.boxTitle;
+      if (printRepTitle) printRepTitle.textContent = domCfg.printTitle;
 
       if (elA4SlotLabel) elA4SlotLabel.textContent = h.name.toUpperCase() + ' · AVG-BEWUST';
       if (elA4StudentLine) elA4StudentLine.textContent = h.name + ' (naam pas op papier invullen · AVG)';
       if (elA4ActiveEx) elA4ActiveEx.textContent = ex.title;
       if (printRepStudent) {
-        printRepStudent.textContent = h.name + ' · Actief onderdeel: ' + ex.title + ' · Naam student (op papier): ______________________';
+        printRepStudent.textContent = h.name + ' · VR-applicatie: ' + domCfg.prepName + ' · Onderdeel: ' + ex.short + ' · Naam student (op papier): ______________________';
       }
 
       const total = physChecks.length || 5;
       const checkedList = [];
       const summaryLines = [];
+      const realTargetWord = domKey === 'elektro' ? 'de echte schakelkast' : 'de echte draaibank';
 
       physChecks.forEach(function (chk, idx) {
         const num = idx + 1;
@@ -1553,7 +1831,7 @@
           checkedList.push(chk.value);
           summaryLines.push('<div style="color:#15803D;font-weight:600;">✓ ' + chk.value + '</div>');
         } else {
-          summaryLines.push('<div style="color:#B45309;">○ Punt ' + num + ': nog samen nalopen bij de echte draaibank</div>');
+          summaryLines.push('<div style="color:#B45309;">○ Punt ' + num + ': nog samen nalopen bij ' + realTargetWord + '</div>');
         }
       });
 
@@ -1565,8 +1843,8 @@
       }
       if (printPhysSummary) {
         printPhysSummary.textContent = checkedList.length > 0
-          ? ('Afgetekende praktijkpunten bij echte draaibank (' + checkedList.length + '/' + total + '): ' + checkedList.join(' · '))
-          : 'Nog samen bij de echte draaibank langs te lopen: Punt 1 t/m Punt 5';
+          ? ('Afgetekende praktijkpunten bij ' + realTargetWord + ' (' + checkedList.length + '/' + total + '): ' + checkedList.join(' · '))
+          : ('Nog samen bij ' + realTargetWord + ' langs te lopen: Punt 1 t/m Punt 5');
       }
     }
 
@@ -1753,14 +2031,14 @@
           h.appOpen = true;
           h.paused = false;
         });
-        setStatusMsg('🚀 VR-app geopend op alle ' + getActiveSlotsCount() + ' brillen in de groep.');
+        setStatusMsg('🚀 VR-applicaties geopend op alle ' + getActiveSlotsCount() + ' brillen in de groep.');
         renderAll();
       });
     }
 
     if (btnStageGroup) {
       btnStageGroup.addEventListener('click', function () {
-        const chosenKey = (selGroupEx && DD_EXERCISES[selGroupEx.value]) ? selGroupEx.value : 'OBJ_1';
+        const chosenKey = (selGroupEx && DD_EXERCISES[selGroupEx.value]) ? selGroupEx.value : 'EL_4';
         const chosenEx = DD_EXERCISES[chosenKey];
         getVisibleRoster().forEach(function (h) {
           h.appOpen = true;
@@ -1797,7 +2075,7 @@
           h.paused = false;
         });
         btnPauseGroup.textContent = '⏸ Pauzeer Groep';
-        setStatusMsg('⏹ Alle VR-apps netjes afgesloten — brillen staan klaar voor de volgende klas.');
+        setStatusMsg('⏹ Alle VR-applicaties netjes afgesloten — brillen staan klaar voor de volgende klas.');
         renderAll();
       });
     }
@@ -1824,7 +2102,7 @@
         const h = getSelectedHeadset();
         h.appOpen = true;
         h.paused = false;
-        setStatusMsg('🚀 VR-app geopend op ' + h.name + '.');
+        setStatusMsg('🚀 VR-applicatie geopend op ' + h.name + '.');
         renderAll();
       });
     }
@@ -1834,7 +2112,7 @@
         const h = getSelectedHeadset();
         h.appOpen = false;
         h.help = false;
-        setStatusMsg('⏹ VR-app netjes gesloten op ' + h.name + '.');
+        setStatusMsg('⏹ VR-applicatie netjes gesloten op ' + h.name + '.');
         renderAll();
       });
     }
@@ -1844,12 +2122,12 @@
         stagedMode = mb.getAttribute('data-dd-mode');
         renderTab2();
       });
-    });
+    } );
 
     if (btnStageOne) {
       btnStageOne.addEventListener('click', function () {
         const h = getSelectedHeadset();
-        const ex = DD_EXERCISES[stagedExKey] || DD_EXERCISES.OBJ_1;
+        const ex = DD_EXERCISES[stagedExKey] || DD_EXERCISES.EL_4;
         h.appOpen = true;
         h.paused = false;
         h.exKey = stagedExKey;
@@ -1884,29 +2162,29 @@
    * 5. Vakgebied-Wisselaar & Maatwerk-Samenvatting (maatwerk.html)
    * ------------------------------------------------------------------ */
   const MW_SCENES = {
-    elektro: {
-      img: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
-      alt: 'Algemene VR-praktijkvoorbereiding voor meterkast, groepenkast en schakelkast volgens NEN 3140 en EN 50110',
-      caption: 'Spanningsloos werken bij meterkast en schakelkast (NEN 3140 & EN 50110) · ook uitbreidbaar voor aanvullende opstellingen',
-      domeinOption: 'Elektrotechniek & Energie (Meterkast & Schakelkast)'
-    },
-    metaal: {
-      img: 'assets/img/brand/domein_01_metaal_en_verspaning.webp',
-      alt: 'Algemene VR-praktijkvoorbereiding voor metaalbewerking en verspaning op freesbank, kolomboormachine en draaibank',
-      caption: 'Metaal & Verspaning: algemene voorbereiding op veilig opspannen, afscherming en werken aan freesbank of boormachine',
-      domeinOption: 'Metaalbewerking & Verspaning'
-    },
     klimaat: {
       img: 'assets/img/brand/domein_04_installatie_en_klimaat.webp',
-      alt: 'Algemene VR-praktijkvoorbereiding voor installatie- en klimaattechniek bij warmtepomp en leidingwerk',
-      caption: 'Installatie & Klimaat: algemene volgorde voor drukloos stellen, afsluiters bedienen en veilig controleren',
+      alt: 'Algemene technische VR-applicatie voor installatie- en klimaattechniek bij warmtepomp en leidingwerk',
+      caption: 'Installatie & Klimaat: algemene technische VR-applicatie voor drukloos stellen, afsluiters bedienen en veilig controleren',
       domeinOption: 'Installatie- & Klimaattechniek'
+    },
+    elektro: {
+      img: 'assets/img/elektro/elektro_01_loto_vergrendelen.webp',
+      alt: 'Algemene technische VR-applicatie voor meterkast, groepenkast en schakelkast volgens NEN 3140 en EN 50110',
+      caption: 'Elektrotechniek & Energie: spanningsloos werken bij meterkast en schakelkast (NEN 3140 & EN 50110) · ook uitbreidbaar op maat',
+      domeinOption: 'Elektrotechniek & Energie (Meterkast & Schakelkast)'
     },
     mechatronica: {
       img: 'assets/img/brand/domein_03_mechatronica_en_industrie.webp',
-      alt: 'Algemene VR-praktijkvoorbereiding voor oefenlijnen en machineveiligheid volgens Europese richtlijnen',
+      alt: 'Algemene technische VR-applicatie voor oefenlijnen en machineveiligheid volgens Europese richtlijnen',
       caption: 'Mechatronica & Industrie: algemene voorbereiding op afscherming, vergrendeling en veilig vrijgeven van oefenlijnen',
       domeinOption: 'Mechatronica & Machineveiligheid'
+    },
+    metaal: {
+      img: 'assets/img/brand/domein_01_metaal_en_verspaning.webp',
+      alt: 'Algemene technische VR-applicatie voor metaalbewerking en verspaning op freesbank, kolomboormachine en draaibank',
+      caption: 'Metaal & Verspaning: algemene voorbereiding op veilig opspannen, afscherming en werken aan freesbank, boormachine of draaibank',
+      domeinOption: 'Metaalbewerking & Verspaning'
     }
   };
 
@@ -1956,7 +2234,7 @@
 
     function buildScopeText() {
       const domein = document.getElementById('scopeDomein').value;
-      const machine = document.getElementById('scopeMachine').value.trim() || 'Aanvullende werkplek of installatie';
+      const machine = document.getElementById('scopeMachine').value.trim() || 'Aanvullende installatie, kast of werkplek';
       const doelgroep = document.getElementById('scopeDoelgroep').value;
       const pakketStatus = document.getElementById('scopeTabletBezit').value;
 
@@ -1968,15 +2246,15 @@
         : 'Kleding- en PBM-check, veilig opstarten en rustig uitschakelen';
 
       const fullText =
-        'SAMENVATTING AANVULLENDE VOORBEREIDING — TECHBUILDS VR\n' +
-        '--------------------------------------------------------\n' +
-        'Uitgangspunt    : Algemene praktijkvoorbereiding (NL & EU-richtlijnen, geen typetraining)\n' +
+        'SAMENVATTING TECHNISCHE VR-APPLICATIE OP MAAT — TECHBUILDS VR\n' +
+        '--------------------------------------------------------------\n' +
+        'Uitgangspunt    : Algemene technische VR-applicatie (NL & EU-richtlijnen, geen typetraining)\n' +
         'Vakgebied       : ' + domein + '\n' +
-        'Werkplek / kast : ' + machine + '\n' +
+        'Opstelling/kast : ' + machine + '\n' +
         'Voor wie        : ' + doelgroep + '\n' +
-        'Leerdoelen      : ' + goalsList + '\n' +
+        'Onderdelen      : ' + goalsList + '\n' +
         'Gewenste vorm   : ' + pakketStatus + '\n' +
-        'Begeleiding     : Gewoon zichtbaar op het 13,1-inch Docent Dashboard + A4-rapport\n' +
+        'Begeleiding     : Gewoon zichtbaar op het 13,1-inch Docent Dashboard v2.4.0 + A4-rapport\n' +
         'Doorlooptijd    : Gemiddeld 6 tot 10 weken van inventarisatie tot gebruik in de les';
 
       return { domein: domein, machine: machine, fullText: fullText };
@@ -1990,7 +2268,7 @@
       if (btnMailScope) {
         btnMailScope.href =
           'mailto:info@techbuildsvr.nl?subject=' +
-          encodeURIComponent('Aanvullende VR-praktijkvoorbereiding — ' + data.machine) +
+          encodeURIComponent('Technische VR-applicatie op maat — ' + data.machine) +
           '&body=' +
           encodeURIComponent(data.fullText);
       }
@@ -2006,7 +2284,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'TechBuilds_VR_Praktijkvoorbereiding_Overzicht.txt';
+        a.download = 'TechBuilds_VR_Applicatie_Op_Maat_Overzicht.txt';
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -2028,25 +2306,25 @@
   }
 
   /* ------------------------------------------------------------------
-   * 6. Pakket- & Modulekeuze (+ € 5.000,- losse module), Kostenoverzicht & Offerte
+   * 6. Pakket- & VR-Applicatiekeuze (+ € 5.000,- losse VR-app), Kostenoverzicht & Offerte
    * ------------------------------------------------------------------ */
   const EXTRA_MODULE_PRICE = 5000;
   const MODULE_CHOICES = {
-    draaibank: {
-      fee: 0,
-      sub: '1 module inbegrepen: Draaibank VR — 3 onderdelen (Buddy Check, Voorbereiden & 5 werkstukken)',
-      feeText: '€ 0,- (inbegrepen)',
-      formValue: 'Draaibank VR — Algemene voorbereiding draaibank (inbegrepen)'
-    },
     elektro: {
       fee: 0,
-      sub: '1 module inbegrepen: Elektrotechniek VR — Meterkast & schakelkast (NEN 3140 & EU)',
+      sub: '1 VR-applicatie inbegrepen: Elektrotechniek VR — Meterkast & schakelkast (NEN 3140 & EN 50110)',
       feeText: '€ 0,- (inbegrepen)',
       formValue: 'Elektrotechniek VR — Meterkast, groepenkast & schakelkast (inbegrepen)'
     },
+    draaibank: {
+      fee: 0,
+      sub: '1 VR-applicatie inbegrepen: Draaibank VR (v2.5.6) — 3 onderdelen (Buddy Check, Voorbereiden & 5 werkstukken)',
+      feeText: '€ 0,- (inbegrepen)',
+      formValue: 'Draaibank VR — Algemene voorbereiding draaibank (inbegrepen)'
+    },
     beide: {
       fee: EXTRA_MODULE_PRICE,
-      sub: 'Draaibank VR (3 onderdelen) + Elektrotechniek VR samen op dezelfde docenttablet en VR-brillen',
+      sub: 'Elektrotechniek VR + Draaibank VR (v2.5.6) samen op dezelfde docenttablet en VR-brillen',
       feeText: '+ € 5.000,- (eenmalig)',
       formValue: 'Beide modules: Draaibank VR + Elektrotechniek VR (+ € 5.000,- eenmalig excl. BTW)'
     }
@@ -2062,10 +2340,10 @@
       annual: 1500,
       firstYearIncluded: true,
       heroImg: 'assets/img/hardware/hardware_01_regietablet_13_eigen_brillen.webp',
-      heroCaption: 'Optie 1 (€ 10.000,-): Losse 13,1-inch docenttablet met tekenpen en het lichte Docent Dashboard voor eigen VR-brillen (incl. 1 module & 1e jaar service)',
+      heroCaption: 'Optie 1 (€ 10.000,-): Losse 13,1-inch docenttablet met tekenpen en Docent Dashboard v2.4.0 voor eigen VR-brillen (incl. 1 VR-applicatie naar keuze & 1e jaar service)',
       unitSingle: '1 Losse docenttablet-set (eigen brillen)',
       unitPlural: 'Losse docenttablet-sets (eigen brillen)',
-      hwSub: 'Losse 13,1-inch docenttablet (tekenpen & stevige hoes) met Docent Dashboard om eigen VR-brillen op te starten, AVG-bewust te begeleiden en af te sluiten',
+      hwSub: 'Losse 13,1-inch docenttablet (tekenpen & stevige hoes) met Docent Dashboard v2.4.0 om eigen VR-brillen op te starten, AVG-bewust te begeleiden en af te sluiten',
       srvSub: 'Hulp op afstand en software-updates (1e jaar bij de aanschaf inbegrepen)',
       ruleHint: 'Het 1e jaar service zit bij de prijs in; vanaf jaar 2 betaal je € 1.500,- per jaar excl. BTW.',
       formValue: 'Optie 1: Docent Dashboard & Eigen Brillen (€ 10.000,- excl. BTW, 1e jr incl., daarna € 1.500,-/jr)'
@@ -2079,10 +2357,10 @@
       annual: 2500,
       firstYearIncluded: false,
       heroImg: 'assets/img/hardware/hardware_02_mobiele_vr_kar_10_en_tablet.webp',
-      heroCaption: 'Optie 2 (€ 15.000,-): Mobiele VR-Kar 10 met exact 10 VR-brillen (2×5), ingebouwde 5G-verbinding en 13,1-inch docenttablet op één stopcontact',
+      heroCaption: 'Optie 2 (€ 15.000,-): Mobiele VR-Kar 10 met exact 10 VR-brillen (Bril 01 t/m 10), ingebouwde 5G-verbinding en 13,1-inch docenttablet op één stopcontact',
       unitSingle: '1 VR-Kar 10 (10 VR-brillen)',
       unitPlural: 'VR-Karren 10',
-      hwSub: 'Verrijdbare oplaadkar (1 stekker) + 10 VR-brillen + ingebouwde wifi- en 5G-router + 13,1-inch docenttablet',
+      hwSub: 'Verrijdbare oplaadkar (1 stekker) + 10 VR-brillen + ingebouwde wifi- en 5G-router + 13,1-inch docenttablet (v2.4.0)',
       srvSub: 'Centraal beheer van alle brillen, onbeperkt 5G én elk jaar onderhoud op school',
       ruleHint: 'Inclusief onbeperkt 5G in de kar en onze jaarlijkse onderhoudsbeurt op school (€ 2.500,-/jr excl. BTW).',
       formValue: 'Optie 2: Complete VR-Kar 10 (€ 15.000,- excl. BTW + € 2.500,-/jr service & 5G)'
@@ -2096,10 +2374,10 @@
       annual: 3500,
       firstYearIncluded: false,
       heroImg: 'assets/img/hardware/hardware_03_mobiele_vr_kar_20_en_tablet.webp',
-      heroCaption: 'Optie 3 (€ 25.000,-): Brede mobiele VR-Kar 20 met exact 20 VR-brillen (4×5), ingebouwde 5G-verbinding en 13,1-inch docenttablet voor hele klassen',
+      heroCaption: 'Optie 3 (€ 25.000,-): Brede mobiele VR-Kar 20 met exact 20 VR-brillen (Bril 01 t/m 20), ingebouwde 5G-verbinding en 13,1-inch docenttablet voor hele klassen',
       unitSingle: '1 VR-Kar 20 (20 VR-brillen)',
       unitPlural: 'VR-Karren 20',
-      hwSub: 'Verrijdbare 20-vaks oplaadkar (1 stekker) + 20 VR-brillen + ingebouwde wifi- en 5G-router + 13,1-inch docenttablet',
+      hwSub: 'Verrijdbare 20-vaks oplaadkar (1 stekker) + 20 VR-brillen + ingebouwde wifi- en 5G-router + 13,1-inch docenttablet (v2.4.0)',
       srvSub: 'Centraal beheer van alle 20 brillen, onbeperkt 5G én elk jaar onderhoud op school',
       ruleHint: 'Voor hele klassen tegelijk, inclusief onbeperkt 5G en jaarlijks onderhoud op school (€ 3.500,-/jr excl. BTW).',
       formValue: 'Optie 3: Complete VR-Kar 20 (€ 25.000,- excl. BTW + € 3.500,-/jr service & 5G)'
@@ -2170,7 +2448,7 @@
     const elPricingHeroCaption = document.getElementById('pricingHeroCaption');
 
     function syncModuleSelection(modKey) {
-      const mInfo = MODULE_CHOICES[modKey] || MODULE_CHOICES.draaibank;
+      const mInfo = MODULE_CHOICES[modKey] || MODULE_CHOICES.elektro;
       if (selModChoice) selModChoice.value = modKey;
       modSegBtns.forEach(function (b) {
         const active = b.getAttribute('data-calc-mod') === modKey;
@@ -2215,8 +2493,8 @@
       }
 
       if (showBanner && elSelectedBanner && elSelectedBannerTitle) {
-        const curMod = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'draaibank';
-        const modSuffix = curMod === 'beide' ? ' + extra module (€ 5.000,-)' : (curMod === 'elektro' ? ' · Elektrotechniek VR' : ' · Draaibank VR');
+        const curMod = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'elektro';
+        const modSuffix = curMod === 'beide' ? ' + extra VR-applicatie (€ 5.000,-)' : (curMod === 'elektro' ? ' · Elektrotechniek VR' : ' · Draaibank VR v2.5.6');
         elSelectedBannerTitle.textContent = '✓ ' + pkg.bannerTitle + modSuffix;
         elSelectedBanner.style.display = 'flex';
       }
@@ -2249,7 +2527,7 @@
       }).join('');
 
       elComparisonBars.innerHTML =
-        '<span class="tco-bars-title">Vergelijking over ' + years + ' jaar' + (extraModFee > 0 ? ' (incl. + € 5.000,- extra module)' : '') + '</span>' +
+        '<span class="tco-bars-title">Vergelijking over ' + years + ' jaar' + (extraModFee > 0 ? ' (incl. + € 5.000,- extra VR-applicatie)' : '') + '</span>' +
         rowsHtml;
 
       elComparisonBars.querySelectorAll('[data-tco-bar-pkg]').forEach(function (row) {
@@ -2267,7 +2545,7 @@
     function updateCalc() {
       const pkgKey = (selPkg && PACKAGES[selPkg.value]) ? selPkg.value : 'optie-2-vr-kar-10';
       const pkg = PACKAGES[pkgKey];
-      const modKey = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'draaibank';
+      const modKey = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'elektro';
       const modInfo = MODULE_CHOICES[modKey];
       const sets = parseInt(inpSets.value, 10) || 1;
       const years = parseInt(inpYears.value, 10) || 3;
@@ -2408,7 +2686,7 @@
     if (btnCalcToQuote) {
       btnCalcToQuote.addEventListener('click', function () {
         const key = (selPkg && PACKAGES[selPkg.value]) ? selPkg.value : 'optie-2-vr-kar-10';
-        const mk = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'draaibank';
+        const mk = (selModChoice && MODULE_CHOICES[selModChoice.value]) ? selModChoice.value : 'elektro';
         syncModuleSelection(mk);
         syncVisualSelection(key, true);
       });
@@ -2420,7 +2698,7 @@
       });
     }
 
-    /* Lees eventuele URL-keuzes (?optie=1|2|3 & ?module=draaibank|elektro|beide) */
+    /* Lees eventuele URL-keuzes (?optie=1|2|3 & ?module=elektro|draaibank|beide) */
     const urlParams = new URLSearchParams(window.location.search);
     const optieParam = urlParams.get('optie') || urlParams.get('pakket');
     const modParam = (urlParams.get('module') || '').toLowerCase();
@@ -2492,7 +2770,7 @@
       const email = document.getElementById('reqEmail').value.trim();
       const tel = document.getElementById('reqPhone').value.trim();
       const type = document.getElementById('reqType').value;
-      const modChoiceText = selReqMod ? selReqMod.value : 'Draaibank VR — Algemene voorbereiding draaibank';
+      const modChoiceText = selReqMod ? selReqMod.value : 'Elektrotechniek VR — Meterkast, groepenkast & schakelkast (inbegrepen)';
       const msg = document.getElementById('reqMessage').value.trim();
 
       if (!naam || !org || !email) {
@@ -2513,7 +2791,7 @@
         'E-mail       : ' + email + '\n' +
         'Telefoon     : ' + (tel || '-') + '\n' +
         'Voorkeur     : ' + type + '\n' +
-        'Module(s)    : ' + modChoiceText + '\n\n' +
+        'VR-app(s)    : ' + modChoiceText + '\n\n' +
         'Toelichting:\n' + (msg || '(Geen extra opmerkingen)');
 
       if (feedbackBox) {

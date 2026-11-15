@@ -3393,8 +3393,8 @@ h1, h2, h3, h4 {
     padding: 12px;
   }
   .hero-photo-tile--dashboard {
-    min-height: 340px;
-    padding: 10px 10px 96px 10px;
+    min-height: 0;
+    padding: 12px;
   }
 }
 
@@ -3480,3 +3480,56 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+ * V2.7 — MULTI-APPLICATIE KAARTLINKS & MODULE-STUDIO SUBWEERGAVEN (APK V2.5.6)
+ * ========================================================================== */
+.part-step-link {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tb-cobalt);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.part-step-link:hover {
+  color: var(--tb-cobalt-strong);
+}
+
+.studio-subview-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.65rem;
+}
+
+.studio-subview-pill {
+  appearance: none;
+  border: 1px solid rgba(11, 25, 44, 0.12);
+  background: #FFFFFF;
+  color: var(--tb-deep-navy);
+  border-radius: var(--tb-radius-pill);
+  padding: 0.34rem 0.78rem;
+  font-family: var(--tb-font-body);
+  font-size: 0.77rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--tb-duration-fast) var(--tb-ease);
+}
+
+.studio-subview-pill:hover {
+  border-color: var(--tb-cobalt);
+  color: var(--tb-cobalt);
+}
+
+.studio-subview-pill.is-active {
+  background: var(--tb-cobalt);
+  border-color: var(--tb-cobalt);
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px -3px rgba(11, 94, 215, 0.34);
+}
+
